@@ -45,7 +45,8 @@
 - (UILabel *)helpLabel {
     if (!_helpLabel) {
         _helpLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, self.frame.size.width, 30)];
-        _helpLabel.backgroundColor = [UIColor colorWithRed:0.8 green:0.3 blue:0.3 alpha:0.9];
+        _helpLabel.backgroundColor = [UIColor colorWithRed:0.8 green:0.3 blue:0.3 alpha:1.0];
+        _helpLabel.alpha = 0.0;
         _helpLabel.textAlignment = NSTextAlignmentCenter;
         _helpLabel.font = [UIFont preferredFontForTextStyle: UIFontTextStyleCaption1];
         _helpLabel.textColor = [UIColor whiteColor];
@@ -132,6 +133,7 @@
     [UIView animateWithDuration:0.3 animations: ^{
          [self updateButtonCenters];
          self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.65];
+         self.helpLabel.alpha = 0.9;
          [self layoutIfNeeded];
      } completion:^(BOOL finished) {
          if (finished) {
@@ -201,6 +203,7 @@
                              button.alpha = 0.0;
                              self.backgroundColor = [UIColor clearColor];
                          }
+                         self.helpLabel.alpha = 0.0;
                      } completion:^(BOOL finished) {
                          if (finished) {
                              self.shown = NO;
