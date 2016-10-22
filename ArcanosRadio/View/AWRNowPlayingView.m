@@ -45,16 +45,15 @@
 
 - (AWRMenu *)menu {
     if (!_menu) {
-        NSArray<AWRMenuItem *> *items = @[[AWRMenuItem itemWithIdentifier:@"share"
-                                                                     icon: [UIImage imageNamed:@"share"]
-                                                                     text: NSLocalizedString(@"MENU_SHARE", nil)],
+        NSArray<AWRMenuItem *> *items = @[[AWRMenuItem itemWithIdentifier:@"about"
+                                                                     icon: [UIImage imageNamed:@"help"]
+                                                                     text: NSLocalizedString(@"MENU_ABOUT", nil)],
                                           [AWRMenuItem itemWithIdentifier:@"settings"
                                                                      icon: [UIImage imageNamed:@"settings"]
                                                                      text: NSLocalizedString(@"MENU_SETTINGS", nil)],
-                                          [AWRMenuItem itemWithIdentifier:@"about"
-                                                                     icon: [UIImage imageNamed:@"help"]
-                                                                     text: NSLocalizedString(@"MENU_ABOUT", nil)]
-                                          ];
+                                          [AWRMenuItem itemWithIdentifier:@"share"
+                                                                     icon: [UIImage imageNamed:@"share"]
+                                                                     text: NSLocalizedString(@"MENU_SHARE", nil)]];
         _menu = [[AWRMenu alloc] initWithFrame:self.frame];
         _menu.delegate = self;
         _menu.items = items;
