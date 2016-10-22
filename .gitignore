@@ -39,12 +39,12 @@ ehthumbs.db
 Thumbs.db
 
 AWRConstants.m
-**/fastlane
-# **/fastlane/Appfile
-# **/fastlane/report.xml
-# **/fastlane/Preview.html
-# **/fastlane/screenshots
-# **/fastlane/test_output
+**/fastlane/env_vars.properties
+**/fastlane/Appfile
+**/fastlane/report.xml
+**/fastlane/Preview.html
+**/fastlane/screenshots
+**/fastlane/test_output
 
 *.hmap
 *.ipa

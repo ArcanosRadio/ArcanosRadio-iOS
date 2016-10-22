@@ -19,6 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 #ifndef MOCK
+    [Crashlytics startWithAPIKey:FABRIC_API_KEY];
     [Fabric with:@[[Crashlytics class]]];
 #endif
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
