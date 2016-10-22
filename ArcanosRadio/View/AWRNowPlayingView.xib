@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11535.1" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11523"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AWRNowPlayingController">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="UyT-HM-NId"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="AWRNowPlayingView" customClass="AWRNowPlayingView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aaN-PC-ico" userLabel="Header">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="375" id="z4n-t7-5o7"/>
+                    </constraints>
+                </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6i-t7-qJ2">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5DG-Vf-irM" userLabel="Metadata Container">
+                            <rect key="frame" x="8" y="394" width="359" height="51"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[song]" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lh0-1K-Aiq">
+                                    <rect key="frame" x="0.0" y="0.0" width="359" height="27.5"/>
+                                    <accessibility key="accessibilityConfiguration" identifier="song_label">
+                                        <accessibilityTraits key="traits" notEnabled="YES"/>
+                                    </accessibility>
+                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
+                                    <color key="textColor" red="1" green="0.78823529411764703" blue="0.047058823529411764" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[artist]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzj-uq-wUb">
+                                    <rect key="frame" x="0.0" y="27.5" width="359" height="23.5"/>
+                                    <accessibility key="accessibilityConfiguration" identifier="artist_label">
+                                        <accessibilityTraits key="traits" notEnabled="YES"/>
+                                    </accessibility>
+                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
+                                    <color key="textColor" red="0.55686274509803924" green="0.90196078431372551" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[lyrics]" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGK-gE-lXW">
+                            <rect key="frame" x="8" y="461" width="36.5" height="13.5"/>
+                            <accessibility key="accessibilityConfiguration" identifier="lyrics_label">
+                                <accessibilityTraits key="traits" notEnabled="YES"/>
+                            </accessibility>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VM6-M7-hl5" userLabel="Spacer Bottom">
+                            <rect key="frame" x="8" y="482.5" width="359" height="400"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="400" id="Q8g-Ax-LID" userLabel="Spacer Bottom"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="VM6-M7-hl5" firstAttribute="centerX" secondItem="S6i-t7-qJ2" secondAttribute="centerX" id="1Jk-Ae-uEg" userLabel="Spacer Bottom Horizontal Center"/>
+                        <constraint firstAttribute="trailing" secondItem="5DG-Vf-irM" secondAttribute="trailing" constant="8" id="5cJ-jj-QP6" userLabel="Metadata Right"/>
+                        <constraint firstItem="AGK-gE-lXW" firstAttribute="leading" secondItem="S6i-t7-qJ2" secondAttribute="leading" constant="8" id="8GG-b0-ZF9" userLabel="Lyrics Left"/>
+                        <constraint firstItem="VM6-M7-hl5" firstAttribute="leading" secondItem="S6i-t7-qJ2" secondAttribute="leading" constant="8" id="Cdf-gq-BKo" userLabel="Spacer Bottom Left"/>
+                        <constraint firstAttribute="bottom" secondItem="VM6-M7-hl5" secondAttribute="bottom" constant="8" id="DTX-RD-YEp" userLabel="Spacer Bottom Bottom"/>
+                        <constraint firstAttribute="trailing" secondItem="VM6-M7-hl5" secondAttribute="trailing" constant="8" id="MKR-0F-A6C" userLabel="Spacer Bottom Right"/>
+                        <constraint firstItem="VM6-M7-hl5" firstAttribute="top" secondItem="AGK-gE-lXW" secondAttribute="bottom" constant="8" id="NEz-bk-4V4" userLabel="Spacer Bottom Top"/>
+                        <constraint firstItem="5DG-Vf-irM" firstAttribute="leading" secondItem="S6i-t7-qJ2" secondAttribute="leading" constant="8" id="aza-aC-cmF" userLabel="Metadata Left"/>
+                        <constraint firstItem="5DG-Vf-irM" firstAttribute="top" secondItem="S6i-t7-qJ2" secondAttribute="top" constant="394" id="g1s-6a-Fye" userLabel="Metadata Top"/>
+                        <constraint firstItem="AGK-gE-lXW" firstAttribute="top" secondItem="5DG-Vf-irM" secondAttribute="bottom" constant="16" id="gbi-70-743" userLabel="Lyrics Top"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="AGK-gE-lXW" secondAttribute="trailing" constant="8" id="grp-5w-sWj" userLabel="Lyrics Minimum Right"/>
+                        <constraint firstItem="5DG-Vf-irM" firstAttribute="centerX" secondItem="S6i-t7-qJ2" secondAttribute="centerX" id="hxr-0L-tZ2" userLabel="Metadata Horizontal Center"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="1Dp-Cs-5gl"/>
+                    </connections>
+                </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uNJ-Gx-8Ck" userLabel="Media Control">
+                    <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1MG-Xz-jxs" userLabel="Mute Button">
+                            <rect key="frame" x="8" y="12" width="44" height="44"/>
+                            <accessibility key="accessibilityConfiguration" identifier="mute_button"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="YWT-1B-CI7" userLabel="Mute Button Height"/>
+                                <constraint firstAttribute="width" secondItem="1MG-Xz-jxs" secondAttribute="height" multiplier="1:1" id="xc0-8z-abg" userLabel="Mute Button Aspect"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            <state key="normal" image="mute"/>
+                            <connections>
+                                <action selector="muteButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="n9B-oA-vfd"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3oA-4B-QPF" userLabel="Increase Volume Button">
+                            <rect key="frame" x="271" y="12" width="44" height="44"/>
+                            <accessibility key="accessibilityConfiguration" identifier="increase_volume_button"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="3oA-4B-QPF" secondAttribute="height" multiplier="1:1" id="OEp-Pz-q2s" userLabel="Volume Plus Button Aspect"/>
+                                <constraint firstAttribute="height" constant="44" id="bFi-yK-AwQ" userLabel="Volume Plus Button Height"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            <state key="normal" image="volume_plus"/>
+                            <connections>
+                                <action selector="heavyMetalButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="QRY-cP-yGc"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qeb-HB-q3h" userLabel="Menu Button">
+                            <rect key="frame" x="323" y="12" width="44" height="44"/>
+                            <accessibility key="accessibilityConfiguration" identifier="menu_button"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="44" id="bC3-gO-Ae0" userLabel="Play Button Width"/>
+                                <constraint firstAttribute="width" secondItem="qeb-HB-q3h" secondAttribute="height" multiplier="1:1" id="rBn-SB-uGy" userLabel="Play Button Aspect"/>
+                            </constraints>
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" image="menu">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="menuPressed:" destination="iN0-l3-epB" eventType="touchDown" id="mBA-uU-ARE"/>
+                            </connections>
+                        </button>
+                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="gmd-m7-sZK">
+                            <rect key="frame" x="58" y="19" width="207" height="31"/>
+                            <accessibility key="accessibilityConfiguration" identifier="volume_slider"/>
+                            <color key="minimumTrackTintColor" red="0.75294117647058822" green="0.75294117647058822" blue="0.75294117647058822" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="maximumTrackTintColor" red="0.75294117647058822" green="0.75294117647058822" blue="0.75294117647058822" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="thumbTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="volumeChanged:" destination="iN0-l3-epB" eventType="valueChanged" id="8gC-ji-kub"/>
+                            </connections>
+                        </slider>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="gmd-m7-sZK" firstAttribute="centerY" secondItem="1MG-Xz-jxs" secondAttribute="centerY" id="3zT-7F-Feh" userLabel="Volume Vertical Center"/>
+                        <constraint firstItem="3oA-4B-QPF" firstAttribute="centerY" secondItem="1MG-Xz-jxs" secondAttribute="centerY" id="Lop-RR-xcE" userLabel="Increase Volume Button Vertical Center"/>
+                        <constraint firstItem="1MG-Xz-jxs" firstAttribute="leading" secondItem="uNJ-Gx-8Ck" secondAttribute="leading" constant="8" id="UD6-z5-IXT" userLabel="Mute Button Left"/>
+                        <constraint firstItem="qeb-HB-q3h" firstAttribute="centerY" secondItem="1MG-Xz-jxs" secondAttribute="centerY" id="V2Y-7d-gec" userLabel="Menu Button Vertical Center"/>
+                        <constraint firstAttribute="bottom" secondItem="1MG-Xz-jxs" secondAttribute="bottom" constant="4" id="auf-me-qto" userLabel="Mute Button Bottom"/>
+                        <constraint firstItem="3oA-4B-QPF" firstAttribute="leading" secondItem="gmd-m7-sZK" secondAttribute="trailing" constant="8" id="d40-y7-AQD" userLabel="Volume Plus Left"/>
+                        <constraint firstItem="gmd-m7-sZK" firstAttribute="leading" secondItem="1MG-Xz-jxs" secondAttribute="trailing" constant="8" id="kEe-Av-xaq" userLabel="Volume Left"/>
+                        <constraint firstAttribute="height" constant="60" id="rEB-Lg-072" userLabel="Media Control Height"/>
+                        <constraint firstItem="qeb-HB-q3h" firstAttribute="leading" secondItem="3oA-4B-QPF" secondAttribute="trailing" constant="8" id="sDC-Ht-L6Y" userLabel="Menu Button Left"/>
+                        <constraint firstAttribute="trailing" secondItem="qeb-HB-q3h" secondAttribute="trailing" constant="8" id="zMB-EA-fgd" userLabel="Menu Button Right"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sct-cG-X0j" userLabel="Play Button">
+                    <rect key="frame" x="305" y="343" width="54" height="54"/>
+                    <color key="backgroundColor" red="0.99607843137254903" green="0.81568627450980391" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
+                    <accessibility key="accessibilityConfiguration" identifier="play_pause_button"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="54" id="3Oo-Nv-bP5" userLabel="Play Button Width"/>
+                        <constraint firstAttribute="height" constant="54" id="dDB-rd-Jps" userLabel="Play Button Height"/>
+                    </constraints>
+                    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" image="play">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="playButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="VLv-E9-9cr"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.027450980392156862" green="0.11764705882352941" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="S6i-t7-qJ2" firstAttribute="leading" secondItem="aaN-PC-ico" secondAttribute="leading" id="DnZ-En-ovr" userLabel="Scroll Left"/>
+                <constraint firstAttribute="trailing" secondItem="sct-cG-X0j" secondAttribute="trailing" constant="16" id="Mup-Kz-jx4" userLabel="Play Button Right"/>
+                <constraint firstItem="uNJ-Gx-8Ck" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="N0f-gq-Ztv" userLabel="Media Control Left"/>
+                <constraint firstAttribute="trailing" secondItem="uNJ-Gx-8Ck" secondAttribute="trailing" id="NBA-eb-ZlM" userLabel="Media Control Right"/>
+                <constraint firstItem="aaN-PC-ico" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="Ovx-mP-vmh" userLabel="Header Right"/>
+                <constraint firstItem="aaN-PC-ico" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="VQJ-aH-oH5" userLabel="Header Top"/>
+                <constraint firstItem="S6i-t7-qJ2" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="Ymi-Rn-g9Z" userLabel="Scroll Bottom"/>
+                <constraint firstItem="aaN-PC-ico" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ajI-ny-Orv" userLabel="Header Left"/>
+                <constraint firstItem="S6i-t7-qJ2" firstAttribute="top" secondItem="aaN-PC-ico" secondAttribute="top" id="dKv-Hl-WTC" userLabel="Scroll Top"/>
+                <constraint firstItem="sct-cG-X0j" firstAttribute="top" secondItem="aaN-PC-ico" secondAttribute="bottom" constant="-32" id="g7W-T9-32R" userLabel="Play Button Top"/>
+                <constraint firstAttribute="bottom" secondItem="uNJ-Gx-8Ck" secondAttribute="bottom" id="ib3-VL-vGA" userLabel="Media Control Bottom"/>
+                <constraint firstItem="S6i-t7-qJ2" firstAttribute="trailing" secondItem="aaN-PC-ico" secondAttribute="trailing" id="li7-Ns-Cgf" userLabel="Scroll Right"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <connections>
+                <outlet property="artistNameLabel" destination="yzj-uq-wUb" id="9Br-q0-dOS"/>
+                <outlet property="headerContainer" destination="aaN-PC-ico" id="zKP-Rg-Twq"/>
+                <outlet property="headerHeight" destination="z4n-t7-5o7" id="GXV-1b-7wH"/>
+                <outlet property="lyricsLabel" destination="AGK-gE-lXW" id="EiY-Az-Ozu"/>
+                <outlet property="mediaControlBar" destination="uNJ-Gx-8Ck" id="Kmq-Im-gva"/>
+                <outlet property="menuButton" destination="qeb-HB-q3h" id="xks-al-0uw"/>
+                <outlet property="metadataContainer" destination="5DG-Vf-irM" id="90R-h1-YZs"/>
+                <outlet property="songNameLabel" destination="Lh0-1K-Aiq" id="qvi-7C-2i8"/>
+                <outlet property="spacerBottomConstraint" destination="Q8g-Ax-LID" id="Bg4-Sg-f8A"/>
+                <outlet property="spacerTopConstraint" destination="g1s-6a-Fye" id="YiE-sv-eej"/>
+                <outlet property="togglePlayButton" destination="sct-cG-X0j" id="jnr-XB-HAD"/>
+                <outlet property="volumeSlider" destination="gmd-m7-sZK" id="0dl-O7-cQm"/>
+            </connections>
+            <point key="canvasLocation" x="34.5" y="53.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="menu" width="24" height="24"/>
+        <image name="mute" width="24" height="24"/>
+        <image name="play" width="36" height="36"/>
+        <image name="volume_plus" width="24" height="24"/>
+    </resources>
+</document>
