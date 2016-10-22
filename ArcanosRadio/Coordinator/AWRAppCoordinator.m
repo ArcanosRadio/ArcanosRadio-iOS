@@ -69,6 +69,7 @@ NSString *kStreamOverMobileData = @"mobile_data_enabled";
 
 - (void)userDidSelectAbout {
     AWRAboutController *aboutController = [[AWRAboutController alloc] init];
+    aboutController.modalTransitionStyle = UIModalTransitionStylePartialCurl;
     aboutController.delegate = self;
     [self.mainController presentViewController:aboutController animated:YES completion:NULL];
 }
