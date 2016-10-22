@@ -94,9 +94,6 @@
 - (void)setTogglePlayButton:(UIButton *)togglePlayButton {
     _togglePlayButton = togglePlayButton;
     _togglePlayButton.layer.cornerRadius = _togglePlayButton.frame.size.height / 2.0f;
-//    _togglePlayButton.backgroundColor = [_togglePlayButton.backgroundColor colorWithAlphaComponent:0.5];
-//    _togglePlayButton.layer.borderColor = UIColor.whiteColor.CGColor;
-//    _togglePlayButton.layer.borderWidth = 2;
 }
 
 - (void)layoutSubviews {

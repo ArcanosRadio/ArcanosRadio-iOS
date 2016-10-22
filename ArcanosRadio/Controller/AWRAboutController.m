@@ -25,4 +25,10 @@
     self.aboutView.delegate = self;
 }
 
+- (void)backButtonPressed {
+    if (!self.delegate) return;
+
+    [self.delegate userDidCloseAbout];
+}
+
 @end

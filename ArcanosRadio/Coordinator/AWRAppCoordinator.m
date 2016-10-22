@@ -73,6 +73,10 @@ NSString *kStreamOverMobileData = @"mobile_data_enabled";
     [self.mainController presentViewController:aboutController animated:YES completion:NULL];
 }
 
+- (void)userDidCloseAbout {
+    [self.mainController dismissViewControllerAnimated:YES completion:NULL];
+}
+
 - (void)userDidSelectSettings {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
 }

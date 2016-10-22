@@ -1,4 +1,5 @@
 #import <UIKit/UIKit.h>
+#import "AWRViewController.h"
 @class AWRNowPlayingViewModel;
 
 @protocol AWRNowPlayingControllerDelegate
@@ -9,7 +10,7 @@
 
 @end
 
-@interface AWRNowPlayingController : UIViewController
+@interface AWRNowPlayingController : AWRViewController
 
 @property (weak, nonatomic) id<AWRNowPlayingControllerDelegate>delegate;
 

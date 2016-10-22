@@ -68,6 +68,8 @@
 		0181E82F1D8CB160008E21C5 /* AWRSongParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 0181E82C1D8CB160008E21C5 /* AWRSongParse.m */; };
 		0181E8331D8CB177008E21C5 /* AWRNowPlayingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0181E8301D8CB177008E21C5 /* AWRNowPlayingView.xib */; };
 		0181E8341D8CB177008E21C5 /* AWRNowPlayingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0181E8321D8CB177008E21C5 /* AWRNowPlayingView.m */; };
+		018E2CC51DBC1CF50035455B /* AWRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 018E2CC41DBC1CF50035455B /* AWRViewController.m */; };
+		018E2CC61DBC1CF50035455B /* AWRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 018E2CC41DBC1CF50035455B /* AWRViewController.m */; };
 		019140781D8D8E05000B19EE /* NSObject+PXPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 019140771D8D8E05000B19EE /* NSObject+PXPromise.m */; };
 		01D2BD0C1D9B00D900632C08 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D2BD0B1D9B00D900632C08 /* QuartzCore.framework */; };
 		01DBE4981D8CB2C4003B2100 /* AWRNowPlayingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DBE4941D8CB2C4003B2100 /* AWRNowPlayingController.m */; };
@@ -160,6 +162,8 @@
 		0181E8301D8CB177008E21C5 /* AWRNowPlayingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AWRNowPlayingView.xib; sourceTree = "<group>"; };
 		0181E8311D8CB177008E21C5 /* AWRNowPlayingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRNowPlayingView.h; sourceTree = "<group>"; };
 		0181E8321D8CB177008E21C5 /* AWRNowPlayingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRNowPlayingView.m; sourceTree = "<group>"; };
+		018E2CC31DBC1CF50035455B /* AWRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRViewController.h; sourceTree = "<group>"; };
+		018E2CC41DBC1CF50035455B /* AWRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRViewController.m; sourceTree = "<group>"; };
 		019140761D8D8E05000B19EE /* NSObject+PXPromise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PXPromise.h"; sourceTree = "<group>"; };
 		019140771D8D8E05000B19EE /* NSObject+PXPromise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PXPromise.m"; sourceTree = "<group>"; };
 		01D2BD0B1D9B00D900632C08 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -369,6 +373,8 @@
 		0181E7F31D8C9374008E21C5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				018E2CC31DBC1CF50035455B /* AWRViewController.h */,
+				018E2CC41DBC1CF50035455B /* AWRViewController.m */,
 				01DBE4961D8CB2C4003B2100 /* AWRNowPlayingController.h */,
 				01DBE4941D8CB2C4003B2100 /* AWRNowPlayingController.m */,
 				016500F81DB3383700B32C0A /* AWRAboutController.h */,
@@ -642,6 +648,7 @@
 				0137D86F1D9CCE0D003A1E6B /* FXBlurView.m in Sources */,
 				01FB393D1DAC607A00EBC99D /* AWRMergeImageView.m in Sources */,
 				0137D8701D9CCE15003A1E6B /* AWRConstants.m in Sources */,
+				018E2CC61DBC1CF50035455B /* AWRViewController.m in Sources */,
 				0137D8771D9CCE56003A1E6B /* NSObject+PXPromise.m in Sources */,
 				016500F71DB337A100B32C0A /* AWRAboutView.m in Sources */,
 				01FB39391DAC596800EBC99D /* AWRNowPlayingHeaderView.m in Sources */,
@@ -672,6 +679,7 @@
 				019140781D8D8E05000B19EE /* NSObject+PXPromise.m in Sources */,
 				0181E8181D8CB14D008E21C5 /* AWRArcanosMediaPlayer.m in Sources */,
 				0181E7DF1D8C905B008E21C5 /* AppDelegate.m in Sources */,
+				018E2CC51DBC1CF50035455B /* AWRViewController.m in Sources */,
 				01FB393C1DAC607A00EBC99D /* AWRMergeImageView.m in Sources */,
 				0181E7DC1D8C905B008E21C5 /* main.m in Sources */,
 				0137D8971D9E66EE003A1E6B /* PFFile+AWRFile.m in Sources */,

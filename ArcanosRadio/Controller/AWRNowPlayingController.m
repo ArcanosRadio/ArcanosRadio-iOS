@@ -115,10 +115,6 @@
     [self.nowPlayingView setVolume:newVolume];
 }
 
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.nowPlayingView.delegate = self;

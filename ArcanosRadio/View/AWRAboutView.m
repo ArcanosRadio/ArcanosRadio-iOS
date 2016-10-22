@@ -45,4 +45,10 @@
     return UIBarPositionTopAttached;
 }
 
+- (IBAction)backButtonPressed:(id)sender {
+    if (!self.delegate) return;
+
+    [self.delegate backButtonPressed];
+}
+
 @end

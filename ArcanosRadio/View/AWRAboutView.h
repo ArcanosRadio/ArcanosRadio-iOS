@@ -2,6 +2,8 @@
 
 @protocol AWRAboutViewDelegate
 
+- (void)backButtonPressed;
+
 @end
 
 @interface AWRAboutView : UIView
