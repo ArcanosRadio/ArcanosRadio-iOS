@@ -21,6 +21,11 @@ fastlane ios alpha
 fastlane ios beta
 ```
 
+### ios store
+```
+fastlane ios store
+```
+
 
 ----
 
