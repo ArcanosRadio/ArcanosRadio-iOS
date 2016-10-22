@@ -91,11 +91,6 @@
     return _headerView;
 }
 
-- (void)setTogglePlayButton:(UIButton *)togglePlayButton {
-    _togglePlayButton = togglePlayButton;
-    _togglePlayButton.layer.cornerRadius = _togglePlayButton.frame.size.height / 2.0f;
-}
-
 - (void)layoutSubviews {
     [super layoutSubviews];
     [self calculateConstraints];
