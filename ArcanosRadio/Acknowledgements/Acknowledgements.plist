@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+        <key>StringsTable</key>
+        <string>Acknowledgements</string>
+        <key>PreferenceSpecifiers</key>
+        <array>
+                <dict>
+                        <key>Type</key>
+                        <string>PSGroupSpecifier</string>
+                        <key>Title</key>
+                        <string>cal</string>
+                </dict>
+                <dict>
+                        <key>Type</key>
+                        <string>PSGroupSpecifier</string>
+                        <key>Title</key>
+                        <string>cal2</string>
+                </dict>
+                <dict>
+                        <key>Type</key>
+                        <string>PSGroupSpecifier</string>
+                        <key>Title</key>
+                        <string>cal3</string>
+                </dict>
+                <dict>
+                        <key>Type</key>
+                        <string>PSGroupSpecifier</string>
+                        <key>Title</key>
+                        <string>cal4</string>
+                </dict>
+                <dict>
+                        <key>Type</key>
+                        <string>PSGroupSpecifier</string>
+                        <key>Title</key>
+                        <string>cal5</string>
+                </dict>
+                <dict>
+                        <key>Type</key>
+                        <string>PSGroupSpecifier</string>
+                        <key>Title</key>
+                        <string>cal6</string>
+                </dict>
+        </array>
+</dict>
+</plist>
