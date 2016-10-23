@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="appLinkCell" rowHeight="57" id="0qu-rV-NsE" customClass="AWRAppLinkInfoTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+            <autoresizingMask key="autoresizingMask" heightSizable="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="0qu-rV-NsE" id="UrC-ew-mRP">
+                <frame key="frameInset" width="341" height="55.5"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Código-fonte iOS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D6D-2C-dfK">
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="https://github.com/luizmb/ArcanosRadio-iOS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gM0-Re-Zme">
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="leadingMargin" secondItem="gM0-Re-Zme" secondAttribute="leading" id="CZ4-kD-uTp"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="gM0-Re-Zme" secondAttribute="bottom" constant="0.5" id="HAT-Rv-Y0X"/>
+                    <constraint firstAttribute="topMargin" secondItem="D6D-2C-dfK" secondAttribute="top" id="IVw-gO-a2W"/>
+                    <constraint firstItem="gM0-Re-Zme" firstAttribute="top" secondItem="D6D-2C-dfK" secondAttribute="bottom" constant="4" id="LDc-hk-YuF"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="D6D-2C-dfK" secondAttribute="leading" id="MaH-Bn-k2u"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="D6D-2C-dfK" secondAttribute="trailing" id="Q26-Nc-uUD"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="gM0-Re-Zme" secondAttribute="trailing" id="cLz-7b-auj"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="detailsOnlyLineLabel" destination="gM0-Re-Zme" id="110-fU-Bf7"/>
+                <outlet property="nameLabel" destination="D6D-2C-dfK" id="rFh-cK-6UL"/>
+            </connections>
+            <point key="canvasLocation" x="-93.5" y="-23"/>
+        </tableViewCell>
+    </objects>
+</document>

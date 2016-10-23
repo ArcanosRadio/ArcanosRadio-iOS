@@ -7,7 +7,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AWRAboutController">
             <connections>
-                <outlet property="tableView" destination="zbC-LI-MYi" id="OOz-0D-ZBN"/>
                 <outlet property="view" destination="iN0-l3-epB" id="aaX-R7-hfu"/>
             </connections>
         </placeholder>
@@ -16,13 +15,11 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zbC-LI-MYi">
-                    <frame key="frameInset" minY="44" width="367" height="623"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zbC-LI-MYi">
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="cxV-ZU-aaQ"/>
-                        <outlet property="delegate" destination="-1" id="j1e-2Q-ybC"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="f5f-h1-yq1"/>
                     </connections>
                 </tableView>
                 <navigationBar contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="pB9-01-NDe">
@@ -44,10 +41,17 @@
                 </navigationBar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="zbC-LI-MYi" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="22z-gW-uw9"/>
+                <constraint firstItem="zbC-LI-MYi" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ESE-fy-ciy"/>
+                <constraint firstAttribute="bottom" secondItem="zbC-LI-MYi" secondAttribute="bottom" id="btt-qH-SLP"/>
+                <constraint firstItem="zbC-LI-MYi" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="nsZ-ps-kxx"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
             <connections>
                 <outlet property="navigationBar" destination="pB9-01-NDe" id="d2Q-lt-FYY"/>
+                <outlet property="tableView" destination="zbC-LI-MYi" id="dNl-dp-LAF"/>
             </connections>
             <point key="canvasLocation" x="33.5" y="53.5"/>
         </view>

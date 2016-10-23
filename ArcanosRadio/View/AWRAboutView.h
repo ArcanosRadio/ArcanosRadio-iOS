@@ -3,6 +3,7 @@
 @protocol AWRAboutViewDelegate
 
 - (void)backButtonPressed;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
 

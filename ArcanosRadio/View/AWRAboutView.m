@@ -1,8 +1,9 @@
 #import "AWRAboutView.h"
 
-@interface AWRAboutView()<UINavigationBarDelegate>
+@interface AWRAboutView()<UINavigationBarDelegate, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -24,6 +25,13 @@
     return self;
 }
 
+- (void)setTableView:(UITableView *)tableView {
+    _tableView = tableView;
+    [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+    [_tableView registerNib:[UINib nibWithNibName:@"AWRDeveloperInfoTableViewCell" bundle:nil] forCellReuseIdentifier:@"developerCell"];
+    [_tableView registerNib:[UINib nibWithNibName:@"AWRAppLinkInfoTableViewCell" bundle:nil] forCellReuseIdentifier:@"appLinkCell"];
+}
+
 - (void)commonInit {
 }
 
@@ -37,12 +45,32 @@
     backButton.title = NSLocalizedString(@"BACK_BUTTON_TEXT", nil);
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    CGRect rect = self.navigationBar.frame;
+    float y = rect.size.height + rect.origin.y;
+    self.tableView.contentInset = UIEdgeInsetsMake(y, 0, 0, 0);
+}
+
 - (UIBarPosition)positionForBar:(id <UIBarPositioning>)bar {
     CGRect frame = self.navigationBar.frame;
     frame.origin = CGPointMake(0, [UIApplication sharedApplication].statusBarFrame.size.height);
     self.navigationBar.frame = frame;
 
     return UIBarPositionTopAttached;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewAutomaticDimension;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewAutomaticDimension;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (!self.delegate) return;
+    [self.delegate tableView:tableView didSelectRowAtIndexPath:indexPath];
 }
 
 - (IBAction)backButtonPressed:(id)sender {
