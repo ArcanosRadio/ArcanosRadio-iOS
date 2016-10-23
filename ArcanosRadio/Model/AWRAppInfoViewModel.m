@@ -19,15 +19,15 @@
 }
 
 + (NSArray<AWRAppInfoViewModel *> *)all {
-    return @[ [[AWRAppInfoViewModel alloc] initWithName:@"Código-fonte iOS"
-                                                 details:@"https://github.com/luizmb/ArcanosRadio-iOS"
-                                                     url:@"https://github.com/luizmb/ArcanosRadio-iOS"],
-              [[AWRAppInfoViewModel alloc] initWithName:@"Código-fonte da Server API"
-                                                 details:@"https://github.com/luizmb/ArcanosRadio-Backend"
-                                                     url:@"https://github.com/luizmb/ArcanosRadio-Backend"],
-              [[AWRAppInfoViewModel alloc] initWithName:@"Arcanos Web Radio"
-                                                 details:@"http://www.arcanosmc.com.br"
-                                                     url:@"http://www.arcanosmc.com.br"]
+    return @[ [[AWRAppInfoViewModel alloc] initWithName:NSLocalizedString(@"ABOUT_SOURCE_CODE_IOS", nil)
+                                                 details:NSLocalizedString(@"ABOUT_SOURCE_CODE_IOS_DETAILS", nil)
+                                                     url:NSLocalizedString(@"ABOUT_SOURCE_CODE_IOS_URL", nil)],
+              [[AWRAppInfoViewModel alloc] initWithName:NSLocalizedString(@"ABOUT_SOURCE_CODE_SERVER_API", nil)
+                                                 details:NSLocalizedString(@"ABOUT_SOURCE_CODE_SERVER_DETAILS", nil)
+                                                     url:NSLocalizedString(@"ABOUT_SOURCE_CODE_SERVER_URL", nil)],
+              [[AWRAppInfoViewModel alloc] initWithName:NSLocalizedString(@"ABOUT_ARCANOS", nil)
+                                                 details:NSLocalizedString(@"ABOUT_ARCANOS_DETAILS", nil)
+                                                     url:NSLocalizedString(@"ABOUT_ARCANOS_URL", nil)]
               ];
 }
 

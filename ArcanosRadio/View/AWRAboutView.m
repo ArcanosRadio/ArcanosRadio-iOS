@@ -22,8 +22,6 @@
 
     UINavigationItem *titleItem = [_navigationBar.items firstObject];
     titleItem.title = NSLocalizedString(@"ABOUT_TITLE_TEXT", nil);
-    UIBarButtonItem *backButton = [titleItem.leftBarButtonItems firstObject];
-    backButton.title = NSLocalizedString(@"BACK_BUTTON_TEXT", nil);
 }
 
 - (void)layoutSubviews {

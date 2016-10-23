@@ -20,8 +20,7 @@
 
     UINavigationItem *titleItem = [_navigationBar.items firstObject];
     titleItem.title = self.license.name;
-    UIBarButtonItem *backButton = [titleItem.leftBarButtonItems firstObject];
-    backButton.title = NSLocalizedString(@"BACK_BUTTON_TEXT", nil);
+    
 }
 
 - (UIBarPosition)positionForBar:(id <UIBarPositioning>)bar {

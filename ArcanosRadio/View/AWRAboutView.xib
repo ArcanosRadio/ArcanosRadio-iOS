@@ -30,7 +30,7 @@
                     </textAttributes>
                     <items>
                         <navigationItem title="About" id="emc-fg-R1N">
-                            <barButtonItem key="leftBarButtonItem" title="Back" id="ZPX-Ek-Ag6">
+                            <barButtonItem key="leftBarButtonItem" image="icon-back" style="done" id="ZPX-Ek-Ag6">
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="backButtonPressed:" destination="iN0-l3-epB" id="si5-j5-7gw"/>
@@ -56,4 +56,7 @@
             <point key="canvasLocation" x="33.5" y="53.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="icon-back" width="13" height="21"/>
+    </resources>
 </document>

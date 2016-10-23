@@ -20,18 +20,18 @@
 }
 
 + (NSArray<AWRAppDeveloperViewModel *> *)all {
-    return @[ [[AWRAppDeveloperViewModel alloc] initWithName:@"Luiz Rodrigo Martins Barbosa"
-                                                     details:@"Desenvolvimento iOS, server API e website"
-                                                 moreDetails:@"https://github.com/luizmb"
-                                                         url:@"https://github.com/luizmb"],
-              [[AWRAppDeveloperViewModel alloc] initWithName:@"Filipe Belatti"
-                                                     details:@"Desenvolvimento Android e concepção de UX"
-                                                 moreDetails:@"https://github.com/fibelatti"
-                                                         url:@"https://github.com/fibelatti"],
-              [[AWRAppDeveloperViewModel alloc] initWithName:@"Jair Gonçalves Barbosa"
-                                                     details:@"Membro do Arcanos Motoclube de São Paulo"
-                                                 moreDetails:@"Criador, produtor e programador da Arcanos Web Radio"
-                                                         url:@"http://www.arcanosmc.com.br"]
+    return @[ [[AWRAppDeveloperViewModel alloc] initWithName:NSLocalizedString(@"ABOUT_LUIZ_NAME", nil)
+                                                     details:NSLocalizedString(@"ABOUT_LUIZ_DETAILS_A", nil)
+                                                 moreDetails:NSLocalizedString(@"ABOUT_LUIZ_DETAILS_B", nil)
+                                                         url:NSLocalizedString(@"ABOUT_LUIZ_URL", nil)],
+              [[AWRAppDeveloperViewModel alloc] initWithName:NSLocalizedString(@"ABOUT_FILIPE_NAME", nil)
+                                                     details:NSLocalizedString(@"ABOUT_FILIPE_DETAILS_A", nil)
+                                                 moreDetails:NSLocalizedString(@"ABOUT_FILIPE_DETAILS_B", nil)
+                                                         url:NSLocalizedString(@"ABOUT_FILIPE_URL", nil)],
+              [[AWRAppDeveloperViewModel alloc] initWithName:NSLocalizedString(@"ABOUT_JAIR_NAME", nil)
+                                                     details:NSLocalizedString(@"ABOUT_JAIR_DETAILS_A", nil)
+                                                 moreDetails:NSLocalizedString(@"ABOUT_JAIR_DETAILS_B", nil)
+                                                         url:NSLocalizedString(@"ABOUT_JAIR_URL", nil)]
              ];
 }
 
