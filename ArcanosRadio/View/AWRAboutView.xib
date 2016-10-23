@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,10 +16,18 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <navigationBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="pB9-01-NDe">
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" placeholder="YES" id="Ndz-Lu-W6g"/>
-                    </constraints>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zbC-LI-MYi">
+                    <frame key="frameInset" minY="44" width="367" height="623"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="cxV-ZU-aaQ"/>
+                        <outlet property="delegate" destination="-1" id="j1e-2Q-ybC"/>
+                    </connections>
+                </tableView>
+                <navigationBar contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="pB9-01-NDe">
+                    <frame key="frameInset" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <textAttributes key="titleTextAttributes">
                         <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
                     </textAttributes>
@@ -35,24 +42,8 @@
                         </navigationItem>
                     </items>
                 </navigationBar>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zbC-LI-MYi">
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="cxV-ZU-aaQ"/>
-                        <outlet property="delegate" destination="-1" id="j1e-2Q-ybC"/>
-                    </connections>
-                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="pB9-01-NDe" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="4tr-6G-qMF"/>
-                <constraint firstAttribute="trailingMargin" secondItem="zbC-LI-MYi" secondAttribute="trailing" id="Hmz-L8-g7A"/>
-                <constraint firstItem="pB9-01-NDe" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="eb7-Tq-v3G"/>
-                <constraint firstItem="zbC-LI-MYi" firstAttribute="top" secondItem="pB9-01-NDe" secondAttribute="bottom" id="nJ6-XS-IlN"/>
-                <constraint firstItem="zbC-LI-MYi" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qtg-KX-ODj"/>
-                <constraint firstItem="pB9-01-NDe" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="s45-KX-U9V"/>
-                <constraint firstItem="zbC-LI-MYi" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="zTj-JV-SPs"/>
-            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
             <connections>

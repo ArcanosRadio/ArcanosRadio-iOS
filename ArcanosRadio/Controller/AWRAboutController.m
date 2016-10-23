@@ -5,7 +5,7 @@
 
 @property(readonly, nonatomic) AWRAboutView *aboutView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) NSArray *content;
+@property (strong, nonatomic) NSArray<NSString *> *content;
 
 @end
 
@@ -40,7 +40,7 @@
                                            pathForResource:@"Acknowledgements"
                                            ofType:@"plist"];
         NSDictionary *root = [[NSDictionary alloc] initWithContentsOfFile:acknowledgementsPlist];
-        _content = [root objectForKey:@"PreferenceSpecifiers"];
+        _content = [root objectForKey:@"Licenses"];
     }
     return _content;
 }
@@ -58,7 +58,7 @@
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
 
-    cell.textLabel.text = [[self.content objectAtIndex:indexPath.row] valueForKey:@"Title"];
+    cell.textLabel.text = [self.content objectAtIndex:indexPath.row];
     //    cell.detailTextLabel.text = [[self.content objectAtIndex:indexPath.row] valueForKey:@"state"];
     return cell;
 }

@@ -70,8 +70,6 @@
 		0181E8341D8CB177008E21C5 /* AWRNowPlayingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0181E8321D8CB177008E21C5 /* AWRNowPlayingView.m */; };
 		018E2CC51DBC1CF50035455B /* AWRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 018E2CC41DBC1CF50035455B /* AWRViewController.m */; };
 		018E2CC61DBC1CF50035455B /* AWRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 018E2CC41DBC1CF50035455B /* AWRViewController.m */; };
-		018E2CD41DBC31130035455B /* cal.license in Resources */ = {isa = PBXBuildFile; fileRef = 018E2CD11DBC31130035455B /* cal.license */; };
-		018E2CD51DBC31130035455B /* cal.license in Resources */ = {isa = PBXBuildFile; fileRef = 018E2CD11DBC31130035455B /* cal.license */; };
 		018E2CD61DBC31130035455B /* genLicense.pl in Resources */ = {isa = PBXBuildFile; fileRef = 018E2CD21DBC31130035455B /* genLicense.pl */; };
 		018E2CD71DBC31130035455B /* genLicense.pl in Resources */ = {isa = PBXBuildFile; fileRef = 018E2CD21DBC31130035455B /* genLicense.pl */; };
 		018E2CE21DBC376A0035455B /* Acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 018E2CE11DBC376A0035455B /* Acknowledgements.plist */; };
@@ -170,7 +168,6 @@
 		0181E8321D8CB177008E21C5 /* AWRNowPlayingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRNowPlayingView.m; sourceTree = "<group>"; };
 		018E2CC31DBC1CF50035455B /* AWRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRViewController.h; sourceTree = "<group>"; };
 		018E2CC41DBC1CF50035455B /* AWRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRViewController.m; sourceTree = "<group>"; };
-		018E2CD11DBC31130035455B /* cal.license */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cal.license; sourceTree = "<group>"; };
 		018E2CD21DBC31130035455B /* genLicense.pl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.perl; path = genLicense.pl; sourceTree = "<group>"; };
 		018E2CE11DBC376A0035455B /* Acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Acknowledgements.plist; sourceTree = "<group>"; };
 		019140761D8D8E05000B19EE /* NSObject+PXPromise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PXPromise.h"; sourceTree = "<group>"; };
@@ -481,7 +478,6 @@
 		018E2CD01DBC31130035455B /* licenses */ = {
 			isa = PBXGroup;
 			children = (
-				018E2CD11DBC31130035455B /* cal.license */,
 				018E2CD21DBC31130035455B /* genLicense.pl */,
 			);
 			path = licenses;
@@ -596,7 +592,6 @@
 				016500F31DB3374500B32C0A /* AWRAboutView.xib in Resources */,
 				0137D8801D9CCEE2003A1E6B /* SplashView.xib in Resources */,
 				0137D87E1D9CCE9A003A1E6B /* AWRNowPlayingView.xib in Resources */,
-				018E2CD51DBC31130035455B /* cal.license in Resources */,
 				01FB39351DAC592B00EBC99D /* AWRNowPlayingHeaderView.xib in Resources */,
 				016500F01DB2EFBD00B32C0A /* Settings.bundle in Resources */,
 				0137D8711D9CCE25003A1E6B /* Assets.xcassets in Resources */,
@@ -613,7 +608,6 @@
 				016500F21DB3374500B32C0A /* AWRAboutView.xib in Resources */,
 				0181E7E71D8C905B008E21C5 /* Assets.xcassets in Resources */,
 				0181E8331D8CB177008E21C5 /* AWRNowPlayingView.xib in Resources */,
-				018E2CD41DBC31130035455B /* cal.license in Resources */,
 				01FB39341DAC592B00EBC99D /* AWRNowPlayingHeaderView.xib in Resources */,
 				016500EF1DB2EFBD00B32C0A /* Settings.bundle in Resources */,
 				0181E7F91D8C9663008E21C5 /* SplashView.xib in Resources */,
