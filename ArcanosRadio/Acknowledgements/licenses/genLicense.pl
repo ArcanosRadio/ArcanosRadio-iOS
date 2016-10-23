@@ -1,5 +1,8 @@
 #!/usr/bin/perl -w
 
+# Original article and script:
+# http://stackoverflow.com/questions/6428353/best-way-to-add-license-section-to-ios-settings-bundle
+
 use strict;
 
 my $plistout =  "../Acknowledgements.plist";
@@ -16,19 +19,22 @@ print $plistfh <<'EOD';
     <key>StringsTable</key>
     <string>Acknowledgements</string>
     <key>Licenses</key>
-    <array>
+    <dict>
 EOD
 for my $i (sort glob("*.license"))
 {
-    my $value=$i;
-    $value =~ s/.license//g;
+    my $key=$i;
+    my $content=`cat $i`;
+    $content =~ s/^\s+|\s+$//g;
+    $key =~ s/.license//g;
     print $plistfh <<"EOD";
-        <string>$value</string>
+        <key>$key</key>
+        <string>$content</string>
 EOD
 }
 
 print $plistfh <<'EOD';
-    </array>
+    </dict>
 </dict>
 </plist>
 EOD

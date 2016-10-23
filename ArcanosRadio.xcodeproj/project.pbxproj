@@ -86,6 +86,14 @@
 		018E2CFC1DBC7DBC0035455B /* AWRAppLinkInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 018E2CFA1DBC7DBC0035455B /* AWRAppLinkInfoTableViewCell.xib */; };
 		018E2CFF1DBC7DD00035455B /* AWRAppLinkInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 018E2CFE1DBC7DD00035455B /* AWRAppLinkInfoTableViewCell.m */; };
 		018E2D001DBC7DD00035455B /* AWRAppLinkInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 018E2CFE1DBC7DD00035455B /* AWRAppLinkInfoTableViewCell.m */; };
+		018E2D021DBCCD950035455B /* AWRLicenseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 018E2D011DBCCD950035455B /* AWRLicenseView.xib */; };
+		018E2D031DBCCD950035455B /* AWRLicenseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 018E2D011DBCCD950035455B /* AWRLicenseView.xib */; };
+		018E2D061DBCCF220035455B /* AWRLicenseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 018E2D051DBCCF220035455B /* AWRLicenseView.m */; };
+		018E2D071DBCCF220035455B /* AWRLicenseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 018E2D051DBCCF220035455B /* AWRLicenseView.m */; };
+		018E2D0A1DBCD4C50035455B /* AWRLicenseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 018E2D091DBCD4C50035455B /* AWRLicenseViewModel.m */; };
+		018E2D0B1DBCD4C50035455B /* AWRLicenseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 018E2D091DBCD4C50035455B /* AWRLicenseViewModel.m */; };
+		018E2D0E1DBCD8670035455B /* AWRLicenseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 018E2D0D1DBCD8670035455B /* AWRLicenseController.m */; };
+		018E2D0F1DBCD8670035455B /* AWRLicenseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 018E2D0D1DBCD8670035455B /* AWRLicenseController.m */; };
 		019140781D8D8E05000B19EE /* NSObject+PXPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 019140771D8D8E05000B19EE /* NSObject+PXPromise.m */; };
 		01D2BD0C1D9B00D900632C08 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D2BD0B1D9B00D900632C08 /* QuartzCore.framework */; };
 		01DBE4981D8CB2C4003B2100 /* AWRNowPlayingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DBE4941D8CB2C4003B2100 /* AWRNowPlayingController.m */; };
@@ -192,6 +200,13 @@
 		018E2CFA1DBC7DBC0035455B /* AWRAppLinkInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AWRAppLinkInfoTableViewCell.xib; sourceTree = "<group>"; };
 		018E2CFD1DBC7DD00035455B /* AWRAppLinkInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRAppLinkInfoTableViewCell.h; sourceTree = "<group>"; };
 		018E2CFE1DBC7DD00035455B /* AWRAppLinkInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRAppLinkInfoTableViewCell.m; sourceTree = "<group>"; };
+		018E2D011DBCCD950035455B /* AWRLicenseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AWRLicenseView.xib; sourceTree = "<group>"; };
+		018E2D041DBCCF220035455B /* AWRLicenseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRLicenseView.h; sourceTree = "<group>"; };
+		018E2D051DBCCF220035455B /* AWRLicenseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRLicenseView.m; sourceTree = "<group>"; };
+		018E2D081DBCD4C50035455B /* AWRLicenseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRLicenseViewModel.h; sourceTree = "<group>"; };
+		018E2D091DBCD4C50035455B /* AWRLicenseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRLicenseViewModel.m; sourceTree = "<group>"; };
+		018E2D0C1DBCD8670035455B /* AWRLicenseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRLicenseController.h; sourceTree = "<group>"; };
+		018E2D0D1DBCD8670035455B /* AWRLicenseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRLicenseController.m; sourceTree = "<group>"; };
 		019140761D8D8E05000B19EE /* NSObject+PXPromise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PXPromise.h"; sourceTree = "<group>"; };
 		019140771D8D8E05000B19EE /* NSObject+PXPromise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PXPromise.m"; sourceTree = "<group>"; };
 		01D2BD0B1D9B00D900632C08 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -303,6 +318,8 @@
 				018E2CF31DBC78960035455B /* AWRAppDeveloperViewModel.m */,
 				018E2CF61DBC7C870035455B /* AWRAppInfoViewModel.h */,
 				018E2CF71DBC7C870035455B /* AWRAppInfoViewModel.m */,
+				018E2D081DBCD4C50035455B /* AWRLicenseViewModel.h */,
+				018E2D091DBCD4C50035455B /* AWRLicenseViewModel.m */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -405,6 +422,9 @@
 				018E2CFA1DBC7DBC0035455B /* AWRAppLinkInfoTableViewCell.xib */,
 				018E2CFD1DBC7DD00035455B /* AWRAppLinkInfoTableViewCell.h */,
 				018E2CFE1DBC7DD00035455B /* AWRAppLinkInfoTableViewCell.m */,
+				018E2D011DBCCD950035455B /* AWRLicenseView.xib */,
+				018E2D041DBCCF220035455B /* AWRLicenseView.h */,
+				018E2D051DBCCF220035455B /* AWRLicenseView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -418,6 +438,8 @@
 				01DBE4941D8CB2C4003B2100 /* AWRNowPlayingController.m */,
 				016500F81DB3383700B32C0A /* AWRAboutController.h */,
 				016500F91DB3383700B32C0A /* AWRAboutController.m */,
+				018E2D0C1DBCD8670035455B /* AWRLicenseController.h */,
+				018E2D0D1DBCD8670035455B /* AWRLicenseController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -622,6 +644,7 @@
 				018E2CD71DBC31130035455B /* genLicense.pl in Resources */,
 				018E2CED1DBC70D90035455B /* AWRDeveloperInfoTableViewCell.xib in Resources */,
 				016500E61DB2D04900B32C0A /* Localizable.strings in Resources */,
+				018E2D031DBCCD950035455B /* AWRLicenseView.xib in Resources */,
 				018E2CFC1DBC7DBC0035455B /* AWRAppLinkInfoTableViewCell.xib in Resources */,
 				016500F31DB3374500B32C0A /* AWRAboutView.xib in Resources */,
 				0137D8801D9CCEE2003A1E6B /* SplashView.xib in Resources */,
@@ -640,6 +663,7 @@
 				018E2CD61DBC31130035455B /* genLicense.pl in Resources */,
 				018E2CEC1DBC70D90035455B /* AWRDeveloperInfoTableViewCell.xib in Resources */,
 				016500E51DB2D04900B32C0A /* Localizable.strings in Resources */,
+				018E2D021DBCCD950035455B /* AWRLicenseView.xib in Resources */,
 				018E2CFB1DBC7DBC0035455B /* AWRAppLinkInfoTableViewCell.xib in Resources */,
 				016500F21DB3374500B32C0A /* AWRAboutView.xib in Resources */,
 				0181E7E71D8C905B008E21C5 /* Assets.xcassets in Resources */,
@@ -706,6 +730,7 @@
 				016501031DB3516400B32C0A /* AWRColorToolkit.m in Sources */,
 				0137D8741D9CCE3D003A1E6B /* AWRArcanosMediaPlayer.m in Sources */,
 				0137D8811D9CCEEA003A1E6B /* AWRAppCoordinator.m in Sources */,
+				018E2D071DBCCF220035455B /* AWRLicenseView.m in Sources */,
 				0137D87F1D9CCEDE003A1E6B /* AWRNowPlayingView.m in Sources */,
 				0137D8A11D9E7093003A1E6B /* AWRMetadataServiceFactory.m in Sources */,
 				0137D8791D9CCE5E003A1E6B /* BFTask+PXPromise.m in Sources */,
@@ -732,7 +757,9 @@
 				01FB39411DACABC000EBC99D /* UIView+Utils.m in Sources */,
 				01FB39451DACB9D600EBC99D /* UIImage+Resize.m in Sources */,
 				018E2CF11DBC720A0035455B /* AWRDeveloperInfoTableViewCell.m in Sources */,
+				018E2D0B1DBCD4C50035455B /* AWRLicenseViewModel.m in Sources */,
 				0137D8781D9CCE5A003A1E6B /* NSError+PXPromise.m in Sources */,
+				018E2D0F1DBCD8670035455B /* AWRLicenseController.m in Sources */,
 				0137D87D1D9CCE79003A1E6B /* AWRNowPlayingViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -767,6 +794,7 @@
 				016500FA1DB3383700B32C0A /* AWRAboutController.m in Sources */,
 				018E2CFF1DBC7DD00035455B /* AWRAppLinkInfoTableViewCell.m in Sources */,
 				01DBE4A01D8CB2D0003B2100 /* AWRMetadataFactory.m in Sources */,
+				018E2D0E1DBCD8670035455B /* AWRLicenseController.m in Sources */,
 				016500E11DB1E79B00B32C0A /* AWRMenu.m in Sources */,
 				016500F61DB337A100B32C0A /* AWRAboutView.m in Sources */,
 				01FB39481DACC7BA00EBC99D /* AWRAvatarImageView.m in Sources */,
@@ -774,6 +802,8 @@
 				0181E8261D8CB158008E21C5 /* BFTask+PXPromise.m in Sources */,
 				01DBE49F1D8CB2D0003B2100 /* AWRParseMetadataStore.m in Sources */,
 				013075F81D96846A003FDA74 /* AWRNowPlayingViewModel.m in Sources */,
+				018E2D0A1DBCD4C50035455B /* AWRLicenseViewModel.m in Sources */,
+				018E2D061DBCCF220035455B /* AWRLicenseView.m in Sources */,
 				016501021DB3516400B32C0A /* AWRColorToolkit.m in Sources */,
 				01FB39441DACB9D600EBC99D /* UIImage+Resize.m in Sources */,
 				0181E8231D8CB158008E21C5 /* NSError+PXPromise.m in Sources */,

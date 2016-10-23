@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AWRLicenseController">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="ZHf-Ta-ypR"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AWRLicenseView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="sss" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Pgm-1D-29w">
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <navigationBar contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="XMw-fg-kKG">
+                    <frame key="frameInset" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <textAttributes key="titleTextAttributes">
+                        <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                    </textAttributes>
+                    <items>
+                        <navigationItem title="About" id="gGn-dV-Bcq">
+                            <barButtonItem key="leftBarButtonItem" title="Back" id="keg-PF-MOn">
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="iN0-l3-epB" id="1LH-bB-9Mp"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Pgm-1D-29w" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="FR8-7H-5L7"/>
+                <constraint firstAttribute="trailing" secondItem="Pgm-1D-29w" secondAttribute="trailing" id="FyB-iM-Zm7"/>
+                <constraint firstAttribute="bottom" secondItem="Pgm-1D-29w" secondAttribute="bottom" id="O24-7Z-eXc"/>
+                <constraint firstItem="Pgm-1D-29w" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="cHG-ze-tsB"/>
+            </constraints>
+            <connections>
+                <outlet property="licenseTextView" destination="Pgm-1D-29w" id="eIN-WK-aLS"/>
+                <outlet property="navigationBar" destination="XMw-fg-kKG" id="2zx-h2-gQK"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </view>
+    </objects>
+</document>

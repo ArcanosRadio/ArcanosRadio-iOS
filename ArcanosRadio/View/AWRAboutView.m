@@ -9,30 +9,11 @@
 
 @implementation AWRAboutView
 
-- (instancetype)initWithCoder:(NSCoder *)aDecoder {
-    self = [super initWithCoder:aDecoder];
-    if (self) {
-        [self commonInit];
-    }
-    return self;
-}
-
-- (instancetype)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (self) {
-        [self commonInit];
-    }
-    return self;
-}
-
 - (void)setTableView:(UITableView *)tableView {
     _tableView = tableView;
     [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
     [_tableView registerNib:[UINib nibWithNibName:@"AWRDeveloperInfoTableViewCell" bundle:nil] forCellReuseIdentifier:@"developerCell"];
     [_tableView registerNib:[UINib nibWithNibName:@"AWRAppLinkInfoTableViewCell" bundle:nil] forCellReuseIdentifier:@"appLinkCell"];
-}
-
-- (void)commonInit {
 }
 
 - (void)setNavigationBar:(UINavigationBar *)navigationBar {

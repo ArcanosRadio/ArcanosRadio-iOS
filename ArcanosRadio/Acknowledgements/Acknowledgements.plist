@@ -5,15 +5,428 @@
     <key>StringsTable</key>
     <string>Acknowledgements</string>
     <key>Licenses</key>
-    <array>
-        <string>Bolts-ObjC</string>
-        <string>Crashlytics</string>
-        <string>Fabric</string>
-        <string>Letras.mus.br</string>
-        <string>Parse-SDK-iOS-OSX</string>
-        <string>ParseServer</string>
-        <string>SocketRocket</string>
-        <string>Spotify-iOS-SDK</string>
-    </array>
+    <dict>
+        <key>Bolts-ObjC</key>
+        <string>BSD License
+
+For Bolts software
+
+Copyright (c) 2013-present, Facebook, Inc. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+ * Redistributions of source code must retain the above copyright notice, this
+   list of conditions and the following disclaimer.
+
+ * Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+
+ * Neither the name Facebook nor the names of its contributors may be used to
+   endorse or promote products derived from this software without specific
+   prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</string>
+        <key>Crashlytics</key>
+        <string>Crashlytics Kit: Copyright 2016 Crashlytics, Inc. All Rights Reserved.
+
+Use of this software is subject to the terms and conditions of the Crashlytics Terms of Service located at http://try.crashlytics.com/terms/terms-of-service.pdf and the Crashlytics Privacy Policy located at http://try.crashlytics.com/terms/privacy-policy.pdf.
+
+OSS: http://get.fabric.io/terms/opensource.txt</string>
+        <key>Fabric</key>
+        <string>Fabric: Copyright 2016 Twitter, Inc. All Rights Reserved.
+
+Use of this software is subject to the terms and conditions of the Fabric Software and Services Agreement located at https://fabric.io/terms.
+
+OSS: http://get.fabric.io/terms/opensource.txt</string>
+        <key>Letras.mus.br</key>
+        <string>Este documento, de agora em diante chamado simplesmente de "Termos de Uso e Política de Privacidade", concentra as regras e condições mais importantes que você precisa conhecer se quiser utilizar os sites:
+www.letras.mus.br (Letras.mus.br),
+www.cifraclub.com.br (Cifra Club),
+www.palcomp3.com (Palco MP3),
+www.ouvirmusica.com.br (Ouvir Música),
+www.forum.cifraclub.com.br (Fórum Cifra Club),
+www.guitarbattle.com.br (Guitar Battle) e
+www.formesuabanda.com.br (Forme Sua Banda)
+Todos de propriedade da STUDIO SOL COMUNICAÇÃO DIGITAL LTDA, chamada de "Studio Sol" daqui em diante.
+
+Atenção:
+
+O simples acesso a qualquer dos nossos sites gera a presunção de que você leu a versão mais recente e atualizada dos Termos de Uso. Além disso, nós consideraremos que você concordou com todas as condições aqui indicadas e também com todas as outras políticas publicadas em qualquer desses sites. Por essa razão, recomendamos que você leia com atenção este documento ANTES de começar a usar algum dos nossos sites ou baixar nossos aplicativos. Recomendamos, também, a leitura de todas as outras políticas que adotamos, como, por exemplo, a nossa Política de Privacidade e a da Outbrain. Se você por acaso não concordar com alguma condição prevista nos Termos de Uso ou se não concordar com alguma de nossas políticas, sugerimos que não acesse os nossos sites e que não utilize os nossos serviços e produtos. Mas, claro, se simplesmente tiver alguma dúvida sobre as regras de uso, fique à vontade para nos consultar. Teremos prazer em lhe responder!
+
+Gratuidade
+
+Todos os serviços, aplicativos e funcionalidades oferecidos por nós em nossos sites são inteiramente gratuitos, não sendo necessária a realização de qualquer pagamento por parte dos nossos usuários.
+
+Cadastro
+
+Suponhamos, então, que seja a primeira vez que você esteja acessando um site da nossa empresa e que já tenha lido e concordado com esses Termos de Uso. Você poderá continuar a navegar livremente, sem a necessidade de realizar qualquer cadastro, visitando todas as páginas disponíveis aos usuários não cadastrados. Contudo, se você quiser participar mais diretamente das funcionalidades oferecidas pelos nossos sites, você precisará preencher um cadastro.
+
+Ao realizar o cadastro, é fundamental que você preencha todos os campos indicados como obrigatórios e que somente insira no formulário informações exatas, precisas e verdadeiras. Além disso, solicitamos que você atualize seus dados pessoais sempre que houver alguma alteração. Aliás, nós nos reservamos o direito de utilizar todos os meios válidos e possíveis para identificar nossos usuários, com a finalidade de evitar fraudes e perfis falsos. Se quiser ter mais informações a esse respeito, sugerimos que leia a nossa Política de Privacidade.
+
+Capacidade para se cadastrar
+
+Os sites, aplicativos e funcionalidades de nossa propriedade estão disponíveis apenas para as pessoas que tenham capacidade legal plena para contratá-los, segundo a legislação brasileira. Não podem utilizá-los, portanto, pessoas que não gozem dessa capacidade, inclusive menores de idade (pessoas com menos de 18 anos), que deverão ser assistidos ou representados pelos pais, tutores ou representantes legais. O mesmo vale para pessoas que tenham sido inabilitadas por nós, temporária ou definitivamente, em razão do uso inadequado dos sites.
+
+Também não é permitido que uma mesma pessoa tenha mais de um cadastro. Se detectarmos cadastros duplicados, poderemos unificá-los ou até mesmo inabilitá-los definitivamente, sem aviso prévio.
+
+Login e senha
+
+Ao final do cadastramento, você precisará definir um login (identificação) e uma senha, os quais deverão ser informados a cada acesso. Mas cuidado: a senha e o login deverão ser mantidos por você em segurança, já que você será integralmente responsável pelas consequências advindas da sua utilização. Por essa razão, não recomendamos que você informe qualquer desses dados a outras pessoas. Se você souber de algum uso não autorizado de seu login e senha, pedimos que nos comunique tal fato imediatamente por e-mail (suporte@studiosol.com.br), sob pena de você assumir a responsabilidade pelas consequências decorrentes de tal uso indevido.
+
+Proteção dos dados
+
+Nós nos comprometemos a não utilizar as informações cadastrais fornecidas por você para a realização de atividades ilícitas, mas somente para aquelas expressamente permitidas pela legislação brasileira e/ou por estes Termos de Uso.
+
+Você poderá solicitar à Studio Sol, a qualquer tempo, a exclusão definitiva dos seus dados pessoais que tiverem sido fornecidos no cadastro. Para tanto, basta nos enviar um e-mail (suporte@studiosol.com.br). De toda forma, ficam ressalvadas as hipóteses de guarda obrigatória de registros previstas no Marco Civil da Internet (Lei 12.965/2014) ou os dados agregados e não identificáveis, para fins estatísticos.
+
+Cookies
+
+Nós poderemos utilizar um mecanismo de instalação de cookies no seu computador quando você acessar os nossos sites, com o objetivo de personalizar a sua experiência. Isso permite, por exemplo, que a sua senha seja preenchida automaticamente no seu computador, bem como que o site informe as atividades anteriores que você tenha realizado nos sites. Ou seja, a utilização de cookies não tem o potencial de lhe prejudicar; ao contrário, eles facilitam a utilização dos nossos sites. Contudo, caso você não queira que sejam instalados cookies, você poderá configurar o seu navegador (browser) para impedir a instalação. Consulte as normas do seu navegador a esse respeito. Você também pode optar pela não coleta de dados anônimos da Audience Science através do link:http://www.networkadvertising.org/managing/opt_out.asp
+
+Postagem de conteúdo
+
+É importante esclarecer que nós, da Studio Sol, somos meros "provedores de aplicativos", nos termos do Marco Civil da Internet. Em outras palavras, somos simplesmente os proprietários dos sites e das respectivas plataformas. Nossa missão é difundir conhecimento, exercendo nítida atividade de formação musical, inspirados nos preceitos máximos da democratização e universalidade da educação. Não nos cabe lançar ou postar qualquer conteúdo nos nossos sites (a não ser aqueles institucionais da nossa empresa), sendo a postagem de conteúdo, portanto, uma faculdade exclusiva dos nossos usuários.
+
+Por essa razão, como meros provedores, não nos responsabilizamos pelos conteúdos postados. Isso fica a cargo dos usuários. Por essa razão, é muito importante que você, na qualidade de usuário, tenha bastante atenção com o conteúdo que vier a postar em qualquer dos nossos sites, como letras musicais, cifras, tablaturas, vídeos, fotos, arquivos de música ou qualquer outro tipo de conteúdo, evitando, por exemplo, a violação de direitos autorais, de direitos da personalidade, como imagem, voz e nome de terceiros ou de direitos sobre marcas de indústria e comércio.
+
+Em relação aos direitos autorais, nós pressupomos que você lançará em nossos sites unicamente conteúdos livres e/ou licenciados, que não violem direitos de terceiros. Como não controlamos o conteúdo postado pelos nossos usuários (o que seria humana e tecnologicamente impossível!), nós contamos com a conduta responsável e o bom-senso dos nossos usuários e parceiros.
+
+Nossa responsabilidade se limita, é importante dizer, a retirar conteúdos do ar, sempre que viermos a receber uma ordem judicial específica nesse sentido. Isso é uma decorrência do Marco Civil da Internet (art. 19). Inclusive, sugerimos que você leia o próximo tópico dos Termos de Uso, que trata do procedimento de retirada de conteúdo do ar.
+
+Com a aceitação desses Termos de Uso, você também está de acordo que todo e qualquer conteúdo que tenha sido postado por você, de sua autoria ou de autoria de terceiros, seja utilizado em todos os nossos sites (ainda que a postagem tenha sido feita em um único site), bem como em nossas redes sociais. Além disso, você permite que o conteúdo seja editado pelos outros usuários cadastrados, que poderão sugerir adequações, propor arranjos e modificações, desenvolvendo uma verdadeira plataforma colaborativa que tem como único propósito a difusão gratuita do conhecimento e formação musical de qualidade. Especificamente no site Palco MP3, podemos vir a utilizar fotos e elementos gráficos presentes na página do artista no Palco MP3, sites oficiais ou não e redes sociais para aplicação nas imagens de destaque da página principal. Com isso, as bandas e artistas devem concordar que o Palco MP3 faça a utilização dos itens citados com fim exclusivamente de divulgação no próprio site e redes sociais oficiais. Por fim, você também permite que os nossos sites vinculem anúncios publicitários, inclusive junto aos conteúdos que você tiver postado, sem qualquer restrição.
+
+Você garante que nenhuma utilização do conteúdo por você postado implicará em pagamento de qualquer natureza, sendo sempre gratuita a sua disponibilização, se atendidas pelos demais usuários as condições previstas nestes Termos de Uso.
+
+Denúncia de violação de direitos autorais
+
+Caso alguma pessoa ou empresa entenda que determinado conteúdo postado por um dos nossos usuários viola seus direitos autorais ou direitos da personalidade, pode nos enviar um e-mail (suporte@studiosol.com.br), descrevendo o fato, indicando com precisão todas as URLs (links) que contêm os respectivos conteúdos e comprovando a qualidade de titular daquele direito por meios idôneos.
+
+Apesar de o Marco Civil da Internet só obrigar um provedor de aplicativos a retirar conteúdo do ar depois de receber uma ordem judicial específica, nós nos reservamos o direito de retirar conteúdos do ar mesmo sem recebermos uma ordem judicial, sempre que detectarmos uma situação que possa consistir em grave violação de direitos. Isso não quer dizer, contudo, que nos responsabilizamos pelos danos decorrentes da manutenção do conteúdo no ar a partir do recebimento de uma notificação ou e-mail informando a suposta violação. Não, retirar o conteúdo do ar antes de receber uma ordem judicial é uma prerrogativa, um direito nosso, não propriamente uma obrigação.
+
+Ainda em relação a esse tema, você, usuário, aceita plenamente que qualquer conteúdo que vier a postar em qualquer dos nossos sites seja retirado do ar sem aviso prévio. De toda forma, você será notificado a respeito de qualquer denúncia de violação de direitos envolvendo conteúdo que tiver postado, e poderá se defender, apresentando seus argumentos. Além disso, você autoriza, igualmente, que nós repassemos seus dados pessoais inseridos no cadastro, bem como os seus IPs (Internet Protocol), a pedido do Judiciário. Nenhuma dessas condutas adotadas por nós terá, portanto, o condão de lhe ocasionar prejuízos, sendo plenamente aceitas por você, que não poderá buscar indenização junto à nossa empresa.
+
+Obrigações assumidas pelos usuários
+
+Ao utilizar qualquer de nossos sites você se compromete a nunca: (a) violar direitos autorais ou direitos da personalidade de terceiros; (b) usar quaisquer métodos de prospecção ou métodos semelhantes de extração de dados; (c) manipular ou de qualquer forma apresentar o site ou conteúdo usando “enquadramento” ou tecnologia de navegação semelhante; (d) registrar, subscrever, cancelar assinaturas, ou tentar registrar, subscrever ou cancelar a assinatura de qualquer parte para qualquer produto ou serviço, por quem não esteja expressamente autorizado a fazê-lo; (e) transmitir, divulgar material ilícito, proibido ou agredir, caluniar, injuriar ou difamar qualquer pessoa ou empresa; (f) propagar informações sobre atividades ilegais e incitação ao crime; (g) disponibilizar conteúdo que tenha cunho discriminatório de qualquer natureza, como de etnia, gênero, orientação sexual ou qualquer outro; (h) criar falsa identidade ou utilizar-se de subterfúgios com a finalidade de enganar outras pessoas ou de obter benefícios; (i) enviar material publicitário não solicitado, inclusive spam, junk mail, chain letters (correntes), mala direta ou pirâmides para terceiros; (j) transmitir arquivos que sejam tecnicamente danosos (incluindo, sem restrições, vírus de computador, bombas lógicas, Cavalos de Tróia, vírus tipo worm, injeção de SQL, componentes danosos, dados corrompidos ou qualquer outro software malicioso); e (k) utilizar os sites para outros fins que não os para os quais foram eles constituídos.
+
+Isenção de Responsabilidade (Disclaimer)
+
+Não nos responsabilizamos por quaisquer danos resultantes da utilização dos nossos sites ou do conteúdo neles inserido, ou ainda pela indisponibilidade dos sites ou do conteúdo, incluindo, mas não se limitando, a lucros cessantes e danos emergentes, morais e materiais. Não garantimos, tampouco, que as funções incorporadas ou existentes nos sites estejam disponíveis sem interrupção ou sem erros. Não há, ainda, a garantia de que o site ou seus conteúdos estejam isentos de infecção de vírus ou algo que tenha propriedades contaminantes ou destrutivas.
+
+Nós empregaremos todos os esforços para assegurar a precisão, correção e confiabilidade dos nossos sites, mas não concedemos quaisquer garantias nesse sentido.
+
+Nós nos declaramos, ainda, isentos de quaisquer responsabilidades pelos conteúdos ou disponibilidade de informações contidas no índice de pesquisa oferecido nos nossos sites, bem como pela precisão de qualquer resultado de pesquisa.
+
+Não nos responsabilizamos por eventual violação de direitos da personalidade, direitos autorais, direitos conexos e direitos de marca e propriedade industrial, decorrente de qualquer conteúdo disponível nos nossos sites, tampouco pela natureza de tal conteúdo, comprometendo-se apenas a tirar do ar, seguindo a sistemática estabelecida nestes Termos de Uso, aquele conteúdo que esteja sendo objeto de suspeita fundada de violação de direitos de qualquer natureza.
+
+Qualquer referência a produtos, serviços, processos ou outra informação relativamente a terceiros, mediante indicação de nome comercial, marca, fabricante, fornecedor ou outros, não constitui nem implica em endosso, patrocínio ou recomendação da nossa parte.
+
+Tolerância
+
+Nenhuma omissão ou demora da nossa parte em exercer os nossos direitos previstos nestes Termos de Uso, nas nossas demais políticas ou previstos em lei, implica ou significa renúncia ao seu exercício.
+
+Alterações dos Termos de Uso
+
+Os Termos de Uso poderão ser modificados e atualizados por nós livremente, a qualquer momento, com o objetivo de adaptá-los às novidades legislativas ou mesmo para inserir novas práticas comerciais, sendo que as alterações passarão a valer imediatamente, se outro prazo não tiver sido indicado na nova versão dos Termos de Uso. É importante, então, que você sempre leia esse documento antes de usar um dos nossos sites. Ele poderá conter uma alteração com a qual você não esteja de acordo. Afinal, a continuidade do uso dos nossos sites por você, depois da publicação das alterações, constituirá na sua plena aceitação tácita de tais alterações.
+
+Legislação e Foro Aplicável
+
+Apesar de, tecnicamente, os nossos sites poderem ser acessados de qualquer parte do planeta, a nossa relação com os usuários dos nossos sites estará sempre, em qualquer hipótese e independentemente do local de onde esteja sendo acessado o serviço, sujeito à Legislação Brasileira, em especial ao Código de Defesa do Consumidor, ao Marco Civil da Internet e a estes Termos de Uso. A fim de solucionar eventuais dúvidas ou controvérsias decorrentes da sua utilização ou de seu conteúdo fica desde já eleito o Foro do Estado do Minas Gerais, Comarca de Belo Horizonte, salvo outro foro privilegiado determinado por lei.
+
+STUDIO SOL COMUNICAÇÃO DIGITAL LTDA.
+CNPJ 04.365.809/0001-78
+Rua Fernandes Tourinho, 164, 5º, 6º e 7º andares
+Belo Horizonte – MG
+CEP 30.112-000</string>
+        <key>Parse-SDK-iOS-OSX</key>
+        <string>BSD License
+
+For Parse iOS/OSX SDK software
+
+Copyright (c) 2015-present, Parse, LLC. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+ * Redistributions of source code must retain the above copyright notice, this
+   list of conditions and the following disclaimer.
+
+ * Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+
+ * Neither the name Parse nor the names of its contributors may be used to
+   endorse or promote products derived from this software without specific
+   prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</string>
+        <key>ParseServer</key>
+        <string>BSD License
+
+For Parse Server software
+
+Copyright (c) 2015-present, Parse, LLC. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+ * Redistributions of source code must retain the above copyright notice, this
+   list of conditions and the following disclaimer.
+
+ * Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+
+ * Neither the name Parse nor the names of its contributors may be used to
+   endorse or promote products derived from this software without specific
+   prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</string>
+        <key>SocketRocket</key>
+        <string>Copyright 2012 Square Inc.
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.</string>
+        <key>Spotify-iOS-SDK</key>
+        <string>Apache License
+                           Version 2.0, January 2004
+                        http://www.apache.org/licenses/
+
+   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+   1. Definitions.
+
+      "License" shall mean the terms and conditions for use, reproduction,
+      and distribution as defined by Sections 1 through 9 of this document.
+
+      "Licensor" shall mean the copyright owner or entity authorized by
+      the copyright owner that is granting the License.
+
+      "Legal Entity" shall mean the union of the acting entity and all
+      other entities that control, are controlled by, or are under common
+      control with that entity. For the purposes of this definition,
+      "control" means (i) the power, direct or indirect, to cause the
+      direction or management of such entity, whether by contract or
+      otherwise, or (ii) ownership of fifty percent (50%) or more of the
+      outstanding shares, or (iii) beneficial ownership of such entity.
+
+      "You" (or "Your") shall mean an individual or Legal Entity
+      exercising permissions granted by this License.
+
+      "Source" form shall mean the preferred form for making modifications,
+      including but not limited to software source code, documentation
+      source, and configuration files.
+
+      "Object" form shall mean any form resulting from mechanical
+      transformation or translation of a Source form, including but
+      not limited to compiled object code, generated documentation,
+      and conversions to other media types.
+
+      "Work" shall mean the work of authorship, whether in Source or
+      Object form, made available under the License, as indicated by a
+      copyright notice that is included in or attached to the work
+      (an example is provided in the Appendix below).
+
+      "Derivative Works" shall mean any work, whether in Source or Object
+      form, that is based on (or derived from) the Work and for which the
+      editorial revisions, annotations, elaborations, or other modifications
+      represent, as a whole, an original work of authorship. For the purposes
+      of this License, Derivative Works shall not include works that remain
+      separable from, or merely link (or bind by name) to the interfaces of,
+      the Work and Derivative Works thereof.
+
+      "Contribution" shall mean any work of authorship, including
+      the original version of the Work and any modifications or additions
+      to that Work or Derivative Works thereof, that is intentionally
+      submitted to Licensor for inclusion in the Work by the copyright owner
+      or by an individual or Legal Entity authorized to submit on behalf of
+      the copyright owner. For the purposes of this definition, "submitted"
+      means any form of electronic, verbal, or written communication sent
+      to the Licensor or its representatives, including but not limited to
+      communication on electronic mailing lists, source code control systems,
+      and issue tracking systems that are managed by, or on behalf of, the
+      Licensor for the purpose of discussing and improving the Work, but
+      excluding communication that is conspicuously marked or otherwise
+      designated in writing by the copyright owner as "Not a Contribution."
+
+      "Contributor" shall mean Licensor and any individual or Legal Entity
+      on behalf of whom a Contribution has been received by Licensor and
+      subsequently incorporated within the Work.
+
+   2. Grant of Copyright License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      copyright license to reproduce, prepare Derivative Works of,
+      publicly display, publicly perform, sublicense, and distribute the
+      Work and such Derivative Works in Source or Object form.
+
+   3. Grant of Patent License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      (except as stated in this section) patent license to make, have made,
+      use, offer to sell, sell, import, and otherwise transfer the Work,
+      where such license applies only to those patent claims licensable
+      by such Contributor that are necessarily infringed by their
+      Contribution(s) alone or by combination of their Contribution(s)
+      with the Work to which such Contribution(s) was submitted. If You
+      institute patent litigation against any entity (including a
+      cross-claim or counterclaim in a lawsuit) alleging that the Work
+      or a Contribution incorporated within the Work constitutes direct
+      or contributory patent infringement, then any patent licenses
+      granted to You under this License for that Work shall terminate
+      as of the date such litigation is filed.
+
+   4. Redistribution. You may reproduce and distribute copies of the
+      Work or Derivative Works thereof in any medium, with or without
+      modifications, and in Source or Object form, provided that You
+      meet the following conditions:
+
+      (a) You must give any other recipients of the Work or
+          Derivative Works a copy of this License; and
+
+      (b) You must cause any modified files to carry prominent notices
+          stating that You changed the files; and
+
+      (c) You must retain, in the Source form of any Derivative Works
+          that You distribute, all copyright, patent, trademark, and
+          attribution notices from the Source form of the Work,
+          excluding those notices that do not pertain to any part of
+          the Derivative Works; and
+
+      (d) If the Work includes a "NOTICE" text file as part of its
+          distribution, then any Derivative Works that You distribute must
+          include a readable copy of the attribution notices contained
+          within such NOTICE file, excluding those notices that do not
+          pertain to any part of the Derivative Works, in at least one
+          of the following places: within a NOTICE text file distributed
+          as part of the Derivative Works; within the Source form or
+          documentation, if provided along with the Derivative Works; or,
+          within a display generated by the Derivative Works, if and
+          wherever such third-party notices normally appear. The contents
+          of the NOTICE file are for informational purposes only and
+          do not modify the License. You may add Your own attribution
+          notices within Derivative Works that You distribute, alongside
+          or as an addendum to the NOTICE text from the Work, provided
+          that such additional attribution notices cannot be construed
+          as modifying the License.
+
+      You may add Your own copyright statement to Your modifications and
+      may provide additional or different license terms and conditions
+      for use, reproduction, or distribution of Your modifications, or
+      for any such Derivative Works as a whole, provided Your use,
+      reproduction, and distribution of the Work otherwise complies with
+      the conditions stated in this License.
+
+   5. Submission of Contributions. Unless You explicitly state otherwise,
+      any Contribution intentionally submitted for inclusion in the Work
+      by You to the Licensor shall be under the terms and conditions of
+      this License, without any additional terms or conditions.
+      Notwithstanding the above, nothing herein shall supersede or modify
+      the terms of any separate license agreement you may have executed
+      with Licensor regarding such Contributions.
+
+   6. Trademarks. This License does not grant permission to use the trade
+      names, trademarks, service marks, or product names of the Licensor,
+      except as required for reasonable and customary use in describing the
+      origin of the Work and reproducing the content of the NOTICE file.
+
+   7. Disclaimer of Warranty. Unless required by applicable law or
+      agreed to in writing, Licensor provides the Work (and each
+      Contributor provides its Contributions) on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+      implied, including, without limitation, any warranties or conditions
+      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
+      PARTICULAR PURPOSE. You are solely responsible for determining the
+      appropriateness of using or redistributing the Work and assume any
+      risks associated with Your exercise of permissions under this License.
+
+   8. Limitation of Liability. In no event and under no legal theory,
+      whether in tort (including negligence), contract, or otherwise,
+      unless required by applicable law (such as deliberate and grossly
+      negligent acts) or agreed to in writing, shall any Contributor be
+      liable to You for damages, including any direct, indirect, special,
+      incidental, or consequential damages of any character arising as a
+      result of this License or out of the use or inability to use the
+      Work (including but not limited to damages for loss of goodwill,
+      work stoppage, computer failure or malfunction, or any and all
+      other commercial damages or losses), even if such Contributor
+      has been advised of the possibility of such damages.
+
+   9. Accepting Warranty or Additional Liability. While redistributing
+      the Work or Derivative Works thereof, You may choose to offer,
+      and charge a fee for, acceptance of support, warranty, indemnity,
+      or other liability obligations and/or rights consistent with this
+      License. However, in accepting such obligations, You may act only
+      on Your own behalf and on Your sole responsibility, not on behalf
+      of any other Contributor, and only if You agree to indemnify,
+      defend, and hold each Contributor harmless for any liability
+      incurred by, or claims asserted against, such Contributor by reason
+      of your accepting any such warranty or additional liability.
+
+   END OF TERMS AND CONDITIONS
+
+   APPENDIX: How to apply the Apache License to your work.
+
+      To apply the Apache License to your work, attach the following
+      boilerplate notice, with the fields enclosed by brackets "{}"
+      replaced with your own identifying information. (Don't include
+      the brackets!)  The text should be enclosed in the appropriate
+      comment syntax for the file format. We also recommend that a
+      file or class name and description of purpose be included on the
+      same "printed page" as the copyright notice for easier
+      identification within third-party archives.
+
+   Copyright {yyyy} {name of copyright owner}
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.</string>
+    </dict>
 </dict>
 </plist>

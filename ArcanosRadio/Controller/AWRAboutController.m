@@ -8,7 +8,7 @@
 @interface AWRAboutController () <AWRAboutViewDelegate, UITableViewDataSource>
 
 @property(readonly, nonatomic) AWRAboutView *aboutView;
-@property (strong, nonatomic) NSArray<NSString *> *thirdPartyLibs;
+@property (strong, nonatomic) NSArray<AWRLicenseViewModel *> *thirdPartyLibs;
 @property (strong, nonatomic) NSArray<AWRAppDeveloperViewModel *> *developers;
 @property (strong, nonatomic) NSArray<AWRAppInfoViewModel *> *appLinks;
 
@@ -38,13 +38,22 @@
     [self.delegate userDidCloseAbout];
 }
 
-- (NSArray<NSString *> *)content {
+- (NSArray<AWRLicenseViewModel *> *)thirdPartyLibs {
     if (!_thirdPartyLibs) {
         NSString *acknowledgementsPlist = [[NSBundle mainBundle]
                                            pathForResource:@"Acknowledgements"
                                            ofType:@"plist"];
         NSDictionary *root = [[NSDictionary alloc] initWithContentsOfFile:acknowledgementsPlist];
-        _thirdPartyLibs = [root objectForKey:@"Licenses"];
+        NSDictionary *licenses = [root objectForKey:@"Licenses"];
+        NSMutableArray<AWRLicenseViewModel *> *licenseArray = [[NSMutableArray alloc] initWithCapacity:licenses.count];
+        for (NSString *key in licenses) {
+            AWRLicenseViewModel *l = [[AWRLicenseViewModel alloc] init];
+            l.name = key;
+            l.text = [licenses objectForKey:key];
+            [licenseArray addObject:l];
+        }
+
+        _thirdPartyLibs = [licenseArray mutableCopy];
     }
     return _thirdPartyLibs;
 }
@@ -76,7 +85,7 @@
         return [self.appLinks count];
     }
 
-    return [self.content count];
+    return [self.thirdPartyLibs count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -109,20 +118,24 @@
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
 
-    cell.textLabel.text = [self.content objectAtIndex:indexPath.row];
+    cell.textLabel.text = [self.thirdPartyLibs objectAtIndex:indexPath.row].name;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (!self.delegate) return;
+
     if (indexPath.section == 0) {
-        AWRAppDeveloperViewModel *dev = self.developers[indexPath.row];
-        [[UIApplication sharedApplication] openURL:dev.url];
+        [self.delegate userDidSelectUrl: self.developers[indexPath.row].url];
+        return;
     }
 
     if (indexPath.section == 1) {
-        AWRAppInfoViewModel *link = self.appLinks[indexPath.row];
-        [[UIApplication sharedApplication] openURL:link.url];
+        [self.delegate userDidSelectUrl: self.appLinks[indexPath.row].url];
+        return;
     }
+
+    [self.delegate userDidSelectLicense:self.thirdPartyLibs[indexPath.row]];
 }
 
 @end

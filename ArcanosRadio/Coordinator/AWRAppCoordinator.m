@@ -2,12 +2,14 @@
 #import "AWRNowPlayingCoordinator.h"
 #import "AWRReachability.h"
 #import "AWRAboutController.h"
+#import "AWRLicenseController.h"
+#import "AWRLicenseViewModel.h"
 
-@interface AWRAppCoordinator()<AWRNowPlayingCoordinatorDelegate, AWRAboutControllerDelegate>
+@interface AWRAppCoordinator()<AWRNowPlayingCoordinatorDelegate, AWRAboutControllerDelegate, AWRLicenseControllerDelegate>
 
 @property (nonatomic, strong) AWRNowPlayingCoordinator *nowPlayingCoordinator;
 @property (nonatomic, strong) AWRReachability *reachability;
-@property (nonatomic, weak) UIViewController *mainController;
+@property (nonatomic, strong) NSMutableArray<UIViewController *> *controllerStack;
 
 @end
 
@@ -49,6 +51,13 @@ NSString *kStreamOverMobileData = @"mobile_data_enabled";
     }
 }
 
+- (NSMutableArray<UIViewController *> *)controllerStack {
+    if (!_controllerStack) {
+        _controllerStack = [[NSMutableArray alloc] init];
+    }
+    return _controllerStack;
+}
+
 - (UIViewController *)start {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults addObserver:self forKeyPath:kKeepScreenOn options:NSKeyValueObservingOptionNew context:NULL];
@@ -56,7 +65,8 @@ NSString *kStreamOverMobileData = @"mobile_data_enabled";
     [self evaluateSettings:defaults];
 
     [self.reachability startNotifier];
-    return self.mainController = [self.nowPlayingCoordinator start];
+    [self.controllerStack addObject:[self.nowPlayingCoordinator start]];
+    return self.currentController;
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
@@ -71,15 +81,43 @@ NSString *kStreamOverMobileData = @"mobile_data_enabled";
     AWRAboutController *aboutController = [[AWRAboutController alloc] init];
 //    aboutController.modalTransitionStyle = UIModalTransitionStylePartialCurl;
     aboutController.delegate = self;
-    [self.mainController presentViewController:aboutController animated:YES completion:NULL];
+
+    [self.currentController presentViewController:aboutController animated:YES completion:^{
+        [self.controllerStack addObject:aboutController];
+    }];
+}
+
+- (UIViewController *)currentController {
+    return [self.controllerStack lastObject];
 }
 
 - (void)userDidCloseAbout {
-    [self.mainController dismissViewControllerAnimated:YES completion:NULL];
+    [self.currentController dismissViewControllerAnimated:YES completion:^{
+        [self.controllerStack removeLastObject];
+    }];
+}
+
+- (void)userDidSelectUrl:(NSURL *)url {
+    [[UIApplication sharedApplication] openURL:url];
+}
+
+- (void)userDidSelectLicense:(AWRLicenseViewModel *)license {
+    AWRLicenseController *licenseController = [[AWRLicenseController alloc] init];
+    licenseController.delegate = self;
+    [licenseController setLicenseModel:license];
+    [self.currentController presentViewController:licenseController animated:YES completion:^{
+        [self.controllerStack addObject:licenseController];
+    }];
 }
 
 - (void)userDidSelectSettings {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+}
+
+- (void)userDidCloseLicense {
+    [self.currentController dismissViewControllerAnimated:YES completion:^{
+        [self.controllerStack removeLastObject];
+    }];
 }
 
 @end
