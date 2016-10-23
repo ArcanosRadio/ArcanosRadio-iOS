@@ -8,4 +8,8 @@ extern NSString *kStreamOverMobileData;
 
 - (UIViewController *)start;
 
+- (void)runningInBackground;
+- (void)runningInForeground;
+- (void)backgroundFetchWithCompletionHandler:(void (^)(BOOL))completionHandler;
+
 @end

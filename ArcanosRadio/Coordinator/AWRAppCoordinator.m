@@ -87,4 +87,15 @@ NSString *kStreamOverMobileData = @"mobile_data_enabled";
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
 }
 
+- (void)runningInBackground {
+    [self.nowPlayingCoordinator runningInBackground];
+}
+
+- (void)runningInForeground {
+    [self.nowPlayingCoordinator runningInForeground];
+}
+
+- (void)backgroundFetchWithCompletionHandler:(void (^)(BOOL))completionHandler {
+    [self.nowPlayingCoordinator backgroundFetchWithCompletionHandler:completionHandler];
+}
 @end

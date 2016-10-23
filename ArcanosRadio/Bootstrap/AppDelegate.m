@@ -22,11 +22,26 @@
     [Crashlytics startWithAPIKey:FABRIC_API_KEY];
     [Fabric with:@[[Crashlytics class]]];
 #endif
+    [application setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.coordinator = [[AWRAppCoordinator alloc] init];
     self.window.rootViewController = [self.coordinator start];
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void)applicationDidEnterBackground:(UIApplication *)application {
+    [self.coordinator runningInBackground];
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    [self.coordinator runningInForeground];
+}
+
+- (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    [self.coordinator backgroundFetchWithCompletionHandler:^(BOOL newSong) {
+        completionHandler(newSong ? UIBackgroundFetchResultNewData : UIBackgroundFetchResultNoData);
+    }];
 }
 
 @end

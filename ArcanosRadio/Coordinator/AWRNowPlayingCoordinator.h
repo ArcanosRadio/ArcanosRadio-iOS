@@ -13,5 +13,8 @@
 @property (nonatomic, weak) id<AWRNowPlayingCoordinatorDelegate> delegate;
 
 - (UIViewController *)start;
+- (void)runningInBackground;
+- (void)runningInForeground;
+- (void)backgroundFetchWithCompletionHandler:(void (^)(BOOL))completionHandler;
 
 @end

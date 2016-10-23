@@ -51,18 +51,26 @@
 }
 
 - (void)updateStatus:(NSTimer *)timer {
+    MPRemoteCommandCenter *commandCenter = [MPRemoteCommandCenter sharedCommandCenter];
+
     if (self.lastStatus != self.audioPlayer.timeControlStatus) {
         self.lastStatus = self.audioPlayer.timeControlStatus;
         if (self.delegate) {
             switch (self.lastStatus) {
                 case AVPlayerTimeControlStatusWaitingToPlayAtSpecifiedRate:
+                    commandCenter.playCommand.enabled = NO;
+                    commandCenter.pauseCommand.enabled = YES;
                     [self.delegate didStartBuffering];
                     break;
                 case AVPlayerTimeControlStatusPlaying:
+                    commandCenter.playCommand.enabled = NO;
+                    commandCenter.pauseCommand.enabled = YES;
                     [self.delegate didStartPlaying];
                     break;
                 case AVPlayerTimeControlStatusPaused:
                 default:
+                    commandCenter.playCommand.enabled = YES;
+                    commandCenter.pauseCommand.enabled = NO;
                     [self.delegate didStopPlaying];
                     break;
             }
@@ -117,14 +125,29 @@
     [audioSession setActive:YES error:&activationError];
 }
 
-- (void)registerForNotifications
-{
+- (void)registerForNotifications {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(remoteControlEventNotification:)
                                                  name:@"RemoteControlEventReceived" object:nil];
+
+    MPRemoteCommandCenter *commandCenter = [MPRemoteCommandCenter sharedCommandCenter];
+
+    commandCenter.previousTrackCommand.enabled = NO;
+    commandCenter.nextTrackCommand.enabled = NO;
+    commandCenter.playCommand.enabled = YES;
+    commandCenter.pauseCommand.enabled = NO;
+//    commandCenter.likeCommand.enabled = YES;
+//    commandCenter.bookmarkCommand.enabled = YES;
+
+    [commandCenter.playCommand addTarget:self action:@selector(play)];
+    [commandCenter.pauseCommand addTarget:self action:@selector(stop)];
+//    [commandCenter.likeCommand addTarget:self action:@selector(like)];
+//    [commandCenter.likeCommand addTarget:self action:@selector(bookmark)];
 }
 
--(void)unregisterForNotifications
-{
+- (void)like { }
+- (void)bookmark { }
+
+-(void)unregisterForNotifications {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"RemoteControlEventReceived" object:nil];
 }
 

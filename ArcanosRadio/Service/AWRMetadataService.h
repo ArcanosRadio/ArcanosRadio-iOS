@@ -9,5 +9,8 @@
 - (instancetype)initWithStore:(id<AWRMetadataStore>)store;
 - (void)startScheduledFetch;
 - (void)cancelScheduledFetch;
+- (void)backgroundMode;
+- (void)foregroundMode;
+- (void)backgroundFetchWithCompletionHandler:(void (^)(BOOL))completionHandler;
 
 @end

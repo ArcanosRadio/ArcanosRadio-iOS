@@ -7,6 +7,7 @@
 @property (nonatomic, strong) NSTimer * timer;
 @property (nonatomic, nullable, strong) id<AWRPlaylist>currentPlaylist;
 @property (nonatomic, strong) id<AWRMetadataStore> metadataStore;
+@property (nonatomic,getter=isForegroundExecution) BOOL foregroundExecution;
 
 @end
 
@@ -21,6 +22,7 @@
 }
 
 - (void)startScheduledFetch {
+    _foregroundExecution = YES;
     [self.timer setFireDate:[NSDate dateWithTimeIntervalSinceNow:0]];
 }
 
@@ -32,15 +34,22 @@
 - (NSTimer *)timer {
     if (_timer == nil) {
         __weak typeof(self) weakSelf = self;
-        _timer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:weakSelf selector:@selector(downloadCurrentSong:) userInfo:nil repeats:YES];
+        _timer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:weakSelf selector:@selector(tick:) userInfo:nil repeats:YES];
     }
     return _timer;
 }
 
-- (void)downloadCurrentSong:(NSTimer *)timer {
+- (void)tick:(NSTimer *)timer {
+    [self downloadCurrentSong].catch(^id<PXPromise>(id<PXBrokenPromise> finishedPromise) {
+        NSLog(@"Error pooling for new song: %@", finishedPromise.error);
+        return [PXNoMorePromises new];
+    });
+}
+
+- (id<PXPromise>)downloadCurrentSong {
     __weak typeof(self) weakSelf = self;
 
-    [self.metadataStore currentSong]
+    return [self.metadataStore currentSong]
         .then(^id<PXPromise>(id<PXSuccessfulPromise> finishedPromise) {
             id<AWRPlaylist>result = finishedPromise.result;
 
@@ -67,9 +76,6 @@
 
             [weakSelf downloadAlbumLyricsAsync];
 
-            return [PXNoMorePromises new];
-        }).catch(^id<PXPromise>(id<PXBrokenPromise> finishedPromise) {
-            NSLog(@"Error pooling for new song: %@", finishedPromise.error);
             return [PXNoMorePromises new];
         });
 }
@@ -98,6 +104,38 @@
     [weakSelf.metadataStore lyricsBySong:weakSelf.currentPlaylist.song]
         .then(^id<PXPromise>(id<PXSuccessfulPromise> finishedPromise) {
             [weakSelf.delegate didFetchSongLyrics:finishedPromise.result];
+            return [PXNoMorePromises new];
+        });
+}
+
+- (void)setForegroundExecution:(BOOL)foregroundExecution {
+    if (_foregroundExecution == foregroundExecution) return;
+    _foregroundExecution = foregroundExecution;
+    if (_foregroundExecution) {
+        [self startScheduledFetch];
+    } else {
+        [self cancelScheduledFetch];
+    }
+}
+
+- (void)foregroundMode { self.foregroundExecution = YES; }
+
+- (void)backgroundMode { self.foregroundExecution = NO; }
+
+- (void)backgroundFetchWithCompletionHandler:(void (^)(BOOL))completionHandler {
+    NSString *songBefore = self.currentPlaylist.song.songName;
+
+    [self downloadCurrentSong]
+        .then(^id<PXPromise>(id<PXSuccessfulPromise> finishedPromise) {
+            NSString *songNow = self.currentPlaylist.song.songName;
+            if ([songBefore isEqualToString:songNow]) {
+                completionHandler(NO);
+            } else {
+                completionHandler(YES);
+            }
+            return [PXNoMorePromises new];
+        }).catch(^id<PXPromise>(id<PXBrokenPromise> finishedPromise) {
+            completionHandler(NO);
             return [PXNoMorePromises new];
         });
 }
