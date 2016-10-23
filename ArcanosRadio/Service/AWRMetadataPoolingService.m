@@ -2,12 +2,16 @@
 #import "AWRMetadataStore.h"
 #import "AWRMetadataFactory.h"
 
+static NSTimeInterval kTimerIntervalInForeground = 8.0;
+static NSTimeInterval kTimerIntervalInBackground = 32.0;
+
 @interface AWRMetadataPoolingService()
 
 @property (nonatomic, strong) NSTimer * timer;
 @property (nonatomic, nullable, strong) id<AWRPlaylist>currentPlaylist;
 @property (nonatomic, strong) id<AWRMetadataStore> metadataStore;
 @property (nonatomic,getter=isForegroundExecution) BOOL foregroundExecution;
+@property (nonatomic)NSTimeInterval timerInterval;
 
 @end
 
@@ -17,6 +21,7 @@
     self = [super init];
     if (self) {
         self.metadataStore = store;
+        self.timerInterval = kTimerIntervalInForeground;
     }
     return self;
 }
@@ -34,7 +39,7 @@
 - (NSTimer *)timer {
     if (_timer == nil) {
         __weak typeof(self) weakSelf = self;
-        _timer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:weakSelf selector:@selector(tick:) userInfo:nil repeats:YES];
+        _timer = [NSTimer scheduledTimerWithTimeInterval:self.timerInterval target:weakSelf selector:@selector(tick:) userInfo:nil repeats:YES];
     }
     return _timer;
 }
@@ -112,9 +117,13 @@
     if (_foregroundExecution == foregroundExecution) return;
     _foregroundExecution = foregroundExecution;
     if (_foregroundExecution) {
+        [self cancelScheduledFetch];
+        self.timerInterval = kTimerIntervalInForeground;
         [self startScheduledFetch];
     } else {
         [self cancelScheduledFetch];
+        self.timerInterval = kTimerIntervalInBackground;
+        [self startScheduledFetch];
     }
 }
 
