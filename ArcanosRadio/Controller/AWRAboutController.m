@@ -4,6 +4,7 @@
 #import "AWRDeveloperInfoTableViewCell.h"
 #import "AWRAppInfoViewModel.h"
 #import "AWRAppLinkInfoTableViewCell.h"
+#import "AWRVersionTableViewCell.h"
 
 @interface AWRAboutController () <AWRAboutViewDelegate, UITableViewDataSource>
 
@@ -73,15 +74,19 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
-        return [self.developers count];
+        return 1;
     }
 
     if (section == 1) {
+        return [self.developers count];
+    }
+
+    if (section == 2) {
         return [self.appLinks count];
     }
 
@@ -90,14 +95,27 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return
-        (section == 0) ? NSLocalizedString(@"ABOUT_TEAM_HEADER", nil)
-      : (section == 1) ? NSLocalizedString(@"ABOUT_LINKS_HEADER", nil)
+        (section == 0) ? nil
+      : (section == 1) ? NSLocalizedString(@"ABOUT_TEAM_HEADER", nil)
+      : (section == 2) ? NSLocalizedString(@"ABOUT_LINKS_HEADER", nil)
       : NSLocalizedString(@"ABOUT_THIRD_PARTY_HEADER", nil);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     if (indexPath.section == 0) {
+        AWRVersionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"appVersionCell" forIndexPath:indexPath];
+
+        NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+        NSString *build = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey];
+
+        cell.appNameLabel.text = NSLocalizedString(@"ABOUT_ARCANOS", nil);
+        cell.copyrightLabel.text = NSLocalizedString(@"ABOUT_COPYRIGHT", nil);
+        cell.versionLabel.text = [NSString stringWithFormat:@"%@ (%@)", version, build];
+        return cell;
+    }
+
+    if (indexPath.section == 1) {
         AWRAppDeveloperViewModel *dev = self.developers[indexPath.row];
         AWRDeveloperInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"developerCell" forIndexPath:indexPath];
         cell.nameLabel.text = dev.name;
@@ -106,7 +124,7 @@
         return cell;
     }
 
-    if (indexPath.section == 1) {
+    if (indexPath.section == 2) {
         AWRAppInfoViewModel *link = self.appLinks[indexPath.row];
         AWRAppLinkInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"appLinkCell" forIndexPath:indexPath];
         cell.nameLabel.text = link.name;
@@ -126,11 +144,15 @@
     if (!self.delegate) return;
 
     if (indexPath.section == 0) {
-        [self.delegate userDidSelectUrl: self.developers[indexPath.row].url];
         return;
     }
 
     if (indexPath.section == 1) {
+        [self.delegate userDidSelectUrl: self.developers[indexPath.row].url];
+        return;
+    }
+
+    if (indexPath.section == 2) {
         [self.delegate userDidSelectUrl: self.appLinks[indexPath.row].url];
         return;
     }

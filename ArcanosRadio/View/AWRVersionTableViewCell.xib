@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="appVersionCell" rowHeight="110" id="QEl-dT-abS" customClass="AWRVersionTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="110"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QEl-dT-abS" id="caU-eM-2Pw">
+                <frame key="frameInset" width="400" height="109"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arcanos_transparent_big" translatesAutoresizingMaskIntoConstraints="NO" id="SuK-vr-O7J">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="96" id="xBg-lQ-qh8"/>
+                            <constraint firstAttribute="width" secondItem="SuK-vr-O7J" secondAttribute="height" multiplier="1:1" id="yi7-vL-HMp"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arcanos Web Radio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncs-ZE-Wrq">
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zts-yR-Tb8">
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27F-qW-pgn">
+                        <string key="text">© Copyright Arcanos MC
+2016 - All rights reserved</string>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="SuK-vr-O7J" secondAttribute="bottom" constant="-1.5" id="3wN-av-mjU"/>
+                    <constraint firstItem="SuK-vr-O7J" firstAttribute="centerY" secondItem="caU-eM-2Pw" secondAttribute="centerY" id="99p-DL-4X3"/>
+                    <constraint firstItem="ncs-ZE-Wrq" firstAttribute="leading" secondItem="SuK-vr-O7J" secondAttribute="trailing" constant="8" id="LFm-pd-M7D"/>
+                    <constraint firstItem="Zts-yR-Tb8" firstAttribute="top" secondItem="ncs-ZE-Wrq" secondAttribute="bottom" id="WMJ-60-OGC"/>
+                    <constraint firstItem="Zts-yR-Tb8" firstAttribute="leading" secondItem="SuK-vr-O7J" secondAttribute="trailing" constant="8" id="Xmx-6Y-Wza"/>
+                    <constraint firstItem="ncs-ZE-Wrq" firstAttribute="top" secondItem="SuK-vr-O7J" secondAttribute="top" id="bX5-Zp-Dmd"/>
+                    <constraint firstItem="SuK-vr-O7J" firstAttribute="top" secondItem="caU-eM-2Pw" secondAttribute="topMargin" constant="-1" id="oCI-M5-uth"/>
+                    <constraint firstItem="27F-qW-pgn" firstAttribute="bottom" secondItem="SuK-vr-O7J" secondAttribute="bottom" id="w6Q-LM-2aE"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="SuK-vr-O7J" secondAttribute="leading" id="xUf-Zo-5Pe"/>
+                    <constraint firstItem="27F-qW-pgn" firstAttribute="leading" secondItem="SuK-vr-O7J" secondAttribute="trailing" constant="8" id="zuy-LG-HDq"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="appNameLabel" destination="ncs-ZE-Wrq" id="7wT-6g-l4r"/>
+                <outlet property="copyrightLabel" destination="27F-qW-pgn" id="gRE-Pq-gEv"/>
+                <outlet property="versionLabel" destination="Zts-yR-Tb8" id="n2j-AN-Zyh"/>
+            </connections>
+            <point key="canvasLocation" x="126" y="148"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="arcanos_transparent_big" width="300" height="300"/>
+    </resources>
+</document>

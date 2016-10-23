@@ -12,6 +12,7 @@
 - (void)setTableView:(UITableView *)tableView {
     _tableView = tableView;
     [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+    [_tableView registerNib:[UINib nibWithNibName:@"AWRVersionTableViewCell" bundle:nil] forCellReuseIdentifier:@"appVersionCell"];
     [_tableView registerNib:[UINib nibWithNibName:@"AWRDeveloperInfoTableViewCell" bundle:nil] forCellReuseIdentifier:@"developerCell"];
     [_tableView registerNib:[UINib nibWithNibName:@"AWRAppLinkInfoTableViewCell" bundle:nil] forCellReuseIdentifier:@"appLinkCell"];
 }

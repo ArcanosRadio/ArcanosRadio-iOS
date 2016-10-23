@@ -96,6 +96,10 @@
 		018E2D0F1DBCD8670035455B /* AWRLicenseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 018E2D0D1DBCD8670035455B /* AWRLicenseController.m */; };
 		018E2D121DBD00F00035455B /* AWRHelpCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 018E2D111DBD00F00035455B /* AWRHelpCoordinator.m */; };
 		018E2D131DBD00F00035455B /* AWRHelpCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 018E2D111DBD00F00035455B /* AWRHelpCoordinator.m */; };
+		018E2D151DBD48960035455B /* AWRVersionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 018E2D141DBD48960035455B /* AWRVersionTableViewCell.xib */; };
+		018E2D161DBD48960035455B /* AWRVersionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 018E2D141DBD48960035455B /* AWRVersionTableViewCell.xib */; };
+		018E2D191DBD48B30035455B /* AWRVersionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 018E2D181DBD48B30035455B /* AWRVersionTableViewCell.m */; };
+		018E2D1A1DBD48B30035455B /* AWRVersionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 018E2D181DBD48B30035455B /* AWRVersionTableViewCell.m */; };
 		019140781D8D8E05000B19EE /* NSObject+PXPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 019140771D8D8E05000B19EE /* NSObject+PXPromise.m */; };
 		01D2BD0C1D9B00D900632C08 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D2BD0B1D9B00D900632C08 /* QuartzCore.framework */; };
 		01DBE4981D8CB2C4003B2100 /* AWRNowPlayingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DBE4941D8CB2C4003B2100 /* AWRNowPlayingController.m */; };
@@ -211,6 +215,9 @@
 		018E2D0D1DBCD8670035455B /* AWRLicenseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRLicenseController.m; sourceTree = "<group>"; };
 		018E2D101DBD00F00035455B /* AWRHelpCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRHelpCoordinator.h; sourceTree = "<group>"; };
 		018E2D111DBD00F00035455B /* AWRHelpCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRHelpCoordinator.m; sourceTree = "<group>"; };
+		018E2D141DBD48960035455B /* AWRVersionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AWRVersionTableViewCell.xib; sourceTree = "<group>"; };
+		018E2D171DBD48B30035455B /* AWRVersionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRVersionTableViewCell.h; sourceTree = "<group>"; };
+		018E2D181DBD48B30035455B /* AWRVersionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRVersionTableViewCell.m; sourceTree = "<group>"; };
 		019140761D8D8E05000B19EE /* NSObject+PXPromise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PXPromise.h"; sourceTree = "<group>"; };
 		019140771D8D8E05000B19EE /* NSObject+PXPromise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PXPromise.m"; sourceTree = "<group>"; };
 		01D2BD0B1D9B00D900632C08 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -422,6 +429,9 @@
 				016500F11DB3374500B32C0A /* AWRAboutView.xib */,
 				016500F41DB337A100B32C0A /* AWRAboutView.h */,
 				016500F51DB337A100B32C0A /* AWRAboutView.m */,
+				018E2D141DBD48960035455B /* AWRVersionTableViewCell.xib */,
+				018E2D171DBD48B30035455B /* AWRVersionTableViewCell.h */,
+				018E2D181DBD48B30035455B /* AWRVersionTableViewCell.m */,
 				018E2CEB1DBC70D90035455B /* AWRDeveloperInfoTableViewCell.xib */,
 				018E2CEE1DBC720A0035455B /* AWRDeveloperInfoTableViewCell.h */,
 				018E2CEF1DBC720A0035455B /* AWRDeveloperInfoTableViewCell.m */,
@@ -649,6 +659,7 @@
 			files = (
 				018E2CD71DBC31130035455B /* genLicense.pl in Resources */,
 				018E2CED1DBC70D90035455B /* AWRDeveloperInfoTableViewCell.xib in Resources */,
+				018E2D161DBD48960035455B /* AWRVersionTableViewCell.xib in Resources */,
 				016500E61DB2D04900B32C0A /* Localizable.strings in Resources */,
 				018E2D031DBCCD950035455B /* AWRLicenseView.xib in Resources */,
 				018E2CFC1DBC7DBC0035455B /* AWRAppLinkInfoTableViewCell.xib in Resources */,
@@ -668,6 +679,7 @@
 			files = (
 				018E2CD61DBC31130035455B /* genLicense.pl in Resources */,
 				018E2CEC1DBC70D90035455B /* AWRDeveloperInfoTableViewCell.xib in Resources */,
+				018E2D151DBD48960035455B /* AWRVersionTableViewCell.xib in Resources */,
 				016500E51DB2D04900B32C0A /* Localizable.strings in Resources */,
 				018E2D021DBCCD950035455B /* AWRLicenseView.xib in Resources */,
 				018E2CFB1DBC7DBC0035455B /* AWRAppLinkInfoTableViewCell.xib in Resources */,
@@ -744,6 +756,7 @@
 				01FB393D1DAC607A00EBC99D /* AWRMergeImageView.m in Sources */,
 				0137D8701D9CCE15003A1E6B /* AWRConstants.m in Sources */,
 				018E2CC61DBC1CF50035455B /* AWRViewController.m in Sources */,
+				018E2D1A1DBD48B30035455B /* AWRVersionTableViewCell.m in Sources */,
 				0137D8771D9CCE56003A1E6B /* NSObject+PXPromise.m in Sources */,
 				018E2CF51DBC78960035455B /* AWRAppDeveloperViewModel.m in Sources */,
 				016500F71DB337A100B32C0A /* AWRAboutView.m in Sources */,
@@ -816,6 +829,7 @@
 				01FB39441DACB9D600EBC99D /* UIImage+Resize.m in Sources */,
 				0181E8231D8CB158008E21C5 /* NSError+PXPromise.m in Sources */,
 				0181E82D1D8CB160008E21C5 /* AWRArtistParse.m in Sources */,
+				018E2D191DBD48B30035455B /* AWRVersionTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
