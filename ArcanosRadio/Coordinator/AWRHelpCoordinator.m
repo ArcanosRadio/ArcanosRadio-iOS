@@ -33,7 +33,7 @@
 
 - (void)userDidSelectLicense:(AWRLicenseViewModel *)license {
     AWRLicenseController *licenseController = [[AWRLicenseController alloc] init];
-    licenseController.modalPresentationCapturesStatusBarAppearance = UIModalTransitionStyleCrossDissolve;
+    licenseController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     licenseController.delegate = self;
     [licenseController setLicenseModel:license];
     [self.aboutController presentViewController:licenseController animated:YES completion:^{
