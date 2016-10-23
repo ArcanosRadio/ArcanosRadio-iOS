@@ -87,12 +87,17 @@
 - (void)userDidSelectShare {
     NSMutableArray *sharingItems = [NSMutableArray new];
 
+    NSString *songName = self.currentSong.songName;
+    NSString *artistName = self.currentSong.artist.artistName;
+
     NSString *text = [[NSLocalizedString(@"SHARE_TEXT", nil)
-                      stringByReplacingOccurrencesOfString:@"${song}" withString:self.currentSong.songName]
-                      stringByReplacingOccurrencesOfString:@"${artist}" withString:self.currentSong.artist.artistName];
+                       stringByReplacingOccurrencesOfString:@"${song}" withString:songName]
+                      stringByReplacingOccurrencesOfString:@"${artist}" withString:artistName];
+
     [sharingItems addObject:text];
 
-    UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:sharingItems applicationActivities:nil];
+    UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:sharingItems
+                                                                                     applicationActivities:nil];
     [self.mainController presentViewController:activityController animated:YES completion:nil];
 }
 

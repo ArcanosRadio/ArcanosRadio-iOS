@@ -37,17 +37,17 @@ NSString *kStreamOverMobileData = @"mobile_data_enabled";
 }
 
 - (void)receivedReachability:(NSNotification *)note {
-    NetworkStatus status = [self.reachability currentReachabilityStatus];
-
-    if(status == NotReachable) {
-        NSLog(@"Sorry, bro! No internet for you");
-    }
-    else if (status == ReachableViaWiFi) {
-        NSLog(@"Wi-fi");
-    }
-    else if (status == ReachableViaWWAN) {
-        NSLog(@"3g");
-    }
+//    NetworkStatus status = [self.reachability currentReachabilityStatus];
+//
+//    if(status == NotReachable) {
+//        NSLog(@"Sorry, bro! No internet for you");
+//    }
+//    else if (status == ReachableViaWiFi) {
+//        NSLog(@"Wi-fi");
+//    }
+//    else if (status == ReachableViaWWAN) {
+//        NSLog(@"3g");
+//    }
 }
 
 - (UIViewController *)start {
@@ -77,8 +77,9 @@ NSString *kStreamOverMobileData = @"mobile_data_enabled";
 }
 
 - (void)coordinator:(AWRHelpCoordinator *)coordinator didFinishExecutingItsMainController:(UIViewController *)controller {
+    __weak typeof(self) weakSelf = self;
     [controller dismissViewControllerAnimated:YES completion:^{
-        self.currentCoordinator = self.nowPlayingCoordinator;
+        weakSelf.currentCoordinator = weakSelf.nowPlayingCoordinator;
     }];
 }
 
