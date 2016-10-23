@@ -20,7 +20,6 @@
 
     UINavigationItem *titleItem = [_navigationBar.items firstObject];
     titleItem.title = self.license.name;
-    
 }
 
 - (UIBarPosition)positionForBar:(id <UIBarPositioning>)bar {
