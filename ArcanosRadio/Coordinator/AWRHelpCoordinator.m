@@ -14,7 +14,7 @@
 
 - (UIViewController *)start {
     AWRAboutController *aboutController = [[AWRAboutController alloc] init];
-    // aboutController.modalTransitionStyle = UIModalTransitionStylePartialCurl;
+    aboutController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     aboutController.delegate = self;
 
     self.currentController = self.aboutController = aboutController;
@@ -33,6 +33,7 @@
 
 - (void)userDidSelectLicense:(AWRLicenseViewModel *)license {
     AWRLicenseController *licenseController = [[AWRLicenseController alloc] init];
+    licenseController.modalPresentationCapturesStatusBarAppearance = UIModalTransitionStyleCrossDissolve;
     licenseController.delegate = self;
     [licenseController setLicenseModel:license];
     [self.aboutController presentViewController:licenseController animated:YES completion:^{
