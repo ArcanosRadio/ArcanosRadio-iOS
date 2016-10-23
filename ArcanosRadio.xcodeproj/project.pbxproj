@@ -94,6 +94,8 @@
 		018E2D0B1DBCD4C50035455B /* AWRLicenseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 018E2D091DBCD4C50035455B /* AWRLicenseViewModel.m */; };
 		018E2D0E1DBCD8670035455B /* AWRLicenseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 018E2D0D1DBCD8670035455B /* AWRLicenseController.m */; };
 		018E2D0F1DBCD8670035455B /* AWRLicenseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 018E2D0D1DBCD8670035455B /* AWRLicenseController.m */; };
+		018E2D121DBD00F00035455B /* AWRHelpCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 018E2D111DBD00F00035455B /* AWRHelpCoordinator.m */; };
+		018E2D131DBD00F00035455B /* AWRHelpCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 018E2D111DBD00F00035455B /* AWRHelpCoordinator.m */; };
 		019140781D8D8E05000B19EE /* NSObject+PXPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 019140771D8D8E05000B19EE /* NSObject+PXPromise.m */; };
 		01D2BD0C1D9B00D900632C08 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D2BD0B1D9B00D900632C08 /* QuartzCore.framework */; };
 		01DBE4981D8CB2C4003B2100 /* AWRNowPlayingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DBE4941D8CB2C4003B2100 /* AWRNowPlayingController.m */; };
@@ -207,6 +209,8 @@
 		018E2D091DBCD4C50035455B /* AWRLicenseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRLicenseViewModel.m; sourceTree = "<group>"; };
 		018E2D0C1DBCD8670035455B /* AWRLicenseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRLicenseController.h; sourceTree = "<group>"; };
 		018E2D0D1DBCD8670035455B /* AWRLicenseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRLicenseController.m; sourceTree = "<group>"; };
+		018E2D101DBD00F00035455B /* AWRHelpCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRHelpCoordinator.h; sourceTree = "<group>"; };
+		018E2D111DBD00F00035455B /* AWRHelpCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRHelpCoordinator.m; sourceTree = "<group>"; };
 		019140761D8D8E05000B19EE /* NSObject+PXPromise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PXPromise.h"; sourceTree = "<group>"; };
 		019140771D8D8E05000B19EE /* NSObject+PXPromise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PXPromise.m"; sourceTree = "<group>"; };
 		01D2BD0B1D9B00D900632C08 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -269,6 +273,8 @@
 				012582B71D91F2EA002C4E93 /* AWRAppCoordinator.m */,
 				01DBE4971D8CB2C4003B2100 /* AWRNowPlayingCoordinator.h */,
 				01DBE4951D8CB2C4003B2100 /* AWRNowPlayingCoordinator.m */,
+				018E2D101DBD00F00035455B /* AWRHelpCoordinator.h */,
+				018E2D111DBD00F00035455B /* AWRHelpCoordinator.m */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -742,6 +748,7 @@
 				018E2CF51DBC78960035455B /* AWRAppDeveloperViewModel.m in Sources */,
 				016500F71DB337A100B32C0A /* AWRAboutView.m in Sources */,
 				01FB39391DAC596800EBC99D /* AWRNowPlayingHeaderView.m in Sources */,
+				018E2D131DBD00F00035455B /* AWRHelpCoordinator.m in Sources */,
 				0126E3481DA7232D0054430C /* AWRMetadataPoolingService.m in Sources */,
 				0137D8721D9CCE29003A1E6B /* main.m in Sources */,
 				0137D8751D9CCE4B003A1E6B /* PXNoMorePromises.m in Sources */,
@@ -793,6 +800,7 @@
 				0181E8341D8CB177008E21C5 /* AWRNowPlayingView.m in Sources */,
 				016500FA1DB3383700B32C0A /* AWRAboutController.m in Sources */,
 				018E2CFF1DBC7DD00035455B /* AWRAppLinkInfoTableViewCell.m in Sources */,
+				018E2D121DBD00F00035455B /* AWRHelpCoordinator.m in Sources */,
 				01DBE4A01D8CB2D0003B2100 /* AWRMetadataFactory.m in Sources */,
 				018E2D0E1DBCD8670035455B /* AWRLicenseController.m in Sources */,
 				016500E11DB1E79B00B32C0A /* AWRMenu.m in Sources */,
