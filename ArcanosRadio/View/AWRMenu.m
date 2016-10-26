@@ -34,10 +34,6 @@
         self.startingPoint = CGPointMake(frame.origin.x + frame.size.width - 44 / 2 - 8,
                                          frame.origin.y + frame.size.height - 44 / 2 - 8);
         self.clipsToBounds = NO;
-        UITapGestureRecognizer *touchGesture = [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                                                       action:@selector(handleTouch:)];
-        touchGesture.cancelsTouchesInView = YES;
-        [self addGestureRecognizer:touchGesture];
     }
     return self;
 }
@@ -45,9 +41,9 @@
 - (UILabel *)helpLabel {
     if (!_helpLabel) {
         _helpLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, self.frame.size.width, 30)];
-        _helpLabel.backgroundColor = [UIColor colorWithRed:0.8 green:0.3 blue:0.3 alpha:1.0];
         _helpLabel.alpha = 0.0;
         _helpLabel.textAlignment = NSTextAlignmentCenter;
+        _helpLabel.backgroundColor = UIColor.darkGrayColor;
         _helpLabel.font = [UIFont preferredFontForTextStyle: UIFontTextStyleCaption1];
         _helpLabel.textColor = [UIColor whiteColor];
         [self addSubview:_helpLabel];
@@ -61,26 +57,6 @@
         [self addConstraints:@[top, left, right]];
     }
     return _helpLabel;
-}
-
-- (void)handleTouch:(UITapGestureRecognizer *)recognizer {
-    [self hide];
-}
-
-- (void)item:(UIButton *)sender didReceiveTouchDown:(id)event {
-    AWRMenuItem *item = [self.items objectAtIndex: ((UIButton *)sender).tag];
-    self.helpLabel.text = item.text;
-}
-
-- (void)item:(UIButton *)sender didReceiveTouchUpInside:(id)event {
-    AWRMenuItem *item = [self.items objectAtIndex: sender.tag];
-    if (self.delegate) {
-        [self.delegate menu:self didSelectItemWithIdentifier:item.identifier];
-    }
-    [self hide];
-}
-
-- (void)cancelSelection:(UIButton *)sender {
 }
 
 - (void)setItems:(NSArray<AWRMenuItem *> *)items {
@@ -110,8 +86,6 @@
             button.accessibilityLabel = item.text;
             button.backgroundColor = UIColor.darkGrayColor;
             button.tintColor = UIColor.whiteColor;
-            [button addTarget:self action:@selector(item:didReceiveTouchDown:) forControlEvents:UIControlEventTouchDown];
-            [button addTarget:self action:@selector(item:didReceiveTouchUpInside:) forControlEvents:UIControlEventTouchUpInside];
             [button setImage:item.icon forState:UIControlStateNormal];
             [subviews addObject:button];
             [self addSubview:button];
@@ -121,7 +95,52 @@
     return _menuItemButtons;
 }
 
+- (UIButton *)buttonForPoint:(CGPoint)point {
+    UIButton *found = nil;
+    for (UIButton *button in _menuItemButtons) {
+        if (point.x >= button.frame.origin.x &&
+            point.x <= button.frame.origin.x + button.frame.size.width &&
+            point.y >= button.frame.origin.y &&
+            point.y <= button.frame.origin.y + button.frame.size.height) {
+            button.backgroundColor = [UIColor colorWithRed:0.8 green:0.3 blue:0.3 alpha:1.0];
+            found = button;
+        } else {
+            button.backgroundColor = UIColor.darkGrayColor;
+        }
+    }
+
+    return found;
+}
+
+- (void)pan:(CGPoint)point {
+    UIButton *button = [self buttonForPoint:point];
+    if (button) {
+        AWRMenuItem *item = [self.items objectAtIndex:button.tag];
+        self.helpLabel.text = item.text;
+        self.helpLabel.backgroundColor = [UIColor colorWithRed:0.8 green:0.3 blue:0.3 alpha:1.0];
+        return;
+    }
+    
+    self.helpLabel.backgroundColor = UIColor.darkGrayColor;
+    self.helpLabel.text = NSLocalizedString(@"MENU_SELECT_ITEM_TEXT", nil);
+}
+
+- (void)didFinishPan:(CGPoint)point {
+    UIButton *button = [self buttonForPoint:point];
+    if (button) {
+        AWRMenuItem *item = [self.items objectAtIndex: button.tag];
+        if (self.delegate) {
+            [self.delegate menu:self didSelectItemWithIdentifier:item.identifier];
+        }
+        [self hide];
+        return;
+    }
+
+    [self hide];
+}
+
 - (void)show {
+    self.helpLabel.backgroundColor = UIColor.darkGrayColor;
     self.helpLabel.text = NSLocalizedString(@"MENU_SELECT_ITEM_TEXT", nil);
 
     for (UIButton *button in self.menuItemButtons) {

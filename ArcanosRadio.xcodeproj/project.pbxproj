@@ -35,6 +35,8 @@
 		0137D8971D9E66EE003A1E6B /* PFFile+AWRFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 0137D8961D9E66EE003A1E6B /* PFFile+AWRFile.m */; };
 		0137D8A01D9E7093003A1E6B /* AWRFakeService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0137D89E1D9E7093003A1E6B /* AWRFakeService.m */; };
 		0137D8A11D9E7093003A1E6B /* AWRMetadataServiceFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0137D89F1D9E7093003A1E6B /* AWRMetadataServiceFactory.m */; };
+		0151BAD91DC0FA4E00736A79 /* AWRMenuPanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0151BAD81DC0FA4E00736A79 /* AWRMenuPanGestureRecognizer.m */; };
+		0151BADA1DC0FA4E00736A79 /* AWRMenuPanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0151BAD81DC0FA4E00736A79 /* AWRMenuPanGestureRecognizer.m */; };
 		016500E11DB1E79B00B32C0A /* AWRMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 016500E01DB1E79B00B32C0A /* AWRMenu.m */; };
 		016500E51DB2D04900B32C0A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 016500E81DB2D04900B32C0A /* Localizable.strings */; };
 		016500E61DB2D04900B32C0A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 016500E81DB2D04900B32C0A /* Localizable.strings */; };
@@ -142,6 +144,8 @@
 		0137D89D1D9E7093003A1E6B /* AWRFakeService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRFakeService.h; sourceTree = "<group>"; };
 		0137D89E1D9E7093003A1E6B /* AWRFakeService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRFakeService.m; sourceTree = "<group>"; };
 		0137D89F1D9E7093003A1E6B /* AWRMetadataServiceFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRMetadataServiceFactory.m; sourceTree = "<group>"; };
+		0151BAD71DC0FA4E00736A79 /* AWRMenuPanGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRMenuPanGestureRecognizer.h; sourceTree = "<group>"; };
+		0151BAD81DC0FA4E00736A79 /* AWRMenuPanGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRMenuPanGestureRecognizer.m; sourceTree = "<group>"; };
 		016500DF1DB1E79B00B32C0A /* AWRMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRMenu.h; sourceTree = "<group>"; };
 		016500E01DB1E79B00B32C0A /* AWRMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRMenu.m; sourceTree = "<group>"; };
 		016500E71DB2D04900B32C0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -562,6 +566,8 @@
 				01FB393F1DACABC000EBC99D /* UIView+Utils.m */,
 				01FB39421DACB9D600EBC99D /* UIImage+Resize.h */,
 				01FB39431DACB9D600EBC99D /* UIImage+Resize.m */,
+				0151BAD71DC0FA4E00736A79 /* AWRMenuPanGestureRecognizer.h */,
+				0151BAD81DC0FA4E00736A79 /* AWRMenuPanGestureRecognizer.m */,
 			);
 			path = BaseLibrary;
 			sourceTree = "<group>";
@@ -766,6 +772,7 @@
 				0137D8721D9CCE29003A1E6B /* main.m in Sources */,
 				0137D8751D9CCE4B003A1E6B /* PXNoMorePromises.m in Sources */,
 				018E2D001DBC7DD00035455B /* AWRAppLinkInfoTableViewCell.m in Sources */,
+				0151BADA1DC0FA4E00736A79 /* AWRMenuPanGestureRecognizer.m in Sources */,
 				0137D8831D9CCEF6003A1E6B /* AWRNowPlayingController.m in Sources */,
 				0137D8821D9CCEEE003A1E6B /* AWRNowPlayingCoordinator.m in Sources */,
 				018E2CF91DBC7C870035455B /* AWRAppInfoViewModel.m in Sources */,
@@ -797,6 +804,7 @@
 				018E2CC51DBC1CF50035455B /* AWRViewController.m in Sources */,
 				018E2CF81DBC7C870035455B /* AWRAppInfoViewModel.m in Sources */,
 				01FB393C1DAC607A00EBC99D /* AWRMergeImageView.m in Sources */,
+				0151BAD91DC0FA4E00736A79 /* AWRMenuPanGestureRecognizer.m in Sources */,
 				0181E7DC1D8C905B008E21C5 /* main.m in Sources */,
 				0137D8971D9E66EE003A1E6B /* PFFile+AWRFile.m in Sources */,
 				0181E8091D8CB0ED008E21C5 /* AWRConstants.m in Sources */,
