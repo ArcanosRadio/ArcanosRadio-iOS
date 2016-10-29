@@ -174,16 +174,18 @@
     [self.overlay bringSubviewToFront:self.helpLabel];
     [self layoutIfNeeded];
 
+    __weak typeof(self) weakSelf = self;
+
     [UIView animateWithDuration:0.3 animations: ^{
-         [self updateButtonCenters];
-         self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.65];
-         self.helpLabel.alpha = 0.9;
-         [self layoutIfNeeded];
+         [weakSelf updateButtonCenters];
+         weakSelf.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.65];
+         weakSelf.helpLabel.alpha = 0.9;
+         [weakSelf layoutIfNeeded];
      } completion:^(BOOL finished) {
          if (finished) {
-             self.shown = YES;
-             if (self.delegate && [self.delegate respondsToSelector:@selector(menuDidBecomeVisible:)]) {
-                 [self.delegate menuDidBecomeVisible:self];
+             weakSelf.shown = YES;
+             if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(menuDidBecomeVisible:)]) {
+                 [weakSelf.delegate menuDidBecomeVisible:weakSelf];
              }
          }
      }];
@@ -244,19 +246,20 @@
 - (void)hide {
     [self layoutIfNeeded];
 
+    __weak typeof(self) weakSelf = self;
     [UIView animateWithDuration:0.3
                      animations: ^{
-                         for (UIButton *button in self.menuItemButtons) {
-                             button.center = self.startingPoint;
+                         for (UIButton *button in weakSelf.menuItemButtons) {
+                             button.center = weakSelf.startingPoint;
                              button.alpha = 0.0;
-                             self.backgroundColor = [UIColor clearColor];
+                             weakSelf.backgroundColor = [UIColor clearColor];
                          }
                          self.helpLabel.alpha = 0.0;
                      } completion:^(BOOL finished) {
                          if (finished) {
-                             self.shown = NO;
-                             if (self.delegate && [self.delegate respondsToSelector:@selector(menuDidBecomeHidden:)]) {
-                                 [self.delegate menuDidBecomeHidden:self];
+                             weakSelf.shown = NO;
+                             if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(menuDidBecomeHidden:)]) {
+                                 [weakSelf.delegate menuDidBecomeHidden:weakSelf];
                              }
                          }
                      }];
