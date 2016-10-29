@@ -112,6 +112,9 @@
                             <state key="normal" image="menu">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="menuButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="k0e-Ss-4vX"/>
+                            </connections>
                         </button>
                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="gmd-m7-sZK">
                             <accessibility key="accessibilityConfiguration" identifier="volume_slider"/>

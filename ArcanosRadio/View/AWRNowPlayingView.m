@@ -7,7 +7,6 @@
 #import "AWRNowPlayingHeaderView.h"
 #import "UIView+Utils.h"
 #import "AWRMenu.h"
-#import "AWRMenuPanGestureRecognizer.h"
 
 @interface AWRNowPlayingView()<UIScrollViewDelegate, AWRMenuDelegate>
 
@@ -160,22 +159,10 @@
     [self.delegate muteButtonPressed];
 }
 
-- (void)setMenuButton:(UIButton *)menuButton {
-    _menuButton = menuButton;
-    AWRMenuPanGestureRecognizer *pan = [[AWRMenuPanGestureRecognizer alloc] initWithTarget:self action:@selector(menuButtonHandler:)];
-    [_menuButton addGestureRecognizer:pan];
-}
-
-- (void)menuButtonHandler:(UIGestureRecognizer *)pan {
-    if (pan.state == UIGestureRecognizerStateBegan) {
-        self.menu.layer.zPosition = 4;
-        [self addSubview:self.menu];
-        [self.menu show];
-    } else if (pan.state == UIGestureRecognizerStateChanged) {
-        [self.menu pan:[pan locationInView:self.menu]];
-    } else if (pan.state == UIGestureRecognizerStateEnded) {
-        [self.menu didFinishPan:[pan locationInView:self.menu]];
-    }
+- (IBAction)menuButtonPressed:(UIButton *)sender {
+    self.menu.layer.zPosition = 4;
+    [self addSubview:self.menu];
+    [self.menu show];
 }
 
 - (void)menu:(AWRMenu *)menu didSelectItemWithIdentifier:(NSString *)identifier {

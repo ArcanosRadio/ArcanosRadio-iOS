@@ -1,6 +1,6 @@
-// https://github.com/AdityaDeshmane/iOSCircularMenu
-
 #import "AWRMenu.h"
+#import "UIView+Utils.h"
+#import "AWRMenuPanGestureRecognizer.h"
 
 #define FIRST_INNER_CIRCLE_RADIUS   75
 #define DISTACE_BETWEEN_CIRCLES     75
@@ -23,6 +23,7 @@
 @property (nonatomic, strong) NSArray<UIButton *> *menuItemButtons;
 @property (nonatomic) CGPoint startingPoint;
 @property (nonatomic, strong) UILabel *helpLabel;
+@property (nonatomic, strong) UIView *overlay;
 
 @end
 
@@ -36,6 +37,19 @@
         self.clipsToBounds = NO;
     }
     return self;
+}
+
+- (UIView *)overlay {
+    if (!_overlay) {
+        _overlay = [[UIView alloc] initWithFrame:self.frame];
+        _overlay.layer.zPosition = 10;
+        [self addSubview:_overlay];
+        [_overlay fillSuperview];
+
+        AWRMenuPanGestureRecognizer *gesture = [[AWRMenuPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
+        [_overlay addGestureRecognizer:gesture];
+    }
+    return _overlay;
 }
 
 - (UILabel *)helpLabel {
@@ -112,31 +126,39 @@
     return found;
 }
 
-- (void)pan:(CGPoint)point {
-    UIButton *button = [self buttonForPoint:point];
-    if (button) {
-        AWRMenuItem *item = [self.items objectAtIndex:button.tag];
-        self.helpLabel.text = item.text;
-        self.helpLabel.backgroundColor = [UIColor colorWithRed:0.8 green:0.3 blue:0.3 alpha:1.0];
-        return;
-    }
-    
-    self.helpLabel.backgroundColor = UIColor.darkGrayColor;
-    self.helpLabel.text = NSLocalizedString(@"MENU_SELECT_ITEM_TEXT", nil);
-}
+- (void)pan:(AWRMenuPanGestureRecognizer *)gesture {
+    CGPoint point = [gesture locationInView:self];
 
-- (void)didFinishPan:(CGPoint)point {
-    UIButton *button = [self buttonForPoint:point];
-    if (button) {
-        AWRMenuItem *item = [self.items objectAtIndex: button.tag];
-        if (self.delegate) {
-            [self.delegate menu:self didSelectItemWithIdentifier:item.identifier];
+    if (gesture.state == UIGestureRecognizerStateBegan
+        || gesture.state == UIGestureRecognizerStateChanged) {
+
+        UIButton *button = [self buttonForPoint:point];
+        if (button) {
+            AWRMenuItem *item = [self.items objectAtIndex:button.tag];
+            self.helpLabel.text = item.text;
+            self.helpLabel.backgroundColor = [UIColor colorWithRed:0.8 green:0.3 blue:0.3 alpha:1.0];
+            return;
         }
-        [self hide];
+        
+        self.helpLabel.backgroundColor = UIColor.darkGrayColor;
+        self.helpLabel.text = NSLocalizedString(@"MENU_SELECT_ITEM_TEXT", nil);
         return;
     }
 
-    [self hide];
+    if (gesture.state == UIGestureRecognizerStateEnded) {
+        UIButton *button = [self buttonForPoint:point];
+        if (button) {
+            AWRMenuItem *item = [self.items objectAtIndex: button.tag];
+            if (self.delegate) {
+                [self.delegate menu:self didSelectItemWithIdentifier:item.identifier];
+            }
+            [self hide];
+            return;
+        }
+        
+        [self hide];
+    }
+
 }
 
 - (void)show {
@@ -145,8 +167,10 @@
 
     for (UIButton *button in self.menuItemButtons) {
         button.center = self.startingPoint;
+        [self.overlay bringSubviewToFront:button];
     }
 
+    [self.overlay bringSubviewToFront:self.helpLabel];
     [self layoutIfNeeded];
 
     [UIView animateWithDuration:0.3 animations: ^{
@@ -165,6 +189,10 @@
 }
 
 - (void)updateButtonCenters {
+    // This method was [STRONGLY] inspired by:
+    // https://github.com/AdityaDeshmane/iOSCircularMenu
+    // Only adapted for a different screen position
+
     /*
      Logic : Use parametric equations to set point along circumference of circle
 

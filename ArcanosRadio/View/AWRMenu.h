@@ -27,8 +27,6 @@
 @property(nonatomic, weak) NSObject<AWRMenuDelegate> *delegate;
 @property(nonatomic, strong) NSArray<AWRMenuItem *> *items;
 
-- (void)pan:(CGPoint)point;
-- (void)didFinishPan:(CGPoint)point;
 - (void)show;
 - (void)hide;
 - (BOOL)toggle;
