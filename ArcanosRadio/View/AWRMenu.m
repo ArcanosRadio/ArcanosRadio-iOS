@@ -2,8 +2,9 @@
 #import "UIView+Utils.h"
 #import "AWRMenuPanGestureRecognizer.h"
 
-#define FIRST_INNER_CIRCLE_RADIUS   75
-#define DISTACE_BETWEEN_CIRCLES     75
+#define FIRST_INNER_CIRCLE_RADIUS    89
+#define DISTACE_BETWEEN_CIRCLES      89
+#define BUTTON_DIAMETER              55
 
 @implementation AWRMenuItem
 
@@ -32,8 +33,8 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        self.startingPoint = CGPointMake(frame.origin.x + frame.size.width - 44 / 2 - 8,
-                                         frame.origin.y + frame.size.height - 44 / 2 - 8);
+        self.startingPoint = CGPointMake(frame.origin.x + frame.size.width - BUTTON_DIAMETER / 2 - 8,
+                                         frame.origin.y + frame.size.height - BUTTON_DIAMETER / 2 - 8);
         self.clipsToBounds = NO;
     }
     return self;
@@ -93,8 +94,8 @@
     if (!_menuItemButtons) {
         NSMutableArray *subviews = [[NSMutableArray alloc] initWithCapacity:self.items.count];
         for (AWRMenuItem *item in self.items) {
-            UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(self.startingPoint.x - 22, self.startingPoint.y - 22, 44, 44)];
-            button.layer.cornerRadius = 22;
+            UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(self.startingPoint.x - BUTTON_DIAMETER / 2, self.startingPoint.y - BUTTON_DIAMETER / 2, BUTTON_DIAMETER, BUTTON_DIAMETER)];
+            button.layer.cornerRadius = BUTTON_DIAMETER / 2;
             button.alpha = 0.0;
             button.tag = [self.items indexOfObject:item];
             button.accessibilityLabel = item.text;
