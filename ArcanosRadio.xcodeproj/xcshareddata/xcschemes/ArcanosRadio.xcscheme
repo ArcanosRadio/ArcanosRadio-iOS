@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0181E7D61D8C905B008E21C5"
-               BuildableName = "ArcanosRadio.app"
+               BuildableName = "Arcanos Radio.app"
                BlueprintName = "ArcanosRadio"
                ReferencedContainer = "container:ArcanosRadio.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0181E7D61D8C905B008E21C5"
-            BuildableName = "ArcanosRadio.app"
+            BuildableName = "Arcanos Radio.app"
             BlueprintName = "ArcanosRadio"
             ReferencedContainer = "container:ArcanosRadio.xcodeproj">
          </BuildableReference>
@@ -56,7 +56,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0181E7D61D8C905B008E21C5"
-            BuildableName = "ArcanosRadio.app"
+            BuildableName = "Arcanos Radio.app"
             BlueprintName = "ArcanosRadio"
             ReferencedContainer = "container:ArcanosRadio.xcodeproj">
          </BuildableReference>
@@ -82,7 +82,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0181E7D61D8C905B008E21C5"
-            BuildableName = "ArcanosRadio.app"
+            BuildableName = "Arcanos Radio.app"
             BlueprintName = "ArcanosRadio"
             ReferencedContainer = "container:ArcanosRadio.xcodeproj">
          </BuildableReference>
