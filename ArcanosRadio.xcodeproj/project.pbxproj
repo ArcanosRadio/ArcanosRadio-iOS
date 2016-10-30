@@ -1023,6 +1023,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "7c529f4a-e522-40cc-992e-ebfcf2f98718";
 				PROVISIONING_PROFILE_SPECIFIER = ArcanosTrial;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1046,6 +1047,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "06e3e5d9-342d-4a3f-8935-71e554862765";
 				PROVISIONING_PROFILE_SPECIFIER = ArcanosTrial;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
