@@ -29,3 +29,7 @@
 "ABOUT_COPYRIGHT" = "© Copyright Arcanos MC\n2016 - Todos os direitos reservados";
 "ABOUT_ARCANOS_DETAILS" = "http://www.arcanosmc.com.br";
 "ABOUT_ARCANOS_URL" = "http://www.arcanosmc.com.br";
+"CRASHREPORT_REQUEST_TITLE" = "Relatórios de crash desativados";
+"CRASHREPORT_REQUEST_MESSAGE" = "O app acabou de travar e você escolheu por não enviar os relatórios de crash. Tais relatórios não carregam informações pessoais e você não tem porque se preocupar em enviá-los.";
+"CRASHREPORT_REQUEST_NEVER_SEND" = "Não, não quero enviar";
+"CRASHREPORT_REQUEST_ALWAYS_SEND" = "Tudo bem, ative o envio de relatórios";

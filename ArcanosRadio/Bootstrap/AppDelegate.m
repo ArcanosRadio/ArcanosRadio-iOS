@@ -1,9 +1,5 @@
 #import "AppDelegate.h"
 #import "AWRAppCoordinator.h"
-#ifndef MOCK
-#import <Fabric/Fabric.h>
-#import <Crashlytics/Crashlytics.h>
-#endif
 
 @interface AppDelegate ()
 
@@ -18,13 +14,9 @@
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-#ifndef MOCK
-    [Crashlytics startWithAPIKey:FABRIC_API_KEY];
-    [Fabric with:@[[Crashlytics class]]];
-#endif
     [application setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.coordinator = [[AWRAppCoordinator alloc] init];
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [self.coordinator start];
     [self.window makeKeyAndVisible];
     return YES;

@@ -29,3 +29,7 @@
 "ABOUT_COPYRIGHT" = "© Copyright Arcanos MC\n2016 - All rights reserved";
 "ABOUT_ARCANOS_DETAILS" = "http://www.arcanosmc.com.br";
 "ABOUT_ARCANOS_URL" = "http://www.arcanosmc.com.br";
+"CRASHREPORT_REQUEST_TITLE" = "Crash reports disabled";
+"CRASHREPORT_REQUEST_MESSAGE" = "The app just crashed and you selected not sending crash reports. Crash reports don't carry any personal information and you don't have to be worried about sending them.";
+"CRASHREPORT_REQUEST_NEVER_SEND" = "No, don't send them";
+"CRASHREPORT_REQUEST_ALWAYS_SEND" = "Ok, enable reports again";

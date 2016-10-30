@@ -10,6 +10,16 @@
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
+			<string>Report app crashes to the developer</string>
+			<key>Key</key>
+			<string>agree_with_crash_reports</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
 			<string>Keep screen always on</string>
 			<key>Key</key>
 			<string>keep_screen_on</string>
