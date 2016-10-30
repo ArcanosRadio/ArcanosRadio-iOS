@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,31 +15,34 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
             <autoresizingMask key="autoresizingMask" heightSizable="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="Kps-GN-scz" id="1VR-f6-Apx">
-                <frame key="frameInset" width="342" height="73"/>
+                <rect key="frame" x="0.0" y="0.0" width="342" height="73"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Luiz Rodrigo Martins Barbosa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2XL-dg-hb1">
+                        <rect key="frame" x="8" y="8" width="326" height="20.5"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desenvolvimento iOS, server API e website" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXw-Hd-UGm">
+                        <rect key="frame" x="8" y="32.5" width="326" height="13.5"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="github.com/luizmb" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gg4-ts-Pif">
+                        <rect key="frame" x="8" y="50" width="326" height="13.5"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="Gg4-ts-Pif" secondAttribute="bottom" constant="1.5" id="2qM-aj-RYR"/>
                     <constraint firstItem="HXw-Hd-UGm" firstAttribute="top" secondItem="2XL-dg-hb1" secondAttribute="bottom" constant="4" id="4qN-Kc-3Tz"/>
                     <constraint firstAttribute="leadingMargin" secondItem="HXw-Hd-UGm" secondAttribute="leading" id="6YD-Tf-KEb"/>
                     <constraint firstAttribute="trailingMargin" secondItem="HXw-Hd-UGm" secondAttribute="trailing" id="K90-gj-AQS"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Gg4-ts-Pif" secondAttribute="trailing" id="LVm-D7-5my"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="Gg4-ts-Pif" secondAttribute="bottom" constant="0.5" id="OQL-ga-E0x"/>
                     <constraint firstAttribute="leadingMargin" secondItem="2XL-dg-hb1" secondAttribute="leading" id="ObK-fM-Q6i"/>
                     <constraint firstAttribute="leadingMargin" secondItem="Gg4-ts-Pif" secondAttribute="leading" id="QJe-gq-tU5"/>
                     <constraint firstAttribute="topMargin" secondItem="2XL-dg-hb1" secondAttribute="top" id="TNe-98-j8b"/>
