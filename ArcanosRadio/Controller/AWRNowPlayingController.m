@@ -2,10 +2,14 @@
 #import "AWRArcanosMediaPlayer.h"
 #import "AWRNowPlayingView.h"
 #import "AWRNowPlayingViewModel.h"
+#import "AWRMetadataFactory.h"
+#import "PXPromise.h"
+#import "AWRStreamingServer.h"
 
 @interface AWRNowPlayingController () <AWRArcanosMediaPlayerDelegate, AWRNowPlayingViewDelegate>
 
 @property(strong, nonatomic) AWRArcanosMediaPlayer *arcanosRadio;
+@property(strong, nonatomic) NSString *streamingUrl;
 @property(readonly, nonatomic) AWRNowPlayingView *nowPlayingView;
 @property(atomic, nullable, strong) AWRNowPlayingViewModel *viewModel;
 @end
@@ -20,16 +24,26 @@
     self = [super initWithNibName:@"AWRNowPlayingView" bundle:nil];
     if (self) {
         self.viewModel = [[AWRNowPlayingViewModel alloc] init];
+
+        __weak typeof(self)weakSelf = self;
+        [[AWRMetadataFactory createMetadataStore] mainStreamingServer]
+        .then(^id<PXPromise>(id<PXSuccessfulPromise> finishedPromise) {
+            id<AWRStreamingServer> server = finishedPromise.result;
+            weakSelf.streamingUrl = server.iPhoneStreaming;
+            return [PXNoMorePromises new];
+        });
     }
     return self;
 }
 
-- (AWRArcanosMediaPlayer *)arcanosRadio {
-    if (!_arcanosRadio) {
-        _arcanosRadio = [[AWRArcanosMediaPlayer alloc] init];
+- (void)setStreamingUrl:(NSString *)streamingUrl {
+    _streamingUrl = streamingUrl;
+    if (_streamingUrl) {
+        _arcanosRadio = [[AWRArcanosMediaPlayer alloc] initWithUrl:_streamingUrl];
         _arcanosRadio.delegate = self;
+        [_arcanosRadio prepare];
+        [_arcanosRadio play];
     }
-    return _arcanosRadio;
 }
 
 - (void)metadataDidChangeTheSong:(NSString *)song artist:(NSString *)artist albumArt:(UIImage *)albumArt {
@@ -119,9 +133,7 @@
     [super viewDidLoad];
     self.nowPlayingView.delegate = self;
     [self.nowPlayingView renderModel:self.viewModel];
-    [self.arcanosRadio prepare];
-    [self.arcanosRadio play];
-    [self.nowPlayingView setVolume:self.arcanosRadio.currentVolume];
+    [self.nowPlayingView setVolume:1.0];
 }
 
 - (void)viewDidUnload {

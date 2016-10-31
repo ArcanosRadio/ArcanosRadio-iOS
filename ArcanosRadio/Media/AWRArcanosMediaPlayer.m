@@ -14,11 +14,11 @@
 
 @implementation AWRArcanosMediaPlayer
 
-- (instancetype)init {
+- (instancetype)initWithUrl:(NSString *)url {
     self = [super init];
     if (self) {
-        NSURL *url = [NSURL URLWithString:ARCANOS_STREAMING_URL];
-        self.streamingFlow = [[AVPlayerItem alloc] initWithURL:url];
+        NSURL *streamingUrl = [NSURL URLWithString:url];
+        self.streamingFlow = [[AVPlayerItem alloc] initWithURL:streamingUrl];
         self.audioPlayer = [[AVPlayer alloc] initWithPlayerItem:self.streamingFlow];
         self.restoreVolume = 0.0;
         [self.timer setFireDate:[NSDate dateWithTimeIntervalSinceNow:0]];

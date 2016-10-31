@@ -13,6 +13,8 @@
 
 @property(nonatomic, weak)id<AWRArcanosMediaPlayerDelegate> delegate;
 
+- (instancetype)init NS_UNAVAILABLE;
+- (instancetype)initWithUrl:(NSString *)url;
 - (void)play;
 - (void)prepare;
 - (void)stop;

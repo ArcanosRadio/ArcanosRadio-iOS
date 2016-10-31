@@ -11,5 +11,6 @@
 - (id<PXPromise>)songByTag:(NSString *)tag;
 - (id<PXPromise>)albumArtBySong:(id<AWRSong>)song;
 - (id<PXPromise>)lyricsBySong:(id<AWRSong>)song;
+- (id<PXPromise>)mainStreamingServer;
 
 @end

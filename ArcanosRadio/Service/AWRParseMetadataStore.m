@@ -3,6 +3,7 @@
 #import "AWRSongParse.h"
 #import "AWRArtistParse.h"
 #import "AWRPlaylistParse.h"
+#import "AWRStreamingServerParse.h"
 
 @interface AWRParseMetadataStore()
 
@@ -81,6 +82,14 @@
             NSString *lyricsText = [[NSString alloc]initWithData:lyricsData encoding:NSUTF8StringEncoding];
             return lyricsText;
         });
+}
+
+- (id<PXPromise>)mainStreamingServer {
+    PFQuery *query = [AWRStreamingServerParse query];
+    [query whereKey:@"mainServer" equalTo:@(YES)];
+    [query setLimit:1];
+
+    return [query getFirstObjectInBackground];
 }
 
 @end
