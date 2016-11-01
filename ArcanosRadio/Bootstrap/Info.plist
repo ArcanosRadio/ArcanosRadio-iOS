@@ -28,13 +28,6 @@
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
-			<key>arcanosmc.com.br</key>
-			<dict>
-				<key>NSExceptionAllowsInsecureHTTPLoads</key>
-				<true/>
-				<key>NSIncludesSubdomains</key>
-				<true/>
-			</dict>
 			<key>liderstreaming.com.br</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>
