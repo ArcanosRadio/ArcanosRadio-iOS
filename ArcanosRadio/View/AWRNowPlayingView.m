@@ -190,7 +190,10 @@
 }
 
 - (void)setVolume:(float)percentage {
-    [self.volumeSlider setValue:percentage];
+    __weak typeof(self) weakSelf = self;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [weakSelf.volumeSlider setValue:percentage];
+    });
 }
 
 - (IBAction)volumeChanged:(UISlider *)sender {
@@ -223,15 +226,24 @@
 }
 
 - (void)setStatusPlaying {
-    [self.togglePlayButton setImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
+    __weak typeof(self) weakSelf = self;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [weakSelf.togglePlayButton setImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
+    });
 }
 
 - (void)setStatusStopped {
-    [self.togglePlayButton setImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
+    __weak typeof(self) weakSelf = self;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [weakSelf.togglePlayButton setImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
+    });
 }
 
 - (void)setStatusBuffering {
-    [self.togglePlayButton setImage:[UIImage imageNamed:@"hourglass"] forState:UIControlStateNormal];
+    __weak typeof(self) weakSelf = self;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [weakSelf.togglePlayButton setImage:[UIImage imageNamed:@"hourglass"] forState:UIControlStateNormal];
+    });
 }
 
 - (void)configureMediaControlBarBackground {
