@@ -11,6 +11,7 @@
 - (id<PXPromise>)songByTag:(NSString *)tag;
 - (id<PXPromise>)albumArtBySong:(id<AWRSong>)song;
 - (id<PXPromise>)lyricsBySong:(id<AWRSong>)song;
-- (id<PXPromise>)readConfig:(NSString *)configKey;
+- (void)refreshConfig;
+- (id)readConfig:(NSString *)configKey;
 
 @end

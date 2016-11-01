@@ -2,6 +2,7 @@
 #import "AWRNowPlayingCoordinator.h"
 #import "AWRHelpCoordinator.h"
 #import "AWRReachability.h"
+#import "AWRMetadataFactory.h"
 #ifndef MOCK
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
@@ -72,6 +73,8 @@ NSString *kStreamOverMobileData = @"mobile_data_enabled";
     [defaults addObserver:self forKeyPath:kKeepScreenOn options:NSKeyValueObservingOptionNew context:NULL];
     [defaults addObserver:self forKeyPath:kStreamOverMobileData options:NSKeyValueObservingOptionNew context:NULL];
     [self evaluateSettings:defaults];
+
+    [[AWRMetadataFactory createMetadataStore] refreshConfig];
 
     [self.reachability startNotifier];
     self.currentCoordinator = self.nowPlayingCoordinator;

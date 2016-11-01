@@ -27,11 +27,7 @@ NSString *const kStreamingUrlConfigKey = @"iphoneStreamingUrl";
         self.viewModel = [[AWRNowPlayingViewModel alloc] init];
 
         __weak typeof(self)weakSelf = self;
-        [[AWRMetadataFactory createMetadataStore] readConfig:kStreamingUrlConfigKey]
-        .then(^id<PXPromise>(id<PXSuccessfulPromise> finishedPromise) {
-            weakSelf.streamingUrl = finishedPromise.result;
-            return [PXNoMorePromises new];
-        });
+        weakSelf.streamingUrl = [[AWRMetadataFactory createMetadataStore] readConfig:kStreamingUrlConfigKey];
     }
     return self;
 }

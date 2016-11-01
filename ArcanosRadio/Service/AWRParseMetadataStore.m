@@ -83,18 +83,12 @@
         });
 }
 
-- (id<PXPromise>)readConfig:(NSString *)configKey {
-    return [PFConfig getConfigInBackground]
-        .then(^id<PXPromise>(id<PXSuccessfulPromise> finishedPromise) {
-            PFConfig *config = finishedPromise.result;
-            if (!config) {
-                config = [PFConfig currentConfig];
-                if (!config) {
-                    return [[PXNoMorePromises alloc] init];
-                }
-            }
-            return config[configKey];
-        });
+- (void)refreshConfig {
+    [PFConfig getConfig];
+}
+
+- (id)readConfig:(NSString *)configKey {
+    return [[PFConfig currentConfig] objectForKey:configKey];
 }
 
 @end

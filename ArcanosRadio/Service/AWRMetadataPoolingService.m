@@ -2,8 +2,8 @@
 #import "AWRMetadataStore.h"
 #import "AWRMetadataFactory.h"
 
-static NSTimeInterval kTimerIntervalInForeground = 8.0;
-static NSTimeInterval kTimerIntervalInBackground = 32.0;
+NSString *const kPoolingTimeActiveConfigKey = @"iphonePoolingTimeActive";
+NSString *const kPoolingTimeBackgroundConfigKey = @"iphonePoolingTimeBackground";
 
 @interface AWRMetadataPoolingService()
 
@@ -13,6 +13,9 @@ static NSTimeInterval kTimerIntervalInBackground = 32.0;
 @property (nonatomic,getter=isForegroundExecution) BOOL foregroundExecution;
 @property (nonatomic)NSTimeInterval timerInterval;
 
+@property (nonatomic)double timerIntervalActive;
+@property (nonatomic)double timerIntervalBackground;
+
 @end
 
 @implementation AWRMetadataPoolingService
@@ -21,7 +24,10 @@ static NSTimeInterval kTimerIntervalInBackground = 32.0;
     self = [super init];
     if (self) {
         self.metadataStore = store;
-        self.timerInterval = kTimerIntervalInForeground;
+        id<AWRMetadataStore> store = [AWRMetadataFactory createMetadataStore];
+        self.timerIntervalActive = [[store readConfig:kPoolingTimeActiveConfigKey] doubleValue];
+        self.timerIntervalBackground = [[store readConfig:kPoolingTimeBackgroundConfigKey] doubleValue];
+        self.timerInterval = self.timerIntervalActive;
     }
     return self;
 }
@@ -118,11 +124,11 @@ static NSTimeInterval kTimerIntervalInBackground = 32.0;
     _foregroundExecution = foregroundExecution;
     if (_foregroundExecution) {
         [self cancelScheduledFetch];
-        self.timerInterval = kTimerIntervalInForeground;
+        self.timerInterval = self.timerIntervalActive;
         [self startScheduledFetch];
     } else {
         [self cancelScheduledFetch];
-        self.timerInterval = kTimerIntervalInBackground;
+        self.timerInterval = self.timerIntervalBackground;
         [self startScheduledFetch];
     }
 }
