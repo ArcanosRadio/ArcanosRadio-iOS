@@ -3,7 +3,6 @@
 #import "AWRSongParse.h"
 #import "AWRArtistParse.h"
 #import "AWRPlaylistParse.h"
-#import "AWRStreamingServerParse.h"
 
 @interface AWRParseMetadataStore()
 
@@ -84,12 +83,18 @@
         });
 }
 
-- (id<PXPromise>)mainStreamingServer {
-    PFQuery *query = [AWRStreamingServerParse query];
-    [query whereKey:@"mainServer" equalTo:@(YES)];
-    [query setLimit:1];
-
-    return [query getFirstObjectInBackground];
+- (id<PXPromise>)readConfig:(NSString *)configKey {
+    return [PFConfig getConfigInBackground]
+        .then(^id<PXPromise>(id<PXSuccessfulPromise> finishedPromise) {
+            PFConfig *config = finishedPromise.result;
+            if (!config) {
+                config = [PFConfig currentConfig];
+                if (!config) {
+                    return [[PXNoMorePromises alloc] init];
+                }
+            }
+            return config[configKey];
+        });
 }
 
 @end

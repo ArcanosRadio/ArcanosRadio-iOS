@@ -35,7 +35,6 @@
 		0137D8971D9E66EE003A1E6B /* PFFile+AWRFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 0137D8961D9E66EE003A1E6B /* PFFile+AWRFile.m */; };
 		0137D8A01D9E7093003A1E6B /* AWRFakeService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0137D89E1D9E7093003A1E6B /* AWRFakeService.m */; };
 		0137D8A11D9E7093003A1E6B /* AWRMetadataServiceFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0137D89F1D9E7093003A1E6B /* AWRMetadataServiceFactory.m */; };
-		014C85771DC7F5E7009DB456 /* AWRStreamingServerParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 014C85761DC7F5E7009DB456 /* AWRStreamingServerParse.m */; };
 		0151BAD91DC0FA4E00736A79 /* AWRMenuPanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0151BAD81DC0FA4E00736A79 /* AWRMenuPanGestureRecognizer.m */; };
 		0151BADA1DC0FA4E00736A79 /* AWRMenuPanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0151BAD81DC0FA4E00736A79 /* AWRMenuPanGestureRecognizer.m */; };
 		016500E11DB1E79B00B32C0A /* AWRMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 016500E01DB1E79B00B32C0A /* AWRMenu.m */; };
@@ -145,9 +144,6 @@
 		0137D89D1D9E7093003A1E6B /* AWRFakeService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRFakeService.h; sourceTree = "<group>"; };
 		0137D89E1D9E7093003A1E6B /* AWRFakeService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRFakeService.m; sourceTree = "<group>"; };
 		0137D89F1D9E7093003A1E6B /* AWRMetadataServiceFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRMetadataServiceFactory.m; sourceTree = "<group>"; };
-		014C85741DC7F4DF009DB456 /* AWRStreamingServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRStreamingServer.h; sourceTree = "<group>"; };
-		014C85751DC7F5E7009DB456 /* AWRStreamingServerParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRStreamingServerParse.h; sourceTree = "<group>"; };
-		014C85761DC7F5E7009DB456 /* AWRStreamingServerParse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRStreamingServerParse.m; sourceTree = "<group>"; };
 		0151BAD71DC0FA4E00736A79 /* AWRMenuPanGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRMenuPanGestureRecognizer.h; sourceTree = "<group>"; };
 		0151BAD81DC0FA4E00736A79 /* AWRMenuPanGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRMenuPanGestureRecognizer.m; sourceTree = "<group>"; };
 		016500DF1DB1E79B00B32C0A /* AWRMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRMenu.h; sourceTree = "<group>"; };
@@ -312,8 +308,6 @@
 				0181E82A1D8CB160008E21C5 /* AWRPlaylistParse.m */,
 				0181E82B1D8CB160008E21C5 /* AWRSongParse.h */,
 				0181E82C1D8CB160008E21C5 /* AWRSongParse.m */,
-				014C85751DC7F5E7009DB456 /* AWRStreamingServerParse.h */,
-				014C85761DC7F5E7009DB456 /* AWRStreamingServerParse.m */,
 				0137D8951D9E66EE003A1E6B /* PFFile+AWRFile.h */,
 				0137D8961D9E66EE003A1E6B /* PFFile+AWRFile.m */,
 			);
@@ -328,7 +322,6 @@
 				0137D8921D9E63DC003A1E6B /* AWRArtist.h */,
 				0137D8931D9E63ED003A1E6B /* AWRPlaylist.h */,
 				0137D8911D9E63CD003A1E6B /* AWRSong.h */,
-				014C85741DC7F4DF009DB456 /* AWRStreamingServer.h */,
 			);
 			name = Protocol;
 			sourceTree = "<group>";
@@ -820,7 +813,6 @@
 				0181E8241D8CB158008E21C5 /* PXNoMorePromises.m in Sources */,
 				0181E8251D8CB158008E21C5 /* PXPromiseResult.m in Sources */,
 				01FB39401DACABC000EBC99D /* UIView+Utils.m in Sources */,
-				014C85771DC7F5E7009DB456 /* AWRStreamingServerParse.m in Sources */,
 				0181E82F1D8CB160008E21C5 /* AWRSongParse.m in Sources */,
 				012582B81D91F2EA002C4E93 /* AWRAppCoordinator.m in Sources */,
 				016500ED1DB2E6F500B32C0A /* AWRReachability.m in Sources */,

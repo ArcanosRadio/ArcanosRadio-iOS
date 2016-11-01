@@ -4,7 +4,8 @@
 #import "AWRNowPlayingViewModel.h"
 #import "AWRMetadataFactory.h"
 #import "PXPromise.h"
-#import "AWRStreamingServer.h"
+
+NSString *const kStreamingUrlConfigKey = @"iphoneStreamingUrl";
 
 @interface AWRNowPlayingController () <AWRArcanosMediaPlayerDelegate, AWRNowPlayingViewDelegate>
 
@@ -26,10 +27,9 @@
         self.viewModel = [[AWRNowPlayingViewModel alloc] init];
 
         __weak typeof(self)weakSelf = self;
-        [[AWRMetadataFactory createMetadataStore] mainStreamingServer]
+        [[AWRMetadataFactory createMetadataStore] readConfig:kStreamingUrlConfigKey]
         .then(^id<PXPromise>(id<PXSuccessfulPromise> finishedPromise) {
-            id<AWRStreamingServer> server = finishedPromise.result;
-            weakSelf.streamingUrl = server.iPhoneStreaming;
+            weakSelf.streamingUrl = finishedPromise.result;
             return [PXNoMorePromises new];
         });
     }
