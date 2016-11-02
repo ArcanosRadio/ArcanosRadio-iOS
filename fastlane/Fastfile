@@ -39,7 +39,7 @@ platform :ios do
             xcodeproj: "ArcanosRadio.xcodeproj")
 
         gym(scheme: "ArcanosRadio")
-        changes = changelog_from_git_commits()
+        changes = changelog_from_git_commits(tag_match_pattern: "*alpha*")
         crashlytics(
             crashlytics_path: "./Frameworks/Crashlytics.framework",
             api_token: ENV['CRASHLYTICS_API_TOKEN'],
@@ -81,7 +81,7 @@ platform :ios do
             xcodeproj: "ArcanosRadio.xcodeproj")
 
         gym(scheme: "ArcanosRadio")
-        changes = changelog_from_git_commits()
+        changes = changelog_from_git_commits(tag_match_pattern: "*beta*")
         crashlytics(
             crashlytics_path: "./Frameworks/Crashlytics.framework",
             api_token: ENV['CRASHLYTICS_API_TOKEN'],
@@ -123,7 +123,7 @@ platform :ios do
             xcodeproj: "ArcanosRadio.xcodeproj")
 
         gym(scheme: "ArcanosRadio")
-        changes = changelog_from_git_commits()
+        changes = changelog_from_git_commits(tag_match_pattern: "*trial*")
         testflight(
             changelog: changes,
             beta_app_description: "Arcanos Web Radio app pre-release version.",

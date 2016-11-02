@@ -26,7 +26,6 @@ Builds beta release and upload to Crashlytics
 fastlane ios trial
 ```
 Builds trial release and upload to Testflight
-
 ### ios store
 ```
 fastlane ios store
