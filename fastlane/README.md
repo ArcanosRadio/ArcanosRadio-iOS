@@ -15,16 +15,17 @@ Runs all the tests
 ```
 fastlane ios alpha
 ```
-
+Builds alpha release and upload to Crashlytics
 ### ios beta
 ```
 fastlane ios beta
 ```
-
+Builds beta release and upload to Crashlytics
 ### ios trial
 ```
 fastlane ios trial
 ```
+Builds trial release and upload to Testflight
 
 ### ios store
 ```

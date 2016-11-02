@@ -104,6 +104,7 @@ platform :ios do
         add_git_tag(tag: "v#{version_beta}.#{build_number}")
     end
 
+    desc "Builds trial release and upload to Testflight"
     lane :trial do
         cert(output_path: "./Certificates/")
         sigh(
