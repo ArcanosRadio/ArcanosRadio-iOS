@@ -105,6 +105,10 @@
 
     UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:sharingItems
                                                                                      applicationActivities:nil];
+
+    activityController.popoverPresentationController.sourceView = self.mainController.view;
+    activityController.popoverPresentationController.sourceRect = self.mainController.view.bounds;
+
     [self.mainController presentViewController:activityController animated:YES completion:nil];
 }
 
