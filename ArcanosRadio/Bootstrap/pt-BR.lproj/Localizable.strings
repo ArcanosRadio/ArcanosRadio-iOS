@@ -19,6 +19,10 @@
 "ABOUT_JAIR_DETAILS_A" = "Membro do Arcanos Motoclube de São Paulo";
 "ABOUT_JAIR_DETAILS_B" = "Criador, produtor e DJ da Arcanos Web Radio";
 "ABOUT_JAIR_URL" = "http://www.arcanosmc.com.br";
+"ABOUT_MARI_NAME" = "Mariana Martins Barbosa";
+"ABOUT_MARI_DETAILS_A" = "Design";
+"ABOUT_MARI_DETAILS_B" = "http://marimartins.art.br";
+"ABOUT_MARI_URL" = "http://marimartins.art.br";
 "ABOUT_SOURCE_CODE_IOS" = "Código-fonte do app iOS";
 "ABOUT_SOURCE_CODE_IOS_DETAILS" = "https://github.com/luizmb/ArcanosRadio-iOS";
 "ABOUT_SOURCE_CODE_IOS_URL" = "https://github.com/luizmb/ArcanosRadio-iOS";

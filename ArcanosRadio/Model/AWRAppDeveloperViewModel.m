@@ -31,7 +31,11 @@
               [[AWRAppDeveloperViewModel alloc] initWithName:NSLocalizedString(@"ABOUT_JAIR_NAME", nil)
                                                      details:NSLocalizedString(@"ABOUT_JAIR_DETAILS_A", nil)
                                                  moreDetails:NSLocalizedString(@"ABOUT_JAIR_DETAILS_B", nil)
-                                                         url:NSLocalizedString(@"ABOUT_JAIR_URL", nil)]
+                                                         url:NSLocalizedString(@"ABOUT_JAIR_URL", nil)],
+              [[AWRAppDeveloperViewModel alloc] initWithName:NSLocalizedString(@"ABOUT_MARI_NAME", nil)
+                                                     details:NSLocalizedString(@"ABOUT_MARI_DETAILS_A", nil)
+                                                 moreDetails:NSLocalizedString(@"ABOUT_MARI_DETAILS_B", nil)
+                                                         url:NSLocalizedString(@"ABOUT_MARI_URL", nil)]
              ];
 }
 
