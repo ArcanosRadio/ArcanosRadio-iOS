@@ -94,10 +94,12 @@
 
     NSString *songName = self.currentSong.songName;
     NSString *artistName = self.currentSong.artist.artistName;
+    NSString *shareUrl = [[AWRMetadataFactory createMetadataStore] readConfig:@"iphoneShareUrl"];
 
-    NSString *text = [[NSLocalizedString(@"SHARE_TEXT", nil)
+    NSString *text = [[[NSLocalizedString(@"SHARE_TEXT", nil)
                        stringByReplacingOccurrencesOfString:@"${song}" withString:songName]
-                      stringByReplacingOccurrencesOfString:@"${artist}" withString:artistName];
+                      stringByReplacingOccurrencesOfString:@"${artist}" withString:artistName]
+                      stringByReplacingOccurrencesOfString:@"${shareUrl}" withString:shareUrl];
 
     [sharingItems addObject:text];
 

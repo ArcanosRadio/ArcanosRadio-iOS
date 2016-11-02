@@ -2,7 +2,7 @@
 "MENU_SHARE" = "Compartilhar";
 "MENU_SETTINGS" = "Ajustes";
 "MENU_ABOUT" = "Sobre o app";
-"SHARE_TEXT" = "Estou ouvindo ${song} por ${artist} na Arcanos Web Rock! Baixe já o app - arcanosmc.com.br #ArcanosWebRock";
+"SHARE_TEXT" = "Estou ouvindo ${song} por ${artist} na Arcanos Web Rock! Baixe já o app - ${shareUrl} #ArcanosWebRock";
 "ABOUT_TITLE_TEXT" = "Sobre o app";
 "ABOUT_TEAM_HEADER" = "Equipe";
 "ABOUT_LINKS_HEADER" = "Endereços";
