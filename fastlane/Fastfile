@@ -20,6 +20,7 @@ platform :ios do
         scan
     end
 
+    desc "Builds alpha release and upload to Crashlytics"
     lane :alpha do
         cert(output_path: "./Certificates/")
         sigh(
@@ -28,21 +29,40 @@ platform :ios do
             provisioning_name: 'ArcanosTrial'
         )
 
+        # Add "alpha" to the version number, e.g: 1.0.0-alpha
+        # This will affect only this build, source code on the
+        # repository will keep numbers only.
+        version_raw = get_version_number(xcodeproj: "ArcanosRadio.xcodeproj")
+        version_alpha = version_raw + "-alpha"
+        increment_version_number(
+            version_number: version_alpha,
+            xcodeproj: "ArcanosRadio.xcodeproj")
+
         gym(scheme: "ArcanosRadio")
-        changelog_from_git_commits
+        changes = changelog_from_git_commits()
         crashlytics(
             crashlytics_path: "./Frameworks/Crashlytics.framework",
             api_token: ENV['CRASHLYTICS_API_TOKEN'],
             build_secret: ENV['CRASHLYTICS_BUILD_SECRET'],
-            groups: "dev-ios"
+            groups: "dev-ios",
+            notes: changes
         )
 
-        version = get_version_number(xcodeproj: "ArcanosRadio.xcodeproj")
+        # Remove "alpha" from the version number, e.g: 1.0.0
+        increment_version_number(
+            version_number: version_raw,
+            xcodeproj: "ArcanosRadio.xcodeproj")
+
         build_number = get_build_number(xcodeproj: "ArcanosRadio.xcodeproj")
-        commit_version_bump(message: "Fastlane alpha: #{version} (#{build_number})",
-                            xcodeproj: "ArcanosRadio.xcodeproj")
+        commit_version_bump(
+            message: "Increment build number to #{version_raw}.#{build_number} (fastlane alpha)",
+            xcodeproj: "ArcanosRadio.xcodeproj")
+
+        # add tag such as "v1.0.0-alpha.3431"
+        add_git_tag(tag: "v#{version_alpha}.#{build_number}")
     end
 
+    desc "Builds beta release and upload to Crashlytics"
     lane :beta do
         cert(output_path: "./Certificates/")
         sigh(
@@ -50,31 +70,38 @@ platform :ios do
             adhoc: true,
             provisioning_name: 'ArcanosTrial'
         )
-        # version_raw = increment_version_number(bump_type: "patch",
-        #                                        xcodeproj: "ArcanosRadio.xcodeproj")
-        # build_number = increment_build_number(xcodeproj: "ArcanosRadio.xcodeproj")
-        # version_alpha = version_raw + "-alpha"
-        # version_beta = version_raw + "-beta"
-        # increment_version_number(version_number: version_beta,
-        #                          xcodeproj: "ArcanosRadio.xcodeproj")
+
+        # Add "beta" to the version number, e.g: 1.0.0-beta
+        # This will affect only this build, source code on the
+        # repository will keep numbers only.
+        version_raw = get_version_number(xcodeproj: "ArcanosRadio.xcodeproj")
+        version_beta = version_raw + "-beta"
+        increment_version_number(
+            version_number: version_beta,
+            xcodeproj: "ArcanosRadio.xcodeproj")
+
         gym(scheme: "ArcanosRadio")
-        changelog_from_git_commits
+        changes = changelog_from_git_commits()
         crashlytics(
             crashlytics_path: "./Frameworks/Crashlytics.framework",
             api_token: ENV['CRASHLYTICS_API_TOKEN'],
             build_secret: ENV['CRASHLYTICS_BUILD_SECRET'],
-            groups: "dev-ios"
+            groups: "dev-ios",
+            notes: changes
         )
 
-        # increment_version_number(version_number: version_alpha,
-        #                          xcodeproj: "ArcanosRadio.xcodeproj")
-        # commit_version_bump(message: "[iOS] Increment version to #{version_alpha}.#{build_number} (fastlane beta)",
-        #                     xcodeproj: "ArcanosRadio.xcodeproj")
+        # Remove "beta" from the version number, e.g: 1.0.0
+        increment_version_number(
+            version_number: version_raw,
+            xcodeproj: "ArcanosRadio.xcodeproj")
 
-        version = get_version_number(xcodeproj: "ArcanosRadio.xcodeproj")
         build_number = get_build_number(xcodeproj: "ArcanosRadio.xcodeproj")
-        commit_version_bump(message: "Fastlane beta: #{version} (#{build_number})",
-                            xcodeproj: "ArcanosRadio.xcodeproj")
+        commit_version_bump(
+            message: "Increment build number to #{version_raw}.#{build_number} (fastlane beta)",
+            xcodeproj: "ArcanosRadio.xcodeproj")
+
+        # add tag such as "v1.0.0-beta.3431"
+        add_git_tag(tag: "v#{version_beta}.#{build_number}")
     end
 
     lane :trial do
@@ -84,13 +111,36 @@ platform :ios do
             adhoc: false,
             provisioning_name: 'ArcanosStore'
         )
-        gym(scheme: "ArcanosRadio")
-        testflight
 
-        version = get_version_number(xcodeproj: "ArcanosRadio.xcodeproj")
+        # Add "trial" to the version number, e.g: 1.0.0-trial
+        # This will affect only this build, source code on the
+        # repository will keep numbers only.
+        version_raw = get_version_number(xcodeproj: "ArcanosRadio.xcodeproj")
+        version_trial = version_raw + "-trial"
+        increment_version_number(
+            version_number: version_trial,
+            xcodeproj: "ArcanosRadio.xcodeproj")
+
+        gym(scheme: "ArcanosRadio")
+        changes = changelog_from_git_commits()
+        testflight(
+            changelog: changes,
+            beta_app_description: "Arcanos Web Radio app pre-release version.",
+            beta_app_feedback_email: "luiz@developercity.de"
+        )
+
+        # Remove "trial" from the version number, e.g: 1.0.0
+        increment_version_number(
+            version_number: version_raw,
+            xcodeproj: "ArcanosRadio.xcodeproj")
+
         build_number = get_build_number(xcodeproj: "ArcanosRadio.xcodeproj")
-        commit_version_bump(message: "Fastlane trial: #{version} (#{build_number})",
-                            xcodeproj: "ArcanosRadio.xcodeproj")
+        commit_version_bump(
+            message: "Increment build number to #{version_raw}.#{build_number} (fastlane trial)",
+            xcodeproj: "ArcanosRadio.xcodeproj")
+
+        # add tag such as "v1.0.0-trial.3431"
+        add_git_tag(tag: "v#{version_trial}.#{build_number}")
     end
 
     lane :store do
