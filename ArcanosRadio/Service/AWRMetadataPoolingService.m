@@ -27,13 +27,13 @@ NSString *const kPoolingTimeBackgroundConfigKey = @"iphonePoolingTimeBackground"
         id<AWRMetadataStore> store = [AWRMetadataFactory createMetadataStore];
         self.timerIntervalActive = [[store readConfig:kPoolingTimeActiveConfigKey] doubleValue];
         self.timerIntervalBackground = [[store readConfig:kPoolingTimeBackgroundConfigKey] doubleValue];
+        _foregroundExecution = YES;
         self.timerInterval = self.timerIntervalActive;
     }
     return self;
 }
 
 - (void)startScheduledFetch {
-    _foregroundExecution = YES;
     [self.timer setFireDate:[NSDate dateWithTimeIntervalSinceNow:0]];
 }
 
@@ -45,6 +45,7 @@ NSString *const kPoolingTimeBackgroundConfigKey = @"iphonePoolingTimeBackground"
 - (NSTimer *)timer {
     if (_timer == nil) {
         __weak typeof(self) weakSelf = self;
+        DLog(@"Timer: %f", self.timerInterval);
         _timer = [NSTimer scheduledTimerWithTimeInterval:self.timerInterval target:weakSelf selector:@selector(tick:) userInfo:nil repeats:YES];
     }
     return _timer;
@@ -65,6 +66,7 @@ NSString *const kPoolingTimeBackgroundConfigKey = @"iphonePoolingTimeBackground"
             id<AWRPlaylist>result = finishedPromise.result;
 
             if (!result) {
+                DLog(@"Current song: no result");
                 if (!weakSelf.currentPlaylist) return [PXNoMorePromises new];
                 weakSelf.currentPlaylist = nil;
                 if (weakSelf.delegate) [weakSelf.delegate didFetchSongMetadata:nil];
@@ -74,11 +76,13 @@ NSString *const kPoolingTimeBackgroundConfigKey = @"iphonePoolingTimeBackground"
             double diff = [result.updatedAt timeIntervalSinceReferenceDate] - [weakSelf.currentPlaylist.updatedAt timeIntervalSinceReferenceDate];
 
             if (diff < 2) {
+                DLog(@"Current song: no changes");
                 return [[NSError alloc] initWithDomain:@"Song hasn't changed since last time we've checked" code:-200 userInfo:nil];
             }
 
             weakSelf.currentPlaylist = result;
 
+            DLog(@"Current song: new song: %@ by %@", result.song.songName, result.song.artist.artistName);
             if (weakSelf.delegate) [weakSelf.delegate didFetchSongMetadata:weakSelf.currentPlaylist];
 
             if (!weakSelf.currentPlaylist.song) return [PXNoMorePromises new];
