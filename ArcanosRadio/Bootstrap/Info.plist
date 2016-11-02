@@ -19,27 +19,27 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0.0</string>
 	<key>CFBundleVersion</key>
-	<string>29</string>
+	<string>31</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.music</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>ITSAppUsesNonExemptEncryption</key>
-	<false/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<false/>
 		<key>NSExceptionDomains</key>
 		<dict>
 			<key>liderstreaming.com.br</key>
 			<dict>
-				<key>NSIncludesSubdomains</key>
-				<true/>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSIncludesSubdomains</key>
 				<true/>
 			</dict>
 		</dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<false/>
 	</dict>
 	<key>UIBackgroundModes</key>
 	<array>
