@@ -15,7 +15,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [application setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
-    self.coordinator = [[AWRAppCoordinator alloc] init];
+    self.coordinator = [[AWRAppCoordinator alloc] initWithOptions:launchOptions];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [self.coordinator start];
     [self.window makeKeyAndVisible];

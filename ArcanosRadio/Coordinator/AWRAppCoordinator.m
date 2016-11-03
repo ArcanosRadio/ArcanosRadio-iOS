@@ -24,7 +24,7 @@ NSString *kStreamOverMobileData = @"mobile_data_enabled";
 
 @implementation AWRAppCoordinator
 
-- (instancetype)init {
+- (instancetype)initWithOptions:(NSDictionary *)launchOptions {
     self = [super init];
     if (self) {
 #ifndef MOCK
