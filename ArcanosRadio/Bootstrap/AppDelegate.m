@@ -31,7 +31,9 @@
 }
 
 - (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    DLog(@"Background fetch");
     [self.coordinator backgroundFetchWithCompletionHandler:^(BOOL newSong) {
+        DLog(@"Background fetch result: %@", newSong?@"new song":@"same song");
         completionHandler(newSong ? UIBackgroundFetchResultNewData : UIBackgroundFetchResultNoData);
     }];
 }
