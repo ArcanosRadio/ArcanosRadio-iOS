@@ -103,6 +103,7 @@
 		018E2D191DBD48B30035455B /* AWRVersionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 018E2D181DBD48B30035455B /* AWRVersionTableViewCell.m */; };
 		018E2D1A1DBD48B30035455B /* AWRVersionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 018E2D181DBD48B30035455B /* AWRVersionTableViewCell.m */; };
 		019140781D8D8E05000B19EE /* NSObject+PXPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 019140771D8D8E05000B19EE /* NSObject+PXPromise.m */; };
+		0196C6341DCE27470061EEE8 /* ScreenshotAutomation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0196C6331DCE27470061EEE8 /* ScreenshotAutomation.m */; };
 		01D2BD0C1D9B00D900632C08 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D2BD0B1D9B00D900632C08 /* QuartzCore.framework */; };
 		01DBE4981D8CB2C4003B2100 /* AWRNowPlayingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DBE4941D8CB2C4003B2100 /* AWRNowPlayingController.m */; };
 		01DBE4991D8CB2C4003B2100 /* AWRNowPlayingCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DBE4951D8CB2C4003B2100 /* AWRNowPlayingCoordinator.m */; };
@@ -123,6 +124,16 @@
 		01FB39481DACC7BA00EBC99D /* AWRAvatarImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FB39471DACC7BA00EBC99D /* AWRAvatarImageView.m */; };
 		01FB39491DACC7BA00EBC99D /* AWRAvatarImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FB39471DACC7BA00EBC99D /* AWRAvatarImageView.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0196C6361DCE27470061EEE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0181E7CF1D8C905B008E21C5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0181E7D61D8C905B008E21C5;
+			remoteInfo = ArcanosRadio;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		012582B61D91F2EA002C4E93 /* AWRAppCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRAppCoordinator.h; sourceTree = "<group>"; };
@@ -224,6 +235,9 @@
 		018E2D181DBD48B30035455B /* AWRVersionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRVersionTableViewCell.m; sourceTree = "<group>"; };
 		019140761D8D8E05000B19EE /* NSObject+PXPromise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PXPromise.h"; sourceTree = "<group>"; };
 		019140771D8D8E05000B19EE /* NSObject+PXPromise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PXPromise.m"; sourceTree = "<group>"; };
+		0196C6311DCE27470061EEE8 /* ScreenshotAutomation.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScreenshotAutomation.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0196C6331DCE27470061EEE8 /* ScreenshotAutomation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScreenshotAutomation.m; sourceTree = "<group>"; };
+		0196C6351DCE27470061EEE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01D2BD0B1D9B00D900632C08 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		01DBE4941D8CB2C4003B2100 /* AWRNowPlayingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRNowPlayingController.m; sourceTree = "<group>"; };
 		01DBE4951D8CB2C4003B2100 /* AWRNowPlayingCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRNowPlayingCoordinator.m; sourceTree = "<group>"; };
@@ -271,6 +285,13 @@
 				0181E7FE1D8C9EB1008E21C5 /* Fabric.framework in Frameworks */,
 				0181E8021D8CADE8008E21C5 /* Bolts.framework in Frameworks */,
 				0181E8031D8CADE8008E21C5 /* Parse.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0196C62E1DCE27470061EEE8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +385,7 @@
 				0181E7FB1D8C9E83008E21C5 /* Frameworks */,
 				0181E7D91D8C905B008E21C5 /* ArcanosRadio */,
 				0137D8591D9CCD2F003A1E6B /* ArcanosRadioMock */,
+				0196C6321DCE27470061EEE8 /* ScreenshotAutomation */,
 				0181E7D81D8C905B008E21C5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -373,6 +395,7 @@
 			children = (
 				0181E7D71D8C905B008E21C5 /* Arcanos Radio.app */,
 				0137D8581D9CCD2F003A1E6B /* ArcanosRadioMock.app */,
+				0196C6311DCE27470061EEE8 /* ScreenshotAutomation.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -557,6 +580,15 @@
 			path = licenses;
 			sourceTree = "<group>";
 		};
+		0196C6321DCE27470061EEE8 /* ScreenshotAutomation */ = {
+			isa = PBXGroup;
+			children = (
+				0196C6331DCE27470061EEE8 /* ScreenshotAutomation.m */,
+				0196C6351DCE27470061EEE8 /* Info.plist */,
+			);
+			path = ScreenshotAutomation;
+			sourceTree = "<group>";
+		};
 		01DE2E7D1D95FC0B003E604E /* BaseLibrary */ = {
 			isa = PBXGroup;
 			children = (
@@ -612,6 +644,24 @@
 			productReference = 0181E7D71D8C905B008E21C5 /* Arcanos Radio.app */;
 			productType = "com.apple.product-type.application";
 		};
+		0196C6301DCE27470061EEE8 /* ScreenshotAutomation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0196C63A1DCE27470061EEE8 /* Build configuration list for PBXNativeTarget "ScreenshotAutomation" */;
+			buildPhases = (
+				0196C62D1DCE27470061EEE8 /* Sources */,
+				0196C62E1DCE27470061EEE8 /* Frameworks */,
+				0196C62F1DCE27470061EEE8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0196C6371DCE27470061EEE8 /* PBXTargetDependency */,
+			);
+			name = ScreenshotAutomation;
+			productName = ScreenshotAutomation;
+			productReference = 0196C6311DCE27470061EEE8 /* ScreenshotAutomation.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -636,6 +686,12 @@
 							};
 						};
 					};
+					0196C6301DCE27470061EEE8 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 7BK8NL3DYL;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 0181E7D61D8C905B008E21C5;
+					};
 				};
 			};
 			buildConfigurationList = 0181E7D21D8C905B008E21C5 /* Build configuration list for PBXProject "ArcanosRadio" */;
@@ -654,6 +710,7 @@
 			targets = (
 				0181E7D61D8C905B008E21C5 /* ArcanosRadio */,
 				0137D8571D9CCD2F003A1E6B /* ArcanosRadioMock */,
+				0196C6301DCE27470061EEE8 /* ScreenshotAutomation */,
 			);
 		};
 /* End PBXProject section */
@@ -696,6 +753,13 @@
 				016500EF1DB2EFBD00B32C0A /* Settings.bundle in Resources */,
 				0181E7F91D8C9663008E21C5 /* SplashView.xib in Resources */,
 				018E2CE21DBC376A0035455B /* Acknowledgements.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0196C62F1DCE27470061EEE8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -841,7 +905,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0196C62D1DCE27470061EEE8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0196C6341DCE27470061EEE8 /* ScreenshotAutomation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0196C6371DCE27470061EEE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0181E7D61D8C905B008E21C5 /* ArcanosRadio */;
+			targetProxy = 0196C6361DCE27470061EEE8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		016500E81DB2D04900B32C0A /* Localizable.strings */ = {
@@ -1052,6 +1132,34 @@
 			};
 			name = Release;
 		};
+		0196C6381DCE27470061EEE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 7BK8NL3DYL;
+				INFOPLIST_FILE = ScreenshotAutomation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.developercity.ScreenshotAutomation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7d7702cc-f552-43c1-900e-45de9dbb4819";
+				TEST_TARGET_NAME = ArcanosRadio;
+			};
+			name = Debug;
+		};
+		0196C6391DCE27470061EEE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 7BK8NL3DYL;
+				INFOPLIST_FILE = ScreenshotAutomation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.developercity.ScreenshotAutomation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7d7702cc-f552-43c1-900e-45de9dbb4819";
+				TEST_TARGET_NAME = ArcanosRadio;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1081,6 +1189,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		0196C63A1DCE27470061EEE8 /* Build configuration list for PBXNativeTarget "ScreenshotAutomation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0196C6381DCE27470061EEE8 /* Debug */,
+				0196C6391DCE27470061EEE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
