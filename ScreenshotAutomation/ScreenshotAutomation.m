@@ -22,11 +22,23 @@
     [app launch];
     [Snapshot setupSnapshot:app];
 
+    XCUIElementQuery *scrollviewChildren = [[XCUIApplication alloc] init].scrollViews.otherElements;
     XCUIElement *headerContainer = app.otherElements[@"header_container"];
     XCUIElement *artistLabel = app.otherElements[@"artist_label"];
     XCUIElement *menuButtonButton = app.buttons[@"menu_button"];
 
+    NSPredicate *exists = [NSPredicate predicateWithFormat:@"exists == 1"];
+    [self expectationForPredicate:exists
+              evaluatedWithObject:scrollviewChildren.otherElements[@"Steppenwolf"]
+                          handler:nil];
+    [self waitForExpectationsWithTimeout:15 handler:nil];
+
     [Snapshot snapshot:@"01_Initial" waitForLoadingIndicator:YES];
+
+    [self expectationForPredicate:exists
+              evaluatedWithObject:scrollviewChildren.otherElements[@"Black Sabbath"]
+                          handler:nil];
+    [self waitForExpectationsWithTimeout:15 handler:nil];
 
     [artistLabel pressForDuration:0 thenDragToElement:headerContainer];
 

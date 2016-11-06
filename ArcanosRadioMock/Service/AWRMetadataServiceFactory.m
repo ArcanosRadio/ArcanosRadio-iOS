@@ -1,12 +1,12 @@
 #import "AWRMetadataFactory.h"
-#import "AWRFakeService.h"
+#import "AWRFakeStore.h"
 #import "AWRMetadataPoolingService.h"
 
 
 @implementation AWRMetadataFactory
 
 + (id<AWRMetadataStore>)createMetadataStore {
-    return [[AWRFakeService alloc] init];
+    return [[AWRFakeStore alloc] init];
 }
 
 + (id<AWRMetadataService>)createMetadataService {
