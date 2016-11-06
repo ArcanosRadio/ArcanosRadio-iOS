@@ -49,6 +49,7 @@
 		016501021DB3516400B32C0A /* AWRColorToolkit.m in Sources */ = {isa = PBXBuildFile; fileRef = 016501011DB3516400B32C0A /* AWRColorToolkit.m */; };
 		016501031DB3516400B32C0A /* AWRColorToolkit.m in Sources */ = {isa = PBXBuildFile; fileRef = 016501011DB3516400B32C0A /* AWRColorToolkit.m */; };
 		01673C791DCF89EE000B14CE /* AWRMetadataPoolingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0126E3461DA7232D0054430C /* AWRMetadataPoolingService.m */; };
+		01673C7B1DCFAD2E000B14CE /* SimulatorStatusMagiciOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01673C7A1DCFAD2E000B14CE /* SimulatorStatusMagiciOS.framework */; };
 		0181E7DC1D8C905B008E21C5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0181E7DB1D8C905B008E21C5 /* main.m */; };
 		0181E7DF1D8C905B008E21C5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0181E7DE1D8C905B008E21C5 /* AppDelegate.m */; };
 		0181E7E71D8C905B008E21C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0181E7E61D8C905B008E21C5 /* Assets.xcassets */; };
@@ -186,6 +187,7 @@
 		016500F91DB3383700B32C0A /* AWRAboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRAboutController.m; sourceTree = "<group>"; };
 		016501001DB3516400B32C0A /* AWRColorToolkit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRColorToolkit.h; sourceTree = "<group>"; };
 		016501011DB3516400B32C0A /* AWRColorToolkit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRColorToolkit.m; sourceTree = "<group>"; };
+		01673C7A1DCFAD2E000B14CE /* SimulatorStatusMagiciOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SimulatorStatusMagiciOS.framework; path = Carthage/Build/iOS/SimulatorStatusMagiciOS.framework; sourceTree = "<group>"; };
 		0181E7D71D8C905B008E21C5 /* Arcanos Radio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Arcanos Radio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0181E7DB1D8C905B008E21C5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0181E7DD1D8C905B008E21C5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 			files = (
 				0137D8871D9CCF9F003A1E6B /* Accelerate.framework in Frameworks */,
 				0137D8861D9CCF9A003A1E6B /* QuartzCore.framework in Frameworks */,
+				01673C7B1DCFAD2E000B14CE /* SimulatorStatusMagiciOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,6 +590,7 @@
 		0181E7FB1D8C9E83008E21C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				01673C7A1DCFAD2E000B14CE /* SimulatorStatusMagiciOS.framework */,
 				01D2BD0B1D9B00D900632C08 /* QuartzCore.framework */,
 				01DE2E811D9601C1003E604E /* Accelerate.framework */,
 				0181E8001D8CADE8008E21C5 /* Bolts.framework */,
@@ -818,6 +822,7 @@
 			files = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/Frameworks/Carthage/Build/iOS/SimulatorStatusMagiciOS.framework",
 			);
 			outputPaths = (
 			);
@@ -1145,7 +1150,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 33;
+				CURRENT_PROJECT_VERSION = 35;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 7BK8NL3DYL;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1170,7 +1175,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 33;
+				CURRENT_PROJECT_VERSION = 35;
 				DEVELOPMENT_TEAM = 7BK8NL3DYL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

@@ -133,6 +133,7 @@ platform :ios do
     end
 
     lane :store do
+        ENV["SIMULATOR_STATUS_MAGIC_OVERRIDES"] = "enable"
         snapshot(
             scheme: "ArcanosRadioMock",
             number_of_retries: 5,

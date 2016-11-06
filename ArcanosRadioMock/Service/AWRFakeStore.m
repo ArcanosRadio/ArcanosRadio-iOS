@@ -6,6 +6,7 @@
 #import "AWRFileVO.h"
 #import "AWRSongViewModel.h"
 #import <UIKit/UIKit.h>
+#import <SimulatorStatusMagiciOS/SimulatorStatusMagiciOS.h>
 
 @interface AWRFakeStore()
 
@@ -103,6 +104,10 @@
 }
 
 - (void)refreshConfig {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [[SDStatusBarManager sharedInstance] enableOverrides];
+    });
 }
 
 - (id)readConfig:(NSString *)configKey {
