@@ -1,5 +1,4 @@
 #import <Foundation/Foundation.h>
-#import "AWREntity.h"
 
 @protocol AWRFile <NSObject>
 

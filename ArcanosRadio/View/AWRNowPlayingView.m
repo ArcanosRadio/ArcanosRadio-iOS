@@ -6,9 +6,9 @@
 #import "AWRNowPlayingView.h"
 #import "AWRNowPlayingHeaderView.h"
 #import "UIView+Utils.h"
-#import "AWRMenu.h"
+#import "AWRMenuView.h"
 
-@interface AWRNowPlayingView()<UIScrollViewDelegate, AWRMenuDelegate>
+@interface AWRNowPlayingView()<UIScrollViewDelegate, AWRMenuViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *headerContainer;
 @property (weak, nonatomic) IBOutlet UIStackView *metadataContainer;
@@ -29,7 +29,7 @@
 @property (nonatomic, strong) NSDictionary *songNameEffects;
 
 @property (weak, nonatomic) IBOutlet UIButton *menuButton;
-@property (strong, nonatomic) IBOutlet AWRMenu *menu;
+@property (strong, nonatomic) IBOutlet AWRMenuView *menu;
 
 @end
 
@@ -43,18 +43,18 @@
     return self;
 }
 
-- (AWRMenu *)menu {
+- (AWRMenuView *)menu {
     if (!_menu) {
-        NSArray<AWRMenuItem *> *items = @[[AWRMenuItem itemWithIdentifier:@"about"
-                                                                     icon: [UIImage imageNamed:@"help"]
-                                                                     text: NSLocalizedString(@"MENU_ABOUT", nil)],
-                                          [AWRMenuItem itemWithIdentifier:@"settings"
-                                                                     icon: [UIImage imageNamed:@"settings"]
-                                                                     text: NSLocalizedString(@"MENU_SETTINGS", nil)],
-                                          [AWRMenuItem itemWithIdentifier:@"share"
-                                                                     icon: [UIImage imageNamed:@"share"]
-                                                                     text: NSLocalizedString(@"MENU_SHARE", nil)]];
-        _menu = [[AWRMenu alloc] initWithFrame:self.frame];
+        NSArray<AWRMenuViewItem *> *items = @[[AWRMenuViewItem itemWithIdentifier:@"about"
+                                                                             icon: [UIImage imageNamed:@"help"]
+                                                                             text: NSLocalizedString(@"MENU_ABOUT", nil)],
+                                              [AWRMenuViewItem itemWithIdentifier:@"settings"
+                                                                             icon: [UIImage imageNamed:@"settings"]
+                                                                             text: NSLocalizedString(@"MENU_SETTINGS", nil)],
+                                              [AWRMenuViewItem itemWithIdentifier:@"share"
+                                                                             icon: [UIImage imageNamed:@"share"]
+                                                                             text: NSLocalizedString(@"MENU_SHARE", nil)]];
+        _menu = [[AWRMenuView alloc] initWithFrame:self.frame];
         _menu.delegate = self;
         _menu.items = items;
     }
@@ -165,7 +165,7 @@
     [self.menu show];
 }
 
-- (void)menu:(AWRMenu *)menu didSelectItemWithIdentifier:(NSString *)identifier {
+- (void)menu:(AWRMenuView *)menu didSelectItemWithIdentifier:(NSString *)identifier {
     if (!self.delegate) return;
 
     if ([@"share" isEqualToString:identifier]) {
@@ -184,7 +184,7 @@
     }
 }
 
-- (void)menuDidBecomeHidden:(AWRMenu *)menu {
+- (void)menuDidBecomeHidden:(AWRMenuView *)menu {
     [self.menu removeFromSuperview];
     self.menu = nil;
 }

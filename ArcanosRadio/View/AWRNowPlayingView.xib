@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,16 +20,21 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aaN-PC-ico" userLabel="Header">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <accessibility key="accessibilityConfiguration" identifier="header_container"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="375" id="z4n-t7-5o7"/>
                     </constraints>
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6i-t7-qJ2">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5DG-Vf-irM" userLabel="Metadata Container">
+                            <rect key="frame" x="8" y="394" width="359" height="51"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[song]" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lh0-1K-Aiq">
+                                    <rect key="frame" x="0.0" y="0.0" width="359" height="27.5"/>
                                     <accessibility key="accessibilityConfiguration" identifier="song_label">
                                         <accessibilityTraits key="traits" notEnabled="YES"/>
                                     </accessibility>
@@ -35,6 +43,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[artist]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzj-uq-wUb">
+                                    <rect key="frame" x="0.0" y="27.5" width="359" height="23.5"/>
                                     <accessibility key="accessibilityConfiguration" identifier="artist_label">
                                         <accessibilityTraits key="traits" notEnabled="YES"/>
                                     </accessibility>
@@ -45,6 +54,7 @@
                             </subviews>
                         </stackView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[lyrics]" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGK-gE-lXW">
+                            <rect key="frame" x="8" y="461" width="36.5" height="13.5"/>
                             <accessibility key="accessibilityConfiguration" identifier="lyrics_label">
                                 <accessibilityTraits key="traits" notEnabled="YES"/>
                             </accessibility>
@@ -53,6 +63,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VM6-M7-hl5" userLabel="Spacer Bottom">
+                            <rect key="frame" x="8" y="482.5" width="359" height="400"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="400" id="Q8g-Ax-LID" userLabel="Spacer Bottom"/>
                             </constraints>
@@ -77,8 +88,10 @@
                     </connections>
                 </scrollView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uNJ-Gx-8Ck" userLabel="Media Control">
+                    <rect key="frame" x="0.0" y="607" width="375" height="60"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1MG-Xz-jxs" userLabel="Mute Button">
+                            <rect key="frame" x="8" y="12" width="44" height="44"/>
                             <accessibility key="accessibilityConfiguration" identifier="mute_button"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="YWT-1B-CI7" userLabel="Mute Button Height"/>
@@ -91,6 +104,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3oA-4B-QPF" userLabel="Increase Volume Button">
+                            <rect key="frame" x="271" y="12" width="44" height="44"/>
                             <accessibility key="accessibilityConfiguration" identifier="increase_volume_button"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="3oA-4B-QPF" secondAttribute="height" multiplier="1:1" id="OEp-Pz-q2s" userLabel="Volume Plus Button Aspect"/>
@@ -103,6 +117,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qeb-HB-q3h" userLabel="Menu Button">
+                            <rect key="frame" x="323" y="12" width="44" height="44"/>
                             <accessibility key="accessibilityConfiguration" identifier="menu_button"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="44" id="bC3-gO-Ae0" userLabel="Play Button Width"/>
@@ -117,6 +132,7 @@
                             </connections>
                         </button>
                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="gmd-m7-sZK">
+                            <rect key="frame" x="58" y="18.5" width="207" height="31"/>
                             <accessibility key="accessibilityConfiguration" identifier="volume_slider"/>
                             <color key="minimumTrackTintColor" red="0.75294117647058822" green="0.75294117647058822" blue="0.75294117647058822" alpha="1" colorSpace="calibratedRGB"/>
                             <color key="maximumTrackTintColor" red="0.75294117647058822" green="0.75294117647058822" blue="0.75294117647058822" alpha="1" colorSpace="calibratedRGB"/>
@@ -140,6 +156,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sct-cG-X0j" userLabel="Play Button">
+                    <rect key="frame" x="305" y="343" width="54" height="54"/>
                     <color key="backgroundColor" red="0.99607843137254903" green="0.81568627450980391" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
                     <accessibility key="accessibilityConfiguration" identifier="play_pause_button"/>
                     <constraints>

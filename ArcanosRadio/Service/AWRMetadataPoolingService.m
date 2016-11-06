@@ -75,6 +75,13 @@ NSString *const kPoolingTimeBackgroundConfigKey = @"iphonePoolingTimeBackground"
 
             double diff = [result.updatedAt timeIntervalSinceReferenceDate] - [weakSelf.currentPlaylist.updatedAt timeIntervalSinceReferenceDate];
 
+            DLog(@"Current: %@ (%@) - Before: %@ (%@) = %f",
+                 result.title,
+                 result.updatedAt,
+                 weakSelf.currentPlaylist.title,
+                 weakSelf.currentPlaylist.updatedAt,
+                 diff);
+
             if (diff < 2) {
                 DLog(@"Current song: no changes");
                 return [[NSError alloc] initWithDomain:@"Song hasn't changed since last time we've checked" code:-200 userInfo:nil];
@@ -83,6 +90,7 @@ NSString *const kPoolingTimeBackgroundConfigKey = @"iphonePoolingTimeBackground"
             weakSelf.currentPlaylist = result;
 
             DLog(@"Current song: new song: %@ by %@", result.song.songName, result.song.artist.artistName);
+
             if (weakSelf.delegate) [weakSelf.delegate didFetchSongMetadata:weakSelf.currentPlaylist];
 
             if (!weakSelf.currentPlaylist.song) return [PXNoMorePromises new];

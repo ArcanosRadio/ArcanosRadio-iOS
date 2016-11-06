@@ -133,21 +133,22 @@ platform :ios do
     end
 
     lane :store do
-        cert(output_path: "./Certificates/")
-        sigh(
-            output_path: "./Certificates/",
-            adhoc: false,
-            provisioning_name: 'ArcanosStore'
-        )
-        # build_number = increment_build_number(xcodeproj: "ArcanosRadio.xcodeproj")
         snapshot
-        gym(scheme: "ArcanosRadio")
-        deliver(force: true)
+        # cert(output_path: "./Certificates/")
+        # sigh(
+        #     output_path: "./Certificates/",
+        #     adhoc: false,
+        #     provisioning_name: 'ArcanosStore'
+        # )
+        # # build_number = increment_build_number(xcodeproj: "ArcanosRadio.xcodeproj")
+        # snapshot
+        # gym(scheme: "ArcanosRadio")
+        # deliver(force: true)
 
-        version = get_version_number(xcodeproj: "ArcanosRadio.xcodeproj")
-        build_number = get_build_number(xcodeproj: "ArcanosRadio.xcodeproj")
-        commit_version_bump(message: "Fastlane store: #{version} (#{build_number})",
-                            xcodeproj: "ArcanosRadio.xcodeproj")
+        # version = get_version_number(xcodeproj: "ArcanosRadio.xcodeproj")
+        # build_number = get_build_number(xcodeproj: "ArcanosRadio.xcodeproj")
+        # commit_version_bump(message: "Fastlane store: #{version} (#{build_number})",
+        #                     xcodeproj: "ArcanosRadio.xcodeproj")
     end
 
     after_all do |lane|

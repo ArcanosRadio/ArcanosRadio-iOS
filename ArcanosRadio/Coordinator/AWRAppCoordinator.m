@@ -1,18 +1,22 @@
 #import "AWRAppCoordinator.h"
 #import "AWRNowPlayingCoordinator.h"
 #import "AWRHelpCoordinator.h"
-#import "AWRReachability.h"
 #import "AWRMetadataFactory.h"
 #ifndef MOCK
+#import "AWRReachability.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 #define CRASHLYTICS_DELEGATE , CrashlyticsDelegate
+#else
+#define CRASHLYTICS_DELEGATE
 #endif
 
 @interface AWRAppCoordinator()<AWRNowPlayingCoordinatorDelegate, AWRHelpCoordinatorDelegate CRASHLYTICS_DELEGATE>
 
 @property (nonatomic, strong) AWRNowPlayingCoordinator *nowPlayingCoordinator;
+#ifndef MOCK
 @property (nonatomic, strong) AWRReachability *reachability;
+#endif
 @property (nonatomic, strong) UIViewController * mainController;
 @property (nonatomic, strong) NSObject *currentCoordinator;
 
@@ -43,6 +47,7 @@ NSString *kStreamOverMobileData = @"mobile_data_enabled";
     return _nowPlayingCoordinator;
 }
 
+#ifndef MOCK
 - (AWRReachability *)reachability {
     if (!_reachability) {
         _reachability = [AWRReachability reachabilityForInternetConnection];
@@ -53,6 +58,7 @@ NSString *kStreamOverMobileData = @"mobile_data_enabled";
     }
     return _reachability;
 }
+#endif
 
 - (void)receivedReachability:(NSNotification *)note {
 //    NetworkStatus status = [self.reachability currentReachabilityStatus];
@@ -76,7 +82,9 @@ NSString *kStreamOverMobileData = @"mobile_data_enabled";
 
     [[AWRMetadataFactory createMetadataStore] refreshConfig];
 
+#ifndef MOCK
     [self.reachability startNotifier];
+#endif
     self.currentCoordinator = self.nowPlayingCoordinator;
     return self.mainController = [self.nowPlayingCoordinator start];
 }

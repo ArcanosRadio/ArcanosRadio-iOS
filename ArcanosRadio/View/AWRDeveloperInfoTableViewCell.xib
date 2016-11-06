@@ -38,7 +38,6 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottomMargin" secondItem="Gg4-ts-Pif" secondAttribute="bottom" constant="1.5" id="2qM-aj-RYR"/>
                     <constraint firstItem="HXw-Hd-UGm" firstAttribute="top" secondItem="2XL-dg-hb1" secondAttribute="bottom" constant="4" id="4qN-Kc-3Tz"/>
                     <constraint firstAttribute="leadingMargin" secondItem="HXw-Hd-UGm" secondAttribute="leading" id="6YD-Tf-KEb"/>
                     <constraint firstAttribute="trailingMargin" secondItem="HXw-Hd-UGm" secondAttribute="trailing" id="K90-gj-AQS"/>
@@ -46,6 +45,7 @@
                     <constraint firstAttribute="leadingMargin" secondItem="2XL-dg-hb1" secondAttribute="leading" id="ObK-fM-Q6i"/>
                     <constraint firstAttribute="leadingMargin" secondItem="Gg4-ts-Pif" secondAttribute="leading" id="QJe-gq-tU5"/>
                     <constraint firstAttribute="topMargin" secondItem="2XL-dg-hb1" secondAttribute="top" id="TNe-98-j8b"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Gg4-ts-Pif" secondAttribute="bottom" constant="1.5" id="ZaK-Dj-S81"/>
                     <constraint firstAttribute="trailingMargin" secondItem="2XL-dg-hb1" secondAttribute="trailing" id="c5c-6I-5vq"/>
                     <constraint firstItem="Gg4-ts-Pif" firstAttribute="top" secondItem="HXw-Hd-UGm" secondAttribute="bottom" constant="4" id="n5s-Wg-U4B"/>
                 </constraints>

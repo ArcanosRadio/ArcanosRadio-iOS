@@ -20,6 +20,7 @@
                 </view>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="et1-2X-qV7" customClass="AWRAvatarImageView">
                     <rect key="frame" x="8" y="174" width="96" height="96"/>
+                    <accessibility key="accessibilityConfiguration" identifier="mini_album_art"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="et1-2X-qV7" secondAttribute="height" multiplier="1:1" id="Unr-X6-eDz" userLabel="icon_square_ratio"/>
                         <constraint firstAttribute="height" constant="96" id="h5g-nL-Y16" userLabel="icon_height"/>

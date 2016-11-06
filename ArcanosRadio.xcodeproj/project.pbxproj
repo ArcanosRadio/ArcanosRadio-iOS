@@ -37,7 +37,7 @@
 		0137D8A11D9E7093003A1E6B /* AWRMetadataServiceFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0137D89F1D9E7093003A1E6B /* AWRMetadataServiceFactory.m */; };
 		0151BAD91DC0FA4E00736A79 /* AWRMenuPanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0151BAD81DC0FA4E00736A79 /* AWRMenuPanGestureRecognizer.m */; };
 		0151BADA1DC0FA4E00736A79 /* AWRMenuPanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0151BAD81DC0FA4E00736A79 /* AWRMenuPanGestureRecognizer.m */; };
-		016500E11DB1E79B00B32C0A /* AWRMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 016500E01DB1E79B00B32C0A /* AWRMenu.m */; };
+		016500E11DB1E79B00B32C0A /* AWRMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 016500E01DB1E79B00B32C0A /* AWRMenuView.m */; };
 		016500E51DB2D04900B32C0A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 016500E81DB2D04900B32C0A /* Localizable.strings */; };
 		016500E61DB2D04900B32C0A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 016500E81DB2D04900B32C0A /* Localizable.strings */; };
 		016500ED1DB2E6F500B32C0A /* AWRReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 016500EC1DB2E6F500B32C0A /* AWRReachability.m */; };
@@ -104,6 +104,13 @@
 		018E2D1A1DBD48B30035455B /* AWRVersionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 018E2D181DBD48B30035455B /* AWRVersionTableViewCell.m */; };
 		019140781D8D8E05000B19EE /* NSObject+PXPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 019140771D8D8E05000B19EE /* NSObject+PXPromise.m */; };
 		0196C6341DCE27470061EEE8 /* ScreenshotAutomation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0196C6331DCE27470061EEE8 /* ScreenshotAutomation.m */; };
+		0196C6401DCE2C3E0061EEE8 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0196C63F1DCE2C3E0061EEE8 /* SnapshotHelper.swift */; };
+		0196C6411DCE89B40061EEE8 /* AWRMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 016500E01DB1E79B00B32C0A /* AWRMenuView.m */; };
+		0196C6441DCE8EAA0061EEE8 /* AWRArtistVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 0196C6431DCE8EAA0061EEE8 /* AWRArtistVO.m */; };
+		0196C6471DCEACD70061EEE8 /* AWREntityVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 0196C6461DCEACD70061EEE8 /* AWREntityVO.m */; };
+		0196C64A1DCED2680061EEE8 /* AWRSongVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 0196C6491DCED2680061EEE8 /* AWRSongVO.m */; };
+		0196C64D1DCED2D20061EEE8 /* AWRPlaylistVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 0196C64C1DCED2D20061EEE8 /* AWRPlaylistVO.m */; };
+		0196C6501DCED3230061EEE8 /* AWRFileVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 0196C64F1DCED3230061EEE8 /* AWRFileVO.m */; };
 		01D2BD0C1D9B00D900632C08 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D2BD0B1D9B00D900632C08 /* QuartzCore.framework */; };
 		01DBE4981D8CB2C4003B2100 /* AWRNowPlayingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DBE4941D8CB2C4003B2100 /* AWRNowPlayingController.m */; };
 		01DBE4991D8CB2C4003B2100 /* AWRNowPlayingCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DBE4951D8CB2C4003B2100 /* AWRNowPlayingCoordinator.m */; };
@@ -157,8 +164,8 @@
 		0137D89F1D9E7093003A1E6B /* AWRMetadataServiceFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRMetadataServiceFactory.m; sourceTree = "<group>"; };
 		0151BAD71DC0FA4E00736A79 /* AWRMenuPanGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRMenuPanGestureRecognizer.h; sourceTree = "<group>"; };
 		0151BAD81DC0FA4E00736A79 /* AWRMenuPanGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRMenuPanGestureRecognizer.m; sourceTree = "<group>"; };
-		016500DF1DB1E79B00B32C0A /* AWRMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRMenu.h; sourceTree = "<group>"; };
-		016500E01DB1E79B00B32C0A /* AWRMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRMenu.m; sourceTree = "<group>"; };
+		016500DF1DB1E79B00B32C0A /* AWRMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRMenuView.h; sourceTree = "<group>"; };
+		016500E01DB1E79B00B32C0A /* AWRMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRMenuView.m; sourceTree = "<group>"; };
 		016500E71DB2D04900B32C0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		016500E91DB2D05200B32C0A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		016500EA1DB2D0E300B32C0A /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -238,6 +245,18 @@
 		0196C6311DCE27470061EEE8 /* ScreenshotAutomation.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScreenshotAutomation.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0196C6331DCE27470061EEE8 /* ScreenshotAutomation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScreenshotAutomation.m; sourceTree = "<group>"; };
 		0196C6351DCE27470061EEE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0196C63E1DCE2C3E0061EEE8 /* ScreenshotAutomation-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScreenshotAutomation-Bridging-Header.h"; sourceTree = "<group>"; };
+		0196C63F1DCE2C3E0061EEE8 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
+		0196C6421DCE8EAA0061EEE8 /* AWRArtistVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AWRArtistVO.h; path = Model/AWRArtistVO.h; sourceTree = SOURCE_ROOT; };
+		0196C6431DCE8EAA0061EEE8 /* AWRArtistVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AWRArtistVO.m; path = Model/AWRArtistVO.m; sourceTree = SOURCE_ROOT; };
+		0196C6451DCEACD70061EEE8 /* AWREntityVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AWREntityVO.h; path = Model/AWREntityVO.h; sourceTree = SOURCE_ROOT; };
+		0196C6461DCEACD70061EEE8 /* AWREntityVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AWREntityVO.m; path = Model/AWREntityVO.m; sourceTree = SOURCE_ROOT; };
+		0196C6481DCED2680061EEE8 /* AWRSongVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AWRSongVO.h; path = Model/AWRSongVO.h; sourceTree = SOURCE_ROOT; };
+		0196C6491DCED2680061EEE8 /* AWRSongVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AWRSongVO.m; path = Model/AWRSongVO.m; sourceTree = SOURCE_ROOT; };
+		0196C64B1DCED2D20061EEE8 /* AWRPlaylistVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AWRPlaylistVO.h; path = Model/AWRPlaylistVO.h; sourceTree = SOURCE_ROOT; };
+		0196C64C1DCED2D20061EEE8 /* AWRPlaylistVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AWRPlaylistVO.m; path = Model/AWRPlaylistVO.m; sourceTree = SOURCE_ROOT; };
+		0196C64E1DCED3230061EEE8 /* AWRFileVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AWRFileVO.h; path = Model/AWRFileVO.h; sourceTree = SOURCE_ROOT; };
+		0196C64F1DCED3230061EEE8 /* AWRFileVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AWRFileVO.m; path = Model/AWRFileVO.m; sourceTree = SOURCE_ROOT; };
 		01D2BD0B1D9B00D900632C08 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		01DBE4941D8CB2C4003B2100 /* AWRNowPlayingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRNowPlayingController.m; sourceTree = "<group>"; };
 		01DBE4951D8CB2C4003B2100 /* AWRNowPlayingCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRNowPlayingCoordinator.m; sourceTree = "<group>"; };
@@ -375,6 +394,16 @@
 		0137D8A21D9E70A8003A1E6B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0196C6451DCEACD70061EEE8 /* AWREntityVO.h */,
+				0196C6461DCEACD70061EEE8 /* AWREntityVO.m */,
+				0196C64E1DCED3230061EEE8 /* AWRFileVO.h */,
+				0196C64F1DCED3230061EEE8 /* AWRFileVO.m */,
+				0196C6421DCE8EAA0061EEE8 /* AWRArtistVO.h */,
+				0196C6431DCE8EAA0061EEE8 /* AWRArtistVO.m */,
+				0196C64B1DCED2D20061EEE8 /* AWRPlaylistVO.h */,
+				0196C64C1DCED2D20061EEE8 /* AWRPlaylistVO.m */,
+				0196C6481DCED2680061EEE8 /* AWRSongVO.h */,
+				0196C6491DCED2680061EEE8 /* AWRSongVO.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -451,8 +480,8 @@
 				0181E7F81D8C9663008E21C5 /* SplashView.xib */,
 				01FB39461DACC7BA00EBC99D /* AWRAvatarImageView.h */,
 				01FB39471DACC7BA00EBC99D /* AWRAvatarImageView.m */,
-				016500DF1DB1E79B00B32C0A /* AWRMenu.h */,
-				016500E01DB1E79B00B32C0A /* AWRMenu.m */,
+				016500DF1DB1E79B00B32C0A /* AWRMenuView.h */,
+				016500E01DB1E79B00B32C0A /* AWRMenuView.m */,
 				016500F11DB3374500B32C0A /* AWRAboutView.xib */,
 				016500F41DB337A100B32C0A /* AWRAboutView.h */,
 				016500F51DB337A100B32C0A /* AWRAboutView.m */,
@@ -583,8 +612,10 @@
 		0196C6321DCE27470061EEE8 /* ScreenshotAutomation */ = {
 			isa = PBXGroup;
 			children = (
-				0196C6331DCE27470061EEE8 /* ScreenshotAutomation.m */,
 				0196C6351DCE27470061EEE8 /* Info.plist */,
+				0196C63E1DCE2C3E0061EEE8 /* ScreenshotAutomation-Bridging-Header.h */,
+				0196C63F1DCE2C3E0061EEE8 /* SnapshotHelper.swift */,
+				0196C6331DCE27470061EEE8 /* ScreenshotAutomation.m */,
 			);
 			path = ScreenshotAutomation;
 			sourceTree = "<group>";
@@ -689,6 +720,7 @@
 					0196C6301DCE27470061EEE8 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 7BK8NL3DYL;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 0181E7D61D8C905B008E21C5;
 					};
@@ -819,16 +851,22 @@
 				0137D8741D9CCE3D003A1E6B /* AWRArcanosMediaPlayer.m in Sources */,
 				0137D8811D9CCEEA003A1E6B /* AWRAppCoordinator.m in Sources */,
 				018E2D071DBCCF220035455B /* AWRLicenseView.m in Sources */,
+				0196C6441DCE8EAA0061EEE8 /* AWRArtistVO.m in Sources */,
 				0137D87F1D9CCEDE003A1E6B /* AWRNowPlayingView.m in Sources */,
 				0137D8A11D9E7093003A1E6B /* AWRMetadataServiceFactory.m in Sources */,
 				0137D8791D9CCE5E003A1E6B /* BFTask+PXPromise.m in Sources */,
 				0137D86F1D9CCE0D003A1E6B /* FXBlurView.m in Sources */,
 				01FB393D1DAC607A00EBC99D /* AWRMergeImageView.m in Sources */,
 				0137D8701D9CCE15003A1E6B /* AWRConstants.m in Sources */,
+				0196C6501DCED3230061EEE8 /* AWRFileVO.m in Sources */,
 				018E2CC61DBC1CF50035455B /* AWRViewController.m in Sources */,
 				018E2D1A1DBD48B30035455B /* AWRVersionTableViewCell.m in Sources */,
 				0137D8771D9CCE56003A1E6B /* NSObject+PXPromise.m in Sources */,
+				0196C6471DCEACD70061EEE8 /* AWREntityVO.m in Sources */,
 				018E2CF51DBC78960035455B /* AWRAppDeveloperViewModel.m in Sources */,
+				0196C64A1DCED2680061EEE8 /* AWRSongVO.m in Sources */,
+				0196C64D1DCED2D20061EEE8 /* AWRPlaylistVO.m in Sources */,
+				0196C6411DCE89B40061EEE8 /* AWRMenuView.m in Sources */,
 				016500F71DB337A100B32C0A /* AWRAboutView.m in Sources */,
 				01FB39391DAC596800EBC99D /* AWRNowPlayingHeaderView.m in Sources */,
 				018E2D131DBD00F00035455B /* AWRHelpCoordinator.m in Sources */,
@@ -888,7 +926,7 @@
 				018E2D121DBD00F00035455B /* AWRHelpCoordinator.m in Sources */,
 				01DBE4A01D8CB2D0003B2100 /* AWRMetadataFactory.m in Sources */,
 				018E2D0E1DBCD8670035455B /* AWRLicenseController.m in Sources */,
-				016500E11DB1E79B00B32C0A /* AWRMenu.m in Sources */,
+				016500E11DB1E79B00B32C0A /* AWRMenuView.m in Sources */,
 				016500F61DB337A100B32C0A /* AWRAboutView.m in Sources */,
 				01FB39481DACC7BA00EBC99D /* AWRAvatarImageView.m in Sources */,
 				0126E3471DA7232D0054430C /* AWRMetadataPoolingService.m in Sources */,
@@ -910,6 +948,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0196C6341DCE27470061EEE8 /* ScreenshotAutomation.m in Sources */,
+				0196C6401DCE2C3E0061EEE8 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1135,6 +1174,7 @@
 		0196C6381DCE27470061EEE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 7BK8NL3DYL;
 				INFOPLIST_FILE = ScreenshotAutomation/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
@@ -1142,6 +1182,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = de.developercity.ScreenshotAutomation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "7d7702cc-f552-43c1-900e-45de9dbb4819";
+				SWIFT_OBJC_BRIDGING_HEADER = "ScreenshotAutomation/ScreenshotAutomation-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = ArcanosRadio;
 			};
 			name = Debug;
@@ -1149,6 +1192,7 @@
 		0196C6391DCE27470061EEE8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 7BK8NL3DYL;
 				INFOPLIST_FILE = ScreenshotAutomation/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
@@ -1156,6 +1200,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = de.developercity.ScreenshotAutomation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "7d7702cc-f552-43c1-900e-45de9dbb4819";
+				SWIFT_OBJC_BRIDGING_HEADER = "ScreenshotAutomation/ScreenshotAutomation-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = ArcanosRadio;
 			};
 			name = Release;

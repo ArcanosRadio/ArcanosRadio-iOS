@@ -1,4 +1,4 @@
-#import "AWRMenu.h"
+#import "AWRMenuView.h"
 #import "UIView+Utils.h"
 #import "AWRMenuPanGestureRecognizer.h"
 
@@ -6,10 +6,10 @@
 #define DISTACE_BETWEEN_CIRCLES      89
 #define BUTTON_DIAMETER              55
 
-@implementation AWRMenuItem
+@implementation AWRMenuViewItem
 
 + (instancetype)itemWithIdentifier:(NSString *)identifier icon:(UIImage *)icon text:(NSString *)text {
-    AWRMenuItem *item = [[AWRMenuItem alloc] init];
+    AWRMenuViewItem *item = [[AWRMenuViewItem alloc] init];
     item.identifier = identifier;
     item.icon = icon;
     item.text = text;
@@ -18,7 +18,7 @@
 
 @end
 
-@interface AWRMenu()
+@interface AWRMenuView()
 
 @property (nonatomic) BOOL shown;
 @property (nonatomic, strong) NSArray<UIButton *> *menuItemButtons;
@@ -28,7 +28,7 @@
 
 @end
 
-@implementation AWRMenu
+@implementation AWRMenuView
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -74,7 +74,7 @@
     return _helpLabel;
 }
 
-- (void)setItems:(NSArray<AWRMenuItem *> *)items {
+- (void)setItems:(NSArray<AWRMenuViewItem *> *)items {
     if (self.shown) {
         return;
     }
@@ -93,7 +93,7 @@
 - (NSArray<UIView *> *)menuItemButtons {
     if (!_menuItemButtons) {
         NSMutableArray *subviews = [[NSMutableArray alloc] initWithCapacity:self.items.count];
-        for (AWRMenuItem *item in self.items) {
+        for (AWRMenuViewItem *item in self.items) {
             UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(self.startingPoint.x - BUTTON_DIAMETER / 2, self.startingPoint.y - BUTTON_DIAMETER / 2, BUTTON_DIAMETER, BUTTON_DIAMETER)];
             button.layer.cornerRadius = BUTTON_DIAMETER / 2;
             button.alpha = 0.0;
@@ -135,7 +135,7 @@
 
         UIButton *button = [self buttonForPoint:point];
         if (button) {
-            AWRMenuItem *item = [self.items objectAtIndex:button.tag];
+            AWRMenuViewItem *item = [self.items objectAtIndex:button.tag];
             self.helpLabel.text = item.text;
             self.helpLabel.backgroundColor = [UIColor colorWithRed:0.8 green:0.3 blue:0.3 alpha:1.0];
             return;
@@ -149,7 +149,7 @@
     if (gesture.state == UIGestureRecognizerStateEnded) {
         UIButton *button = [self buttonForPoint:point];
         if (button) {
-            AWRMenuItem *item = [self.items objectAtIndex: button.tag];
+            AWRMenuViewItem *item = [self.items objectAtIndex: button.tag];
             if (self.delegate) {
                 [self.delegate menu:self didSelectItemWithIdentifier:item.identifier];
             }
