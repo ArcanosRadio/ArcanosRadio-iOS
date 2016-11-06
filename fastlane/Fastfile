@@ -159,6 +159,7 @@ platform :ios do
             reinstall_app: false,
             localize_simulator: true)
         frameit(white: true)
+        deliver
     end
 
     after_all do |lane|
