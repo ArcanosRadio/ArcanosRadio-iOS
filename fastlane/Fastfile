@@ -158,11 +158,10 @@ platform :ios do
             erase_simulator: false,
             reinstall_app: false,
             localize_simulator: true)
-        frameit(white: true)
     end
 
     lane :upload_metadata do
-        deliver
+        deliver(skip_binary_upload: true)
     end
 
     after_all do |lane|
