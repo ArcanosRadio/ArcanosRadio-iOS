@@ -171,14 +171,90 @@ Born to be wild";
     bornToBeWild.albumArtAssetName = @"born_to_be_wild";
     bornToBeWild.updatedAt = self.referenceDate;
 
+    AWRSongViewModel *huntingHighAndLow = [[AWRSongViewModel alloc] init];
+    huntingHighAndLow.songName = @"Hunting High And Low";
+    huntingHighAndLow.artistName = @"Stratovarius";
+    huntingHighAndLow.lyrics = @"I feel the wind in my hair\n\
+And it's whispering, telling me things\n\
+Of a storm that is gathering near\n\
+Full of power I'm spreading my wings\n\
+\n\
+Now I'm leaving my worries behind\n\
+Feel the freedom of body and mind\n\
+I'm starting my journey, I'm drifting away with the wind, I go\n\
+\n\
+I am Hunting High and Low\n\
+Diving from the sky above\n\
+Looking for, more and more, once again\n\
+I'm Hunting High and Low\n\
+Sometimes I may win, sometimes I'll lose\n\
+It's just a game that I play\n\
+\n\
+After the storm there's a calm\n\
+Through the clouds shines a ray of the sun\n\
+I'm carried from all my harm\n\
+There is no one I can't outrun\n\
+\n\
+Now I'm leaving my worries behind\n\
+Feel the freedom of body and mind\n\
+I'm starting my journey, I'm drifting away with the wind, I go\n\
+\n\
+I am Hunting High and Low\n\
+Diving from the sky above\n\
+Looking for, more and more, once again\n\
+I'm Hunting High and Low\n\
+Sometimes I may win sometimes I lose\n\
+It's just a game that I play\n\
+\n\
+I am Hunting High and Low\n\
+Diving from the sky above\n\
+Looking for, more and more, once again\n\
+I'm Hunting High and Low\n\
+Sometimes I may win sometimes I lose\n\
+It's just a game that I play";
+    huntingHighAndLow.albumArtAssetName = @"hunting_high_and_low";
+    huntingHighAndLow.updatedAt = self.referenceDate;
+
     AWRSongViewModel *ironMan = [[AWRSongViewModel alloc] init];
     ironMan.songName = @"Iron Man";
     ironMan.artistName = @"Black Sabbath";
-    ironMan.lyrics = @"";
-    ironMan.albumArtAssetName = @"born_to_be_wild";
+    ironMan.lyrics = @"Has he lost his mind?\n\
+Can he see or is he blind?\n\
+Can he walk at all\n\
+Or if he moves will he fall?\n\
+Is he alive or dead?\n\
+Has he thoughts within his head?\n\
+We'll just pass him there\n\
+Why should we even care?\n\
+\n\
+He was turned to steel\n\
+In the great magnetic field\n\
+When he travelled time\n\
+For the future of mankind\n\
+\n\
+Nobody wants him\n\
+He just stares at the world\n\
+Planning his vengeance\n\
+That he will soon unfurl\n\
+\n\
+Now the time is here\n\
+For iron man to spread fear\n\
+Vengeance from the grave\n\
+Kills the people he once saved\n\
+\n\
+Nobody wants him\n\
+They just turn their heads\n\
+Nobody helps him\n\
+Now he has his revenge\n\
+\n\
+Heavy boots of lead\n\
+Fills his victims full of dread\n\
+Running as fast as they can\n\
+Iron man lives again!";
+    ironMan.albumArtAssetName = @"iron_man";
     ironMan.updatedAt = self.referenceDate;
 
-    return @[bornToBeWild, ironMan];
+    return @[bornToBeWild, huntingHighAndLow, ironMan];
 }
 
 @end

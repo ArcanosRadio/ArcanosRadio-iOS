@@ -27,14 +27,17 @@
     XCUIElement *artistLabel = app.otherElements[@"artist_label"];
     XCUIElement *menuButtonButton = app.buttons[@"menu_button"];
 
+    // First screenshot: Full album, Stratovarius song
     NSPredicate *exists = [NSPredicate predicateWithFormat:@"exists == 1"];
     [self expectationForPredicate:exists
-              evaluatedWithObject:scrollviewChildren.otherElements[@"Steppenwolf"]
+              evaluatedWithObject:scrollviewChildren.otherElements[@"Stratovarius"]
                           handler:nil];
     [self waitForExpectationsWithTimeout:15 handler:nil];
 
     [Snapshot snapshot:@"01_Initial" waitForLoadingIndicator:YES];
 
+
+    // Second screenshot: Lyrics, Black Sabbath song
     [self expectationForPredicate:exists
               evaluatedWithObject:scrollviewChildren.otherElements[@"Black Sabbath"]
                           handler:nil];
@@ -44,9 +47,25 @@
 
     [Snapshot snapshot:@"02_SmallHeader" waitForLoadingIndicator:YES];
 
-    [artistLabel pressForDuration:0 thenDragToElement:headerContainer];
+
+    // Third screenshot: Scroll to the end, Steppenwolf song
+    [self expectationForPredicate:exists
+              evaluatedWithObject:scrollviewChildren.otherElements[@"Steppenwolf"]
+                          handler:nil];
+    [self waitForExpectationsWithTimeout:15 handler:nil];
+
+    [headerContainer swipeUp];
 
     [Snapshot snapshot:@"03_FullLyrics" waitForLoadingIndicator:YES];
+
+
+    // Fourth screenshot: Menu, Stratovarius song
+    [[scrollviewChildren elementBoundByIndex:0] swipeDown];
+
+    [self expectationForPredicate:exists
+              evaluatedWithObject:scrollviewChildren.otherElements[@"Stratovarius"]
+                          handler:nil];
+    [self waitForExpectationsWithTimeout:15 handler:nil];
 
     [menuButtonButton tap];
 
