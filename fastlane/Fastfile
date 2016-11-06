@@ -133,8 +133,12 @@ platform :ios do
     end
 
     lane :store do
-        snapshot
-        # cert(output_path: "./Certificates/")
+        snapshot(
+            scheme: "ArcanosRadioMock",
+            number_of_retries: 5,
+            localize_simulator: true)
+        frameit(white: true)
+          # cert(output_path: "./Certificates/")
         # sigh(
         #     output_path: "./Certificates/",
         #     adhoc: false,

@@ -11,16 +11,12 @@
 - (void)setUp {
     [super setUp];
     self.continueAfterFailure = NO;
-    [[[XCUIApplication alloc] init] launch];
 }
 
 - (void)testFastlaneScreenshot {
     XCUIApplication *app = [[XCUIApplication alloc] init];
-    NSDictionary *testEnvironment = @{@"mock": @(YES)};
-    app.launchEnvironment = testEnvironment;
-
-    [app launch];
     [Snapshot setupSnapshot:app];
+    [app launch];
 
     XCUIElementQuery *scrollviewChildren = [[XCUIApplication alloc] init].scrollViews.otherElements;
     XCUIElement *headerContainer = app.otherElements[@"header_container"];
