@@ -36,6 +36,11 @@ fastlane ios store
 fastlane ios screenshots
 ```
 
+### ios upload_metadata
+```
+fastlane ios upload_metadata
+```
+
 
 ----
 
