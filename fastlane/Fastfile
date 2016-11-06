@@ -159,6 +159,9 @@ platform :ios do
             reinstall_app: false,
             localize_simulator: true)
         frameit(white: true)
+    end
+
+    lane :upload_metadata do
         deliver
     end
 
