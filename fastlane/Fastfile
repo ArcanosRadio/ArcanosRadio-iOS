@@ -133,13 +133,7 @@ platform :ios do
     end
 
     lane :store do
-        ENV["SIMULATOR_STATUS_MAGIC_OVERRIDES"] = "enable"
-        snapshot(
-            scheme: "ArcanosRadioMock",
-            number_of_retries: 5,
-            localize_simulator: true)
-        frameit(white: true)
-          # cert(output_path: "./Certificates/")
+        # cert(output_path: "./Certificates/")
         # sigh(
         #     output_path: "./Certificates/",
         #     adhoc: false,
@@ -154,6 +148,17 @@ platform :ios do
         # build_number = get_build_number(xcodeproj: "ArcanosRadio.xcodeproj")
         # commit_version_bump(message: "Fastlane store: #{version} (#{build_number})",
         #                     xcodeproj: "ArcanosRadio.xcodeproj")
+    end
+
+    lane :screenshots do
+        ENV["SIMULATOR_STATUS_MAGIC_OVERRIDES"] = "enable"
+        snapshot(
+            scheme: "ArcanosRadioMock",
+            number_of_retries: 5,
+            erase_simulator: false,
+            reinstall_app: false,
+            localize_simulator: true)
+        frameit(white: true)
     end
 
     after_all do |lane|

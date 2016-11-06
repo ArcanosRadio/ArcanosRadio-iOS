@@ -31,6 +31,11 @@ Builds trial release and upload to Testflight
 fastlane ios store
 ```
 
+### ios screenshots
+```
+fastlane ios screenshots
+```
+
 
 ----
 
