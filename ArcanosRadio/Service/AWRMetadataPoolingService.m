@@ -52,13 +52,13 @@
 }
 
 - (void)tick:(NSTimer *)timer {
-    [self downloadCurrentSong].catch(^id<PXPromise>(id<PXBrokenPromise> finishedPromise) {
+    [self fetchCurrentSong].catch(^id<PXPromise>(id<PXBrokenPromise> finishedPromise) {
         NSLog(@"Error pooling for new song: %@", finishedPromise.error);
         return [PXNoMorePromises new];
     });
 }
 
-- (id<PXPromise>)downloadCurrentSong {
+- (id<PXPromise>)fetchCurrentSong {
     __weak typeof(self) weakSelf = self;
 
     return [self.metadataStore currentSong]
@@ -75,35 +75,59 @@
 
             double diff = [result.updatedAt timeIntervalSinceReferenceDate] - [weakSelf.currentPlaylist.updatedAt timeIntervalSinceReferenceDate];
 
-            DLog(@"Current: %@ (%@) - Before: %@ (%@) = %f",
-                 result.title,
-                 result.updatedAt,
-                 weakSelf.currentPlaylist.title,
-                 weakSelf.currentPlaylist.updatedAt,
-                 diff);
-
             if (diff < 2) {
-                DLog(@"Current song: no changes");
                 return [[NSError alloc] initWithDomain:@"Song hasn't changed since last time we've checked" code:-200 userInfo:nil];
             }
 
             weakSelf.currentPlaylist = result;
 
-            DLog(@"Current song: new song: %@ by %@", result.song.songName, result.song.artist.artistName);
+            DLog(@"New song: %@ by %@ (since %@)", result.song.songName, result.song.artist.artistName, result.updatedAt);
 
             if (weakSelf.delegate) [weakSelf.delegate metadataDidChangeTheSong:weakSelf.currentPlaylist.song];
 
             if (!weakSelf.currentPlaylist.song) return [PXNoMorePromises new];
 
-            [weakSelf downloadAlbumArtAsync];
+            [weakSelf fetchArtistDescriptionAsync];
 
-            [weakSelf downloadAlbumLyricsAsync];
+            [weakSelf fetchSongDescriptionAsync];
+
+            [weakSelf fetchAlbumArtAsync];
+
+            [weakSelf fetchAlbumLyricsAsync];
 
             return [PXNoMorePromises new];
         });
 }
 
-- (void)downloadAlbumArtAsync {
+- (NSString *)locale {
+    return @"en";
+}
+
+- (void)fetchArtistDescriptionAsync {
+    __weak typeof(self) weakSelf = self;
+
+    [weakSelf.metadataStore descriptionForArtist:weakSelf.currentPlaylist.song.artist locale:self.locale]
+        .then(^id<PXPromise>(id<PXSuccessfulPromise> finishedPromise) {
+            if ([weakSelf.delegate respondsToSelector:@selector(metadataDidFinishDownloadingArtistDescription:forSong:)]) {
+                [weakSelf.delegate metadataDidFinishDownloadingArtistDescription:finishedPromise.result forSong:weakSelf.currentPlaylist.song];
+            }
+            return [PXNoMorePromises new];
+        });
+}
+
+- (void)fetchSongDescriptionAsync {
+    __weak typeof(self) weakSelf = self;
+
+    [weakSelf.metadataStore descriptionForSong:weakSelf.currentPlaylist.song locale:self.locale]
+        .then(^id<PXPromise>(id<PXSuccessfulPromise> finishedPromise) {
+            if ([weakSelf.delegate respondsToSelector:@selector(metadataDidFinishDownloadingSongDescription:forSong:)]) {
+                [weakSelf.delegate metadataDidFinishDownloadingSongDescription:finishedPromise.result forSong:weakSelf.currentPlaylist.song];
+            }
+            return [PXNoMorePromises new];
+        });
+}
+
+- (void)fetchAlbumArtAsync {
     __weak typeof(self) weakSelf = self;
 
     if (!weakSelf.currentPlaylist.song.albumArt) {
@@ -119,7 +143,7 @@
         });
 }
 
-- (void)downloadAlbumLyricsAsync {
+- (void)fetchAlbumLyricsAsync {
     __weak typeof(self) weakSelf = self;
 
     BOOL hasRights = weakSelf.currentPlaylist.song.hasRightsContract || self.serverRightsFlag || self.localRightsFlag;
@@ -164,7 +188,7 @@
 - (void)backgroundFetchWithCompletionHandler:(void (^)(BOOL))completionHandler {
     NSString *songBefore = self.currentPlaylist.song.songName;
 
-    [self downloadCurrentSong]
+    [self fetchCurrentSong]
         .then(^id<PXPromise>(id<PXSuccessfulPromise> finishedPromise) {
             NSString *songNow = self.currentPlaylist.song.songName;
             if ([songBefore isEqualToString:songNow]) {

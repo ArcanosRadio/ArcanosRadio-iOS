@@ -13,5 +13,6 @@
 @property (nonatomic) BOOL hasRightsContract;
 @property (nonatomic, strong) NSString *spotifyTrackId;
 @property (nonatomic, strong) NSString *spotifyAlbumId;
+@property (nonatomic, strong) NSDictionary<NSString *, __kindof id<AWRFile>> *localizedDescription;
 
 @end

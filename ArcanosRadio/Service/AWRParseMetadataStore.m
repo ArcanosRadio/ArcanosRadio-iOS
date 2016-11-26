@@ -79,11 +79,41 @@
         return nil;
     }
     AWRSongParse *songParse = (AWRSongParse *)song;
-    return [songParse.lyrics getDataInBackground]
+    return [self fetchTextFile:songParse.lyrics];
+}
+
+- (id<PXPromise>)descriptionForArtist:(id<AWRArtist>)artist locale:(NSString *)locale {
+    if (![artist isKindOfClass:AWRArtistParse.class]) {
+        return nil;
+    }
+    AWRArtistParse *artistParse = (AWRArtistParse *)artist;
+    PFFile *file = [artistParse.localizedDescription objectForKey:locale];
+    if (!file) {
+        return nil;
+    }
+
+    return [self fetchTextFile:file];
+}
+
+- (id<PXPromise>)descriptionForSong:(id<AWRSong>)song locale:(NSString *)locale {
+    if (![song isKindOfClass:AWRSongParse.class]) {
+        return nil;
+    }
+    AWRSongParse *songParse = (AWRSongParse *)song;
+    PFFile *file = [songParse.localizedDescription objectForKey:locale];
+    if (!file) {
+        return nil;
+    }
+
+    return [self fetchTextFile:file];
+}
+
+- (id<PXPromise>)fetchTextFile:(PFFile *)file {
+    return [file getDataInBackground]
         .then(^id<PXPromise>(id<PXSuccessfulPromise> finishedPromise) {
-            NSData *lyricsData = finishedPromise.result;
-            NSString *lyricsText = [[NSString alloc]initWithData:lyricsData encoding:NSUTF8StringEncoding];
-            return lyricsText;
+            NSData *data = finishedPromise.result;
+            NSString *text = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+            return text;
         });
 }
 
