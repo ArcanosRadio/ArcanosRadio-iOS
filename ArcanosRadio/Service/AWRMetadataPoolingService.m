@@ -10,6 +10,8 @@
 @property (nonatomic)NSTimeInterval timerInterval;
 @property (nonatomic)double timerIntervalActive;
 @property (nonatomic)double timerIntervalBackground;
+@property (nonatomic) BOOL serverRightsFlag;
+@property (nonatomic) BOOL localRightsFlag;
 
 @end
 
@@ -22,6 +24,9 @@
         id<AWRMetadataStore> store = [AWRMetadataFactory createMetadataStore];
         self.timerIntervalActive = [[store readConfig:REMOTE_CONFIG_POOLING_TIME_ACTIVE_KEY] doubleValue];
         self.timerIntervalBackground = [[store readConfig:REMOTE_CONFIG_POOLING_TIME_BACKGROUND_KEY] doubleValue];
+        self.serverRightsFlag = [[store readConfig:REMOTE_CONFIG_RIGHTS_FLAG_KEY] boolValue];
+        self.localRightsFlag = [[NSUserDefaults standardUserDefaults] boolForKey:CONFIG_RIGHTS_FLAG_KEY];
+
         _foregroundExecution = YES;
         self.timerInterval = self.timerIntervalActive;
     }
@@ -117,7 +122,15 @@
 - (void)downloadAlbumLyricsAsync {
     __weak typeof(self) weakSelf = self;
 
-    if (!weakSelf.currentPlaylist.song.lyrics) {
+    BOOL hasRights = weakSelf.currentPlaylist.song.hasRightsContract || self.serverRightsFlag || self.localRightsFlag;
+
+    if (!hasRights || !weakSelf.currentPlaylist.song.lyrics) {
+        NSString *noLyrics = NSLocalizedString(@"LYRICS_UNAVAILABLE", nil);
+
+        if ([weakSelf.delegate respondsToSelector:@selector(metadataDidFinishDownloadingLyrics:forSong:)]) {
+            [weakSelf.delegate metadataDidFinishDownloadingLyrics:noLyrics forSong:weakSelf.currentPlaylist.song];
+        }
+
         return;
     }
 

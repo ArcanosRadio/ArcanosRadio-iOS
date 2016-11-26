@@ -10,5 +10,7 @@
 @property (nonatomic, strong) id<AWRFile> albumArt;
 @property (nonatomic, strong) id<AWRFile> lyrics;
 @property (nonatomic, strong) NSArray<NSString *> *tags;
+@property (nonatomic) BOOL hasRightsContract;
+@property (nonatomic, strong) NSString *spotifyUrl;
 
 @end

@@ -11,6 +11,6 @@
     return @"Song";
 }
 
-@dynamic songName, artist, albumArt, lyrics, tags;
+@dynamic songName, artist, albumArt, lyrics, tags, hasRightsContract, spotifyUrl;
 
 @end

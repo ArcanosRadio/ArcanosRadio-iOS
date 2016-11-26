@@ -37,3 +37,4 @@
 "CRASHREPORT_REQUEST_MESSAGE" = "The app just crashed and you selected not sending crash reports. Crash reports don't carry any personal information and you don't have to be worried about sending them.";
 "CRASHREPORT_REQUEST_NEVER_SEND" = "No, don't send them";
 "CRASHREPORT_REQUEST_ALWAYS_SEND" = "Ok, enable reports again";
+"LYRICS_UNAVAILABLE" = "The lyrics are not available for this song";
