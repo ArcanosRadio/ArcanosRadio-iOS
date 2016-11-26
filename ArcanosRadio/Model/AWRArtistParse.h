@@ -8,6 +8,7 @@
 @property (nonatomic, strong) NSString *url;
 @property (nonatomic, strong) NSString *text;
 @property (nonatomic, strong) NSArray *tags;
+@property (nonatomic, strong) NSString *spotifyArtistId;
 
 + (NSString *)parseClassName;
 

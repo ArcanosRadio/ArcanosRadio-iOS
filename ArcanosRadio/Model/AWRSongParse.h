@@ -13,7 +13,8 @@
 @property (nonatomic, strong) PFFile *lyrics;
 @property (nonatomic, strong) NSArray *tags;
 @property (nonatomic) BOOL hasRightsContract;
-@property (nonatomic, strong) NSString *spotifyUrl;
+@property (nonatomic, strong) NSString *spotifyTrackId;
+@property (nonatomic, strong) NSString *spotifyAlbumId;
 
 + (NSString *)parseClassName;
 

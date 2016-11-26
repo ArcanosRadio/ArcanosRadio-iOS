@@ -11,6 +11,6 @@
     return @"Artist";
 }
 
-@dynamic artistName, url, text, tags;
+@dynamic artistName, url, text, tags, spotifyArtistId;
 
 @end

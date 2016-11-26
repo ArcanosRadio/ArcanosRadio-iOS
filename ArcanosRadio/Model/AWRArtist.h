@@ -7,5 +7,6 @@
 @property (nonatomic, strong) NSString *url;
 @property (nonatomic, strong) NSString *text;
 @property (nonatomic, strong) NSArray<NSString *> *tags;
+@property (nonatomic, strong) NSString *spotifyArtistId;
 
 @end
