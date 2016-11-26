@@ -117,6 +117,11 @@
 		01DBE4991D8CB2C4003B2100 /* AWRNowPlayingCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DBE4951D8CB2C4003B2100 /* AWRNowPlayingCoordinator.m */; };
 		01DBE49F1D8CB2D0003B2100 /* AWRParseMetadataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DBE49A1D8CB2D0003B2100 /* AWRParseMetadataStore.m */; };
 		01DBE4A01D8CB2D0003B2100 /* AWRMetadataFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DBE49E1D8CB2D0003B2100 /* AWRMetadataFactory.m */; };
+		01DD772A1DE985EB006E82B3 /* AWRCrashReportController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DD77291DE985EB006E82B3 /* AWRCrashReportController.m */; };
+		01DD772E1DE992BB006E82B3 /* AWRShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DD772D1DE992BB006E82B3 /* AWRShareViewController.m */; };
+		01DD772F1DE992BB006E82B3 /* AWRShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DD772D1DE992BB006E82B3 /* AWRShareViewController.m */; };
+		01DD77321DE997DF006E82B3 /* AWRControlCenterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DD77311DE997DF006E82B3 /* AWRControlCenterController.m */; };
+		01DD77331DE997DF006E82B3 /* AWRControlCenterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DD77311DE997DF006E82B3 /* AWRControlCenterController.m */; };
 		01DE2E801D95FCA3003E604E /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DE2E7F1D95FCA3003E604E /* FXBlurView.m */; };
 		01DE2E821D9601C1003E604E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01DE2E811D9601C1003E604E /* Accelerate.framework */; };
 		01FB39341DAC592B00EBC99D /* AWRNowPlayingHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01FB39331DAC592B00EBC99D /* AWRNowPlayingHeaderView.xib */; };
@@ -279,6 +284,12 @@
 		01DBE49C1D8CB2D0003B2100 /* AWRMetadataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRMetadataStore.h; sourceTree = "<group>"; };
 		01DBE49D1D8CB2D0003B2100 /* AWRMetadataFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRMetadataFactory.h; sourceTree = "<group>"; };
 		01DBE49E1D8CB2D0003B2100 /* AWRMetadataFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRMetadataFactory.m; sourceTree = "<group>"; };
+		01DD77281DE985EB006E82B3 /* AWRCrashReportController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRCrashReportController.h; sourceTree = "<group>"; };
+		01DD77291DE985EB006E82B3 /* AWRCrashReportController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRCrashReportController.m; sourceTree = "<group>"; };
+		01DD772C1DE992BB006E82B3 /* AWRShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRShareViewController.h; sourceTree = "<group>"; };
+		01DD772D1DE992BB006E82B3 /* AWRShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRShareViewController.m; sourceTree = "<group>"; };
+		01DD77301DE997DF006E82B3 /* AWRControlCenterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRControlCenterController.h; sourceTree = "<group>"; };
+		01DD77311DE997DF006E82B3 /* AWRControlCenterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRControlCenterController.m; sourceTree = "<group>"; };
 		01DE2E7E1D95FCA3003E604E /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
 		01DE2E7F1D95FCA3003E604E /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
 		01DE2E811D9601C1003E604E /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -523,10 +534,16 @@
 				018E2CC41DBC1CF50035455B /* AWRViewController.m */,
 				01DBE4961D8CB2C4003B2100 /* AWRNowPlayingController.h */,
 				01DBE4941D8CB2C4003B2100 /* AWRNowPlayingController.m */,
+				01DD77301DE997DF006E82B3 /* AWRControlCenterController.h */,
+				01DD77311DE997DF006E82B3 /* AWRControlCenterController.m */,
 				016500F81DB3383700B32C0A /* AWRAboutController.h */,
 				016500F91DB3383700B32C0A /* AWRAboutController.m */,
 				018E2D0C1DBCD8670035455B /* AWRLicenseController.h */,
 				018E2D0D1DBCD8670035455B /* AWRLicenseController.m */,
+				01DD77281DE985EB006E82B3 /* AWRCrashReportController.h */,
+				01DD77291DE985EB006E82B3 /* AWRCrashReportController.m */,
+				01DD772C1DE992BB006E82B3 /* AWRShareViewController.h */,
+				01DD772D1DE992BB006E82B3 /* AWRShareViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -881,8 +898,10 @@
 				0137D8771D9CCE56003A1E6B /* NSObject+PXPromise.m in Sources */,
 				018E2CF51DBC78960035455B /* AWRAppDeveloperViewModel.m in Sources */,
 				0196C6411DCE89B40061EEE8 /* AWRMenuView.m in Sources */,
+				01DD772F1DE992BB006E82B3 /* AWRShareViewController.m in Sources */,
 				016500F71DB337A100B32C0A /* AWRAboutView.m in Sources */,
 				0196C6651DCF6EA60061EEE8 /* AWRPlaylistVO.m in Sources */,
+				01DD77331DE997DF006E82B3 /* AWRControlCenterController.m in Sources */,
 				01FB39391DAC596800EBC99D /* AWRNowPlayingHeaderView.m in Sources */,
 				018E2D131DBD00F00035455B /* AWRHelpCoordinator.m in Sources */,
 				0137D8721D9CCE29003A1E6B /* main.m in Sources */,
@@ -915,6 +934,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01DD772E1DE992BB006E82B3 /* AWRShareViewController.m in Sources */,
 				01DBE4991D8CB2C4003B2100 /* AWRNowPlayingCoordinator.m in Sources */,
 				0181E82E1D8CB160008E21C5 /* AWRPlaylistParse.m in Sources */,
 				01FB39381DAC596800EBC99D /* AWRNowPlayingHeaderView.m in Sources */,
@@ -931,6 +951,8 @@
 				01DBE4981D8CB2C4003B2100 /* AWRNowPlayingController.m in Sources */,
 				01DE2E801D95FCA3003E604E /* FXBlurView.m in Sources */,
 				0181E8241D8CB158008E21C5 /* PXNoMorePromises.m in Sources */,
+				01DD77321DE997DF006E82B3 /* AWRControlCenterController.m in Sources */,
+				01DD772A1DE985EB006E82B3 /* AWRCrashReportController.m in Sources */,
 				0181E8251D8CB158008E21C5 /* PXPromiseResult.m in Sources */,
 				01FB39401DACABC000EBC99D /* UIView+Utils.m in Sources */,
 				0181E82F1D8CB160008E21C5 /* AWRSongParse.m in Sources */,

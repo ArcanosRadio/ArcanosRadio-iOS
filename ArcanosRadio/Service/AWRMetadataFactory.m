@@ -4,6 +4,10 @@
 
 @implementation AWRMetadataFactory
 
++ (Class<AWRMetadataStore>)metadataStoreClass {
+    return [AWRParseMetadataStore class];
+}
+
 + (id<AWRMetadataStore>)createMetadataStore {
     static dispatch_once_t onceToken;
 

@@ -2,9 +2,6 @@
 #import "AWRMetadataStore.h"
 #import "AWRMetadataFactory.h"
 
-NSString *const kPoolingTimeActiveConfigKey = @"iphonePoolingTimeActive";
-NSString *const kPoolingTimeBackgroundConfigKey = @"iphonePoolingTimeBackground";
-
 @interface AWRMetadataPoolingService()
 
 @property (nonatomic, strong) NSTimer * timer;
@@ -25,8 +22,8 @@ NSString *const kPoolingTimeBackgroundConfigKey = @"iphonePoolingTimeBackground"
     if (self) {
         self.metadataStore = store;
         id<AWRMetadataStore> store = [AWRMetadataFactory createMetadataStore];
-        self.timerIntervalActive = [[store readConfig:kPoolingTimeActiveConfigKey] doubleValue];
-        self.timerIntervalBackground = [[store readConfig:kPoolingTimeBackgroundConfigKey] doubleValue];
+        self.timerIntervalActive = [[store readConfig:REMOTE_CONFIG_POOLING_TIME_ACTIVE_KEY] doubleValue];
+        self.timerIntervalBackground = [[store readConfig:REMOTE_CONFIG_POOLING_TIME_BACKGROUND_KEY] doubleValue];
         _foregroundExecution = YES;
         self.timerInterval = self.timerIntervalActive;
     }
@@ -69,7 +66,7 @@ NSString *const kPoolingTimeBackgroundConfigKey = @"iphonePoolingTimeBackground"
                 DLog(@"Current song: no result");
                 if (!weakSelf.currentPlaylist) return [PXNoMorePromises new];
                 weakSelf.currentPlaylist = nil;
-                if (weakSelf.delegate) [weakSelf.delegate didFetchSongMetadata:nil];
+                if (weakSelf.delegate) [weakSelf.delegate metadataDidChangeTheSong:nil];
                 return [PXNoMorePromises new];
             }
 
@@ -91,7 +88,7 @@ NSString *const kPoolingTimeBackgroundConfigKey = @"iphonePoolingTimeBackground"
 
             DLog(@"Current song: new song: %@ by %@", result.song.songName, result.song.artist.artistName);
 
-            if (weakSelf.delegate) [weakSelf.delegate didFetchSongMetadata:weakSelf.currentPlaylist];
+            if (weakSelf.delegate) [weakSelf.delegate metadataDidChangeTheSong:weakSelf.currentPlaylist.song];
 
             if (!weakSelf.currentPlaylist.song) return [PXNoMorePromises new];
 
@@ -112,7 +109,9 @@ NSString *const kPoolingTimeBackgroundConfigKey = @"iphonePoolingTimeBackground"
 
     [weakSelf.metadataStore albumArtBySong:weakSelf.currentPlaylist.song]
         .then(^id<PXPromise>(id<PXSuccessfulPromise> finishedPromise) {
-            [weakSelf.delegate didFetchSongAlbumArt:finishedPromise.result];
+            NSData *data = finishedPromise.result;
+            UIImage *albumArt = [UIImage imageWithData:data];
+            [weakSelf.delegate metadataDidFinishDownloadingAlbumArt:albumArt forSong:weakSelf.currentPlaylist.song];
             return [PXNoMorePromises new];
         });
 }
@@ -126,7 +125,9 @@ NSString *const kPoolingTimeBackgroundConfigKey = @"iphonePoolingTimeBackground"
 
     [weakSelf.metadataStore lyricsBySong:weakSelf.currentPlaylist.song]
         .then(^id<PXPromise>(id<PXSuccessfulPromise> finishedPromise) {
-            [weakSelf.delegate didFetchSongLyrics:finishedPromise.result];
+            if ([weakSelf.delegate respondsToSelector:@selector(metadataDidFinishDownloadingLyrics:forSong:)]) {
+                [weakSelf.delegate metadataDidFinishDownloadingLyrics:finishedPromise.result forSong:weakSelf.currentPlaylist.song];
+            }
             return [PXNoMorePromises new];
         });
 }

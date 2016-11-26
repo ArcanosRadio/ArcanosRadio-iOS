@@ -4,6 +4,7 @@
 #import "AWRMetadataFactory.h"
 #ifndef MOCK
 #import "AWRReachability.h"
+#import "AWRCrashReportController.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 #define CRASHLYTICS_DELEGATE , CrashlyticsDelegate
@@ -21,10 +22,6 @@
 @property (nonatomic, strong) NSObject *currentCoordinator;
 
 @end
-
-NSString *kKeepScreenOn = @"keep_screen_on";
-NSString *kAgreeWithCrashReports = @"agree_with_crash_reports";
-NSString *kStreamOverMobileData = @"mobile_data_enabled";
 
 @implementation AWRAppCoordinator
 
@@ -58,30 +55,18 @@ NSString *kStreamOverMobileData = @"mobile_data_enabled";
     }
     return _reachability;
 }
-#endif
 
 - (void)receivedReachability:(NSNotification *)note {
-//    NetworkStatus status = [self.reachability currentReachabilityStatus];
-//
-//    if(status == NotReachable) {
-//        NSLog(@"Sorry, bro! No internet for you");
-//    }
-//    else if (status == ReachableViaWiFi) {
-//        NSLog(@"Wi-fi");
-//    }
-//    else if (status == ReachableViaWWAN) {
-//        NSLog(@"3g");
-//    }
 }
+#endif
 
 - (UIViewController *)start {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults addObserver:self forKeyPath:kKeepScreenOn options:NSKeyValueObservingOptionNew context:NULL];
-    [defaults addObserver:self forKeyPath:kStreamOverMobileData options:NSKeyValueObservingOptionNew context:NULL];
+    [defaults addObserver:self forKeyPath:CONFIG_KEEP_SCREEN_ON_KEY options:NSKeyValueObservingOptionNew context:NULL];
+    [defaults addObserver:self forKeyPath:CONFIG_STREAM_OVER_MOBILE_DATA_KEY options:NSKeyValueObservingOptionNew context:NULL];
     [self evaluateSettings:defaults];
 
     [[AWRMetadataFactory createMetadataStore] refreshConfig];
-
 #ifndef MOCK
     [self.reachability startNotifier];
 #endif
@@ -94,9 +79,9 @@ NSString *kStreamOverMobileData = @"mobile_data_enabled";
 }
 
 - (void)evaluateSettings:(NSUserDefaults *)defaults {
-    [[UIApplication sharedApplication] setIdleTimerDisabled:[defaults boolForKey:kKeepScreenOn]];
-    if ([defaults valueForKey:kAgreeWithCrashReports] == nil) {
-        [defaults setBool:YES forKey:kAgreeWithCrashReports];
+    [[UIApplication sharedApplication] setIdleTimerDisabled:[defaults boolForKey:CONFIG_KEEP_SCREEN_ON_KEY]];
+    if ([defaults valueForKey:CONFIG_AGREE_WITH_CRASH_REPORTS_KEY] == nil) {
+        [defaults setBool:YES forKey:CONFIG_AGREE_WITH_CRASH_REPORTS_KEY];
     }
 }
 
@@ -132,32 +117,8 @@ NSString *kStreamOverMobileData = @"mobile_data_enabled";
 
 #ifndef MOCK
 - (void)crashlyticsDidDetectReportForLastExecution:(CLSReport *)report completionHandler:(void (^)(BOOL))completionHandler {
-
-    BOOL reportCrash = [[NSUserDefaults standardUserDefaults] boolForKey:kAgreeWithCrashReports];
-
-    if (reportCrash) {
-        completionHandler(YES);
-    } else {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"CRASHREPORT_REQUEST_TITLE", nil)
-                                                                      message:NSLocalizedString(@"CRASHREPORT_REQUEST_MESSAGE", nil)
-                                                               preferredStyle:UIAlertControllerStyleAlert];
-
-        [alert addAction: [UIAlertAction actionWithTitle:NSLocalizedString(@"CRASHREPORT_REQUEST_NEVER_SEND", nil)
-                                                   style:UIAlertActionStyleCancel
-                                                 handler:^(UIAlertAction * _Nonnull action) {
-            completionHandler(NO);
-        }]];
-
-        [alert addAction: [UIAlertAction actionWithTitle:NSLocalizedString(@"CRASHREPORT_REQUEST_ALWAYS_SEND", nil)
-                                                   style:UIAlertActionStyleDefault
-                                                 handler:^(UIAlertAction * _Nonnull action) {
-            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kAgreeWithCrashReports];
-            completionHandler(YES);
-        }]];
-
-        [self.mainController presentViewController:alert animated:YES completion:NULL];
-    }
-
+    AWRCrashReportController *crashReportController = [[AWRCrashReportController alloc] initWithParent:self.mainController];
+    [crashReportController sendReport:report completionHandler:completionHandler];
 }
 #endif
 

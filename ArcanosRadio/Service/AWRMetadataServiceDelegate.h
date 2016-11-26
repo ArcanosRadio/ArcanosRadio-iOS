@@ -1,10 +1,14 @@
 #import <Foundation/Foundation.h>
 #import "AWRPlaylist.h"
+#import <UIKit/UIKit.h>
 
 @protocol AWRMetadataServiceDelegate <NSObject>
 
-- (void)didFetchSongMetadata:(id<AWRPlaylist>)playlist;
-- (void)didFetchSongAlbumArt:(NSData *)albumArt;
-- (void)didFetchSongLyrics:(NSString *)lyrics;
+@required
+- (void)metadataDidChangeTheSong:(id<AWRSong>)song;
+- (void)metadataDidFinishDownloadingAlbumArt:(UIImage *)albumArt forSong:(id<AWRSong>)song;
+
+@optional
+- (void)metadataDidFinishDownloadingLyrics:(NSString *)lyrics forSong:(id<AWRSong>)song;
 
 @end

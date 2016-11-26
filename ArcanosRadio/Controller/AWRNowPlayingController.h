@@ -1,5 +1,7 @@
 #import <UIKit/UIKit.h>
 #import "AWRViewController.h"
+#import "AWRSong.h"
+#import "AWRMetadataServiceDelegate.h"
 @class AWRNowPlayingViewModel;
 
 @protocol AWRNowPlayingControllerDelegate
@@ -10,12 +12,8 @@
 
 @end
 
-@interface AWRNowPlayingController : AWRViewController
+@interface AWRNowPlayingController : AWRViewController<AWRMetadataServiceDelegate>
 
 @property (weak, nonatomic) id<AWRNowPlayingControllerDelegate>delegate;
-
-- (void)metadataDidChangeTheSong:(NSString *)song artist:(NSString *)artist albumArt:(UIImage *)albumArt;
-- (void)metadataDidFinishDownloadingAlbumArt:(UIImage *)albumArt;
-- (void)metadataDidFinishDownloadingLyrics:(NSString *)lyrics;
 
 @end

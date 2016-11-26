@@ -17,6 +17,10 @@
     }]];
 }
 
++ (UIImage *)defaultAlbumArt {
+    return [UIImage imageNamed:@"arcanos_transparent_big"];
+}
+
 - (id<PXPromise>)currentSong {
     PFQuery *query = [AWRPlaylistParse query];
     [query orderByDescending:@"createdAt"];

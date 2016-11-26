@@ -5,8 +5,6 @@
 #import "AWRMetadataFactory.h"
 #import "PXPromise.h"
 
-NSString *const kStreamingUrlConfigKey = @"iphoneStreamingUrl";
-
 @interface AWRNowPlayingController () <AWRArcanosMediaPlayerDelegate, AWRNowPlayingViewDelegate>
 
 @property(strong, nonatomic) AWRArcanosMediaPlayer *arcanosRadio;
@@ -27,7 +25,7 @@ NSString *const kStreamingUrlConfigKey = @"iphoneStreamingUrl";
         self.viewModel = [[AWRNowPlayingViewModel alloc] init];
 
         __weak typeof(self)weakSelf = self;
-        weakSelf.streamingUrl = [[AWRMetadataFactory createMetadataStore] readConfig:kStreamingUrlConfigKey];
+        weakSelf.streamingUrl = [[AWRMetadataFactory createMetadataStore] readConfig:REMOTE_CONFIG_STREAMING_URL_KEY];
     }
     return self;
 }
@@ -42,20 +40,21 @@ NSString *const kStreamingUrlConfigKey = @"iphoneStreamingUrl";
     }
 }
 
-- (void)metadataDidChangeTheSong:(NSString *)song artist:(NSString *)artist albumArt:(UIImage *)albumArt {
-    self.viewModel.songName = song;
-    self.viewModel.artistName = artist;
-    self.viewModel.albumArt = albumArt;
+- (void)metadataDidChangeTheSong:(id<AWRSong>)song {
+    self.viewModel.songName = song.songName;
+    self.viewModel.artistName = song.artist.artistName;
+    UIImage *defaultImage = [[AWRMetadataFactory metadataStoreClass] defaultAlbumArt];
+    self.viewModel.albumArt = defaultImage;
     self.viewModel.lyrics = @"";
     [self.nowPlayingView renderModel:self.viewModel];
 }
 
-- (void)metadataDidFinishDownloadingAlbumArt:(UIImage *)albumArt {
+- (void)metadataDidFinishDownloadingAlbumArt:(UIImage *)albumArt forSong:(id<AWRSong>)song {
     self.viewModel.albumArt = albumArt;
     [self.nowPlayingView renderModel:self.viewModel];
 }
 
-- (void)metadataDidFinishDownloadingLyrics:(NSString *)lyrics {
+- (void)metadataDidFinishDownloadingLyrics:(NSString *)lyrics forSong:(id<AWRSong>)song {
     self.viewModel.lyrics = lyrics;
     [self.nowPlayingView renderModel:self.viewModel];
 }
@@ -74,14 +73,6 @@ NSString *const kStreamingUrlConfigKey = @"iphoneStreamingUrl";
 
 - (void)beginReceivingRemoteControlEvents {
     [self becomeFirstResponder];
-}
-
-- (IBAction)play:(id)sender {
-    [self.arcanosRadio play];
-}
-
-- (IBAction)stop:(id)sender {
-    [self.arcanosRadio stop];
 }
 
 - (void)playButtonPressed {

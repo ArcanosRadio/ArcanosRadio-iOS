@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "PXPromise.h"
 #import "AWRSong.h"
+#import <UIKit/UIKit.h>
 
 @protocol AWRMetadataStore
 
@@ -13,5 +14,5 @@
 - (id<PXPromise>)lyricsBySong:(id<AWRSong>)song;
 - (void)refreshConfig;
 - (id)readConfig:(NSString *)configKey;
-
++ (UIImage *)defaultAlbumArt;
 @end

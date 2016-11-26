@@ -4,6 +4,7 @@
 
 @interface AWRMetadataFactory : NSObject
 
++ (Class<AWRMetadataStore>)metadataStoreClass;
 + (id<AWRMetadataStore>)createMetadataStore;
 + (id<AWRMetadataService>)createMetadataService;
 
