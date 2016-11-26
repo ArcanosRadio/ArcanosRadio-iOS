@@ -5,11 +5,9 @@
 @interface AWRMetadataPoolingService()
 
 @property (nonatomic, strong) NSTimer * timer;
-@property (nonatomic, nullable, strong) id<AWRPlaylist>currentPlaylist;
 @property (nonatomic, strong) id<AWRMetadataStore> metadataStore;
 @property (nonatomic,getter=isForegroundExecution) BOOL foregroundExecution;
 @property (nonatomic)NSTimeInterval timerInterval;
-
 @property (nonatomic)double timerIntervalActive;
 @property (nonatomic)double timerIntervalBackground;
 

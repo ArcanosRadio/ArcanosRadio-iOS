@@ -13,7 +13,6 @@
 @property (nonatomic, strong) AWRNowPlayingController *mainController;
 @property (nonatomic, strong) AWRControlCenterController *controlCenterController;
 @property (nonatomic, strong) id<AWRMetadataService> metadataService;
-@property (nonatomic, strong) id<AWRSong> currentSong;
 
 @end
 
@@ -37,18 +36,17 @@
 }
 
 - (void)metadataDidChangeTheSong:(id<AWRSong>)song {
-    self.currentSong = song;
-    [self.mainController metadataDidChangeTheSong:self.currentSong];
-    [self.controlCenterController metadataDidChangeTheSong:self.currentSong];
+    [self.mainController metadataDidChangeTheSong:song];
+    [self.controlCenterController metadataDidChangeTheSong:song];
 }
 
 - (void)metadataDidFinishDownloadingAlbumArt:(UIImage *)albumArt forSong:(id<AWRSong>)song {
-    [self.mainController metadataDidFinishDownloadingAlbumArt:albumArt forSong:self.currentSong];
-    [self.controlCenterController metadataDidFinishDownloadingAlbumArt:albumArt forSong:self.currentSong];
+    [self.mainController metadataDidFinishDownloadingAlbumArt:albumArt forSong:song];
+    [self.controlCenterController metadataDidFinishDownloadingAlbumArt:albumArt forSong:song];
 }
 
 - (void)metadataDidFinishDownloadingLyrics:(NSString *)lyrics forSong:(id<AWRSong>)song {
-    [self.mainController metadataDidFinishDownloadingLyrics:lyrics forSong:self.currentSong];
+    [self.mainController metadataDidFinishDownloadingLyrics:lyrics forSong:song];
 }
 
 - (void)configureRemoteEvents {
@@ -62,7 +60,7 @@
 }
 
 - (void)userDidSelectShare {
-    AWRShareViewController *shareController = [[AWRShareViewController alloc] initWithCurrentSong:self.currentSong parentView:self.mainController.view];
+    AWRShareViewController *shareController = [[AWRShareViewController alloc] initWithCurrentSong:self.metadataService.currentPlaylist.song parentView:self.mainController.view];
     [self.mainController presentViewController:shareController animated:YES completion:nil];
 }
 
