@@ -64,7 +64,7 @@
 
 - (id<PXPromise>)albumArtBySong:(id<AWRSong>)song {
     if (![song isKindOfClass:AWRSongParse.class]) {
-        return nil;
+        return [NSError errorWithDomain:@"Error on Parse Metadata Store: song is not a PFObject" code:0 userInfo:nil];
     }
     AWRSongParse *songParse = (AWRSongParse *)song;
     return [songParse.albumArt getDataInBackground]
@@ -76,7 +76,7 @@
 
 - (id<PXPromise>)lyricsBySong:(id<AWRSong>)song {
     if (![song isKindOfClass:AWRSongParse.class]) {
-        return nil;
+        return [NSError errorWithDomain:@"Error on Parse Metadata Store: song is not a PFObject" code:0 userInfo:nil];
     }
     AWRSongParse *songParse = (AWRSongParse *)song;
     return [self fetchTextFile:songParse.lyrics];
@@ -84,12 +84,12 @@
 
 - (id<PXPromise>)descriptionForArtist:(id<AWRArtist>)artist locale:(NSString *)locale {
     if (![artist isKindOfClass:AWRArtistParse.class]) {
-        return nil;
+        return [NSError errorWithDomain:@"Error on Parse Metadata Store: artist is not a PFObject" code:0 userInfo:nil];
     }
     AWRArtistParse *artistParse = (AWRArtistParse *)artist;
     PFFile *file = [artistParse.localizedDescription objectForKey:locale];
     if (!file) {
-        return nil;
+        return [[PXPromiseResult alloc] initWithValue:nil];
     }
 
     return [self fetchTextFile:file];
@@ -97,12 +97,12 @@
 
 - (id<PXPromise>)descriptionForSong:(id<AWRSong>)song locale:(NSString *)locale {
     if (![song isKindOfClass:AWRSongParse.class]) {
-        return nil;
+        return [NSError errorWithDomain:@"Error on Parse Metadata Store: song is not a PFObject" code:0 userInfo:nil];
     }
     AWRSongParse *songParse = (AWRSongParse *)song;
     PFFile *file = [songParse.localizedDescription objectForKey:locale];
     if (!file) {
-        return nil;
+        return [[PXPromiseResult alloc] initWithValue:nil];
     }
 
     return [self fetchTextFile:file];

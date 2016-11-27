@@ -44,9 +44,8 @@
 
 - (NSTimer *)timer {
     if (_timer == nil) {
-        __weak typeof(self) weakSelf = self;
         DLog(@"Timer: %f", self.timerInterval);
-        _timer = [NSTimer scheduledTimerWithTimeInterval:self.timerInterval target:weakSelf selector:@selector(tick:) userInfo:nil repeats:YES];
+        _timer = [NSTimer scheduledTimerWithTimeInterval:self.timerInterval target:self selector:@selector(tick:) userInfo:nil repeats:YES];
     }
     return _timer;
 }
@@ -60,7 +59,6 @@
 
 - (id<PXPromise>)fetchCurrentSong {
     __weak typeof(self) weakSelf = self;
-
     return [self.metadataStore currentSong]
         .then(^id<PXPromise>(id<PXSuccessfulPromise> finishedPromise) {
             id<AWRPlaylist>result = finishedPromise.result;
@@ -106,7 +104,7 @@
 - (void)fetchArtistDescriptionAsync {
     __weak typeof(self) weakSelf = self;
 
-    [weakSelf.metadataStore descriptionForArtist:weakSelf.currentPlaylist.song.artist locale:self.locale]
+    [self.metadataStore descriptionForArtist:self.currentPlaylist.song.artist locale:self.locale]
         .then(^id<PXPromise>(id<PXSuccessfulPromise> finishedPromise) {
             if ([weakSelf.delegate respondsToSelector:@selector(metadataDidFinishDownloadingArtistDescription:forSong:)]) {
                 [weakSelf.delegate metadataDidFinishDownloadingArtistDescription:finishedPromise.result forSong:weakSelf.currentPlaylist.song];
@@ -118,7 +116,7 @@
 - (void)fetchSongDescriptionAsync {
     __weak typeof(self) weakSelf = self;
 
-    [weakSelf.metadataStore descriptionForSong:weakSelf.currentPlaylist.song locale:self.locale]
+    [self.metadataStore descriptionForSong:self.currentPlaylist.song locale:self.locale]
         .then(^id<PXPromise>(id<PXSuccessfulPromise> finishedPromise) {
             if ([weakSelf.delegate respondsToSelector:@selector(metadataDidFinishDownloadingSongDescription:forSong:)]) {
                 [weakSelf.delegate metadataDidFinishDownloadingSongDescription:finishedPromise.result forSong:weakSelf.currentPlaylist.song];
@@ -128,13 +126,13 @@
 }
 
 - (void)fetchAlbumArtAsync {
-    __weak typeof(self) weakSelf = self;
-
-    if (!weakSelf.currentPlaylist.song.albumArt) {
+    if (!self.currentPlaylist.song.albumArt) {
         return;
     }
 
-    [weakSelf.metadataStore albumArtBySong:weakSelf.currentPlaylist.song]
+    __weak typeof(self) weakSelf = self;
+
+    [self.metadataStore albumArtBySong:self.currentPlaylist.song]
         .then(^id<PXPromise>(id<PXSuccessfulPromise> finishedPromise) {
             NSData *data = finishedPromise.result;
             UIImage *albumArt = [UIImage imageWithData:data];
@@ -144,21 +142,21 @@
 }
 
 - (void)fetchAlbumLyricsAsync {
-    __weak typeof(self) weakSelf = self;
+    BOOL hasRights = self.currentPlaylist.song.hasRightsContract || self.serverRightsFlag || self.localRightsFlag;
 
-    BOOL hasRights = weakSelf.currentPlaylist.song.hasRightsContract || self.serverRightsFlag || self.localRightsFlag;
-
-    if (!hasRights || !weakSelf.currentPlaylist.song.lyrics) {
+    if (!hasRights || !self.currentPlaylist.song.lyrics) {
         NSString *noLyrics = NSLocalizedString(@"LYRICS_UNAVAILABLE", nil);
 
-        if ([weakSelf.delegate respondsToSelector:@selector(metadataDidFinishDownloadingLyrics:forSong:)]) {
-            [weakSelf.delegate metadataDidFinishDownloadingLyrics:noLyrics forSong:weakSelf.currentPlaylist.song];
+        if ([self.delegate respondsToSelector:@selector(metadataDidFinishDownloadingLyrics:forSong:)]) {
+            [self.delegate metadataDidFinishDownloadingLyrics:noLyrics forSong:self.currentPlaylist.song];
         }
 
         return;
     }
 
-    [weakSelf.metadataStore lyricsBySong:weakSelf.currentPlaylist.song]
+    __weak typeof(self) weakSelf = self;
+
+    [self.metadataStore lyricsBySong:self.currentPlaylist.song]
         .then(^id<PXPromise>(id<PXSuccessfulPromise> finishedPromise) {
             if ([weakSelf.delegate respondsToSelector:@selector(metadataDidFinishDownloadingLyrics:forSong:)]) {
                 [weakSelf.delegate metadataDidFinishDownloadingLyrics:finishedPromise.result forSong:weakSelf.currentPlaylist.song];
