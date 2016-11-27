@@ -3,5 +3,6 @@
 @interface UIView (Utils)
 
 - (void)fillSuperview;
+- (void)anchorToTheTop;
 
 @end

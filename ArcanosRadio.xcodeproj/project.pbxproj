@@ -126,6 +126,10 @@
 		01DD77381DEA5618006E82B3 /* AWRMetadataServiceMulticastDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DD77361DEA5618006E82B3 /* AWRMetadataServiceMulticastDelegate.m */; };
 		01DD773D1DEA5D83006E82B3 /* NSArray+Functional.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DD773C1DEA5D83006E82B3 /* NSArray+Functional.m */; };
 		01DD773E1DEA5D83006E82B3 /* NSArray+Functional.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DD773C1DEA5D83006E82B3 /* NSArray+Functional.m */; };
+		01DD77491DEA743B006E82B3 /* AWRNowPlayingBodyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01DD77481DEA743B006E82B3 /* AWRNowPlayingBodyView.xib */; };
+		01DD774A1DEA743B006E82B3 /* AWRNowPlayingBodyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01DD77481DEA743B006E82B3 /* AWRNowPlayingBodyView.xib */; };
+		01DD774D1DEA7452006E82B3 /* AWRNowPlayingBodyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DD774C1DEA7452006E82B3 /* AWRNowPlayingBodyView.m */; };
+		01DD774E1DEA7452006E82B3 /* AWRNowPlayingBodyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DD774C1DEA7452006E82B3 /* AWRNowPlayingBodyView.m */; };
 		01DE2E801D95FCA3003E604E /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DE2E7F1D95FCA3003E604E /* FXBlurView.m */; };
 		01DE2E821D9601C1003E604E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01DE2E811D9601C1003E604E /* Accelerate.framework */; };
 		01FB39341DAC592B00EBC99D /* AWRNowPlayingHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01FB39331DAC592B00EBC99D /* AWRNowPlayingHeaderView.xib */; };
@@ -298,6 +302,9 @@
 		01DD77361DEA5618006E82B3 /* AWRMetadataServiceMulticastDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRMetadataServiceMulticastDelegate.m; sourceTree = "<group>"; };
 		01DD773B1DEA5D83006E82B3 /* NSArray+Functional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Functional.h"; sourceTree = "<group>"; };
 		01DD773C1DEA5D83006E82B3 /* NSArray+Functional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Functional.m"; sourceTree = "<group>"; };
+		01DD77481DEA743B006E82B3 /* AWRNowPlayingBodyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AWRNowPlayingBodyView.xib; sourceTree = "<group>"; };
+		01DD774B1DEA7452006E82B3 /* AWRNowPlayingBodyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRNowPlayingBodyView.h; sourceTree = "<group>"; };
+		01DD774C1DEA7452006E82B3 /* AWRNowPlayingBodyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRNowPlayingBodyView.m; sourceTree = "<group>"; };
 		01DE2E7E1D95FCA3003E604E /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
 		01DE2E7F1D95FCA3003E604E /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
 		01DE2E811D9601C1003E604E /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -503,11 +510,14 @@
 			children = (
 				016501001DB3516400B32C0A /* AWRColorToolkit.h */,
 				016501011DB3516400B32C0A /* AWRColorToolkit.m */,
+				01FB393A1DAC607A00EBC99D /* AWRMergeImageView.h */,
+				01FB393B1DAC607A00EBC99D /* AWRMergeImageView.m */,
 				01FB39331DAC592B00EBC99D /* AWRNowPlayingHeaderView.xib */,
 				01FB39361DAC596800EBC99D /* AWRNowPlayingHeaderView.h */,
 				01FB39371DAC596800EBC99D /* AWRNowPlayingHeaderView.m */,
-				01FB393A1DAC607A00EBC99D /* AWRMergeImageView.h */,
-				01FB393B1DAC607A00EBC99D /* AWRMergeImageView.m */,
+				01DD77481DEA743B006E82B3 /* AWRNowPlayingBodyView.xib */,
+				01DD774B1DEA7452006E82B3 /* AWRNowPlayingBodyView.h */,
+				01DD774C1DEA7452006E82B3 /* AWRNowPlayingBodyView.m */,
 				0181E8301D8CB177008E21C5 /* AWRNowPlayingView.xib */,
 				0181E8311D8CB177008E21C5 /* AWRNowPlayingView.h */,
 				0181E8321D8CB177008E21C5 /* AWRNowPlayingView.m */,
@@ -799,6 +809,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				018E2CD71DBC31130035455B /* genLicense.pl in Resources */,
+				01DD774A1DEA743B006E82B3 /* AWRNowPlayingBodyView.xib in Resources */,
 				018E2CED1DBC70D90035455B /* AWRDeveloperInfoTableViewCell.xib in Resources */,
 				018E2D161DBD48960035455B /* AWRVersionTableViewCell.xib in Resources */,
 				016500E61DB2D04900B32C0A /* Localizable.strings in Resources */,
@@ -820,6 +831,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				018E2CD61DBC31130035455B /* genLicense.pl in Resources */,
+				01DD77491DEA743B006E82B3 /* AWRNowPlayingBodyView.xib in Resources */,
 				018E2CEC1DBC70D90035455B /* AWRDeveloperInfoTableViewCell.xib in Resources */,
 				018E2D151DBD48960035455B /* AWRVersionTableViewCell.xib in Resources */,
 				016500E51DB2D04900B32C0A /* Localizable.strings in Resources */,
@@ -907,6 +919,7 @@
 				0137D86F1D9CCE0D003A1E6B /* FXBlurView.m in Sources */,
 				01FB393D1DAC607A00EBC99D /* AWRMergeImageView.m in Sources */,
 				0137D8701D9CCE15003A1E6B /* AWRConstants.m in Sources */,
+				01DD774E1DEA7452006E82B3 /* AWRNowPlayingBodyView.m in Sources */,
 				018E2CC61DBC1CF50035455B /* AWRViewController.m in Sources */,
 				018E2D1A1DBD48B30035455B /* AWRVersionTableViewCell.m in Sources */,
 				0137D8771D9CCE56003A1E6B /* NSObject+PXPromise.m in Sources */,
@@ -985,6 +998,7 @@
 				016500F61DB337A100B32C0A /* AWRAboutView.m in Sources */,
 				01FB39481DACC7BA00EBC99D /* AWRAvatarImageView.m in Sources */,
 				0126E3471DA7232D0054430C /* AWRMetadataPoolingService.m in Sources */,
+				01DD774D1DEA7452006E82B3 /* AWRNowPlayingBodyView.m in Sources */,
 				0181E8261D8CB158008E21C5 /* BFTask+PXPromise.m in Sources */,
 				01DBE49F1D8CB2D0003B2100 /* AWRParseMetadataStore.m in Sources */,
 				013075F81D96846A003FDA74 /* AWRNowPlayingViewModel.m in Sources */,

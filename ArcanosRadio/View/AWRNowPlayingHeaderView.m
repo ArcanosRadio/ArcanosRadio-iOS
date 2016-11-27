@@ -38,6 +38,10 @@ const float kAvatarCornerRadius = 10.0;
 
 - (void)layoutSubviews {
     [super layoutSubviews];
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [self emptyFields];
+    });
     float currentHeight = MIN(self.frame.size.height, self.maximumHeight);
     float progress = (self.maximumHeight - currentHeight) / self.deltaHeight;
     self.backgroundAlbumArt.progress = progress;
@@ -46,6 +50,11 @@ const float kAvatarCornerRadius = 10.0;
     CATransform3D horizontalOffsetEffect = CATransform3DIdentity;
     horizontalOffsetEffect = CATransform3DTranslate(horizontalOffsetEffect, (1.0 - progress) * 12.0, 0, 0);
     self.albumArtIcon.layer.transform = horizontalOffsetEffect;
+}
+
+- (void)emptyFields {
+    self.songLabel.text = @"";
+    self.artistLabel.text = @"";
 }
 
 - (void)renderModel:(AWRNowPlayingViewModel *)model {
