@@ -98,7 +98,7 @@
 }
 
 - (NSString *)locale {
-    return @"en";
+    return [[NSLocale preferredLanguages] objectAtIndex:0];
 }
 
 - (void)fetchArtistDescriptionAsync {
