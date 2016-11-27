@@ -13,6 +13,7 @@
 + (void)configure {
     [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
         configuration.applicationId = PARSE_APP;
+        configuration.clientKey = PARSE_CLIENT_KEY;
         configuration.server = PARSE_URL;
     }]];
 }
