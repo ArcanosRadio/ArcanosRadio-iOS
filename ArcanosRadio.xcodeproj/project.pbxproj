@@ -122,6 +122,10 @@
 		01DD772F1DE992BB006E82B3 /* AWRShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DD772D1DE992BB006E82B3 /* AWRShareViewController.m */; };
 		01DD77321DE997DF006E82B3 /* AWRControlCenterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DD77311DE997DF006E82B3 /* AWRControlCenterController.m */; };
 		01DD77331DE997DF006E82B3 /* AWRControlCenterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DD77311DE997DF006E82B3 /* AWRControlCenterController.m */; };
+		01DD77371DEA5618006E82B3 /* AWRMetadataServiceMulticastDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DD77361DEA5618006E82B3 /* AWRMetadataServiceMulticastDelegate.m */; };
+		01DD77381DEA5618006E82B3 /* AWRMetadataServiceMulticastDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DD77361DEA5618006E82B3 /* AWRMetadataServiceMulticastDelegate.m */; };
+		01DD773D1DEA5D83006E82B3 /* NSArray+Functional.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DD773C1DEA5D83006E82B3 /* NSArray+Functional.m */; };
+		01DD773E1DEA5D83006E82B3 /* NSArray+Functional.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DD773C1DEA5D83006E82B3 /* NSArray+Functional.m */; };
 		01DE2E801D95FCA3003E604E /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DE2E7F1D95FCA3003E604E /* FXBlurView.m */; };
 		01DE2E821D9601C1003E604E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01DE2E811D9601C1003E604E /* Accelerate.framework */; };
 		01FB39341DAC592B00EBC99D /* AWRNowPlayingHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01FB39331DAC592B00EBC99D /* AWRNowPlayingHeaderView.xib */; };
@@ -290,6 +294,10 @@
 		01DD772D1DE992BB006E82B3 /* AWRShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRShareViewController.m; sourceTree = "<group>"; };
 		01DD77301DE997DF006E82B3 /* AWRControlCenterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRControlCenterController.h; sourceTree = "<group>"; };
 		01DD77311DE997DF006E82B3 /* AWRControlCenterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRControlCenterController.m; sourceTree = "<group>"; };
+		01DD77351DEA5618006E82B3 /* AWRMetadataServiceMulticastDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRMetadataServiceMulticastDelegate.h; sourceTree = "<group>"; };
+		01DD77361DEA5618006E82B3 /* AWRMetadataServiceMulticastDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRMetadataServiceMulticastDelegate.m; sourceTree = "<group>"; };
+		01DD773B1DEA5D83006E82B3 /* NSArray+Functional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Functional.h"; sourceTree = "<group>"; };
+		01DD773C1DEA5D83006E82B3 /* NSArray+Functional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Functional.m"; sourceTree = "<group>"; };
 		01DE2E7E1D95FCA3003E604E /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
 		01DE2E7F1D95FCA3003E604E /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
 		01DE2E811D9601C1003E604E /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -564,6 +572,8 @@
 				01DBE49D1D8CB2D0003B2100 /* AWRMetadataFactory.h */,
 				01DBE49E1D8CB2D0003B2100 /* AWRMetadataFactory.m */,
 				0126E3421DA721F70054430C /* AWRMetadataServiceDelegate.h */,
+				01DD77351DEA5618006E82B3 /* AWRMetadataServiceMulticastDelegate.h */,
+				01DD77361DEA5618006E82B3 /* AWRMetadataServiceMulticastDelegate.m */,
 				0126E3411DA721970054430C /* AWRMetadataService.h */,
 				0126E3451DA7232D0054430C /* AWRMetadataPoolingService.h */,
 				0126E3461DA7232D0054430C /* AWRMetadataPoolingService.m */,
@@ -664,6 +674,8 @@
 				01FB39431DACB9D600EBC99D /* UIImage+Resize.m */,
 				0151BAD71DC0FA4E00736A79 /* AWRMenuPanGestureRecognizer.h */,
 				0151BAD81DC0FA4E00736A79 /* AWRMenuPanGestureRecognizer.m */,
+				01DD773B1DEA5D83006E82B3 /* NSArray+Functional.h */,
+				01DD773C1DEA5D83006E82B3 /* NSArray+Functional.m */,
 			);
 			path = BaseLibrary;
 			sourceTree = "<group>";
@@ -883,6 +895,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				016501031DB3516400B32C0A /* AWRColorToolkit.m in Sources */,
+				01DD773E1DEA5D83006E82B3 /* NSArray+Functional.m in Sources */,
+				01DD77381DEA5618006E82B3 /* AWRMetadataServiceMulticastDelegate.m in Sources */,
 				0137D8741D9CCE3D003A1E6B /* AWRArcanosMediaPlayer.m in Sources */,
 				0137D8811D9CCEEA003A1E6B /* AWRAppCoordinator.m in Sources */,
 				018E2D071DBCCF220035455B /* AWRLicenseView.m in Sources */,
@@ -963,6 +977,7 @@
 				0181E8341D8CB177008E21C5 /* AWRNowPlayingView.m in Sources */,
 				016500FA1DB3383700B32C0A /* AWRAboutController.m in Sources */,
 				018E2CFF1DBC7DD00035455B /* AWRAppLinkInfoTableViewCell.m in Sources */,
+				01DD773D1DEA5D83006E82B3 /* NSArray+Functional.m in Sources */,
 				018E2D121DBD00F00035455B /* AWRHelpCoordinator.m in Sources */,
 				01DBE4A01D8CB2D0003B2100 /* AWRMetadataFactory.m in Sources */,
 				018E2D0E1DBCD8670035455B /* AWRLicenseController.m in Sources */,
@@ -978,6 +993,7 @@
 				016501021DB3516400B32C0A /* AWRColorToolkit.m in Sources */,
 				01FB39441DACB9D600EBC99D /* UIImage+Resize.m in Sources */,
 				0181E8231D8CB158008E21C5 /* NSError+PXPromise.m in Sources */,
+				01DD77371DEA5618006E82B3 /* AWRMetadataServiceMulticastDelegate.m in Sources */,
 				0181E82D1D8CB160008E21C5 /* AWRArtistParse.m in Sources */,
 				018E2D191DBD48B30035455B /* AWRVersionTableViewCell.m in Sources */,
 			);
