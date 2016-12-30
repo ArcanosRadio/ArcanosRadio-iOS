@@ -10,6 +10,7 @@
 @property (nonatomic, strong) NSArray *tags;
 @property (nonatomic, strong) NSString *spotifyArtistId;
 @property (nonatomic, strong) NSDictionary<NSString *, __kindof id<AWRFile>> *localizedDescription;
+@property (nonatomic, strong) NSString *twitterTimeline;
 
 + (NSString *)parseClassName;
 

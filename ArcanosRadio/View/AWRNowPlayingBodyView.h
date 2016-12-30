@@ -7,7 +7,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic)float titleAlpha;
 - (void)renderModel:(AWRNowPlayingViewModel *)model;
-
+- (void)setTwitterView:(UITableView *)twitterView;
 @end
 
 NS_ASSUME_NONNULL_END

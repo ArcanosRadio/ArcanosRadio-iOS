@@ -23,7 +23,7 @@ static UIColor *_errorTextColor;
 {
     if (self == [AWRColorToolkit class])
     {
-        _backgroundPrimaryColor = [UIColor whiteColor];
+        _backgroundPrimaryColor = [UIColor colorWithRed:0.0161213 green:0.157977 blue:0.222895 alpha:1.0];
         _backgroundSecundaryColor = [UIColor whiteColor];
         _headerTextPrimaryColor = [UIColor whiteColor];
         _headerTextSecundaryColor = [UIColor whiteColor];

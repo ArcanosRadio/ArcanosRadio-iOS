@@ -4,6 +4,7 @@
 #import "AWRNowPlayingViewModel.h"
 #import "AWRMetadataFactory.h"
 #import "PXPromise.h"
+#import "AWRTwitterViewController.h"
 
 @interface AWRNowPlayingController () <AWRArcanosMediaPlayerDelegate, AWRNowPlayingViewDelegate>
 
@@ -11,6 +12,7 @@
 @property(strong, nonatomic) NSString *streamingUrl;
 @property(readonly, nonatomic) AWRNowPlayingView *nowPlayingView;
 @property(atomic, nullable, strong) AWRNowPlayingViewModel *viewModel;
+@property(strong, nonatomic) AWRTwitterViewController *twitterViewController;
 @end
 
 @implementation AWRNowPlayingController
@@ -23,11 +25,16 @@
     self = [super initWithNibName:@"AWRNowPlayingView" bundle:nil];
     if (self) {
         self.viewModel = [[AWRNowPlayingViewModel alloc] init];
-
-        __weak typeof(self)weakSelf = self;
-        weakSelf.streamingUrl = [[AWRMetadataFactory createMetadataStore] readConfig:REMOTE_CONFIG_STREAMING_URL_KEY];
+        self.streamingUrl = [[AWRMetadataFactory createMetadataStore] readConfig:REMOTE_CONFIG_STREAMING_URL_KEY];
     }
     return self;
+}
+
+- (AWRTwitterViewController *)twitterViewController {
+    if (!_twitterViewController) {
+        _twitterViewController = [AWRTwitterViewController new];
+    }
+    return _twitterViewController;
 }
 
 - (void)setStreamingUrl:(NSString *)streamingUrl {
@@ -43,6 +50,18 @@
 - (void)metadataDidChangeTheSong:(id<AWRSong>)song {
     self.viewModel.songName = song.songName;
     self.viewModel.artistName = song.artist.artistName;
+
+    if (song.artist.twitterTimeline && [song.artist.twitterTimeline characterAtIndex:0] == '#' ) {
+        // Hashtag search
+        [self.twitterViewController setTwitterSearch:song.artist.twitterTimeline];
+    } else if (song.artist.twitterTimeline) {
+        // User timeline
+        [self.twitterViewController setTwitterTimeline:song.artist.twitterTimeline];
+    } else {
+        // General search
+        [self.twitterViewController setTwitterSearch:song.artist.artistName];
+    }
+
     UIImage *defaultImage = [[AWRMetadataFactory metadataStoreClass] defaultAlbumArt];
     self.viewModel.albumArt = defaultImage;
     self.viewModel.lyrics = @"";
@@ -121,6 +140,8 @@
     self.nowPlayingView.delegate = self;
     [self.nowPlayingView renderModel:self.viewModel];
     [self.nowPlayingView setVolume:1.0];
+    [self addChildViewController:self.twitterViewController];
+    [self.nowPlayingView setTwitterView:self.twitterViewController.view];
 }
 
 - (void)viewDidUnload {

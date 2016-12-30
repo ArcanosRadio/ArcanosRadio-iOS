@@ -10,6 +10,13 @@
 		012582B81D91F2EA002C4E93 /* AWRAppCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 012582B71D91F2EA002C4E93 /* AWRAppCoordinator.m */; };
 		0126E3471DA7232D0054430C /* AWRMetadataPoolingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0126E3461DA7232D0054430C /* AWRMetadataPoolingService.m */; };
 		013075F81D96846A003FDA74 /* AWRNowPlayingViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 013075F71D96846A003FDA74 /* AWRNowPlayingViewModel.m */; };
+		013784D91DEE2921006EC13E /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 013784D61DEE2921006EC13E /* TwitterKit.framework */; };
+		013784DA1DEE2921006EC13E /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 013784D71DEE2921006EC13E /* TwitterKitResources.bundle */; };
+		013784DB1DEE2921006EC13E /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 013784D81DEE2921006EC13E /* TwitterCore.framework */; };
+		013784DE1DEE2A86006EC13E /* AWRTwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 013784DD1DEE2A86006EC13E /* AWRTwitterViewController.m */; };
+		013784DF1DEE2A86006EC13E /* AWRTwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 013784DD1DEE2A86006EC13E /* AWRTwitterViewController.m */; };
+		013784E11DEE2AC4006EC13E /* AWRTwitterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013784E01DEE2AC4006EC13E /* AWRTwitterView.xib */; };
+		013784E21DEE2AC4006EC13E /* AWRTwitterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013784E01DEE2AC4006EC13E /* AWRTwitterView.xib */; };
 		0137D86F1D9CCE0D003A1E6B /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DE2E7F1D95FCA3003E604E /* FXBlurView.m */; };
 		0137D8701D9CCE15003A1E6B /* AWRConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0181E8071D8CB0ED008E21C5 /* AWRConstants.m */; };
 		0137D8711D9CCE25003A1E6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0181E7E61D8C905B008E21C5 /* Assets.xcassets */; };
@@ -32,6 +39,7 @@
 		0137D8971D9E66EE003A1E6B /* PFFile+AWRFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 0137D8961D9E66EE003A1E6B /* PFFile+AWRFile.m */; };
 		0137D8A01D9E7093003A1E6B /* AWRFakeStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 0137D89E1D9E7093003A1E6B /* AWRFakeStore.m */; };
 		0137D8A11D9E7093003A1E6B /* AWRMetadataServiceFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0137D89F1D9E7093003A1E6B /* AWRMetadataServiceFactory.m */; };
+		01419A1A1E15E111008FDBDB /* AWRTwitterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01419A191E15E111008FDBDB /* AWRTwitterView.m */; };
 		0151BAD91DC0FA4E00736A79 /* AWRMenuPanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0151BAD81DC0FA4E00736A79 /* AWRMenuPanGestureRecognizer.m */; };
 		0151BADA1DC0FA4E00736A79 /* AWRMenuPanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0151BAD81DC0FA4E00736A79 /* AWRMenuPanGestureRecognizer.m */; };
 		016500E11DB1E79B00B32C0A /* AWRMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 016500E01DB1E79B00B32C0A /* AWRMenuView.m */; };
@@ -173,6 +181,12 @@
 		013075F61D96846A003FDA74 /* AWRNowPlayingViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRNowPlayingViewModel.h; sourceTree = "<group>"; };
 		013075F71D96846A003FDA74 /* AWRNowPlayingViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRNowPlayingViewModel.m; sourceTree = "<group>"; };
 		0130D3061DA14E74005A299E /* AWREntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWREntity.h; sourceTree = "<group>"; };
+		013784D61DEE2921006EC13E /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
+		013784D71DEE2921006EC13E /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
+		013784D81DEE2921006EC13E /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
+		013784DC1DEE2A86006EC13E /* AWRTwitterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRTwitterViewController.h; sourceTree = "<group>"; };
+		013784DD1DEE2A86006EC13E /* AWRTwitterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRTwitterViewController.m; sourceTree = "<group>"; };
+		013784E01DEE2AC4006EC13E /* AWRTwitterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AWRTwitterView.xib; sourceTree = "<group>"; };
 		0137D8581D9CCD2F003A1E6B /* ArcanosRadioMock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArcanosRadioMock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0137D8911D9E63CD003A1E6B /* AWRSong.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRSong.h; sourceTree = "<group>"; };
 		0137D8921D9E63DC003A1E6B /* AWRArtist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRArtist.h; sourceTree = "<group>"; };
@@ -183,6 +197,8 @@
 		0137D89D1D9E7093003A1E6B /* AWRFakeStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRFakeStore.h; sourceTree = "<group>"; };
 		0137D89E1D9E7093003A1E6B /* AWRFakeStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRFakeStore.m; sourceTree = "<group>"; };
 		0137D89F1D9E7093003A1E6B /* AWRMetadataServiceFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRMetadataServiceFactory.m; sourceTree = "<group>"; };
+		01419A181E15E111008FDBDB /* AWRTwitterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRTwitterView.h; sourceTree = "<group>"; };
+		01419A191E15E111008FDBDB /* AWRTwitterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRTwitterView.m; sourceTree = "<group>"; };
 		0151BAD71DC0FA4E00736A79 /* AWRMenuPanGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRMenuPanGestureRecognizer.h; sourceTree = "<group>"; };
 		0151BAD81DC0FA4E00736A79 /* AWRMenuPanGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRMenuPanGestureRecognizer.m; sourceTree = "<group>"; };
 		016500DF1DB1E79B00B32C0A /* AWRMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRMenuView.h; sourceTree = "<group>"; };
@@ -341,7 +357,9 @@
 				0181E7FF1D8C9EB1008E21C5 /* Crashlytics.framework in Frameworks */,
 				0181E7FE1D8C9EB1008E21C5 /* Fabric.framework in Frameworks */,
 				0181E8021D8CADE8008E21C5 /* Bolts.framework in Frameworks */,
+				013784DB1DEE2921006EC13E /* TwitterCore.framework in Frameworks */,
 				0181E8031D8CADE8008E21C5 /* Parse.framework in Frameworks */,
+				013784D91DEE2921006EC13E /* TwitterKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,6 +559,9 @@
 				018E2D011DBCCD950035455B /* AWRLicenseView.xib */,
 				018E2D041DBCCF220035455B /* AWRLicenseView.h */,
 				018E2D051DBCCF220035455B /* AWRLicenseView.m */,
+				013784E01DEE2AC4006EC13E /* AWRTwitterView.xib */,
+				01419A181E15E111008FDBDB /* AWRTwitterView.h */,
+				01419A191E15E111008FDBDB /* AWRTwitterView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -562,6 +583,8 @@
 				01DD77291DE985EB006E82B3 /* AWRCrashReportController.m */,
 				01DD772C1DE992BB006E82B3 /* AWRShareViewController.h */,
 				01DD772D1DE992BB006E82B3 /* AWRShareViewController.m */,
+				013784DC1DEE2A86006EC13E /* AWRTwitterViewController.h */,
+				013784DD1DEE2A86006EC13E /* AWRTwitterViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -627,6 +650,9 @@
 		0181E7FB1D8C9E83008E21C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				013784D61DEE2921006EC13E /* TwitterKit.framework */,
+				013784D71DEE2921006EC13E /* TwitterKitResources.bundle */,
+				013784D81DEE2921006EC13E /* TwitterCore.framework */,
 				01673C7A1DCFAD2E000B14CE /* SimulatorStatusMagiciOS.framework */,
 				01D2BD0B1D9B00D900632C08 /* QuartzCore.framework */,
 				01DE2E811D9601C1003E604E /* Accelerate.framework */,
@@ -755,7 +781,7 @@
 		0181E7CF1D8C905B008E21C5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = DeveloperCity;
 				TargetAttributes = {
 					0137D8571D9CCD2F003A1E6B = {
@@ -819,6 +845,7 @@
 				016500F31DB3374500B32C0A /* AWRAboutView.xib in Resources */,
 				0137D8801D9CCEE2003A1E6B /* SplashView.xib in Resources */,
 				0137D87E1D9CCE9A003A1E6B /* AWRNowPlayingView.xib in Resources */,
+				013784E21DEE2AC4006EC13E /* AWRTwitterView.xib in Resources */,
 				01FB39351DAC592B00EBC99D /* AWRNowPlayingHeaderView.xib in Resources */,
 				016500F01DB2EFBD00B32C0A /* Settings.bundle in Resources */,
 				0137D8711D9CCE25003A1E6B /* Assets.xcassets in Resources */,
@@ -834,12 +861,14 @@
 				01DD77491DEA743B006E82B3 /* AWRNowPlayingBodyView.xib in Resources */,
 				018E2CEC1DBC70D90035455B /* AWRDeveloperInfoTableViewCell.xib in Resources */,
 				018E2D151DBD48960035455B /* AWRVersionTableViewCell.xib in Resources */,
+				013784DA1DEE2921006EC13E /* TwitterKitResources.bundle in Resources */,
 				016500E51DB2D04900B32C0A /* Localizable.strings in Resources */,
 				018E2D021DBCCD950035455B /* AWRLicenseView.xib in Resources */,
 				018E2CFB1DBC7DBC0035455B /* AWRAppLinkInfoTableViewCell.xib in Resources */,
 				016500F21DB3374500B32C0A /* AWRAboutView.xib in Resources */,
 				0181E7E71D8C905B008E21C5 /* Assets.xcassets in Resources */,
 				0181E8331D8CB177008E21C5 /* AWRNowPlayingView.xib in Resources */,
+				013784E11DEE2AC4006EC13E /* AWRTwitterView.xib in Resources */,
 				01FB39341DAC592B00EBC99D /* AWRNowPlayingHeaderView.xib in Resources */,
 				016500EF1DB2EFBD00B32C0A /* Settings.bundle in Resources */,
 				0181E7F91D8C9663008E21C5 /* SplashView.xib in Resources */,
@@ -954,6 +983,7 @@
 				0137D8781D9CCE5A003A1E6B /* NSError+PXPromise.m in Sources */,
 				018E2D0F1DBCD8670035455B /* AWRLicenseController.m in Sources */,
 				0137D87D1D9CCE79003A1E6B /* AWRNowPlayingViewModel.m in Sources */,
+				013784DF1DEE2A86006EC13E /* AWRTwitterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -968,6 +998,7 @@
 				019140781D8D8E05000B19EE /* NSObject+PXPromise.m in Sources */,
 				0181E8181D8CB14D008E21C5 /* AWRArcanosMediaPlayer.m in Sources */,
 				0181E7DF1D8C905B008E21C5 /* AppDelegate.m in Sources */,
+				013784DE1DEE2A86006EC13E /* AWRTwitterViewController.m in Sources */,
 				018E2CC51DBC1CF50035455B /* AWRViewController.m in Sources */,
 				018E2CF81DBC7C870035455B /* AWRAppInfoViewModel.m in Sources */,
 				01FB393C1DAC607A00EBC99D /* AWRMergeImageView.m in Sources */,
@@ -1007,6 +1038,7 @@
 				016501021DB3516400B32C0A /* AWRColorToolkit.m in Sources */,
 				01FB39441DACB9D600EBC99D /* UIImage+Resize.m in Sources */,
 				0181E8231D8CB158008E21C5 /* NSError+PXPromise.m in Sources */,
+				01419A1A1E15E111008FDBDB /* AWRTwitterView.m in Sources */,
 				01DD77371DEA5618006E82B3 /* AWRMetadataServiceMulticastDelegate.m in Sources */,
 				0181E82D1D8CB160008E21C5 /* AWRArtistParse.m in Sources */,
 				018E2D191DBD48B30035455B /* AWRVersionTableViewCell.m in Sources */,
@@ -1192,6 +1224,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};

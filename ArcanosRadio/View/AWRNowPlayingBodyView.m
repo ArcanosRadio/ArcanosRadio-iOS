@@ -1,4 +1,5 @@
 #import "AWRNowPlayingBodyView.h"
+#import "UIView+Utils.h"
 
 @interface AWRNowPlayingBodyView()
 
@@ -6,7 +7,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *songNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *artistNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *lyricsLabel;
+@property (weak, nonatomic) IBOutlet UIView *twitterContainerView;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *twitterViewHeight;
 @property (nonatomic, strong) NSDictionary *songNameEffects;
+@property (nonatomic, strong) UITableView *twitterView;
 
 @end
 
@@ -49,12 +53,27 @@
 
 - (void)setTitleAlpha:(float)titleAlpha {
     self.metadataContainer.alpha = titleAlpha;
+    self.twitterView.scrollEnabled = titleAlpha <= 0.01;
 }
 
 - (CGSize)sizeThatFits:(CGSize)size {
-    UIView *lowerView = self.lyricsLabel;
+    UIView *lowerView = self.twitterView ?: self.lyricsLabel;
     return CGSizeMake(lowerView.frame.origin.x + lowerView.frame.size.width,
                       lowerView.frame.origin.y + lowerView.frame.size.height);
+}
+
+- (void)setTwitterView:(UITableView *)twitterView {
+    if (_twitterView != twitterView) {
+        if (_twitterView) {
+            [_twitterView removeFromSuperview];
+        }
+        twitterView.scrollEnabled = self.titleAlpha <= 0.01;
+        _twitterView = twitterView;
+        _twitterView.frame = self.twitterContainerView.frame;
+        [self.twitterContainerView addSubview:_twitterView];
+        [_twitterView fillSuperview];
+        self.twitterViewHeight.constant = 200;
+    }
 }
 
 @end

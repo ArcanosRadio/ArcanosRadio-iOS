@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -37,8 +37,14 @@
                         </label>
                     </subviews>
                 </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9A6-H2-zWj" userLabel="twitterContainer">
+                    <rect key="frame" x="0.0" y="67" width="375" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="kdt-TH-SuN"/>
+                    </constraints>
+                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[lyrics]" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibf-j7-8dY">
-                    <rect key="frame" x="8" y="67" width="36.5" height="13.5"/>
+                    <rect key="frame" x="8" y="143" width="36.5" height="13.5"/>
                     <accessibility key="accessibilityConfiguration" identifier="lyrics_label">
                         <accessibilityTraits key="traits" notEnabled="YES"/>
                     </accessibility>
@@ -48,12 +54,15 @@
                 </label>
             </subviews>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="9A6-H2-zWj" secondAttribute="trailing" id="1Zh-fI-nHQ" userLabel="twitter_right"/>
                 <constraint firstItem="ibf-j7-8dY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="EZq-Kh-Lsf" userLabel="lyrics_left"/>
-                <constraint firstItem="ibf-j7-8dY" firstAttribute="top" secondItem="GYC-TW-TBW" secondAttribute="bottom" constant="16" id="Q4b-h1-NI6" userLabel="lyrics_top"/>
+                <constraint firstItem="9A6-H2-zWj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Ku0-2X-TpW" userLabel="twitter_left"/>
                 <constraint firstItem="GYC-TW-TBW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Tpc-xe-Id6" userLabel="metadata_top"/>
+                <constraint firstItem="9A6-H2-zWj" firstAttribute="top" secondItem="GYC-TW-TBW" secondAttribute="bottom" constant="16" id="X6n-H3-R3l" userLabel="twitter_top"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ibf-j7-8dY" secondAttribute="trailing" constant="8" id="bVv-kN-7iG" userLabel="lyrics_right_minimum"/>
                 <constraint firstItem="GYC-TW-TBW" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dpx-eq-nWK" userLabel="metadata_center_x"/>
                 <constraint firstAttribute="trailing" secondItem="GYC-TW-TBW" secondAttribute="trailing" constant="8" id="f8I-b6-lb5" userLabel="metadata_right"/>
+                <constraint firstItem="ibf-j7-8dY" firstAttribute="top" secondItem="9A6-H2-zWj" secondAttribute="bottom" constant="16" id="pf9-o6-1qE" userLabel="lyrics_top"/>
                 <constraint firstItem="GYC-TW-TBW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="u4S-K3-WQx" userLabel="metadata_left"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -62,6 +71,8 @@
                 <outlet property="lyricsLabel" destination="ibf-j7-8dY" id="ePc-hT-1QW"/>
                 <outlet property="metadataContainer" destination="GYC-TW-TBW" id="0VH-Lx-WeA"/>
                 <outlet property="songNameLabel" destination="BZq-qh-r2n" id="Dgv-qy-ohH"/>
+                <outlet property="twitterContainerView" destination="9A6-H2-zWj" id="KAJ-EM-WuA"/>
+                <outlet property="twitterViewHeight" destination="kdt-TH-SuN" id="lq1-TY-cGu"/>
             </connections>
             <point key="canvasLocation" x="33.5" y="-196.5"/>
         </view>

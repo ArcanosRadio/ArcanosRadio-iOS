@@ -70,6 +70,10 @@
     return _bodyView;
 }
 
+- (void)setTwitterView:(UITableView *)twitterView {
+    [self.bodyView setTwitterView:twitterView];
+}
+
 - (void)layoutSubviews {
     [super layoutSubviews];
     [self calculateConstraints];

@@ -22,6 +22,7 @@
 @interface AWRNowPlayingView : UIView
 
 @property (nonatomic, weak)id<AWRNowPlayingViewDelegate> delegate;
+- (void)setTwitterView:(UIView *)twitterView;
 - (void)renderModel:(AWRNowPlayingViewModel *)model;
 - (void)setVolume:(float)percentage;
 - (void)setStatusPlaying;

@@ -7,6 +7,7 @@
 #import "AWRCrashReportController.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
+#import <TwitterKit/TwitterKit.h>
 #define CRASHLYTICS_DELEGATE , CrashlyticsDelegate
 #else
 #define CRASHLYTICS_DELEGATE
@@ -30,7 +31,8 @@
     if (self) {
 #ifndef MOCK
         [Crashlytics startWithAPIKey:FABRIC_API_KEY delegate:self];
-        [Fabric with:@[[Crashlytics class]]];
+        [[Twitter sharedInstance] startWithConsumerKey:TWITTER_CONSUMER_KEY consumerSecret:TWITTER_CONSUMER_SECRET];
+        [Fabric with:@[[Crashlytics class], [Twitter class]]];
 #endif
     }
     return self;
