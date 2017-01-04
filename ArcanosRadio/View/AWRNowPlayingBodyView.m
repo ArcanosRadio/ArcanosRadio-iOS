@@ -1,14 +1,17 @@
 #import "AWRNowPlayingBodyView.h"
 #import "UIView+Utils.h"
 
-@interface AWRNowPlayingBodyView()
+@interface AWRNowPlayingBodyView()<UITabBarDelegate>
+
+@property (weak, nonatomic) IBOutlet UITabBar *tabBar;
 
 @property (weak, nonatomic) IBOutlet UIStackView *metadataContainer;
+@property (weak, nonatomic) IBOutlet UIScrollView *lyricsContainer;
+@property (weak, nonatomic) IBOutlet UIView *twitterContainerView;
+
 @property (weak, nonatomic) IBOutlet UILabel *songNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *artistNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *lyricsLabel;
-@property (weak, nonatomic) IBOutlet UIView *twitterContainerView;
-@property (nonatomic, weak) IBOutlet NSLayoutConstraint *twitterViewHeight;
 @property (nonatomic, strong) NSDictionary *songNameEffects;
 @property (nonatomic, strong) UITableView *twitterView;
 
@@ -45,6 +48,29 @@
     self.songNameLabel.text = @"";
     self.artistNameLabel.text = @"";
     self.lyricsLabel.text = @"";
+
+    if (!self.tabBar.selectedItem) {
+        self.tabBar.selectedItem = [self.tabBar.items firstObject];
+    }
+}
+
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
+    switch (item.tag) {
+        case 0:
+            self.lyricsContainer.hidden = NO;
+            self.twitterContainerView.hidden = YES;
+            break;
+        case 1:
+            self.lyricsContainer.hidden = YES;
+            self.twitterContainerView.hidden = NO;
+            break;
+        case 2:
+            self.lyricsContainer.hidden = YES;
+            self.twitterContainerView.hidden = YES;
+            break;
+        default:
+            break;
+    }
 }
 
 - (float)titleAlpha {
@@ -53,13 +79,7 @@
 
 - (void)setTitleAlpha:(float)titleAlpha {
     self.metadataContainer.alpha = titleAlpha;
-    self.twitterView.scrollEnabled = titleAlpha <= 0.01;
-}
-
-- (CGSize)sizeThatFits:(CGSize)size {
-    UIView *lowerView = self.twitterView ?: self.lyricsLabel;
-    return CGSizeMake(lowerView.frame.origin.x + lowerView.frame.size.width,
-                      lowerView.frame.origin.y + lowerView.frame.size.height);
+    self.lyricsContainer.scrollEnabled = self.twitterView.scrollEnabled = self.titleAlpha <= 0.01;
 }
 
 - (void)setTwitterView:(UITableView *)twitterView {
@@ -67,12 +87,11 @@
         if (_twitterView) {
             [_twitterView removeFromSuperview];
         }
-        twitterView.scrollEnabled = self.titleAlpha <= 0.01;
+        self.lyricsContainer.scrollEnabled = twitterView.scrollEnabled = self.titleAlpha <= 0.01;
         _twitterView = twitterView;
         _twitterView.frame = self.twitterContainerView.frame;
         [self.twitterContainerView addSubview:_twitterView];
         [_twitterView fillSuperview];
-        self.twitterViewHeight.constant = 200;
     }
 }
 

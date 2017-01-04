@@ -14,13 +14,17 @@
 }
 
 - (void)setTwitterSearch:(NSString *)searchQuery {
-    TWTRSearchTimelineDataSource *searchDataSource = [[TWTRSearchTimelineDataSource alloc] initWithSearchQuery:searchQuery APIClient:self.client];
-    self.dataSource = searchDataSource;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        TWTRSearchTimelineDataSource *searchDataSource = [[TWTRSearchTimelineDataSource alloc] initWithSearchQuery:searchQuery APIClient:self.client];
+        self.dataSource = searchDataSource;
+    });
 }
 
 - (void)setTwitterTimeline:(NSString *)timeline {
-    TWTRUserTimelineDataSource *userTimelineDataSource = [[TWTRUserTimelineDataSource alloc] initWithScreenName:timeline APIClient:self.client];
-    self.dataSource = userTimelineDataSource;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        TWTRUserTimelineDataSource *userTimelineDataSource = [[TWTRUserTimelineDataSource alloc] initWithScreenName:timeline APIClient:self.client];
+        self.dataSource = userTimelineDataSource;
+    });
 }
 
 @end

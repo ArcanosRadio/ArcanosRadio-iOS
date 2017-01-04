@@ -15,14 +15,12 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *headerHeight;
 @property (strong, nonatomic) AWRNowPlayingHeaderView *headerView;
 @property (weak, nonatomic) IBOutlet UIView *bodyContainer;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bodyHeight;
 @property (strong, nonatomic) AWRNowPlayingBodyView *bodyView;
 
 @property (weak, nonatomic) IBOutlet UIView *mediaControlBar;
 @property (weak, nonatomic) IBOutlet UISlider *volumeSlider;
 @property (weak, nonatomic) IBOutlet UIButton *togglePlayButton;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *spacerTopConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *spacerBottomConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bodyTopConstraint;
 @property (weak, nonatomic) IBOutlet UIButton *menuButton;
 
 @property (strong, nonatomic) AWRMenuView *menu;
@@ -63,9 +61,7 @@
     if (!_bodyView) {
         _bodyView = [[[NSBundle mainBundle] loadNibNamed:@"AWRNowPlayingBodyView" owner:self options:nil] firstObject];
         [self.bodyContainer addSubview:_bodyView];
-        [_bodyView anchorToTheTop];
-        [self.bodyView sizeToFit];
-        self.bodyHeight.constant = self.bodyView.bounds.size.height;
+        [_bodyView fillSuperview];
     }
     return _bodyView;
 }
@@ -83,18 +79,7 @@
 }
 
 - (void)calculateConstraints {
-    self.spacerTopConstraint.constant = self.headerView.maximumHeight + self.togglePlayButton.frame.size.height / 2;
-    [self calculatePaddingBottom];
-}
-
-- (void)calculatePaddingBottom {
-    float mediaControlHeight = 54;
-    [self.bodyView sizeToFit];
-    self.bodyHeight.constant = self.bodyView.bounds.size.height;
-
-    self.spacerBottomConstraint.constant =
-    MAX(mediaControlHeight,
-        self.bounds.size.height - self.bodyHeight.constant - self.headerView.minimumHeight / 2);
+    self.bodyTopConstraint.constant = self.headerView.maximumHeight;
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -191,10 +176,8 @@
 - (void)renderModel:(AWRNowPlayingViewModel *)model {
     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_main_queue(), ^{
-        self.spacerBottomConstraint.constant = self.bounds.size.height;
         [weakSelf.bodyView renderModel:model];
         [weakSelf.headerView renderModel:model];
-        [weakSelf calculatePaddingBottom];
     });
 }
 

@@ -30,29 +30,24 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6i-t7-qJ2">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ji9-9b-L9g" userLabel="Body">
-                            <rect key="frame" x="0.0" y="394" width="374" height="51"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ioz-gG-4qa" userLabel="BodyTopSpacer">
+                            <rect key="frame" x="-0.5" y="0.0" width="375" height="375"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="51" id="yfo-ei-ke2"/>
+                                <constraint firstAttribute="height" constant="375" id="aD8-kA-VZa" userLabel="BodyTopSpacer Height"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VM6-M7-hl5" userLabel="Spacer Bottom">
-                            <rect key="frame" x="8" y="452.5" width="358" height="400"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="400" id="Q8g-Ax-LID" userLabel="Spacer Bottom"/>
-                            </constraints>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ji9-9b-L9g" userLabel="Body">
+                            <rect key="frame" x="-0.5" y="375" width="375" height="667"/>
                         </view>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="VM6-M7-hl5" firstAttribute="centerX" secondItem="S6i-t7-qJ2" secondAttribute="centerX" id="1Jk-Ae-uEg" userLabel="Spacer Bottom Horizontal Center"/>
-                        <constraint firstAttribute="trailing" secondItem="Ji9-9b-L9g" secondAttribute="trailing" id="C3v-Xk-DtR" userLabel="Body Right"/>
-                        <constraint firstItem="VM6-M7-hl5" firstAttribute="leading" secondItem="S6i-t7-qJ2" secondAttribute="leading" constant="8" id="Cdf-gq-BKo" userLabel="Spacer Bottom Left"/>
-                        <constraint firstAttribute="bottom" secondItem="VM6-M7-hl5" secondAttribute="bottom" constant="8" id="DTX-RD-YEp" userLabel="Spacer Bottom Bottom"/>
-                        <constraint firstAttribute="trailing" secondItem="VM6-M7-hl5" secondAttribute="trailing" constant="8" id="MKR-0F-A6C" userLabel="Spacer Bottom Right"/>
-                        <constraint firstItem="Ji9-9b-L9g" firstAttribute="centerX" secondItem="S6i-t7-qJ2" secondAttribute="centerX" id="NCc-U9-Mgc" userLabel="Body Horizontal Center"/>
-                        <constraint firstItem="VM6-M7-hl5" firstAttribute="top" secondItem="Ji9-9b-L9g" secondAttribute="bottom" constant="8" id="P53-YT-HGQ" userLabel="Spacer Bottom Top"/>
-                        <constraint firstItem="Ji9-9b-L9g" firstAttribute="leading" secondItem="S6i-t7-qJ2" secondAttribute="leading" id="YsL-Xr-DBi" userLabel="Body Left"/>
-                        <constraint firstItem="Ji9-9b-L9g" firstAttribute="top" secondItem="S6i-t7-qJ2" secondAttribute="top" constant="394" id="qm6-di-pWc" userLabel="Body Top"/>
+                        <constraint firstItem="Ioz-gG-4qa" firstAttribute="centerX" secondItem="S6i-t7-qJ2" secondAttribute="centerX" id="2dp-mJ-k7Z" userLabel="BodyTopSpacer X"/>
+                        <constraint firstItem="Ji9-9b-L9g" firstAttribute="centerX" secondItem="S6i-t7-qJ2" secondAttribute="centerX" id="NCc-U9-Mgc" userLabel="Body X"/>
+                        <constraint firstAttribute="bottom" secondItem="Ji9-9b-L9g" secondAttribute="bottom" id="QlD-32-6T4" userLabel="Body Bottom"/>
+                        <constraint firstItem="Ji9-9b-L9g" firstAttribute="top" secondItem="Ioz-gG-4qa" secondAttribute="bottom" id="SeQ-CM-Iqq" userLabel="Body Top"/>
+                        <constraint firstItem="Ioz-gG-4qa" firstAttribute="leading" secondItem="S6i-t7-qJ2" secondAttribute="leading" id="Yq7-dG-bFG" userLabel="BodyTopSpacer Left"/>
+                        <constraint firstAttribute="trailing" secondItem="Ioz-gG-4qa" secondAttribute="trailing" id="isG-jI-AH0" userLabel="BodyTopSpacer Right"/>
+                        <constraint firstItem="Ioz-gG-4qa" firstAttribute="top" secondItem="S6i-t7-qJ2" secondAttribute="top" id="lmz-LR-qQ0" userLabel="BodyTopSpacer Top"/>
                     </constraints>
                     <connections>
                         <outlet property="delegate" destination="iN0-l3-epB" id="1Dp-Cs-5gl"/>
@@ -150,11 +145,13 @@
             </subviews>
             <color key="backgroundColor" red="0.027450980392156862" green="0.11764705882352941" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="Ji9-9b-L9g" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="8xP-5h-HxH" userLabel="Body Height"/>
                 <constraint firstItem="S6i-t7-qJ2" firstAttribute="leading" secondItem="aaN-PC-ico" secondAttribute="leading" id="DnZ-En-ovr" userLabel="Scroll Left"/>
                 <constraint firstAttribute="trailing" secondItem="sct-cG-X0j" secondAttribute="trailing" constant="16" id="Mup-Kz-jx4" userLabel="Play Button Right"/>
                 <constraint firstItem="uNJ-Gx-8Ck" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="N0f-gq-Ztv" userLabel="Media Control Left"/>
                 <constraint firstAttribute="trailing" secondItem="uNJ-Gx-8Ck" secondAttribute="trailing" id="NBA-eb-ZlM" userLabel="Media Control Right"/>
                 <constraint firstItem="aaN-PC-ico" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="Ovx-mP-vmh" userLabel="Header Right"/>
+                <constraint firstItem="Ji9-9b-L9g" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="UL3-N4-ueJ" userLabel="Body Width"/>
                 <constraint firstItem="aaN-PC-ico" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="VQJ-aH-oH5" userLabel="Header Top"/>
                 <constraint firstItem="S6i-t7-qJ2" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="Ymi-Rn-g9Z" userLabel="Scroll Bottom"/>
                 <constraint firstItem="aaN-PC-ico" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ajI-ny-Orv" userLabel="Header Left"/>
@@ -167,13 +164,11 @@
             <nil key="simulatedTopBarMetrics"/>
             <connections>
                 <outlet property="bodyContainer" destination="Ji9-9b-L9g" id="P8M-9T-kO4"/>
-                <outlet property="bodyHeight" destination="yfo-ei-ke2" id="vHr-pK-3oe"/>
+                <outlet property="bodyTopConstraint" destination="aD8-kA-VZa" id="2YN-zE-heK"/>
                 <outlet property="headerContainer" destination="aaN-PC-ico" id="zKP-Rg-Twq"/>
                 <outlet property="headerHeight" destination="z4n-t7-5o7" id="GXV-1b-7wH"/>
                 <outlet property="mediaControlBar" destination="uNJ-Gx-8Ck" id="Kmq-Im-gva"/>
                 <outlet property="menuButton" destination="qeb-HB-q3h" id="xks-al-0uw"/>
-                <outlet property="spacerBottomConstraint" destination="Q8g-Ax-LID" id="Bg4-Sg-f8A"/>
-                <outlet property="spacerTopConstraint" destination="qm6-di-pWc" id="sbc-Q7-Mt9"/>
                 <outlet property="togglePlayButton" destination="sct-cG-X0j" id="jnr-XB-HAD"/>
                 <outlet property="volumeSlider" destination="gmd-m7-sZK" id="0dl-O7-cQm"/>
             </connections>
