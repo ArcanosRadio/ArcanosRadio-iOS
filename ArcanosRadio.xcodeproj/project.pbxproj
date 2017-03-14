@@ -1248,8 +1248,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.developercity.ArcanosRadio;
 				PRODUCT_NAME = "Arcanos Radio";
-				PROVISIONING_PROFILE = "7d7702cc-f552-43c1-900e-45de9dbb4819";
-				PROVISIONING_PROFILE_SPECIFIER = ArcanosDev;
+				PROVISIONING_PROFILE = "53830c0e-ab14-4544-98ac-81c1a9df6fed";
+				PROVISIONING_PROFILE_SPECIFIER = "Arcanos Radio Dev";
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1272,8 +1272,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.developercity.ArcanosRadio;
 				PRODUCT_NAME = "Arcanos Radio";
-				PROVISIONING_PROFILE = "7d7702cc-f552-43c1-900e-45de9dbb4819";
-				PROVISIONING_PROFILE_SPECIFIER = ArcanosDev;
+				PROVISIONING_PROFILE = "53830c0e-ab14-4544-98ac-81c1a9df6fed";
+				PROVISIONING_PROFILE_SPECIFIER = "Arcanos Radio Dev";
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

@@ -17,7 +17,7 @@
         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="D2N-W5-cbb" customClass="AWRTwitterView">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="0.99505919710000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <point key="canvasLocation" x="484" y="120"/>
         </tableView>
     </objects>

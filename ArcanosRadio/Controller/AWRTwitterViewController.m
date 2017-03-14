@@ -1,4 +1,5 @@
 #import "AWRTwitterViewController.h"
+#import "AWRTwitterView.h"
 
 @interface AWRTwitterViewController ()
 
@@ -10,6 +11,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [(AWRTwitterView *)self.view configureView];
     self.client = [TWTRAPIClient new];
 }
 
