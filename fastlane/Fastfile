@@ -118,7 +118,8 @@ platform :ios do
         testflight(
             changelog: changes,
             beta_app_description: "Arcanos Web Radio app pre-release version.",
-            beta_app_feedback_email: "luiz@developercity.de"
+            beta_app_feedback_email: "luiz@developercity.de",
+            distribute_external: true
         )
 
         build_number = get_build_number(xcodeproj: "ArcanosRadio.xcodeproj")
