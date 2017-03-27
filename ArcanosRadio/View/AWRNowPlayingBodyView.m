@@ -1,9 +1,7 @@
 #import "AWRNowPlayingBodyView.h"
 #import "UIView+Utils.h"
 
-@interface AWRNowPlayingBodyView()<UITabBarDelegate>
-
-@property (weak, nonatomic) IBOutlet UITabBar *tabBar;
+@interface AWRNowPlayingBodyView()
 
 @property (weak, nonatomic) IBOutlet UIStackView *metadataContainer;
 @property (weak, nonatomic) IBOutlet UIScrollView *lyricsContainer;
@@ -48,29 +46,21 @@
     self.songNameLabel.text = @"";
     self.artistNameLabel.text = @"";
     self.lyricsLabel.text = @"";
-
-    if (!self.tabBar.selectedItem) {
-        self.tabBar.selectedItem = [self.tabBar.items firstObject];
-    }
 }
 
-- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
-    switch (item.tag) {
-        case 0:
-            self.lyricsContainer.hidden = NO;
-            self.twitterContainerView.hidden = YES;
-            break;
-        case 1:
-            self.lyricsContainer.hidden = YES;
-            self.twitterContainerView.hidden = NO;
-            break;
-        case 2:
-            self.lyricsContainer.hidden = YES;
-            self.twitterContainerView.hidden = YES;
-            break;
-        default:
-            break;
-    }
+- (void)showLyrics {
+    self.lyricsContainer.hidden = NO;
+    self.twitterContainerView.hidden = YES;
+}
+
+- (void)showTwitter {
+    self.lyricsContainer.hidden = YES;
+    self.twitterContainerView.hidden = NO;
+}
+
+- (void)showWebsite {
+    self.lyricsContainer.hidden = YES;
+    self.twitterContainerView.hidden = YES;
 }
 
 - (float)titleAlpha {

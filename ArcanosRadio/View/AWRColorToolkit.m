@@ -29,7 +29,7 @@ static UIColor *_errorTextColor;
         _headerTextSecundaryColor = [UIColor whiteColor];
         _bodyTextPrimaryColor = [UIColor whiteColor];
         _bodyTextSecundaryColor = [UIColor whiteColor];
-        _extraHighlightBackgroundColor = [UIColor whiteColor];
+        _extraHighlightBackgroundColor = [UIColor colorWithRed:254./255. green:208./255. blue:49./255. alpha:1.0];
         _extraHighlightTextColor = [UIColor whiteColor];
         _disabledBackgroundColor = [UIColor whiteColor];
         _disabledTextColor = [UIColor whiteColor];

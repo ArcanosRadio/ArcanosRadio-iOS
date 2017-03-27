@@ -15,23 +15,8 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="302"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tabBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="GBP-CT-t2S">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <items>
-                        <tabBarItem title="Lyrics" image="tab_lyrics" selectedImage="tab_lyrics_fill" id="t7r-EP-9V9" userLabel="Lyrics"/>
-                        <tabBarItem tag="1" title="Twitter" image="tab_twitter" selectedImage="tab_twitter_fill" id="g4N-YR-NYz" userLabel="Twitter"/>
-                        <tabBarItem tag="2" enabled="NO" title="Website" image="tab_site" selectedImage="tab_site_fill" id="Acu-vD-G8T" userLabel="Website"/>
-                        <tabBarItem title="" id="nZ6-Il-iNN"/>
-                    </items>
-                    <color key="barTintColor" red="0.027450980390000001" green="0.1176470588" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
-                    <color key="selectedImageTintColor" red="1" green="0.78823529410000004" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
-                    <connections>
-                        <outlet property="delegate" destination="iN0-l3-epB" id="oNx-GU-e2g"/>
-                    </connections>
-                </tabBar>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="GYC-TW-TBW" userLabel="Metadata Container">
-                    <rect key="frame" x="8" y="65" width="359" height="51"/>
+                    <rect key="frame" x="8" y="16" width="359" height="51"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[song]" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZq-qh-r2n">
                             <rect key="frame" x="0.0" y="0.0" width="359" height="27.5"/>
@@ -54,10 +39,10 @@
                     </subviews>
                 </stackView>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9A6-H2-zWj" userLabel="twitterContainer">
-                    <rect key="frame" x="0.0" y="132" width="375" height="170"/>
+                    <rect key="frame" x="0.0" y="83" width="375" height="219"/>
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2zc-hx-Rkg" userLabel="lyricsContainer">
-                    <rect key="frame" x="0.0" y="132" width="375" height="170"/>
+                    <rect key="frame" x="0.0" y="83" width="375" height="219"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[lyrics]" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibf-j7-8dY">
                             <rect key="frame" x="8" y="8" width="36.5" height="13.5"/>
@@ -81,18 +66,15 @@
                 <constraint firstAttribute="trailing" secondItem="9A6-H2-zWj" secondAttribute="trailing" id="1Zh-fI-nHQ" userLabel="twitter_right"/>
                 <constraint firstAttribute="bottom" secondItem="9A6-H2-zWj" secondAttribute="bottom" id="53T-Zu-O0o" userLabel="twitter_bottom"/>
                 <constraint firstItem="2zc-hx-Rkg" firstAttribute="top" secondItem="GYC-TW-TBW" secondAttribute="bottom" constant="16" id="CLO-Sn-D7u" userLabel="lyricsContainer_top"/>
-                <constraint firstAttribute="trailing" secondItem="GBP-CT-t2S" secondAttribute="trailing" id="FDs-nh-kBg" userLabel="TabBar_right"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ibf-j7-8dY" secondAttribute="trailing" constant="8" id="I6x-kC-0jS"/>
                 <constraint firstItem="9A6-H2-zWj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Ku0-2X-TpW" userLabel="twitter_left"/>
-                <constraint firstItem="GBP-CT-t2S" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="MPN-t4-lYX" userLabel="TabBar_top"/>
                 <constraint firstItem="2zc-hx-Rkg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="NH5-SU-J7k" userLabel="lyricsContainer_left"/>
-                <constraint firstItem="GBP-CT-t2S" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="VSh-wa-0C0" userLabel="TabBar_left"/>
+                <constraint firstItem="GYC-TW-TBW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="WEY-Ol-eBU" userLabel="metadata_top"/>
                 <constraint firstAttribute="bottom" secondItem="2zc-hx-Rkg" secondAttribute="bottom" id="Wll-X9-WQq" userLabel="lyricsContainer_bottom"/>
                 <constraint firstItem="9A6-H2-zWj" firstAttribute="top" secondItem="GYC-TW-TBW" secondAttribute="bottom" constant="16" id="X6n-H3-R3l" userLabel="twitter_top"/>
                 <constraint firstAttribute="trailing" secondItem="2zc-hx-Rkg" secondAttribute="trailing" id="Z8l-m1-ySb" userLabel="lyricsContainer_right"/>
                 <constraint firstItem="GYC-TW-TBW" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dpx-eq-nWK" userLabel="metadata_center_x"/>
                 <constraint firstAttribute="trailing" secondItem="GYC-TW-TBW" secondAttribute="trailing" constant="8" id="f8I-b6-lb5" userLabel="metadata_right"/>
-                <constraint firstItem="GYC-TW-TBW" firstAttribute="top" secondItem="GBP-CT-t2S" secondAttribute="bottom" constant="16" id="jd4-5d-xpK" userLabel="metadata_top"/>
                 <constraint firstItem="GYC-TW-TBW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="u4S-K3-WQx" userLabel="metadata_left"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -102,18 +84,9 @@
                 <outlet property="lyricsLabel" destination="ibf-j7-8dY" id="bJF-gS-Ab7"/>
                 <outlet property="metadataContainer" destination="GYC-TW-TBW" id="0VH-Lx-WeA"/>
                 <outlet property="songNameLabel" destination="BZq-qh-r2n" id="Dgv-qy-ohH"/>
-                <outlet property="tabBar" destination="GBP-CT-t2S" id="9ta-Ii-U56"/>
                 <outlet property="twitterContainerView" destination="9A6-H2-zWj" id="KAJ-EM-WuA"/>
             </connections>
             <point key="canvasLocation" x="33.5" y="-126"/>
         </view>
     </objects>
-    <resources>
-        <image name="tab_lyrics" width="25" height="25"/>
-        <image name="tab_lyrics_fill" width="25" height="25"/>
-        <image name="tab_site" width="25" height="25"/>
-        <image name="tab_site_fill" width="25" height="25"/>
-        <image name="tab_twitter" width="25" height="25"/>
-        <image name="tab_twitter_fill" width="25" height="25"/>
-    </resources>
 </document>
