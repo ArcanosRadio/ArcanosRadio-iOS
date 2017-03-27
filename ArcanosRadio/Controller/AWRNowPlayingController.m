@@ -141,7 +141,7 @@
     [self.nowPlayingView renderModel:self.viewModel];
     [self.nowPlayingView setVolume:1.0];
     [self addChildViewController:self.twitterViewController];
-    [self.nowPlayingView setTwitterView:self.twitterViewController.view];
+//    [self.nowPlayingView setTwitterView:self.twitterViewController.view];
 }
 
 - (void)viewDidUnload {
