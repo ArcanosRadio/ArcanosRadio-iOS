@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		010C2F471E889EDF00042530 /* AWRNowPlayingToolbarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010C2F461E889EDF00042530 /* AWRNowPlayingToolbarView.xib */; };
 		012582B81D91F2EA002C4E93 /* AWRAppCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 012582B71D91F2EA002C4E93 /* AWRAppCoordinator.m */; };
 		0126E3471DA7232D0054430C /* AWRMetadataPoolingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0126E3461DA7232D0054430C /* AWRMetadataPoolingService.m */; };
 		013075F81D96846A003FDA74 /* AWRNowPlayingViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 013075F71D96846A003FDA74 /* AWRNowPlayingViewModel.m */; };
@@ -172,6 +173,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		010C2F461E889EDF00042530 /* AWRNowPlayingToolbarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AWRNowPlayingToolbarView.xib; sourceTree = "<group>"; };
 		012582B61D91F2EA002C4E93 /* AWRAppCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRAppCoordinator.h; sourceTree = "<group>"; };
 		012582B71D91F2EA002C4E93 /* AWRAppCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRAppCoordinator.m; sourceTree = "<group>"; };
 		0126E3411DA721970054430C /* AWRMetadataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRMetadataService.h; sourceTree = "<group>"; };
@@ -533,6 +535,7 @@
 				01FB39331DAC592B00EBC99D /* AWRNowPlayingHeaderView.xib */,
 				01FB39361DAC596800EBC99D /* AWRNowPlayingHeaderView.h */,
 				01FB39371DAC596800EBC99D /* AWRNowPlayingHeaderView.m */,
+				010C2F461E889EDF00042530 /* AWRNowPlayingToolbarView.xib */,
 				01DD77481DEA743B006E82B3 /* AWRNowPlayingBodyView.xib */,
 				01DD774B1DEA7452006E82B3 /* AWRNowPlayingBodyView.h */,
 				01DD774C1DEA7452006E82B3 /* AWRNowPlayingBodyView.m */,
@@ -861,6 +864,7 @@
 				01DD77491DEA743B006E82B3 /* AWRNowPlayingBodyView.xib in Resources */,
 				018E2CEC1DBC70D90035455B /* AWRDeveloperInfoTableViewCell.xib in Resources */,
 				018E2D151DBD48960035455B /* AWRVersionTableViewCell.xib in Resources */,
+				010C2F471E889EDF00042530 /* AWRNowPlayingToolbarView.xib in Resources */,
 				013784DA1DEE2921006EC13E /* TwitterKitResources.bundle in Resources */,
 				016500E51DB2D04900B32C0A /* Localizable.strings in Resources */,
 				018E2D021DBCCD950035455B /* AWRLicenseView.xib in Resources */,

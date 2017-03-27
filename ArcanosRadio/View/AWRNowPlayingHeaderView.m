@@ -3,7 +3,6 @@
 #import "FXBlurView.h"
 #import "UIImage+Resize.h"
 #import "AWRAvatarImageView.h"
-#import "AWRColorToolkit.h"
 
 const int kDefaultMargin = 8;
 const float kAvatarBorder = 4.0;
@@ -20,14 +19,6 @@ const float kAvatarCornerRadius = 10.0;
 @property (strong, nonatomic) NSDictionary *textEffects;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *metadataVerticalCenterConstraint;
 
-@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *toolbarLeftMargin;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *toolbarRightMargin;
-@property (weak, nonatomic) IBOutlet UIButton *lyricsButton;
-@property (weak, nonatomic) IBOutlet UIButton *twitterButton;
-@property (weak, nonatomic) IBOutlet UIButton *websiteButton;
-@property (strong, nonatomic) IBOutletCollection(NSLayoutConstraint) NSArray *buttonsSize;
-
 @end
 
 @implementation AWRNowPlayingHeaderView
@@ -43,19 +34,6 @@ const float kAvatarCornerRadius = 10.0;
 
 - (float)deltaHeight {
     return self.maximumHeight - self.minimumHeight;
-}
-
-- (IBAction)toolbarItemSelected:(UIButton *)sender {
-    self.lyricsButton.selected = NO;
-    self.twitterButton.selected = NO;
-    self.websiteButton.selected = NO;
-    self.lyricsButton.tintColor = [UIColor darkGrayColor];
-    self.twitterButton.tintColor = [UIColor darkGrayColor];
-    self.websiteButton.tintColor = [UIColor darkGrayColor];
-
-    sender.selected = YES;
-    sender.tintColor = AWRColorToolkit.extraHighlightBackgroundColor;
-    [sender setNeedsLayout];
 }
 
 - (void)layoutSubviews {

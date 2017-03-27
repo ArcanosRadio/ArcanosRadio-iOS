@@ -12,14 +12,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clipsSubviews="YES" contentMode="scaleToFill" id="r6r-VK-qg5" customClass="AWRNowPlayingHeaderView">
-            <rect key="frame" x="0.0" y="0.0" width="329" height="409"/>
+            <rect key="frame" x="0.0" y="0.0" width="329" height="424"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UDm-4P-vDN" customClass="AWRMergeImageView">
-                    <rect key="frame" x="0.0" y="0.0" width="329" height="351"/>
+                    <rect key="frame" x="0.0" y="0.0" width="329" height="424"/>
                 </view>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="et1-2X-qV7" customClass="AWRAvatarImageView">
-                    <rect key="frame" x="8" y="127.5" width="96" height="96"/>
+                    <rect key="frame" x="8" y="174" width="96" height="96"/>
                     <accessibility key="accessibilityConfiguration" identifier="mini_album_art"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="et1-2X-qV7" secondAttribute="height" multiplier="1:1" id="Unr-X6-eDz" userLabel="icon_square_ratio"/>
@@ -38,7 +38,7 @@
                     </userDefinedRuntimeAttributes>
                 </imageView>
                 <stackView opaque="NO" alpha="0.0" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="B0g-4k-sB6">
-                    <rect key="frame" x="112" y="158" width="209" height="35"/>
+                    <rect key="frame" x="112" y="204.5" width="209" height="35"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[song]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="287-cl-MlW">
                             <rect key="frame" x="0.0" y="0.0" width="209" height="20.5"/>
@@ -61,130 +61,18 @@
                         <constraint firstAttribute="height" constant="20" id="45g-7Z-TJD" userLabel="statusbar_height"/>
                     </constraints>
                 </view>
-                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mKv-js-i6W">
-                    <rect key="frame" x="0.0" y="351" width="329" height="58"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="58" id="sa6-Po-BW1"/>
-                    </constraints>
-                    <items>
-                        <barButtonItem width="20" style="plain" systemItem="fixedSpace" id="eUi-tc-Tvh"/>
-                        <barButtonItem style="plain" id="RYY-zY-xdF">
-                            <view key="customView" contentMode="scaleToFill" id="iPz-EN-Gcy">
-                                <rect key="frame" x="36" y="3" width="40" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcc-PR-ijF">
-                                        <rect key="frame" x="0.0" y="0.0" width="40" height="52"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="OyA-Xz-f2r"/>
-                                            <constraint firstAttribute="height" constant="52" id="gDE-7E-zfF"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
-                                        <color key="tintColor" red="1" green="0.78823529410000004" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <inset key="titleEdgeInsets" minX="-50" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="12"/>
-                                        <state key="normal" title="Lyrics" image="tab_lyrics">
-                                            <color key="titleColor" white="0.33657525510000003" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="selected" title="Lyrics" image="tab_lyrics_fill">
-                                            <color key="titleColor" red="1" green="0.78823529410000004" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="toolbarItemSelected:" destination="r6r-VK-qg5" eventType="touchUpInside" id="xcb-Er-CKl"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="tcc-PR-ijF" firstAttribute="centerX" secondItem="iPz-EN-Gcy" secondAttribute="centerX" id="TDR-3z-sW7"/>
-                                    <constraint firstItem="tcc-PR-ijF" firstAttribute="top" secondItem="iPz-EN-Gcy" secondAttribute="top" id="UIR-L1-ggU"/>
-                                </constraints>
-                            </view>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="it0-Nj-Ewt"/>
-                        <barButtonItem style="plain" id="p3A-XK-6hN">
-                            <view key="customView" contentMode="scaleToFill" id="TvS-HZ-qeo">
-                                <rect key="frame" x="118" y="3" width="40" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HVX-8N-sTq">
-                                        <rect key="frame" x="0.0" y="0.0" width="40" height="52"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="ohH-nV-avK"/>
-                                            <constraint firstAttribute="height" constant="52" id="vb1-dS-B75"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
-                                        <color key="tintColor" red="1" green="0.78823529410000004" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <inset key="titleEdgeInsets" minX="-50" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="12"/>
-                                        <state key="normal" title="Twitter" image="tab_twitter">
-                                            <color key="titleColor" white="0.33657525510000003" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="selected" title="Twitter" image="tab_twitter_fill">
-                                            <color key="titleColor" red="1" green="0.78823529410000004" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="toolbarItemSelected:" destination="r6r-VK-qg5" eventType="touchUpInside" id="dKl-5s-tZr"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="HVX-8N-sTq" firstAttribute="top" secondItem="TvS-HZ-qeo" secondAttribute="top" id="Z9U-zk-4u1"/>
-                                    <constraint firstItem="HVX-8N-sTq" firstAttribute="centerX" secondItem="TvS-HZ-qeo" secondAttribute="centerX" id="f2U-di-9Qh"/>
-                                </constraints>
-                            </view>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="StU-4r-Rov"/>
-                        <barButtonItem style="plain" id="1dz-B1-HB6">
-                            <view key="customView" contentMode="scaleToFill" id="9fU-Lw-UMQ">
-                                <rect key="frame" x="201" y="3" width="40" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ntS-Qa-Slj">
-                                        <rect key="frame" x="0.0" y="0.0" width="40" height="52"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="52" id="4RW-ww-rGc"/>
-                                            <constraint firstAttribute="width" constant="40" id="m7M-xK-lwu"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
-                                        <color key="tintColor" red="1" green="0.78823529410000004" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <inset key="titleEdgeInsets" minX="-50" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="12"/>
-                                        <state key="normal" title="Website" image="tab_site">
-                                            <color key="titleColor" white="0.33657525510000003" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="selected" title="Website" image="tab_site_fill">
-                                            <color key="titleColor" red="1" green="0.78823529410000004" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="toolbarItemSelected:" destination="r6r-VK-qg5" eventType="touchUpInside" id="XUa-sx-zRt"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="ntS-Qa-Slj" firstAttribute="centerX" secondItem="9fU-Lw-UMQ" secondAttribute="centerX" id="Gib-CO-9oM"/>
-                                    <constraint firstItem="ntS-Qa-Slj" firstAttribute="top" secondItem="9fU-Lw-UMQ" secondAttribute="top" id="iL5-bf-Jsp"/>
-                                </constraints>
-                            </view>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="sdk-kP-BHK"/>
-                        <barButtonItem width="40" style="plain" systemItem="fixedSpace" id="xjL-qN-uv9"/>
-                    </items>
-                    <color key="barTintColor" red="0.027450980392156862" green="0.11764705882352941" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
-                </toolbar>
             </subviews>
             <constraints>
+                <constraint firstItem="et1-2X-qV7" firstAttribute="centerY" secondItem="r6r-VK-qg5" secondAttribute="centerY" constant="10" id="FK1-22-dpE" userLabel="icon_vertical_center"/>
                 <constraint firstItem="UDm-4P-vDN" firstAttribute="top" secondItem="r6r-VK-qg5" secondAttribute="top" id="LQX-ij-gPH" userLabel="background_top_cover"/>
-                <constraint firstAttribute="trailing" secondItem="mKv-js-i6W" secondAttribute="trailing" id="WJG-ms-LT2"/>
                 <constraint firstAttribute="trailing" secondItem="B0g-4k-sB6" secondAttribute="trailing" constant="8" id="YJA-aw-sfZ" userLabel="song_name_right"/>
                 <constraint firstItem="Qhu-53-vjb" firstAttribute="top" secondItem="r6r-VK-qg5" secondAttribute="top" id="ZQE-nf-MQZ" userLabel="statusbar_top"/>
                 <constraint firstItem="et1-2X-qV7" firstAttribute="leading" secondItem="r6r-VK-qg5" secondAttribute="leading" constant="8" id="Zb2-BJ-TnW" userLabel="icon_left"/>
-                <constraint firstItem="mKv-js-i6W" firstAttribute="leading" secondItem="r6r-VK-qg5" secondAttribute="leading" id="a2m-PZ-SZW"/>
-                <constraint firstAttribute="bottom" secondItem="UDm-4P-vDN" secondAttribute="bottom" constant="58" id="dHb-gC-nJv" userLabel="background_bottom_cover"/>
-                <constraint firstAttribute="bottom" secondItem="mKv-js-i6W" secondAttribute="bottom" id="fSn-sh-DG7"/>
+                <constraint firstAttribute="bottom" secondItem="UDm-4P-vDN" secondAttribute="bottom" id="dHb-gC-nJv" userLabel="background_bottom_cover"/>
+                <constraint firstItem="UDm-4P-vDN" firstAttribute="centerY" secondItem="r6r-VK-qg5" secondAttribute="centerY" id="fb7-NE-T7v" userLabel="background_vertical_center"/>
                 <constraint firstAttribute="trailing" secondItem="Qhu-53-vjb" secondAttribute="trailing" id="ffB-fO-bQ1" userLabel="statusbar_right"/>
                 <constraint firstItem="Qhu-53-vjb" firstAttribute="leading" secondItem="r6r-VK-qg5" secondAttribute="leading" id="jib-t3-SQf" userLabel="statusbar_left"/>
                 <constraint firstItem="B0g-4k-sB6" firstAttribute="centerY" secondItem="et1-2X-qV7" secondAttribute="centerY" id="r0V-oy-BRb" userLabel="song_name_vertical_center"/>
-                <constraint firstItem="et1-2X-qV7" firstAttribute="centerY" secondItem="UDm-4P-vDN" secondAttribute="centerY" id="riq-sD-Lja" userLabel="icon_vertical_center"/>
                 <constraint firstAttribute="trailing" secondItem="UDm-4P-vDN" secondAttribute="trailing" id="slr-it-psV" userLabel="background_right"/>
                 <constraint firstItem="B0g-4k-sB6" firstAttribute="leading" secondItem="et1-2X-qV7" secondAttribute="trailing" constant="8" id="tfM-Q5-QCu" userLabel="song_name_left"/>
                 <constraint firstItem="UDm-4P-vDN" firstAttribute="leading" secondItem="r6r-VK-qg5" secondAttribute="leading" id="ueu-Uf-j9H" userLabel="background_left"/>
@@ -194,25 +82,11 @@
                 <outlet property="albumArtIcon" destination="et1-2X-qV7" id="KGC-2y-o2F"/>
                 <outlet property="artistLabel" destination="Gsu-TU-MYK" id="Nqu-b0-3je"/>
                 <outlet property="backgroundAlbumArt" destination="UDm-4P-vDN" id="wGB-Bk-c72"/>
-                <outlet property="lyricsButton" destination="tcc-PR-ijF" id="Z4x-Pe-IIe"/>
                 <outlet property="metadataContainer" destination="B0g-4k-sB6" id="JV2-Os-Dyf"/>
                 <outlet property="metadataVerticalCenterConstraint" destination="r0V-oy-BRb" id="3MA-iY-Twv"/>
                 <outlet property="songLabel" destination="287-cl-MlW" id="ma7-tE-lhK"/>
-                <outlet property="toolbar" destination="mKv-js-i6W" id="L5e-ST-lC9"/>
-                <outlet property="toolbarLeftMargin" destination="eUi-tc-Tvh" id="vCy-PD-3GX"/>
-                <outlet property="toolbarRightMargin" destination="xjL-qN-uv9" id="Zjv-30-iKL"/>
-                <outlet property="twitterButton" destination="HVX-8N-sTq" id="B2r-FH-eDR"/>
-                <outlet property="websiteButton" destination="ntS-Qa-Slj" id="fqX-O3-uzI"/>
             </connections>
-            <point key="canvasLocation" x="5.5" y="-443.5"/>
+            <point key="canvasLocation" x="5.5" y="-443"/>
         </view>
     </objects>
-    <resources>
-        <image name="tab_lyrics" width="50" height="50"/>
-        <image name="tab_lyrics_fill" width="50" height="50"/>
-        <image name="tab_site" width="50" height="50"/>
-        <image name="tab_site_fill" width="50" height="50"/>
-        <image name="tab_twitter" width="50" height="50"/>
-        <image name="tab_twitter_fill" width="50" height="50"/>
-    </resources>
 </document>
