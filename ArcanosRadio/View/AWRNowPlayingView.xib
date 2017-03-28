@@ -27,116 +27,128 @@
                         <constraint firstAttribute="height" constant="375" id="z4n-t7-5o7"/>
                     </constraints>
                 </view>
-                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hGF-HM-rkm">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="GBt-Ls-lAG" userLabel="Metadata Stack View">
+                    <rect key="frame" x="8" y="437" width="359" height="51"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[song]" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BxD-MH-guM">
+                            <rect key="frame" x="0.0" y="0.0" width="359" height="27.5"/>
+                            <accessibility key="accessibilityConfiguration" identifier="song_label">
+                                <accessibilityTraits key="traits" notEnabled="YES"/>
+                            </accessibility>
+                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
+                            <color key="textColor" red="1" green="0.78823529410000004" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[artist]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22u-K2-QRp">
+                            <rect key="frame" x="0.0" y="27.5" width="359" height="23.5"/>
+                            <accessibility key="accessibilityConfiguration" identifier="artist_label">
+                                <accessibilityTraits key="traits" notEnabled="YES"/>
+                            </accessibility>
+                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
+                            <color key="textColor" red="0.5568627451" green="0.90196078430000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <stackView contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0Lx-0h-o3X" userLabel="Toolbar Stack View">
                     <rect key="frame" x="0.0" y="375" width="375" height="58"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ip-Ny-Qbe">
+                            <rect key="frame" x="0.0" y="0.0" width="94" height="58"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c69-nK-qXV">
+                                    <rect key="frame" x="27" y="3" width="40" height="52"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="52" id="ANf-bQ-sCM"/>
+                                        <constraint firstAttribute="width" constant="40" id="v1t-xi-ZhY"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
+                                    <color key="tintColor" red="1" green="0.78823529410000004" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <inset key="titleEdgeInsets" minX="-50" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="12"/>
+                                    <state key="normal" title="Lyrics" image="tab_lyrics">
+                                        <color key="titleColor" white="0.33657525510000003" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="selected" title="Lyrics" image="tab_lyrics_fill">
+                                        <color key="titleColor" red="1" green="0.78823529410000004" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="toolbarItemSelected:" destination="iN0-l3-epB" eventType="touchUpInside" id="nKe-5D-Rh0"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="c69-nK-qXV" firstAttribute="centerY" secondItem="7Ip-Ny-Qbe" secondAttribute="centerY" id="qX2-2S-UQS"/>
+                                <constraint firstItem="c69-nK-qXV" firstAttribute="centerX" secondItem="7Ip-Ny-Qbe" secondAttribute="centerX" id="tZI-DE-0Ok"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i2b-c4-84E">
+                            <rect key="frame" x="94" y="0.0" width="93.5" height="58"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6uH-vE-k95">
+                                    <rect key="frame" x="26.5" y="3" width="40" height="52"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="52" id="MQp-Gu-XB1"/>
+                                        <constraint firstAttribute="width" constant="40" id="UZj-5j-Sa2"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
+                                    <color key="tintColor" red="1" green="0.78823529410000004" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <inset key="titleEdgeInsets" minX="-50" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="12"/>
+                                    <state key="normal" title="Twitter" image="tab_twitter">
+                                        <color key="titleColor" white="0.33657525510000003" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="selected" title="Twitter" image="tab_twitter_fill">
+                                        <color key="titleColor" red="1" green="0.78823529410000004" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="toolbarItemSelected:" destination="iN0-l3-epB" eventType="touchUpInside" id="gXR-VY-gma"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="6uH-vE-k95" firstAttribute="centerY" secondItem="i2b-c4-84E" secondAttribute="centerY" id="Qsc-gw-joW"/>
+                                <constraint firstItem="6uH-vE-k95" firstAttribute="centerX" secondItem="i2b-c4-84E" secondAttribute="centerX" id="Wro-Fk-aMn"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m6r-Fg-xN0">
+                            <rect key="frame" x="187.5" y="0.0" width="94" height="58"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1mA-5W-TqX">
+                                    <rect key="frame" x="27" y="3" width="40" height="52"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="40" id="bhX-42-Cll"/>
+                                        <constraint firstAttribute="height" constant="52" id="lnc-1z-qe8"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
+                                    <color key="tintColor" red="1" green="0.78823529410000004" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <inset key="titleEdgeInsets" minX="-50" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="12"/>
+                                    <state key="normal" title="Website" image="tab_site">
+                                        <color key="titleColor" white="0.33657525510000003" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="selected" title="Website" image="tab_site_fill">
+                                        <color key="titleColor" red="1" green="0.78823529410000004" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="toolbarItemSelected:" destination="iN0-l3-epB" eventType="touchUpInside" id="c5C-sM-dUt"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="1mA-5W-TqX" firstAttribute="centerY" secondItem="m6r-Fg-xN0" secondAttribute="centerY" id="0S5-id-hoU"/>
+                                <constraint firstItem="1mA-5W-TqX" firstAttribute="centerX" secondItem="m6r-Fg-xN0" secondAttribute="centerX" id="P99-ms-PbL"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1OQ-bi-4Wk">
+                            <rect key="frame" x="281.5" y="0.0" width="93.5" height="58"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" constant="58" id="cRg-s0-iht"/>
+                        <constraint firstAttribute="height" constant="58" id="CQ6-LY-VBN"/>
                     </constraints>
-                    <items>
-                        <barButtonItem width="20" style="plain" systemItem="fixedSpace" id="Yrj-vT-Tbo"/>
-                        <barButtonItem style="plain" id="1pW-E8-Kxq">
-                            <view key="customView" contentMode="scaleToFill" id="Fhw-VD-jjY">
-                                <rect key="frame" x="36" y="3" width="40" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c69-nK-qXV">
-                                        <rect key="frame" x="0.0" y="0.0" width="40" height="52"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="52" id="ANf-bQ-sCM"/>
-                                            <constraint firstAttribute="width" constant="40" id="v1t-xi-ZhY"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
-                                        <color key="tintColor" red="1" green="0.78823529410000004" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <inset key="titleEdgeInsets" minX="-50" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="12"/>
-                                        <state key="normal" title="Lyrics" image="tab_lyrics">
-                                            <color key="titleColor" white="0.33657525510000003" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="selected" title="Lyrics" image="tab_lyrics_fill">
-                                            <color key="titleColor" red="1" green="0.78823529410000004" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="toolbarItemSelected:" destination="iN0-l3-epB" eventType="touchUpInside" id="nKe-5D-Rh0"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="c69-nK-qXV" firstAttribute="centerX" secondItem="Fhw-VD-jjY" secondAttribute="centerX" id="D6d-68-pod"/>
-                                    <constraint firstItem="c69-nK-qXV" firstAttribute="top" secondItem="Fhw-VD-jjY" secondAttribute="top" id="Z2r-tX-R5a"/>
-                                </constraints>
-                            </view>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Jf3-ew-snf"/>
-                        <barButtonItem style="plain" id="O0K-dR-I9g">
-                            <view key="customView" contentMode="scaleToFill" id="tpB-9B-tC0">
-                                <rect key="frame" x="134" y="3" width="40" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6uH-vE-k95">
-                                        <rect key="frame" x="0.0" y="0.0" width="40" height="52"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="52" id="MQp-Gu-XB1"/>
-                                            <constraint firstAttribute="width" constant="40" id="UZj-5j-Sa2"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
-                                        <color key="tintColor" red="1" green="0.78823529410000004" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <inset key="titleEdgeInsets" minX="-50" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="12"/>
-                                        <state key="normal" title="Twitter" image="tab_twitter">
-                                            <color key="titleColor" white="0.33657525510000003" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="selected" title="Twitter" image="tab_twitter_fill">
-                                            <color key="titleColor" red="1" green="0.78823529410000004" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="toolbarItemSelected:" destination="iN0-l3-epB" eventType="touchUpInside" id="gXR-VY-gma"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="6uH-vE-k95" firstAttribute="top" secondItem="tpB-9B-tC0" secondAttribute="top" id="KY5-58-Ufg"/>
-                                    <constraint firstItem="6uH-vE-k95" firstAttribute="centerX" secondItem="tpB-9B-tC0" secondAttribute="centerX" id="Okh-q6-Ixf"/>
-                                </constraints>
-                            </view>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="fTl-Yk-OH3"/>
-                        <barButtonItem style="plain" id="l8Q-rl-JUB">
-                            <view key="customView" contentMode="scaleToFill" id="AML-OM-LuM">
-                                <rect key="frame" x="231" y="3" width="40" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1mA-5W-TqX">
-                                        <rect key="frame" x="0.0" y="0.0" width="40" height="52"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="bhX-42-Cll"/>
-                                            <constraint firstAttribute="height" constant="52" id="lnc-1z-qe8"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
-                                        <color key="tintColor" red="1" green="0.78823529410000004" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <inset key="titleEdgeInsets" minX="-50" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="12"/>
-                                        <state key="normal" title="Website" image="tab_site">
-                                            <color key="titleColor" white="0.33657525510000003" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="selected" title="Website" image="tab_site_fill">
-                                            <color key="titleColor" red="1" green="0.78823529410000004" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="toolbarItemSelected:" destination="iN0-l3-epB" eventType="touchUpInside" id="c5C-sM-dUt"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="1mA-5W-TqX" firstAttribute="centerX" secondItem="AML-OM-LuM" secondAttribute="centerX" id="9BS-9g-3pk"/>
-                                    <constraint firstItem="1mA-5W-TqX" firstAttribute="top" secondItem="AML-OM-LuM" secondAttribute="top" id="axV-zM-nDY"/>
-                                </constraints>
-                            </view>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="zEP-ig-XVt"/>
-                        <barButtonItem width="40" style="plain" systemItem="fixedSpace" id="Z1A-kH-9nl"/>
-                    </items>
-                    <color key="barTintColor" red="0.027450980390000001" green="0.1176470588" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
-                </toolbar>
+                </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sct-cG-X0j" userLabel="Play Button">
                     <rect key="frame" x="305" y="343" width="54" height="54"/>
                     <color key="backgroundColor" red="0.99607843137254903" green="0.81568627450980391" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
@@ -158,24 +170,6 @@
                         <action selector="playButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="VLv-E9-9cr"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[song]" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BxD-MH-guM">
-                    <rect key="frame" x="8" y="437" width="359" height="28"/>
-                    <accessibility key="accessibilityConfiguration" identifier="song_label">
-                        <accessibilityTraits key="traits" notEnabled="YES"/>
-                    </accessibility>
-                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
-                    <color key="textColor" red="1" green="0.78823529410000004" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[artist]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22u-K2-QRp">
-                    <rect key="frame" x="8" y="465" width="359" height="24"/>
-                    <accessibility key="accessibilityConfiguration" identifier="artist_label">
-                        <accessibilityTraits key="traits" notEnabled="YES"/>
-                    </accessibility>
-                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
-                    <color key="textColor" red="0.5568627451" green="0.90196078430000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07J-eA-cW8">
                     <rect key="frame" x="0.0" y="-48" width="0.0" height="667"/>
                     <constraints>
@@ -186,13 +180,13 @@
                     </connections>
                 </scrollView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m33-v1-fxP" userLabel="TabContainer">
-                    <rect key="frame" x="0.0" y="497" width="375" height="122"/>
+                    <rect key="frame" x="0.0" y="496" width="375" height="123"/>
                     <subviews>
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aa5-TN-khB" userLabel="Lyrics Scroll View">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="122"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="123"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[lyrics]" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="knd-2x-4Jg">
-                                    <rect key="frame" x="8" y="8" width="36.5" height="14"/>
+                                    <rect key="frame" x="8" y="8" width="36.5" height="13.5"/>
                                     <accessibility key="accessibilityConfiguration" identifier="lyrics_label">
                                         <accessibilityTraits key="traits" notEnabled="YES"/>
                                     </accessibility>
@@ -292,43 +286,46 @@
                 <constraint firstItem="07J-eA-cW8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="2dG-xJ-2Zz" userLabel="Scroll Left"/>
                 <constraint firstItem="07J-eA-cW8" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="3sQ-cJ-M67" userLabel="Scroll Height"/>
                 <constraint firstItem="uNJ-Gx-8Ck" firstAttribute="top" secondItem="07J-eA-cW8" secondAttribute="bottom" id="56T-ul-N37" userLabel="Scroll Bottom"/>
-                <constraint firstItem="22u-K2-QRp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Dq1-9W-OS0" userLabel="Artist Left"/>
-                <constraint firstItem="m33-v1-fxP" firstAttribute="top" secondItem="22u-K2-QRp" secondAttribute="bottom" constant="8" id="KeT-kY-hpc" userLabel="TabContainer Top"/>
+                <constraint firstAttribute="trailing" secondItem="GBt-Ls-lAG" secondAttribute="trailing" constant="8" id="8kr-Vk-skD" userLabel="Metadata Right"/>
+                <constraint firstAttribute="trailing" secondItem="0Lx-0h-o3X" secondAttribute="trailing" id="9TM-PL-JbU" userLabel="Toolbar Stack Right"/>
+                <constraint firstItem="GBt-Ls-lAG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Ckg-Ek-rcU" userLabel="Metadata Left"/>
                 <constraint firstAttribute="trailing" secondItem="sct-cG-X0j" secondAttribute="trailing" constant="16" id="Mup-Kz-jx4" userLabel="Play Button Right"/>
                 <constraint firstItem="uNJ-Gx-8Ck" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="N0f-gq-Ztv" userLabel="Media Control Left"/>
-                <constraint firstItem="22u-K2-QRp" firstAttribute="top" secondItem="BxD-MH-guM" secondAttribute="bottom" id="N0i-NU-Kfx" userLabel="Artist Top"/>
                 <constraint firstAttribute="trailing" secondItem="uNJ-Gx-8Ck" secondAttribute="trailing" id="NBA-eb-ZlM" userLabel="Media Control Right"/>
+                <constraint firstItem="0Lx-0h-o3X" firstAttribute="top" secondItem="aaN-PC-ico" secondAttribute="bottom" id="OhQ-uA-GMX" userLabel="Toolbar Stack Top"/>
                 <constraint firstItem="aaN-PC-ico" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="Ovx-mP-vmh" userLabel="Header Right"/>
-                <constraint firstAttribute="trailing" secondItem="hGF-HM-rkm" secondAttribute="trailing" id="P0E-qZ-VfW" userLabel="Toolbar Right"/>
+                <constraint firstItem="GBt-Ls-lAG" firstAttribute="top" secondItem="0Lx-0h-o3X" secondAttribute="bottom" constant="4" id="PRU-bg-HOy" userLabel="Metadata Top"/>
                 <constraint firstItem="aaN-PC-ico" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="VQJ-aH-oH5" userLabel="Header Top"/>
-                <constraint firstItem="BxD-MH-guM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Ytj-D5-YVR" userLabel="Song Left"/>
-                <constraint firstItem="BxD-MH-guM" firstAttribute="top" secondItem="hGF-HM-rkm" secondAttribute="bottom" constant="4" id="aY4-ms-ZIl" userLabel="Song Top"/>
+                <constraint firstItem="uNJ-Gx-8Ck" firstAttribute="top" relation="greaterThanOrEqual" secondItem="0Lx-0h-o3X" secondAttribute="bottom" constant="66" id="YbO-Dc-h0v" userLabel="Max Bounce"/>
+                <constraint firstItem="m33-v1-fxP" firstAttribute="top" secondItem="GBt-Ls-lAG" secondAttribute="bottom" constant="8" id="ZrH-45-4ih" userLabel="TabContainer Top"/>
                 <constraint firstItem="aaN-PC-ico" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ajI-ny-Orv" userLabel="Header Left"/>
                 <constraint firstItem="uNJ-Gx-8Ck" firstAttribute="top" secondItem="m33-v1-fxP" secondAttribute="bottom" id="cDW-y5-CMF" userLabel="TabContainer Bottom"/>
                 <constraint firstItem="sct-cG-X0j" firstAttribute="top" secondItem="aaN-PC-ico" secondAttribute="bottom" constant="-32" id="g7W-T9-32R" userLabel="Play Button Top"/>
                 <constraint firstAttribute="bottom" secondItem="uNJ-Gx-8Ck" secondAttribute="bottom" id="ib3-VL-vGA" userLabel="Media Control Bottom"/>
-                <constraint firstItem="hGF-HM-rkm" firstAttribute="top" secondItem="aaN-PC-ico" secondAttribute="bottom" id="kR9-Ik-Sbc" userLabel="Toolbar Top"/>
                 <constraint firstItem="m33-v1-fxP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="kt7-h5-C1l" userLabel="TabContainer Left"/>
-                <constraint firstItem="uNJ-Gx-8Ck" firstAttribute="top" relation="greaterThanOrEqual" secondItem="hGF-HM-rkm" secondAttribute="bottom" constant="66" id="p5D-tn-jN4" userLabel="Max Bounce"/>
-                <constraint firstAttribute="trailing" secondItem="22u-K2-QRp" secondAttribute="trailing" constant="8" id="rFI-R2-pBe" userLabel="Artist Right"/>
-                <constraint firstAttribute="trailing" secondItem="BxD-MH-guM" secondAttribute="trailing" constant="8" id="ryk-Eq-Ytl" userLabel="Song Right"/>
-                <constraint firstItem="hGF-HM-rkm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="tQx-pu-Rhe" userLabel="Toolbar Left"/>
+                <constraint firstItem="0Lx-0h-o3X" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="nOp-uV-JlZ" userLabel="Toolbar Stack Left"/>
+                <constraint firstItem="m33-v1-fxP" firstAttribute="top" relation="greaterThanOrEqual" secondItem="aaN-PC-ico" secondAttribute="bottom" id="sXU-QN-0Yb" userLabel="TabContainer Distance to Header"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
             <connections>
                 <outlet property="artistLabel" destination="22u-K2-QRp" id="Ict-ST-peJ"/>
+                <outlet property="bigMetadataStackView" destination="GBt-Ls-lAG" id="9jX-we-O30"/>
                 <outlet property="headerContainer" destination="aaN-PC-ico" id="zKP-Rg-Twq"/>
                 <outlet property="headerHeight" destination="z4n-t7-5o7" id="GXV-1b-7wH"/>
                 <outlet property="lyricsButton" destination="c69-nK-qXV" id="MuI-vW-co2"/>
                 <outlet property="lyricsLabel" destination="knd-2x-4Jg" id="adS-vB-mxW"/>
+                <outlet property="lyricsScrollView" destination="Aa5-TN-khB" id="OQA-td-wW1"/>
                 <outlet property="mediaControlBar" destination="uNJ-Gx-8Ck" id="Kmq-Im-gva"/>
                 <outlet property="menuButton" destination="qeb-HB-q3h" id="xks-al-0uw"/>
+                <outlet property="metadataTopLayoutConstraint" destination="PRU-bg-HOy" id="XCf-eE-nHY"/>
                 <outlet property="scrollView" destination="07J-eA-cW8" id="hnn-ku-ZZE"/>
                 <outlet property="songLabel" destination="BxD-MH-guM" id="PJf-f1-wag"/>
                 <outlet property="tabContainer" destination="m33-v1-fxP" id="lBN-w4-jfO"/>
                 <outlet property="togglePlayButton" destination="sct-cG-X0j" id="jnr-XB-HAD"/>
-                <outlet property="toolbar" destination="hGF-HM-rkm" id="sdL-UR-HDR"/>
+                <outlet property="toolbar" destination="0Lx-0h-o3X" id="Ter-E4-afH"/>
+                <outlet property="toolbarHeightLayoutConstraint" destination="CQ6-LY-VBN" id="iUQ-Tg-X71"/>
+                <outlet property="toolbarTopLayoutConstraint" destination="OhQ-uA-GMX" id="xQx-8d-kWo"/>
                 <outlet property="twitterButton" destination="6uH-vE-k95" id="6nZ-Bn-wSS"/>
                 <outlet property="volumeSlider" destination="gmd-m7-sZK" id="0dl-O7-cQm"/>
                 <outlet property="websiteButton" destination="1mA-5W-TqX" id="oD6-fj-zQR"/>

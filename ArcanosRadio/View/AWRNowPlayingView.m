@@ -1,14 +1,12 @@
-// ScrollView behavior was adapted from Yari D'areglia's (@bitwaker) article:
-// http://www.thinkandbuild.it/implementing-the-twitter-ios-app-ui/
-// Visit his github for more information:
-// https://github.com/ariok/TB_TwitterUI
-
 #import "AWRNowPlayingView.h"
 #import "AWRNowPlayingHeaderView.h"
 #import "AWRNowPlayingBodyView.h"
 #import "UIView+Utils.h"
 #import "AWRMenuView.h"
 #import "AWRColorToolkit.h"
+
+const float kToolbarMaximumSize = 58.0;
+const float kToolbarMinimumSize = 28.0;
 
 @interface AWRNowPlayingView()<UIScrollViewDelegate, AWRMenuViewDelegate>
 
@@ -22,7 +20,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *togglePlayButton;
 @property (weak, nonatomic) IBOutlet UIButton *menuButton;
 
-@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
+@property (weak, nonatomic) IBOutlet UIStackView *toolbar;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *toolbarTopLayoutConstraint;
 @property (weak, nonatomic) IBOutlet UIButton *lyricsButton;
 @property (weak, nonatomic) IBOutlet UIButton *twitterButton;
 @property (weak, nonatomic) IBOutlet UIButton *websiteButton;
@@ -35,6 +34,10 @@
 @property (strong, nonatomic) AWRMenuView *menu;
 @property (weak, nonatomic) IBOutlet UIView *tabContainer;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *toolbarHeightLayoutConstraint;
+@property (weak, nonatomic) IBOutlet UIScrollView *lyricsScrollView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *metadataTopLayoutConstraint;
+@property (weak, nonatomic) IBOutlet UIStackView *bigMetadataStackView;
 @end
 
 @implementation AWRNowPlayingView
@@ -93,59 +96,174 @@
         [self emptyFields];
         [self addGestureRecognizer: self.scrollView.panGestureRecognizer];
         [self toolbarItemSelected: self.lyricsButton];
+
+        self.headerContainer.layer.zPosition = 2;
+        self.toolbar.layer.zPosition = 3;
+        self.togglePlayButton.layer.zPosition = 4;
+        [self setToolbarColor:AWRColorToolkit.toolbarBackgroundColor];
     });
 
-    [self calculateConstraints];
-    self.headerContainer.layer.zPosition = 2;
-    self.togglePlayButton.layer.zPosition = 3;
 //    [self configureMediaBarShadow];
     [self recalculateContentSize];
 }
 
-- (void)recalculateContentSize {
-//    let maxOffsetText1 = textView.contentSize.height - textView.frame.height
-//    let maxOffsetText2 = textView2.contentSize.height - textView2.frame.height
-//    let totalOffset = maxOffsetText1 + maxOffsetText2
-//    let scrollContentSize = totalOffset + scrollView.frame.height
-    float scrollContentSize = 5000.0;
-
-    self.scrollView.contentSize = CGSizeMake(1.0, scrollContentSize);
+- (void)setToolbarColor:(UIColor *)color {
+    for (UIView *view in self.toolbar.subviews) {
+        view.backgroundColor = color;
+    }
 }
 
-- (void)calculateConstraints {
-//    self.bodyTopConstraint.constant = self.headerView.maximumHeight;
+- (void)recalculateContentSize {
+    float scrollbarFrameHeight = self.scrollView.frame.size.height;
+    float headerOffset = self.headerView.maximumHeight - self.headerView.minimumHeight;
+    float toolbarOffset = kToolbarMaximumSize - kToolbarMinimumSize;
+    float offsetUntilMetadataIsCompletelyHidden = self.bigMetadataStackView.frame.size.height;
+    float maxBigMetadataMovement = offsetUntilMetadataIsCompletelyHidden + kToolbarMinimumSize;
+    float maxToolbarMovement = kToolbarMinimumSize + 8;
+
+    float maxLyricsContainerSize = [UIScreen mainScreen].bounds.size.height
+        - self.headerView.minimumHeight
+        - self.mediaControlBar.frame.size.height;
+
+    float lyricsMaxOffset = MAX(self.lyricsScrollView.contentSize.height - maxLyricsContainerSize, 0);
+    self.scrollView.contentSize = CGSizeMake(1.0, scrollbarFrameHeight + headerOffset + toolbarOffset + lyricsMaxOffset + maxBigMetadataMovement + maxToolbarMovement);
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    CGFloat offset = scrollView.contentOffset.y;
+    float offset = scrollView.contentOffset.y;
+    float headerSize = MAX(self.headerView.maximumHeight - offset,
+                           self.headerView.minimumHeight);
 
-    self.headerHeight.constant = MAX(self.headerView.maximumHeight - offset,
-                                     self.headerView.minimumHeight);
+    self.headerHeight.constant = headerSize;
+    float maxScrollHeader = self.headerView.maximumHeight - self.headerView.minimumHeight;
 
-//    float mainMetadataContainerPaddingTop = 6.0;
+    // Check if Header is transitioning between maximum and minimum sizes
+    if (offset <= maxScrollHeader) {
+        ////////////////////////
+        /// Scrolling Header ///
+        ////////////////////////
 
-//    float realSongNameTop = self.bodyContainer.frame.origin.y + mainMetadataContainerPaddingTop - offset;
+        // Scroll lyrics to the top
+        self.lyricsScrollView.contentOffset = CGPointMake(0, 0);
 
-//    if (realSongNameTop >= self.headerHeight.constant) {
-//        // big song name is completely visible
-//        // header title should be hidden
-//        self.headerView.metadataOffset = mainMetadataContainerPaddingTop + self.headerView.maximumHeight / 2;
-//        self.headerView.metadataAlpha = 0.0;
-//        self.bodyView.titleAlpha = 1.0;
-//    } else {
-//        // big song name is partially or fully covered by header
-//        // header title should be proportionally visible
-//        float headerPathStart = mainMetadataContainerPaddingTop + self.headerView.minimumHeight / 2;
-//        float hiddenSize = self.headerHeight.constant - realSongNameTop;
-//
-//        float alphaHeader = MIN(hiddenSize / 30, 1.0);
-//        float alphaMain = 1.0 - alphaHeader;
-//        self.headerView.metadataAlpha = alphaHeader;
-//        self.bodyView.titleAlpha = alphaMain;
-//
-//        float headerPathProgress = MAX(0.0, headerPathStart - hiddenSize);
-//        self.headerView.metadataOffset = headerPathProgress;
-//    }
+        // Keep Big Metadata 4 pixels below toolbar
+        self.metadataTopLayoutConstraint.constant = 4;
+
+        // Big Metadata is completely visible
+        self.songLabel.alpha = 1.0;
+        self.artistLabel.alpha = 1.0;
+
+        // Header mini-Metadata should be hidden
+        self.headerView.metadataAlpha = 0.0;
+        self.headerView.metadataOffset = self.headerView.maximumHeight;
+
+        // Toolbar is yet at the maximum size
+        self.toolbarHeightLayoutConstraint.constant = kToolbarMaximumSize;
+
+        self.toolbarTopLayoutConstraint.constant = 0;
+        [self setToolbarColor:AWRColorToolkit.toolbarBackgroundColor];
+        return;
+    }
+
+    // Header size is the minimum
+    // Let's check how further we are from that point
+    float offsetAfterHeaderTransition = offset - maxScrollHeader;
+    float toolbarSize = MAX(kToolbarMaximumSize - offsetAfterHeaderTransition,
+                            kToolbarMinimumSize);
+
+    self.toolbarHeightLayoutConstraint.constant = toolbarSize;
+    float maxToolbarTransformation = kToolbarMaximumSize - kToolbarMinimumSize;
+
+    // Check if Toolbar is transitioning between maximum and minimum sizes
+    if (offsetAfterHeaderTransition <= maxToolbarTransformation) {
+        ////////////////////////////
+        /// Transforming Toolbar ///
+        ////////////////////////////
+
+        // Scroll lyrics to the top
+        self.lyricsScrollView.contentOffset = CGPointMake(0, 0);
+
+        // Keep Big Metadata 4 pixels below toolbar
+        self.metadataTopLayoutConstraint.constant = 4;
+
+        // Big Metadata is completely visible
+        self.songLabel.alpha = 1.0;
+        self.artistLabel.alpha = 1.0;
+
+        // Header mini-Metadata should be hidden
+        self.headerView.metadataAlpha = 0.0;
+        self.headerView.metadataOffset = self.headerView.maximumHeight;
+
+        self.toolbarTopLayoutConstraint.constant = 0;
+        [self setToolbarColor:AWRColorToolkit.toolbarBackgroundColor];
+        return;
+    }
+
+    // Toolbar already reached the minimum size
+    // Let's check how further we are from that point
+    float offsetAfterToolbarTransformation = offsetAfterHeaderTransition - maxToolbarTransformation;
+    float offsetUntilMetadataIsCompletelyHidden = self.bigMetadataStackView.frame.size.height;
+    float maxBigMetadataMovement = offsetUntilMetadataIsCompletelyHidden + kToolbarMinimumSize + 12;
+    float offsetBigMetadata = 4 - MIN(offsetAfterToolbarTransformation, maxBigMetadataMovement);
+
+    self.metadataTopLayoutConstraint.constant = offsetBigMetadata;
+    self.headerView.metadataOffset = MAX((self.headerView.minimumHeight / 2) + 20 - offsetAfterToolbarTransformation, 0);
+
+    if (offsetAfterToolbarTransformation <= offsetUntilMetadataIsCompletelyHidden) {
+        //////////////////////////////////
+        /// Still visible Big Metadata ///
+        //////////////////////////////////
+
+        // Scroll lyrics to the top
+        self.lyricsScrollView.contentOffset = CGPointMake(0, 0);
+
+        float movementPercentage = offsetAfterToolbarTransformation / offsetUntilMetadataIsCompletelyHidden;
+        // Big Metadata is partially visible
+        self.songLabel.alpha = 1.0 - movementPercentage;
+        self.artistLabel.alpha = 1.0 - movementPercentage;
+
+        // Header mini-Metadata is partially visible (inversely proportional to big metadata alpha)
+        self.headerView.metadataAlpha = movementPercentage;
+
+        self.toolbarTopLayoutConstraint.constant = 0;
+        [self setToolbarColor:AWRColorToolkit.toolbarBackgroundColor];
+        return;
+    }
+
+    // Big metadata is completely invisible now
+    // Small metadata completely visible
+    self.songLabel.alpha = 0.0;
+    self.artistLabel.alpha = 0.0;
+    self.headerView.metadataAlpha = 1.0;
+
+    // Let's check how further we are from that point
+    float offsetAfterHidingMetadata = offsetAfterToolbarTransformation - offsetUntilMetadataIsCompletelyHidden;
+    float maxToolbarMovement = kToolbarMinimumSize + 8;
+    float offsetToolbarMovement = -MIN(offsetAfterHidingMetadata, maxToolbarMovement);
+
+    self.metadataTopLayoutConstraint.constant = offsetBigMetadata - offsetToolbarMovement;
+    self.toolbarTopLayoutConstraint.constant = offsetToolbarMovement;
+
+    if (offsetAfterHidingMetadata <= maxToolbarMovement) {
+        ////////////////////////////////
+        /// Moving toolbar to header ///
+        ////////////////////////////////
+
+        // Scroll lyrics to the top
+        self.lyricsScrollView.contentOffset = CGPointMake(0, 0);
+
+        float movementPercentage = 1.0 - offsetAfterHidingMetadata / maxToolbarMovement;
+        // Toolbar background is partially opaque
+        [self setToolbarColor:[AWRColorToolkit.toolbarBackgroundColor colorWithAlphaComponent:movementPercentage]];
+        return;
+    }
+
+    // Outer scroll is done, the toolbar must be hidden now
+    [self setToolbarColor:[UIColor clearColor]];
+
+    // And the rest of the scroll belongs to the children scrollviews
+    float remainingOffset = offsetAfterHidingMetadata - maxToolbarMovement;
+    self.lyricsScrollView.contentOffset = CGPointMake(0, remainingOffset);
 }
 
 - (IBAction)playButtonPressed:(id)sender {

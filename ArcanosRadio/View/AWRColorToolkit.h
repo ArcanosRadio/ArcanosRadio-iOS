@@ -3,6 +3,8 @@
 
 @interface AWRColorToolkit : NSObject
 
++ (UIColor *)toolbarBackgroundColor;
+
 + (UIColor *)backgroundPrimaryColor;
 + (UIColor *)backgroundSecundaryColor;
 
