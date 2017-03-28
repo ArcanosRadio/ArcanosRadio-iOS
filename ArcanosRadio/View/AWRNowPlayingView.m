@@ -8,7 +8,7 @@ const float kToolbarMaximumSize = 58.0;
 const float kToolbarMinimumSize = 28.0;
 
 const float kToolbarInitialLeftMargin = 25.0;
-const float kToolbarInitialSpacing = 60.0;
+const float kToolbarInitialSpacing = 50.0;
 const float kToolbarFinalLeftMargin = 112.0;
 const float kToolbarFinalSpacing = 20.0;
 
@@ -50,6 +50,7 @@ const float kToolbarFinalSpacing = 20.0;
 
 @property (strong, nonatomic) IBOutletCollection(NSLayoutConstraint) NSArray *toolbarItemsHeight;
 
+@property (strong, nonatomic) UIScrollView *twitterView;
 @end
 
 @implementation AWRNowPlayingView
@@ -66,6 +67,42 @@ const float kToolbarFinalSpacing = 20.0;
     sender.tintColor = AWRColorToolkit.extraHighlightBackgroundColor;
 
     self.lyricsLabel.hidden = sender != self.lyricsButton;
+
+    if (sender == self.lyricsButton) {
+        [self setCurrentTab:AWRNowPlayingViewTabLyrics];
+    } else if (sender == self.twitterButton) {
+        [self setCurrentTab:AWRNowPlayingViewTabTwitter];
+    } else if (sender == self.websiteButton) {
+        [self setCurrentTab:AWRNowPlayingViewTabWebsite];
+    }
+}
+
+- (void)setCurrentTab:(AWRNowPlayingViewTab)currentTab {
+    float currentContentOffset = self.scrollView.contentOffset.y;
+
+    if (_currentTab == currentTab) return;
+
+    _currentTab = currentTab;
+    switch (currentTab) {
+        case AWRNowPlayingViewTabLyrics:
+            self.lyricsScrollView.hidden = NO;
+            self.twitterView.hidden = YES;
+            break;
+        case AWRNowPlayingViewTabTwitter:
+            self.lyricsScrollView.hidden = YES;
+            self.twitterView.hidden = NO;
+            break;
+        case AWRNowPlayingViewTabWebsite:
+            self.lyricsScrollView.hidden = YES;
+            self.twitterView.hidden = YES;
+            break;
+    }
+
+    [self recalculateContentSize];
+    [self.scrollView setContentOffset:CGPointMake(0, MIN(currentContentOffset, [self screenAnimationScrollOffset])) animated:NO];
+    [self.lyricsScrollView setContentOffset:CGPointMake(0, 0) animated:NO];
+    [self.twitterView setContentOffset:CGPointMake(0, 0) animated:NO];
+    [self.delegate currentTabHasChanged:_currentTab];
 }
 
 - (AWRMenuView *)menu {
@@ -96,9 +133,17 @@ const float kToolbarFinalSpacing = 20.0;
     return _headerView;
 }
 
-//- (void)setTwitterView:(UITableView *)twitterView {
-//    [self.bodyView setTwitterView:twitterView];
-//}
+- (void)setTwitterView:(UIScrollView *)twitterView {
+    if (_twitterView) {
+        [_twitterView removeFromSuperview];
+        _twitterView = nil;
+    }
+    _twitterView = twitterView;
+    [_twitterView removeGestureRecognizer:_twitterView.panGestureRecognizer];
+    _twitterView.hidden = self.currentTab != AWRNowPlayingViewTabTwitter;
+    [self.tabContainer addSubview:_twitterView];
+    [_twitterView fillSuperview];
+}
 
 - (void)layoutSubviews {
     [super layoutSubviews];
@@ -123,20 +168,28 @@ const float kToolbarFinalSpacing = 20.0;
     [self recalculateContentSize];
 }
 
-- (void)recalculateContentSize {
-    float scrollbarFrameHeight = self.scrollView.frame.size.height;
+- (float)screenAnimationScrollOffset {
     float headerOffset = self.headerView.maximumHeight - self.headerView.minimumHeight;
     float toolbarOffset = kToolbarMaximumSize - kToolbarMinimumSize;
     float offsetUntilMetadataIsCompletelyHidden = self.bigMetadataStackView.frame.size.height;
     float maxBigMetadataMovement = offsetUntilMetadataIsCompletelyHidden + 8;
     float maxToolbarMovement = kToolbarMinimumSize + 8;
+    return headerOffset + toolbarOffset + maxBigMetadataMovement + maxToolbarMovement;
+}
 
-    float maxLyricsContainerSize = [UIScreen mainScreen].bounds.size.height
+- (void)recalculateContentSize {
+    float scrollbarFrameHeight = self.scrollView.frame.size.height;
+
+    float innerScrollMaxContainerSize = [UIScreen mainScreen].bounds.size.height
         - self.headerView.minimumHeight
         - self.mediaControlBar.frame.size.height;
 
-    float lyricsMaxOffset = MAX(self.lyricsScrollView.contentSize.height - maxLyricsContainerSize, 0);
-    self.scrollView.contentSize = CGSizeMake(1.0, scrollbarFrameHeight + headerOffset + toolbarOffset + lyricsMaxOffset + maxBigMetadataMovement + maxToolbarMovement);
+    float innerScrollMaxOffset =
+        self.currentTab == AWRNowPlayingViewTabLyrics ? MAX(self.lyricsScrollView.contentSize.height - innerScrollMaxContainerSize, 0)
+      : self.currentTab == AWRNowPlayingViewTabTwitter ? MAX(self.twitterView.contentSize.height - innerScrollMaxContainerSize, 0)
+      : 0;
+
+    self.scrollView.contentSize = CGSizeMake(1.0, scrollbarFrameHeight + [self screenAnimationScrollOffset] + innerScrollMaxOffset);
 }
 
 - (void)setToolbarHeight:(float)height {
@@ -190,8 +243,9 @@ const float kToolbarFinalSpacing = 20.0;
         /// Scrolling Header ///
         ////////////////////////
 
-        // Scroll lyrics to the top
+        // Scroll lyrics and Twitter to the top
         self.lyricsScrollView.contentOffset = CGPointMake(0, 0);
+        self.twitterView.contentOffset = CGPointMake(0, 0);
 
         // Keep Big Metadata 4 pixels below toolbar
         self.metadataTopLayoutConstraint.constant = 4;
@@ -231,8 +285,9 @@ const float kToolbarFinalSpacing = 20.0;
         /// Transforming Toolbar ///
         ////////////////////////////
 
-        // Scroll lyrics to the top
+        // Scroll lyrics and Twitter to the top
         self.lyricsScrollView.contentOffset = CGPointMake(0, 0);
+        self.twitterView.contentOffset = CGPointMake(0, 0);
 
         // Keep Big Metadata 4 pixels below toolbar
         self.metadataTopLayoutConstraint.constant = 4;
@@ -269,8 +324,9 @@ const float kToolbarFinalSpacing = 20.0;
         /// Still visible Big Metadata ///
         //////////////////////////////////
 
-        // Scroll lyrics to the top
+        // Scroll lyrics and Twitter to the top
         self.lyricsScrollView.contentOffset = CGPointMake(0, 0);
+        self.twitterView.contentOffset = CGPointMake(0, 0);
 
         float movementPercentage = offsetAfterToolbarTransformation / offsetUntilMetadataIsCompletelyHidden;
         // Big Metadata is partially visible
@@ -308,8 +364,9 @@ const float kToolbarFinalSpacing = 20.0;
         /// Moving toolbar to header ///
         ////////////////////////////////
 
-        // Scroll lyrics to the top
+        // Scroll lyrics and Twitter to the top
         self.lyricsScrollView.contentOffset = CGPointMake(0, 0);
+        self.twitterView.contentOffset = CGPointMake(0, 0);
 
         float movementPercentage = 1.0 - offsetAfterHidingMetadata / maxToolbarMovement;
         // Toolbar background is partially opaque
@@ -329,7 +386,13 @@ const float kToolbarFinalSpacing = 20.0;
 
     // And the rest of the scroll belongs to the children scrollviews
     float remainingOffset = offsetAfterHidingMetadata - maxToolbarMovement;
-    self.lyricsScrollView.contentOffset = CGPointMake(0, remainingOffset);
+    if (self.currentTab == AWRNowPlayingViewTabLyrics) {
+        self.lyricsScrollView.contentOffset = CGPointMake(0, remainingOffset);
+    } else if (self.currentTab == AWRNowPlayingViewTabTwitter) {
+        self.twitterView.contentOffset = CGPointMake(0, remainingOffset);
+    } else {
+
+    }
 }
 
 - (IBAction)playButtonPressed:(id)sender {

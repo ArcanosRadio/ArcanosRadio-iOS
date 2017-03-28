@@ -119,6 +119,9 @@
     }
 }
 
+- (void)currentTabHasChanged:(AWRNowPlayingViewTab)newtab {
+}
+
 - (void)settingsButtonPressed {
     if (self.delegate) {
         [self.delegate userDidSelectSettings];
@@ -141,7 +144,7 @@
     [self.nowPlayingView renderModel:self.viewModel];
     [self.nowPlayingView setVolume:1.0];
     [self addChildViewController:self.twitterViewController];
-//    [self.nowPlayingView setTwitterView:self.twitterViewController.view];
+    [self.nowPlayingView setTwitterView:(UIScrollView *)self.twitterViewController.view];
 }
 
 - (void)viewDidUnload {

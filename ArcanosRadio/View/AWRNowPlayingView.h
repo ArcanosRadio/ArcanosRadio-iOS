@@ -7,6 +7,12 @@
 #import "AWRNowPlayingViewModel.h"
 #import <MediaPlayer/MPVolumeView.h>
 
+typedef NS_ENUM(NSInteger, AWRNowPlayingViewTab) {
+    AWRNowPlayingViewTabLyrics,
+    AWRNowPlayingViewTabTwitter,
+    AWRNowPlayingViewTabWebsite
+};
+
 @protocol AWRNowPlayingViewDelegate
 
 - (void)playButtonPressed;
@@ -16,13 +22,15 @@
 - (void)shareButtonPressed;
 - (void)aboutButtonPressed;
 - (void)settingsButtonPressed;
+- (void)currentTabHasChanged:(AWRNowPlayingViewTab)newtab;
 
 @end
 
 @interface AWRNowPlayingView : UIView
 
+@property (nonatomic)AWRNowPlayingViewTab currentTab;
 @property (nonatomic, weak)id<AWRNowPlayingViewDelegate> delegate;
-//- (void)setTwitterView:(UIView *)twitterView;
+- (void)setTwitterView:(UIScrollView *)twitterView;
 - (void)renderModel:(AWRNowPlayingViewModel *)model;
 - (void)setVolume:(float)percentage;
 - (void)setStatusPlaying;
