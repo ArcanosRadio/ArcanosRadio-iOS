@@ -177,12 +177,21 @@
                                 <constraint firstItem="knd-2x-4Jg" firstAttribute="top" secondItem="Aa5-TN-khB" secondAttribute="top" constant="8" id="hdY-Z4-uZ0" userLabel="Lyrics Label Top"/>
                             </constraints>
                         </scrollView>
+                        <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h1Z-qS-dBf">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="123"/>
+                            <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <dataDetectorType key="dataDetectorTypes"/>
+                        </webView>
                     </subviews>
                     <constraints>
+                        <constraint firstItem="h1Z-qS-dBf" firstAttribute="top" secondItem="m33-v1-fxP" secondAttribute="top" id="1K2-QF-F63"/>
                         <constraint firstAttribute="bottom" secondItem="Aa5-TN-khB" secondAttribute="bottom" id="5Xh-4c-h8d" userLabel="Lyrics Scroll View Bottom"/>
+                        <constraint firstItem="h1Z-qS-dBf" firstAttribute="leading" secondItem="m33-v1-fxP" secondAttribute="leading" id="NPj-2V-g3U"/>
                         <constraint firstItem="Aa5-TN-khB" firstAttribute="leading" secondItem="m33-v1-fxP" secondAttribute="leading" id="buh-42-Flz" userLabel="Lyrics Scroll View Left"/>
                         <constraint firstItem="Aa5-TN-khB" firstAttribute="top" secondItem="m33-v1-fxP" secondAttribute="top" id="nOS-OX-Il4" userLabel="Lyrics Scroll View Top"/>
+                        <constraint firstAttribute="trailing" secondItem="h1Z-qS-dBf" secondAttribute="trailing" id="oFz-Gb-78r"/>
                         <constraint firstAttribute="trailing" secondItem="Aa5-TN-khB" secondAttribute="trailing" id="swi-yC-ahD" userLabel="Lyrics Scroll View Right"/>
+                        <constraint firstAttribute="bottom" secondItem="h1Z-qS-dBf" secondAttribute="bottom" id="wDP-zh-kLu"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uNJ-Gx-8Ck" userLabel="Media Control">
@@ -304,6 +313,7 @@
                 <outlet property="toolbarTopLayoutConstraint" destination="OhQ-uA-GMX" id="xQx-8d-kWo"/>
                 <outlet property="twitterButton" destination="6uH-vE-k95" id="6nZ-Bn-wSS"/>
                 <outlet property="volumeSlider" destination="gmd-m7-sZK" id="0dl-O7-cQm"/>
+                <outlet property="webView" destination="h1Z-qS-dBf" id="sRI-Qn-1b7"/>
                 <outlet property="websiteButton" destination="1mA-5W-TqX" id="oD6-fj-zQR"/>
                 <outletCollection property="toolbarItemsSpacing" destination="lUO-Q4-4X7" id="z26-VZ-E0V"/>
                 <outletCollection property="toolbarItemsSpacing" destination="7xt-EB-ONp" id="jAl-wg-q5W"/>

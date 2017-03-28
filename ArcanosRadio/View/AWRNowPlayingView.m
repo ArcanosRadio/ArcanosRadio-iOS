@@ -50,7 +50,8 @@ const float kToolbarFinalSpacing = 20.0;
 
 @property (strong, nonatomic) IBOutletCollection(NSLayoutConstraint) NSArray *toolbarItemsHeight;
 
-@property (strong, nonatomic) UIScrollView *twitterView;
+@property (strong, nonatomic)UIScrollView *twitterView;
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 @end
 
 @implementation AWRNowPlayingView
@@ -67,6 +68,8 @@ const float kToolbarFinalSpacing = 20.0;
     sender.tintColor = AWRColorToolkit.extraHighlightBackgroundColor;
 
     self.lyricsLabel.hidden = sender != self.lyricsButton;
+    self.twitterView.hidden = sender != self.twitterButton;
+    self.webView.hidden = sender != self.websiteButton;
 
     if (sender == self.lyricsButton) {
         [self setCurrentTab:AWRNowPlayingViewTabLyrics];
@@ -83,20 +86,31 @@ const float kToolbarFinalSpacing = 20.0;
     _currentTab = currentTab;
     switch (currentTab) {
         case AWRNowPlayingViewTabLyrics:
+            [self.scrollView setUserInteractionEnabled:YES];
+            self.scrollView.scrollEnabled = YES;
             self.lyricsScrollView.hidden = NO;
             self.twitterView.hidden = YES;
+            self.webView.hidden = YES;
+            [self innerScrollsToTop:NO];
             break;
         case AWRNowPlayingViewTabTwitter:
+            [self.scrollView setUserInteractionEnabled:YES];
+            self.scrollView.scrollEnabled = YES;
             self.lyricsScrollView.hidden = YES;
             self.twitterView.hidden = NO;
+            self.webView.hidden = YES;
+            [self innerScrollsToTop:NO];
             break;
         case AWRNowPlayingViewTabWebsite:
+            [self.scrollView setUserInteractionEnabled:NO];
+            [self.scrollView setContentOffset:CGPointMake(0, [self screenAnimationScrollOffset]) animated:YES];
+            self.scrollView.scrollEnabled = NO;
             self.lyricsScrollView.hidden = YES;
             self.twitterView.hidden = YES;
+            self.webView.hidden = NO;
             break;
     }
 
-    [self innerScrollsToTop:NO];
     [self.delegate currentTabHasChanged:_currentTab];
 }
 
@@ -169,7 +183,12 @@ const float kToolbarFinalSpacing = 20.0;
     self.toolbarItemsLeftMargin.constant = kToolbarInitialLeftMargin;
     for (NSLayoutConstraint *c in self.toolbarItemsSpacing) { c.constant = kToolbarInitialSpacing; }
     [self setToolbarHeight:kToolbarMaximumSize];
+    self.websiteButton.enabled = NO;
     //    [self configureMediaBarShadow];
+}
+
+- (void)navigate:(NSURLRequest *)request {
+    [self.webView loadRequest:request];
 }
 
 - (void)layoutSubviews {
@@ -480,6 +499,7 @@ const float kToolbarFinalSpacing = 20.0;
         self.songLabel.attributedText = [[NSAttributedString alloc]initWithString:model.songName attributes:self.songNameEffects];
         self.artistLabel.text = model.artistName;
         self.lyricsLabel.text = model.lyrics;
+        self.websiteButton.enabled = model.hasUrl;
     });
 }
 

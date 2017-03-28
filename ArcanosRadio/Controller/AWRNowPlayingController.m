@@ -50,6 +50,8 @@
 - (void)metadataDidChangeTheSong:(id<AWRSong>)song {
     self.viewModel.songName = song.songName;
     self.viewModel.artistName = song.artist.artistName;
+    self.viewModel.url = song.artist.url;
+    self.viewModel.hasUrl = song.artist.url.length > 0;
 
     if (song.artist.twitterTimeline && [song.artist.twitterTimeline characterAtIndex:0] == '#' ) {
         // Hashtag search
@@ -120,6 +122,18 @@
 }
 
 - (void)currentTabHasChanged:(AWRNowPlayingViewTab)newtab {
+    if (newtab == AWRNowPlayingViewTabWebsite) {
+        NSString *urlString = self.viewModel.url;
+        if (!urlString) {
+            [self.nowPlayingView setCurrentTab:AWRNowPlayingViewTabLyrics];
+            return;
+        }
+
+        NSURL *url = [NSURL URLWithString:urlString];
+        NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+
+        [self.nowPlayingView navigate:requestObj];
+    }
 }
 
 - (void)settingsButtonPressed {

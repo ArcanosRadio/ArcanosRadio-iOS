@@ -36,5 +36,7 @@ typedef NS_ENUM(NSInteger, AWRNowPlayingViewTab) {
 - (void)setStatusPlaying;
 - (void)setStatusStopped;
 - (void)setStatusBuffering;
+- (void)navigate:(NSURLRequest *)request;
+- (void)setCurrentTab:(AWRNowPlayingViewTab)currentTab;
 
 @end
