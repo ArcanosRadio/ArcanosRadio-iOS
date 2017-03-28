@@ -8,6 +8,7 @@ const int kDefaultMargin = 8;
 const float kAvatarBorder = 4.0;
 const float kAvatarBorderOpacity = 0.35;
 const float kAvatarCornerRadius = 10.0;
+static NSString * const kStatusBarTappedNotification = @"StatusBarTappedNotification";
 
 @interface AWRNowPlayingHeaderView()
 
@@ -38,10 +39,6 @@ const float kAvatarCornerRadius = 10.0;
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        [self emptyFields];
-    });
     float currentHeight = MIN(self.frame.size.height, self.maximumHeight);
     float progress = (self.maximumHeight - currentHeight) / self.deltaHeight;
     self.backgroundAlbumArt.progress = progress;
@@ -50,6 +47,23 @@ const float kAvatarCornerRadius = 10.0;
     CATransform3D horizontalOffsetEffect = CATransform3DIdentity;
     horizontalOffsetEffect = CATransform3DTranslate(horizontalOffsetEffect, (1.0 - progress) * 12.0, 0, 0);
     self.albumArtIcon.layer.transform = horizontalOffsetEffect;
+}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(statusBarTappedAction:)
+                                                 name:kStatusBarTappedNotification
+                                               object:nil];
+    [self emptyFields];
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kStatusBarTappedNotification object:nil];
+}
+
+- (void)statusBarTappedAction:(NSNotification*)notification {
+    [self.delegate didTapStatusBar];
 }
 
 - (void)emptyFields {

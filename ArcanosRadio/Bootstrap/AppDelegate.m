@@ -1,6 +1,8 @@
 #import "AppDelegate.h"
 #import "AWRAppCoordinator.h"
 
+static NSString * const kStatusBarTappedNotification = @"StatusBarTappedNotification";
+
 @interface AppDelegate ()
 
 @property (nonatomic, strong) AWRAppCoordinator *coordinator;
@@ -36,6 +38,16 @@
         DLog(@"Background fetch result: %@", newSong?@"new song":@"same song");
         completionHandler(newSong ? UIBackgroundFetchResultNewData : UIBackgroundFetchResultNoData);
     }];
+}
+
+#pragma mark - Status bar touch tracking
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
+    CGPoint location = [[[event allTouches] anyObject] locationInView:[self window]];
+    CGRect statusBarFrame = [UIApplication sharedApplication].statusBarFrame;
+    if (CGRectContainsPoint(statusBarFrame, location)) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:kStatusBarTappedNotification object:nil];
+    }
 }
 
 @end

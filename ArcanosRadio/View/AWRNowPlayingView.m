@@ -12,7 +12,7 @@ const float kToolbarInitialSpacing = 50.0;
 const float kToolbarFinalLeftMargin = 112.0;
 const float kToolbarFinalSpacing = 20.0;
 
-@interface AWRNowPlayingView()<UIScrollViewDelegate, AWRMenuViewDelegate>
+@interface AWRNowPlayingView()<UIScrollViewDelegate, AWRMenuViewDelegate, AWRNowPlayingHeaderViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *headerContainer;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *headerHeight;
@@ -78,8 +78,6 @@ const float kToolbarFinalSpacing = 20.0;
 }
 
 - (void)setCurrentTab:(AWRNowPlayingViewTab)currentTab {
-    float currentContentOffset = self.scrollView.contentOffset.y;
-
     if (_currentTab == currentTab) return;
 
     _currentTab = currentTab;
@@ -98,11 +96,20 @@ const float kToolbarFinalSpacing = 20.0;
             break;
     }
 
-    [self recalculateContentSize];
-    [self.scrollView setContentOffset:CGPointMake(0, MIN(currentContentOffset, [self screenAnimationScrollOffset])) animated:NO];
-    [self.lyricsScrollView setContentOffset:CGPointMake(0, 0) animated:NO];
-    [self.twitterView setContentOffset:CGPointMake(0, 0) animated:NO];
+    [self innerScrollsToTop];
     [self.delegate currentTabHasChanged:_currentTab];
+}
+
+- (void)didTapStatusBar {
+    [self innerScrollsToTop];
+}
+
+- (void)innerScrollsToTop {
+    float currentContentOffset = self.scrollView.contentOffset.y;
+    [self recalculateContentSize];
+    [self.scrollView setContentOffset:CGPointMake(0, MIN(currentContentOffset, [self screenAnimationScrollOffset])) animated:YES];
+    [self.lyricsScrollView setContentOffset:CGPointMake(0, 0) animated:YES];
+    [self.twitterView setContentOffset:CGPointMake(0, 0) animated:YES];
 }
 
 - (AWRMenuView *)menu {
@@ -127,6 +134,7 @@ const float kToolbarFinalSpacing = 20.0;
     if (!_headerView) {
         _headerView = [[[NSBundle mainBundle] loadNibNamed:@"AWRNowPlayingHeaderView" owner:self options:nil] firstObject];
         [self.headerContainer addSubview:_headerView];
+        _headerView.delegate = self;
         [_headerView fillSuperview];
         self.headerHeight.constant = _headerView.maximumHeight;
     }
@@ -145,26 +153,28 @@ const float kToolbarFinalSpacing = 20.0;
     [_twitterView fillSuperview];
 }
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+
+    [self emptyFields];
+    [self addGestureRecognizer: self.scrollView.panGestureRecognizer];
+    [self toolbarItemSelected: self.lyricsButton];
+
+    self.headerContainer.layer.zPosition = 2;
+    self.toolbar.layer.zPosition = 3;
+    self.togglePlayButton.layer.zPosition = 4;
+    self.scrollView.layer.zPosition = 5;
+    self.toolbar.backgroundColor = AWRColorToolkit.toolbarBackgroundColor;
+
+    self.toolbarItemsLeftMargin.constant = kToolbarInitialLeftMargin;
+    for (NSLayoutConstraint *c in self.toolbarItemsSpacing) { c.constant = kToolbarInitialSpacing; }
+    [self setToolbarHeight:kToolbarMaximumSize];
+    //    [self configureMediaBarShadow];
+}
+
 - (void)layoutSubviews {
     [super layoutSubviews];
 
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        [self emptyFields];
-        [self addGestureRecognizer: self.scrollView.panGestureRecognizer];
-        [self toolbarItemSelected: self.lyricsButton];
-
-        self.headerContainer.layer.zPosition = 2;
-        self.toolbar.layer.zPosition = 3;
-        self.togglePlayButton.layer.zPosition = 4;
-        self.toolbar.backgroundColor = AWRColorToolkit.toolbarBackgroundColor;
-
-        self.toolbarItemsLeftMargin.constant = kToolbarInitialLeftMargin;
-        for (NSLayoutConstraint *c in self.toolbarItemsSpacing) { c.constant = kToolbarInitialSpacing; }
-        [self setToolbarHeight:kToolbarMaximumSize];
-    });
-
-//    [self configureMediaBarShadow];
     [self recalculateContentSize];
 }
 
@@ -229,7 +239,17 @@ const float kToolbarFinalSpacing = 20.0;
     }
 }
 
+- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView {
+    return YES;
+}
+
+- (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView {
+    NSLog(@"hey!");
+}
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (scrollView != self.scrollView) return;
+
     float offset = scrollView.contentOffset.y;
     float headerSize = MAX(self.headerView.maximumHeight - offset,
                            self.headerView.minimumHeight);
