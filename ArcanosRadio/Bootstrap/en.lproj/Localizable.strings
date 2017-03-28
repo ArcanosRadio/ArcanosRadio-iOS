@@ -38,3 +38,6 @@
 "CRASHREPORT_REQUEST_NEVER_SEND" = "No, don't send them";
 "CRASHREPORT_REQUEST_ALWAYS_SEND" = "Ok, enable reports again";
 "LYRICS_UNAVAILABLE" = "The lyrics are not available for this song";
+"TOOLBAR_LYRICS" = "Lyrics";
+"TOOLBAR_TWITTER" = "Twitter";
+"TOOLBAR_WEBSITE" = "Website";

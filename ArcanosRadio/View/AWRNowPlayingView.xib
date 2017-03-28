@@ -50,105 +50,80 @@
                         </label>
                     </subviews>
                 </stackView>
-                <stackView contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0Lx-0h-o3X" userLabel="Toolbar Stack View">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Lx-0h-o3X" userLabel="Toolbar">
                     <rect key="frame" x="0.0" y="375" width="375" height="58"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ip-Ny-Qbe">
-                            <rect key="frame" x="0.0" y="0.0" width="94" height="58"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c69-nK-qXV">
-                                    <rect key="frame" x="27" y="3" width="40" height="52"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="52" id="ANf-bQ-sCM"/>
-                                        <constraint firstAttribute="width" constant="40" id="v1t-xi-ZhY"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
-                                    <color key="tintColor" red="1" green="0.78823529410000004" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <inset key="titleEdgeInsets" minX="-50" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="12"/>
-                                    <state key="normal" title="Lyrics" image="tab_lyrics">
-                                        <color key="titleColor" white="0.33657525510000003" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <state key="selected" title="Lyrics" image="tab_lyrics_fill">
-                                        <color key="titleColor" red="1" green="0.78823529410000004" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="toolbarItemSelected:" destination="iN0-l3-epB" eventType="touchUpInside" id="nKe-5D-Rh0"/>
-                                    </connections>
-                                </button>
-                            </subviews>
+                        <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c69-nK-qXV">
+                            <rect key="frame" x="30" y="3" width="40" height="52"/>
                             <constraints>
-                                <constraint firstItem="c69-nK-qXV" firstAttribute="centerY" secondItem="7Ip-Ny-Qbe" secondAttribute="centerY" id="qX2-2S-UQS"/>
-                                <constraint firstItem="c69-nK-qXV" firstAttribute="centerX" secondItem="7Ip-Ny-Qbe" secondAttribute="centerX" id="tZI-DE-0Ok"/>
+                                <constraint firstAttribute="height" secondItem="c69-nK-qXV" secondAttribute="width" multiplier="1:1" constant="12" id="AVa-4E-pbC"/>
+                                <constraint firstAttribute="width" constant="40" id="v1t-xi-ZhY"/>
                             </constraints>
-                        </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i2b-c4-84E">
-                            <rect key="frame" x="94" y="0.0" width="93.5" height="58"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6uH-vE-k95">
-                                    <rect key="frame" x="26.5" y="3" width="40" height="52"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="52" id="MQp-Gu-XB1"/>
-                                        <constraint firstAttribute="width" constant="40" id="UZj-5j-Sa2"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
-                                    <color key="tintColor" red="1" green="0.78823529410000004" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <inset key="titleEdgeInsets" minX="-50" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="12"/>
-                                    <state key="normal" title="Twitter" image="tab_twitter">
-                                        <color key="titleColor" white="0.33657525510000003" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <state key="selected" title="Twitter" image="tab_twitter_fill">
-                                        <color key="titleColor" red="1" green="0.78823529410000004" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="toolbarItemSelected:" destination="iN0-l3-epB" eventType="touchUpInside" id="gXR-VY-gma"/>
-                                    </connections>
-                                </button>
-                            </subviews>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
+                            <color key="tintColor" red="1" green="0.78823529410000004" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <inset key="titleEdgeInsets" minX="-50" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="12"/>
+                            <state key="normal" title="Lyrics" image="tab_lyrics">
+                                <color key="titleColor" white="0.33657525510000003" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" title="Lyrics" image="tab_lyrics_fill">
+                                <color key="titleColor" red="1" green="0.78823529410000004" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="toolbarItemSelected:" destination="iN0-l3-epB" eventType="touchUpInside" id="nKe-5D-Rh0"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1mA-5W-TqX">
+                            <rect key="frame" x="190" y="3" width="40" height="52"/>
                             <constraints>
-                                <constraint firstItem="6uH-vE-k95" firstAttribute="centerY" secondItem="i2b-c4-84E" secondAttribute="centerY" id="Qsc-gw-joW"/>
-                                <constraint firstItem="6uH-vE-k95" firstAttribute="centerX" secondItem="i2b-c4-84E" secondAttribute="centerX" id="Wro-Fk-aMn"/>
+                                <constraint firstAttribute="height" secondItem="1mA-5W-TqX" secondAttribute="width" multiplier="1:1" constant="12" id="5iE-W8-4zT"/>
+                                <constraint firstAttribute="width" constant="40" id="bhX-42-Cll"/>
                             </constraints>
-                        </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m6r-Fg-xN0">
-                            <rect key="frame" x="187.5" y="0.0" width="94" height="58"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1mA-5W-TqX">
-                                    <rect key="frame" x="27" y="3" width="40" height="52"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="40" id="bhX-42-Cll"/>
-                                        <constraint firstAttribute="height" constant="52" id="lnc-1z-qe8"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
-                                    <color key="tintColor" red="1" green="0.78823529410000004" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <inset key="titleEdgeInsets" minX="-50" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="12"/>
-                                    <state key="normal" title="Website" image="tab_site">
-                                        <color key="titleColor" white="0.33657525510000003" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <state key="selected" title="Website" image="tab_site_fill">
-                                        <color key="titleColor" red="1" green="0.78823529410000004" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="toolbarItemSelected:" destination="iN0-l3-epB" eventType="touchUpInside" id="c5C-sM-dUt"/>
-                                    </connections>
-                                </button>
-                            </subviews>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
+                            <color key="tintColor" red="1" green="0.78823529410000004" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <inset key="titleEdgeInsets" minX="-50" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="12"/>
+                            <state key="normal" title="Website" image="tab_site">
+                                <color key="titleColor" white="0.33657525510000003" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" title="Website" image="tab_site_fill">
+                                <color key="titleColor" red="1" green="0.78823529410000004" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="toolbarItemSelected:" destination="iN0-l3-epB" eventType="touchUpInside" id="c5C-sM-dUt"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6uH-vE-k95">
+                            <rect key="frame" x="110" y="3" width="40" height="52"/>
                             <constraints>
-                                <constraint firstItem="1mA-5W-TqX" firstAttribute="centerY" secondItem="m6r-Fg-xN0" secondAttribute="centerY" id="0S5-id-hoU"/>
-                                <constraint firstItem="1mA-5W-TqX" firstAttribute="centerX" secondItem="m6r-Fg-xN0" secondAttribute="centerX" id="P99-ms-PbL"/>
+                                <constraint firstAttribute="width" constant="40" id="UZj-5j-Sa2"/>
+                                <constraint firstAttribute="height" secondItem="6uH-vE-k95" secondAttribute="width" multiplier="1:1" constant="12" id="YxH-lU-P0k"/>
                             </constraints>
-                        </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1OQ-bi-4Wk">
-                            <rect key="frame" x="281.5" y="0.0" width="93.5" height="58"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        </view>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
+                            <color key="tintColor" red="1" green="0.78823529410000004" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <inset key="titleEdgeInsets" minX="-50" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="12"/>
+                            <state key="normal" title="Twitter" image="tab_twitter">
+                                <color key="titleColor" white="0.33657525510000003" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" title="Twitter" image="tab_twitter_fill">
+                                <color key="titleColor" red="1" green="0.78823529410000004" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="toolbarItemSelected:" destination="iN0-l3-epB" eventType="touchUpInside" id="gXR-VY-gma"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <constraints>
+                        <constraint firstItem="1mA-5W-TqX" firstAttribute="leading" secondItem="6uH-vE-k95" secondAttribute="trailing" constant="40" id="7xt-EB-ONp"/>
                         <constraint firstAttribute="height" constant="58" id="CQ6-LY-VBN"/>
+                        <constraint firstItem="c69-nK-qXV" firstAttribute="leading" secondItem="0Lx-0h-o3X" secondAttribute="leading" constant="30" id="Hh4-AW-JYD"/>
+                        <constraint firstItem="6uH-vE-k95" firstAttribute="centerY" secondItem="0Lx-0h-o3X" secondAttribute="centerY" id="MHK-rv-Dsl"/>
+                        <constraint firstItem="c69-nK-qXV" firstAttribute="centerY" secondItem="0Lx-0h-o3X" secondAttribute="centerY" id="PMe-ur-DXJ"/>
+                        <constraint firstItem="1mA-5W-TqX" firstAttribute="centerY" secondItem="0Lx-0h-o3X" secondAttribute="centerY" id="iOh-fG-xUD"/>
+                        <constraint firstItem="6uH-vE-k95" firstAttribute="leading" secondItem="c69-nK-qXV" secondAttribute="trailing" constant="40" id="lUO-Q4-4X7"/>
                     </constraints>
-                </stackView>
+                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sct-cG-X0j" userLabel="Play Button">
                     <rect key="frame" x="305" y="343" width="54" height="54"/>
                     <color key="backgroundColor" red="0.99607843137254903" green="0.81568627450980391" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
@@ -287,12 +262,12 @@
                 <constraint firstItem="07J-eA-cW8" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="3sQ-cJ-M67" userLabel="Scroll Height"/>
                 <constraint firstItem="uNJ-Gx-8Ck" firstAttribute="top" secondItem="07J-eA-cW8" secondAttribute="bottom" id="56T-ul-N37" userLabel="Scroll Bottom"/>
                 <constraint firstAttribute="trailing" secondItem="GBt-Ls-lAG" secondAttribute="trailing" constant="8" id="8kr-Vk-skD" userLabel="Metadata Right"/>
-                <constraint firstAttribute="trailing" secondItem="0Lx-0h-o3X" secondAttribute="trailing" id="9TM-PL-JbU" userLabel="Toolbar Stack Right"/>
+                <constraint firstAttribute="trailing" secondItem="0Lx-0h-o3X" secondAttribute="trailing" id="9TM-PL-JbU" userLabel="Toolbar Right"/>
                 <constraint firstItem="GBt-Ls-lAG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Ckg-Ek-rcU" userLabel="Metadata Left"/>
                 <constraint firstAttribute="trailing" secondItem="sct-cG-X0j" secondAttribute="trailing" constant="16" id="Mup-Kz-jx4" userLabel="Play Button Right"/>
                 <constraint firstItem="uNJ-Gx-8Ck" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="N0f-gq-Ztv" userLabel="Media Control Left"/>
                 <constraint firstAttribute="trailing" secondItem="uNJ-Gx-8Ck" secondAttribute="trailing" id="NBA-eb-ZlM" userLabel="Media Control Right"/>
-                <constraint firstItem="0Lx-0h-o3X" firstAttribute="top" secondItem="aaN-PC-ico" secondAttribute="bottom" id="OhQ-uA-GMX" userLabel="Toolbar Stack Top"/>
+                <constraint firstItem="0Lx-0h-o3X" firstAttribute="top" secondItem="aaN-PC-ico" secondAttribute="bottom" id="OhQ-uA-GMX" userLabel="Toolbar Top"/>
                 <constraint firstItem="aaN-PC-ico" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="Ovx-mP-vmh" userLabel="Header Right"/>
                 <constraint firstItem="GBt-Ls-lAG" firstAttribute="top" secondItem="0Lx-0h-o3X" secondAttribute="bottom" constant="4" id="PRU-bg-HOy" userLabel="Metadata Top"/>
                 <constraint firstItem="aaN-PC-ico" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="VQJ-aH-oH5" userLabel="Header Top"/>
@@ -303,7 +278,7 @@
                 <constraint firstItem="sct-cG-X0j" firstAttribute="top" secondItem="aaN-PC-ico" secondAttribute="bottom" constant="-32" id="g7W-T9-32R" userLabel="Play Button Top"/>
                 <constraint firstAttribute="bottom" secondItem="uNJ-Gx-8Ck" secondAttribute="bottom" id="ib3-VL-vGA" userLabel="Media Control Bottom"/>
                 <constraint firstItem="m33-v1-fxP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="kt7-h5-C1l" userLabel="TabContainer Left"/>
-                <constraint firstItem="0Lx-0h-o3X" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="nOp-uV-JlZ" userLabel="Toolbar Stack Left"/>
+                <constraint firstItem="0Lx-0h-o3X" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="nOp-uV-JlZ" userLabel="Toolbar Left"/>
                 <constraint firstItem="m33-v1-fxP" firstAttribute="top" relation="greaterThanOrEqual" secondItem="aaN-PC-ico" secondAttribute="bottom" id="sXU-QN-0Yb" userLabel="TabContainer Distance to Header"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
@@ -325,10 +300,19 @@
                 <outlet property="togglePlayButton" destination="sct-cG-X0j" id="jnr-XB-HAD"/>
                 <outlet property="toolbar" destination="0Lx-0h-o3X" id="Ter-E4-afH"/>
                 <outlet property="toolbarHeightLayoutConstraint" destination="CQ6-LY-VBN" id="iUQ-Tg-X71"/>
+                <outlet property="toolbarItemsLeftMargin" destination="Hh4-AW-JYD" id="KHN-zs-yvo"/>
                 <outlet property="toolbarTopLayoutConstraint" destination="OhQ-uA-GMX" id="xQx-8d-kWo"/>
                 <outlet property="twitterButton" destination="6uH-vE-k95" id="6nZ-Bn-wSS"/>
                 <outlet property="volumeSlider" destination="gmd-m7-sZK" id="0dl-O7-cQm"/>
                 <outlet property="websiteButton" destination="1mA-5W-TqX" id="oD6-fj-zQR"/>
+                <outletCollection property="toolbarItemsSpacing" destination="lUO-Q4-4X7" id="z26-VZ-E0V"/>
+                <outletCollection property="toolbarItemsSpacing" destination="7xt-EB-ONp" id="jAl-wg-q5W"/>
+                <outletCollection property="toolbarItemsWidth" destination="v1t-xi-ZhY" id="MAZ-ba-B6T"/>
+                <outletCollection property="toolbarItemsWidth" destination="UZj-5j-Sa2" id="Pnc-IP-Qzf"/>
+                <outletCollection property="toolbarItemsWidth" destination="bhX-42-Cll" id="tSR-Pf-pkS"/>
+                <outletCollection property="toolbarItemsHeight" destination="AVa-4E-pbC" id="Y2d-wW-sSh"/>
+                <outletCollection property="toolbarItemsHeight" destination="YxH-lU-P0k" id="XDb-c3-oiw"/>
+                <outletCollection property="toolbarItemsHeight" destination="5iE-W8-4zT" id="tqw-H9-kFg"/>
             </connections>
             <point key="canvasLocation" x="34.5" y="53.5"/>
         </view>

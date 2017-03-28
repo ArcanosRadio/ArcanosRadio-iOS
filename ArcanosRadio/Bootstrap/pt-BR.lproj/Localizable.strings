@@ -38,3 +38,6 @@
 "CRASHREPORT_REQUEST_NEVER_SEND" = "Não, não quero enviar";
 "CRASHREPORT_REQUEST_ALWAYS_SEND" = "Tudo bem, ative o envio de relatórios";
 "LYRICS_UNAVAILABLE" = "Letras não disponíveis para essa música";
+"TOOLBAR_LYRICS" = "Letra";
+"TOOLBAR_TWITTER" = "Twitter";
+"TOOLBAR_WEBSITE" = "Site";
