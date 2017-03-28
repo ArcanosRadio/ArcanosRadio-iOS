@@ -96,20 +96,20 @@ const float kToolbarFinalSpacing = 20.0;
             break;
     }
 
-    [self innerScrollsToTop];
+    [self innerScrollsToTop:NO];
     [self.delegate currentTabHasChanged:_currentTab];
 }
 
 - (void)didTapStatusBar {
-    [self innerScrollsToTop];
+    [self innerScrollsToTop:YES];
 }
 
-- (void)innerScrollsToTop {
+- (void)innerScrollsToTop:(BOOL)animated {
     float currentContentOffset = self.scrollView.contentOffset.y;
     [self recalculateContentSize];
-    [self.scrollView setContentOffset:CGPointMake(0, MIN(currentContentOffset, [self screenAnimationScrollOffset])) animated:YES];
-    [self.lyricsScrollView setContentOffset:CGPointMake(0, 0) animated:YES];
-    [self.twitterView setContentOffset:CGPointMake(0, 0) animated:YES];
+    [self.scrollView setContentOffset:CGPointMake(0, MIN(currentContentOffset, [self screenAnimationScrollOffset])) animated:animated];
+    [self.lyricsScrollView setContentOffset:CGPointMake(0, 0) animated:animated];
+    [self.twitterView setContentOffset:CGPointMake(0, 0) animated:animated];
 }
 
 - (AWRMenuView *)menu {
