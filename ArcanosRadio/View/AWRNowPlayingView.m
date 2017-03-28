@@ -1,6 +1,5 @@
 #import "AWRNowPlayingView.h"
 #import "AWRNowPlayingHeaderView.h"
-#import "AWRNowPlayingBodyView.h"
 #import "UIView+Utils.h"
 #import "AWRMenuView.h"
 #import "AWRColorToolkit.h"
