@@ -10,9 +10,6 @@
 		012582B81D91F2EA002C4E93 /* AWRAppCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 012582B71D91F2EA002C4E93 /* AWRAppCoordinator.m */; };
 		0126E3471DA7232D0054430C /* AWRMetadataPoolingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0126E3461DA7232D0054430C /* AWRMetadataPoolingService.m */; };
 		013075F81D96846A003FDA74 /* AWRNowPlayingViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 013075F71D96846A003FDA74 /* AWRNowPlayingViewModel.m */; };
-		013784D91DEE2921006EC13E /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 013784D61DEE2921006EC13E /* TwitterKit.framework */; };
-		013784DA1DEE2921006EC13E /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 013784D71DEE2921006EC13E /* TwitterKitResources.bundle */; };
-		013784DB1DEE2921006EC13E /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 013784D81DEE2921006EC13E /* TwitterCore.framework */; };
 		013784DE1DEE2A86006EC13E /* AWRTwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 013784DD1DEE2A86006EC13E /* AWRTwitterViewController.m */; };
 		013784DF1DEE2A86006EC13E /* AWRTwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 013784DD1DEE2A86006EC13E /* AWRTwitterViewController.m */; };
 		013784E11DEE2AC4006EC13E /* AWRTwitterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013784E01DEE2AC4006EC13E /* AWRTwitterView.xib */; };
@@ -148,6 +145,10 @@
 		01FB39451DACB9D600EBC99D /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FB39431DACB9D600EBC99D /* UIImage+Resize.m */; };
 		01FB39481DACC7BA00EBC99D /* AWRAvatarImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FB39471DACC7BA00EBC99D /* AWRAvatarImageView.m */; };
 		01FB39491DACC7BA00EBC99D /* AWRAvatarImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FB39471DACC7BA00EBC99D /* AWRAvatarImageView.m */; };
+		D5EF61EA1EDF84AC00890584 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5EF61E91EDF84AC00890584 /* TwitterCore.framework */; };
+		D5EF61EC1EDF84C200890584 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5EF61EB1EDF84C200890584 /* TwitterKit.framework */; };
+		D5EF61EF1EDF84D700890584 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D5EF61ED1EDF84D700890584 /* TwitterKitResources.bundle */; };
+		D5EF61F01EDF84D700890584 /* TwitterShareExtensionUIResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D5EF61EE1EDF84D700890584 /* TwitterShareExtensionUIResources.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,9 +178,6 @@
 		013075F61D96846A003FDA74 /* AWRNowPlayingViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRNowPlayingViewModel.h; sourceTree = "<group>"; };
 		013075F71D96846A003FDA74 /* AWRNowPlayingViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRNowPlayingViewModel.m; sourceTree = "<group>"; };
 		0130D3061DA14E74005A299E /* AWREntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWREntity.h; sourceTree = "<group>"; };
-		013784D61DEE2921006EC13E /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
-		013784D71DEE2921006EC13E /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
-		013784D81DEE2921006EC13E /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
 		013784DC1DEE2A86006EC13E /* AWRTwitterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRTwitterViewController.h; sourceTree = "<group>"; };
 		013784DD1DEE2A86006EC13E /* AWRTwitterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRTwitterViewController.m; sourceTree = "<group>"; };
 		013784E01DEE2AC4006EC13E /* AWRTwitterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AWRTwitterView.xib; sourceTree = "<group>"; };
@@ -328,6 +326,10 @@
 		01FB39431DACB9D600EBC99D /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
 		01FB39461DACC7BA00EBC99D /* AWRAvatarImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRAvatarImageView.h; sourceTree = "<group>"; };
 		01FB39471DACC7BA00EBC99D /* AWRAvatarImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRAvatarImageView.m; sourceTree = "<group>"; };
+		D5EF61E91EDF84AC00890584 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
+		D5EF61EB1EDF84C200890584 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
+		D5EF61ED1EDF84D700890584 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TwitterKitResources.bundle; sourceTree = "<group>"; };
+		D5EF61EE1EDF84D700890584 /* TwitterShareExtensionUIResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TwitterShareExtensionUIResources.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -349,10 +351,10 @@
 				01DE2E821D9601C1003E604E /* Accelerate.framework in Frameworks */,
 				0181E7FF1D8C9EB1008E21C5 /* Crashlytics.framework in Frameworks */,
 				0181E7FE1D8C9EB1008E21C5 /* Fabric.framework in Frameworks */,
+				D5EF61EA1EDF84AC00890584 /* TwitterCore.framework in Frameworks */,
 				0181E8021D8CADE8008E21C5 /* Bolts.framework in Frameworks */,
-				013784DB1DEE2921006EC13E /* TwitterCore.framework in Frameworks */,
 				0181E8031D8CADE8008E21C5 /* Parse.framework in Frameworks */,
-				013784D91DEE2921006EC13E /* TwitterKit.framework in Frameworks */,
+				D5EF61EC1EDF84C200890584 /* TwitterKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,9 +642,10 @@
 		0181E7FB1D8C9E83008E21C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				013784D61DEE2921006EC13E /* TwitterKit.framework */,
-				013784D71DEE2921006EC13E /* TwitterKitResources.bundle */,
-				013784D81DEE2921006EC13E /* TwitterCore.framework */,
+				D5EF61ED1EDF84D700890584 /* TwitterKitResources.bundle */,
+				D5EF61EE1EDF84D700890584 /* TwitterShareExtensionUIResources.bundle */,
+				D5EF61EB1EDF84C200890584 /* TwitterKit.framework */,
+				D5EF61E91EDF84AC00890584 /* TwitterCore.framework */,
 				01673C7A1DCFAD2E000B14CE /* SimulatorStatusMagiciOS.framework */,
 				01D2BD0B1D9B00D900632C08 /* QuartzCore.framework */,
 				01DE2E811D9601C1003E604E /* Accelerate.framework */,
@@ -849,14 +852,15 @@
 				018E2CD61DBC31130035455B /* genLicense.pl in Resources */,
 				018E2CEC1DBC70D90035455B /* AWRDeveloperInfoTableViewCell.xib in Resources */,
 				018E2D151DBD48960035455B /* AWRVersionTableViewCell.xib in Resources */,
-				013784DA1DEE2921006EC13E /* TwitterKitResources.bundle in Resources */,
 				016500E51DB2D04900B32C0A /* Localizable.strings in Resources */,
+				D5EF61EF1EDF84D700890584 /* TwitterKitResources.bundle in Resources */,
 				018E2D021DBCCD950035455B /* AWRLicenseView.xib in Resources */,
 				018E2CFB1DBC7DBC0035455B /* AWRAppLinkInfoTableViewCell.xib in Resources */,
 				016500F21DB3374500B32C0A /* AWRAboutView.xib in Resources */,
 				0181E7E71D8C905B008E21C5 /* Assets.xcassets in Resources */,
 				0181E8331D8CB177008E21C5 /* AWRNowPlayingView.xib in Resources */,
 				013784E11DEE2AC4006EC13E /* AWRTwitterView.xib in Resources */,
+				D5EF61F01EDF84D700890584 /* TwitterShareExtensionUIResources.bundle in Resources */,
 				01FB39341DAC592B00EBC99D /* AWRNowPlayingHeaderView.xib in Resources */,
 				016500EF1DB2EFBD00B32C0A /* Settings.bundle in Resources */,
 				0181E7F91D8C9663008E21C5 /* SplashView.xib in Resources */,
@@ -1234,7 +1238,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.developercity.ArcanosRadio;
 				PRODUCT_NAME = "Arcanos Radio";
-				PROVISIONING_PROFILE = "53830c0e-ab14-4544-98ac-81c1a9df6fed";
+				PROVISIONING_PROFILE = "d6c3f426-8445-4e52-82c4-b32d5ad6a1b8";
 				PROVISIONING_PROFILE_SPECIFIER = "Arcanos Radio Dev";
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
