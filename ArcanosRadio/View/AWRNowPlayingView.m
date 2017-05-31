@@ -7,6 +7,8 @@
 const float kToolbarMaximumSize = 58.0;
 const float kToolbarMinimumSize = 28.0;
 
+const float kToolbarItemInitialWidth = 40.0;
+
 const float kToolbarInitialLeftMargin = 25.0;
 const float kToolbarInitialSpacing = 50.0;
 const float kToolbarFinalLeftMargin = 112.0;
@@ -226,7 +228,7 @@ const float kToolbarFinalSpacing = 20.0;
     NSArray *buttons = @[self.lyricsButton, self.twitterButton, self.websiteButton];
 
     if (height >= 52) {
-        for (NSLayoutConstraint *c in self.toolbarItemsWidth) { c.constant = 40; }
+        for (NSLayoutConstraint *c in self.toolbarItemsWidth) { c.constant = kToolbarItemInitialWidth; }
         for (NSLayoutConstraint *c in self.toolbarItemsHeight) { c.constant = 12; }
         for (UIButton *b in buttons) { b.imageEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, 12.0, 0.0); }
         [self.lyricsButton setTitle:NSLocalizedString(@"TOOLBAR_LYRICS", nil) forState:UIControlStateNormal];
@@ -239,7 +241,7 @@ const float kToolbarFinalSpacing = 20.0;
     }
 
     if (height >= 44) {
-        for (NSLayoutConstraint *c in self.toolbarItemsWidth) { c.constant = 40; }
+        for (NSLayoutConstraint *c in self.toolbarItemsWidth) { c.constant = kToolbarItemInitialWidth; }
         for (NSLayoutConstraint *c in self.toolbarItemsHeight) { c.constant = 0; }
         for (UIButton *b in buttons) {
             b.imageEdgeInsets = UIEdgeInsetsZero;
@@ -317,6 +319,9 @@ const float kToolbarFinalSpacing = 20.0;
 
     [self setToolbarHeight:toolbarSize];
     float maxToolbarTransformation = kToolbarMaximumSize - kToolbarMinimumSize;
+    NSLayoutConstraint *currentItemWidth = [self.toolbarItemsWidth firstObject];
+    float toolbarLeftMarginTransition = kToolbarInitialLeftMargin + (kToolbarItemInitialWidth - currentItemWidth.constant) / 2.0;
+    float toolbarSpacingTransition = kToolbarInitialSpacing + kToolbarItemInitialWidth - currentItemWidth.constant;
 
     // Check if Toolbar is transitioning between maximum and minimum sizes
     if (offsetAfterHeaderTransition <= maxToolbarTransformation) {
@@ -342,9 +347,10 @@ const float kToolbarFinalSpacing = 20.0;
         self.toolbarTopLayoutConstraint.constant = 0;
         self.toolbar.backgroundColor = AWRColorToolkit.toolbarBackgroundColor;
 
-        self.toolbarItemsLeftMargin.constant = kToolbarInitialLeftMargin;
-        for (NSLayoutConstraint *c in self.toolbarItemsSpacing) { c.constant = kToolbarInitialSpacing; }
-
+        self.toolbarItemsLeftMargin.constant = toolbarLeftMarginTransition;
+        for (NSLayoutConstraint *c in self.toolbarItemsSpacing) {
+            c.constant = toolbarSpacingTransition;
+        }
         return;
     }
 
@@ -378,9 +384,10 @@ const float kToolbarFinalSpacing = 20.0;
         self.toolbarTopLayoutConstraint.constant = 0;
         self.toolbar.backgroundColor = AWRColorToolkit.toolbarBackgroundColor;
 
-        self.toolbarItemsLeftMargin.constant = kToolbarInitialLeftMargin;
-        for (NSLayoutConstraint *c in self.toolbarItemsSpacing) { c.constant = kToolbarInitialSpacing; }
-
+        self.toolbarItemsLeftMargin.constant = toolbarLeftMarginTransition;
+        for (NSLayoutConstraint *c in self.toolbarItemsSpacing) {
+            c.constant = toolbarSpacingTransition;
+        }
         return;
     }
 
@@ -394,7 +401,6 @@ const float kToolbarFinalSpacing = 20.0;
     float offsetAfterHidingMetadata = offsetAfterToolbarTransformation - offsetUntilMetadataIsCompletelyHidden;
     float maxToolbarMovement = kToolbarMinimumSize + 8;
     float offsetToolbarMovement = -MIN(offsetAfterHidingMetadata, maxToolbarMovement);
-
     self.metadataTopLayoutConstraint.constant = offsetBigMetadata - offsetToolbarMovement;
     self.toolbarTopLayoutConstraint.constant = offsetToolbarMovement;
 
@@ -411,9 +417,10 @@ const float kToolbarFinalSpacing = 20.0;
         // Toolbar background is partially opaque
         self.toolbar.backgroundColor = [AWRColorToolkit.toolbarBackgroundColor colorWithAlphaComponent:movementPercentage];
 
-        self.toolbarItemsLeftMargin.constant = kToolbarInitialLeftMargin + (1.0 - movementPercentage) * (kToolbarFinalLeftMargin - kToolbarInitialLeftMargin);
-        for (NSLayoutConstraint *c in self.toolbarItemsSpacing) { c.constant = kToolbarInitialSpacing + (1.0 - movementPercentage) * (kToolbarFinalSpacing - kToolbarInitialSpacing); }
-
+        self.toolbarItemsLeftMargin.constant = toolbarLeftMarginTransition + (1.0 - movementPercentage) * (kToolbarFinalLeftMargin - toolbarLeftMarginTransition);
+        for (NSLayoutConstraint *c in self.toolbarItemsSpacing) {
+            c.constant = toolbarSpacingTransition + (1.0 - movementPercentage) * (kToolbarFinalSpacing - toolbarSpacingTransition);
+        }
         return;
     }
 
