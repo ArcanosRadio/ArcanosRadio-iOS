@@ -1,7 +1,7 @@
 #import "AWRTwitterViewController.h"
 #import "AWRTwitterView.h"
 
-@interface AWRTwitterViewController ()
+@interface AWRTwitterViewController ()<TWTRTimelineDelegate>
 
 @property (nonatomic, strong)TWTRAPIClient *client;
 
@@ -13,6 +13,12 @@
     [super viewDidLoad];
     [(AWRTwitterView *)self.view configureView];
     self.client = [TWTRAPIClient new];
+    self.timelineDelegate = self;
+}
+
+-(void)timeline:(TWTRTimelineViewController *)timeline didFinishLoadingTweets:(NSArray *)tweets
+          error:(NSError *)error {
+    [self.delegate twitterDidRefresh];
 }
 
 - (void)setTwitterSearch:(NSString *)searchQuery {

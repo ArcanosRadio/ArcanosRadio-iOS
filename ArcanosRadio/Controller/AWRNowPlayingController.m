@@ -6,7 +6,7 @@
 #import "PXPromise.h"
 #import "AWRTwitterViewController.h"
 
-@interface AWRNowPlayingController () <AWRArcanosMediaPlayerDelegate, AWRNowPlayingViewDelegate>
+@interface AWRNowPlayingController () <AWRArcanosMediaPlayerDelegate, AWRNowPlayingViewDelegate, AWRTwitterViewControllerDelegate>
 
 @property(strong, nonatomic) AWRArcanosMediaPlayer *arcanosRadio;
 @property(strong, nonatomic) NSString *streamingUrl;
@@ -30,9 +30,13 @@
     return self;
 }
 
+- (void)twitterDidRefresh {
+}
+
 - (AWRTwitterViewController *)twitterViewController {
     if (!_twitterViewController) {
         _twitterViewController = [AWRTwitterViewController new];
+        _twitterViewController.delegate = self;
     }
     return _twitterViewController;
 }

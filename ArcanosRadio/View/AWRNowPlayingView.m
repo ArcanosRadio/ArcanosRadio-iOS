@@ -113,6 +113,7 @@ const float kToolbarFinalSpacing = 20.0;
             break;
     }
 
+    [self recalculateContentSize];
     [self.delegate currentTabHasChanged:_currentTab];
 }
 
@@ -195,8 +196,6 @@ const float kToolbarFinalSpacing = 20.0;
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-
-    [self recalculateContentSize];
 }
 
 - (float)screenAnimationScrollOffset {
@@ -221,6 +220,10 @@ const float kToolbarFinalSpacing = 20.0;
       : 0;
 
     self.scrollView.contentSize = CGSizeMake(1.0, scrollbarFrameHeight + [self screenAnimationScrollOffset] + innerScrollMaxOffset);
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    [self recalculateContentSize];
 }
 
 - (void)setToolbarHeight:(float)height {
@@ -265,7 +268,6 @@ const float kToolbarFinalSpacing = 20.0;
 }
 
 - (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView {
-    NSLog(@"hey!");
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -507,6 +509,7 @@ const float kToolbarFinalSpacing = 20.0;
         self.artistLabel.text = model.artistName;
         self.lyricsLabel.text = model.lyrics;
         self.websiteButton.enabled = model.hasUrl;
+        [self recalculateContentSize];
     });
 }
 
