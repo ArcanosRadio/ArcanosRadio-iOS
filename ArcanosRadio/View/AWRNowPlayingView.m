@@ -3,6 +3,7 @@
 #import "UIView+Utils.h"
 #import "AWRMenuView.h"
 #import "AWRColorToolkit.h"
+#import <QuartzCore/QuartzCore.h>
 
 const float kToolbarMaximumSize = 58.0;
 const float kToolbarMinimumSize = 28.0;
@@ -64,10 +65,12 @@ const float kToolbarFinalSpacing = 20.0;
     self.websiteButton.selected = NO;
     sender.selected = YES;
 
-    self.lyricsButton.tintColor = [UIColor darkGrayColor];
-    self.twitterButton.tintColor = [UIColor darkGrayColor];
-    self.websiteButton.tintColor = [UIColor darkGrayColor];
-    sender.tintColor = AWRColorToolkit.extraHighlightBackgroundColor;
+    self.lyricsButton.tintColor = AWRColorToolkit.toolbarForegroundColor;
+    self.twitterButton.tintColor = AWRColorToolkit.toolbarForegroundColor;
+    self.websiteButton.tintColor = self.websiteButton.enabled
+        ? AWRColorToolkit.toolbarForegroundColor
+        : AWRColorToolkit.disabledTextColor;
+    sender.tintColor = AWRColorToolkit.extraHighlightTextColor;
 
     self.lyricsLabel.hidden = sender != self.lyricsButton;
     self.twitterView.hidden = sender != self.twitterButton;
@@ -187,7 +190,35 @@ const float kToolbarFinalSpacing = 20.0;
     for (NSLayoutConstraint *c in self.toolbarItemsSpacing) { c.constant = kToolbarInitialSpacing; }
     [self setToolbarHeight:kToolbarMaximumSize];
     self.websiteButton.enabled = NO;
-    //    [self configureMediaBarShadow];
+
+    [self.lyricsButton setTitleColor:AWRColorToolkit.toolbarForegroundColor forState:UIControlStateNormal];
+    [self.lyricsButton setTitleColor:AWRColorToolkit.disabledTextColor forState:UIControlStateDisabled];
+    [self.lyricsButton setTitleColor:AWRColorToolkit.extraHighlightTextColor forState:UIControlStateSelected];
+    self.lyricsButton.layer.shadowColor = AWRColorToolkit.shadowColor.CGColor;
+    self.lyricsButton.layer.shadowRadius = 1.5f;
+    self.lyricsButton.layer.shadowOffset = CGSizeMake(0.2f, 0.5f);
+    self.lyricsButton.layer.shadowOpacity = 0.9f;
+    self.lyricsButton.clipsToBounds = NO;
+
+    [self.twitterButton setTitleColor:AWRColorToolkit.toolbarForegroundColor forState:UIControlStateNormal];
+    [self.twitterButton setTitleColor:AWRColorToolkit.disabledTextColor forState:UIControlStateDisabled];
+    [self.twitterButton setTitleColor:AWRColorToolkit.extraHighlightTextColor forState:UIControlStateSelected];
+    self.twitterButton.layer.shadowColor = AWRColorToolkit.shadowColor.CGColor;
+    self.twitterButton.layer.shadowRadius = 1.5f;
+    self.twitterButton.layer.shadowOffset = CGSizeMake(0.2f, 0.5f);
+    self.twitterButton.layer.shadowOpacity = 0.9f;
+    self.twitterButton.clipsToBounds = NO;
+
+    [self.websiteButton setTitleColor:AWRColorToolkit.toolbarForegroundColor forState:UIControlStateNormal];
+    [self.websiteButton setTitleColor:AWRColorToolkit.disabledTextColor forState:UIControlStateDisabled];
+    [self.websiteButton setTitleColor:AWRColorToolkit.extraHighlightTextColor forState:UIControlStateSelected];
+    self.websiteButton.layer.shadowColor = AWRColorToolkit.shadowColor.CGColor;
+    self.websiteButton.layer.shadowRadius = 1.5f;
+    self.websiteButton.layer.shadowOffset = CGSizeMake(0.2f, 0.5f);
+    self.websiteButton.layer.shadowOpacity = 0.9f;
+    self.websiteButton.clipsToBounds = NO;
+
+    [self configureMediaBarShadow];
 }
 
 - (void)navigate:(NSURLRequest *)request {
@@ -427,7 +458,7 @@ const float kToolbarFinalSpacing = 20.0;
     }
 
     // Outer scroll is done, the toolbar must be hidden now
-    self.toolbar.backgroundColor = [UIColor clearColor];
+    self.toolbar.backgroundColor = AWRColorToolkit.noColor;
 
     self.toolbarItemsLeftMargin.constant = kToolbarFinalLeftMargin;
     for (NSLayoutConstraint *c in self.toolbarItemsSpacing) { c.constant = kToolbarFinalSpacing; }
@@ -508,7 +539,12 @@ const float kToolbarFinalSpacing = 20.0;
         self.songLabel.attributedText = [[NSAttributedString alloc]initWithString:model.songName attributes:self.songNameEffects];
         self.artistLabel.text = model.artistName;
         self.lyricsLabel.text = model.lyrics;
-        self.websiteButton.enabled = model.hasUrl;
+        if (self.websiteButton.enabled != model.hasUrl) {
+            self.websiteButton.enabled = model.hasUrl;
+            self.websiteButton.tintColor = model.hasUrl
+                ? AWRColorToolkit.toolbarForegroundColor
+                : AWRColorToolkit.disabledTextColor;
+        }
         [self recalculateContentSize];
     });
 }
@@ -518,7 +554,7 @@ const float kToolbarFinalSpacing = 20.0;
         _songNameEffects = @{
                              NSForegroundColorAttributeName: self.songLabel.textColor,
                              NSFontAttributeName: self.songLabel.font,
-                             NSStrokeColorAttributeName: [UIColor colorWithRed:0.5 green:0.5 blue:0.1 alpha:0.9],
+                             NSStrokeColorAttributeName: AWRColorToolkit.highlightStrokeColor,
                              NSStrokeWidthAttributeName: @(-5.0)
                              };
     }
@@ -553,19 +589,16 @@ const float kToolbarFinalSpacing = 20.0;
     });
 }
 
-//- (void)configureMediaBarShadow {
-//    id backgroundColor = (id)[self.backgroundColor CGColor];
-//    id backgroundColorWithTransparency = (id)[[self.backgroundColor colorWithAlphaComponent:0.01] CGColor];
-//
-//    static dispatch_once_t onceToken;
-//    dispatch_once(&onceToken, ^{
-//        CAGradientLayer *gradient = [CAGradientLayer layer];
-//        gradient.frame = self.shadowView.bounds;
-//        gradient.colors = [NSArray arrayWithObjects:backgroundColorWithTransparency,
-//                                                    backgroundColor,
-//                                                    nil];
-//        [self.shadowView.layer insertSublayer:gradient atIndex:0];
-//    });
-//}
+- (void)configureMediaBarShadow {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        CALayer *layer = self.mediaControlBar.layer;
+        layer.shadowColor = AWRColorToolkit.shadowColor.CGColor;
+        layer.shadowRadius = 4.5;
+        layer.shadowOpacity = 0.6;
+        layer.shadowOffset = CGSizeMake(0, -3.0);
+        layer.masksToBounds = NO;
+    });
+}
 
 @end

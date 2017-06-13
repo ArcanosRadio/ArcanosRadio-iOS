@@ -4,6 +4,7 @@
 @interface AWRColorToolkit : NSObject
 
 + (UIColor *)toolbarBackgroundColor;
++ (UIColor *)toolbarForegroundColor;
 
 + (UIColor *)backgroundPrimaryColor;
 + (UIColor *)backgroundSecundaryColor;
@@ -28,5 +29,10 @@
 
 + (UIColor *)errorBackgroundColor;
 + (UIColor *)errorTextColor;
+
++ (UIColor *)noColor;
++ (UIColor *)highlightStrokeColor;
+
++ (UIColor *)shadowColor;
 
 @end
