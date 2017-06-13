@@ -1096,7 +1096,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.developercity.ArcanosRadio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7c529f4a-e522-40cc-992e-ebfcf2f98718";
+				PROVISIONING_PROFILE = "ec250298-bf54-4679-89b7-36733143d126";
 				PROVISIONING_PROFILE_SPECIFIER = ArcanosTrial;
 			};
 			name = Debug;
@@ -1120,7 +1120,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.developercity.ArcanosRadio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7c529f4a-e522-40cc-992e-ebfcf2f98718";
+				PROVISIONING_PROFILE = "ec250298-bf54-4679-89b7-36733143d126";
 				PROVISIONING_PROFILE_SPECIFIER = ArcanosTrial;
 			};
 			name = Release;
@@ -1238,8 +1238,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.developercity.ArcanosRadio;
 				PRODUCT_NAME = "Arcanos Radio";
-				PROVISIONING_PROFILE = "d6c3f426-8445-4e52-82c4-b32d5ad6a1b8";
-				PROVISIONING_PROFILE_SPECIFIER = "Arcanos Radio Dev";
+				PROVISIONING_PROFILE = "ef858900-7f9e-49e5-877b-f86315c7521e";
+				PROVISIONING_PROFILE_SPECIFIER = ArcanosDev;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1249,7 +1249,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CURRENT_PROJECT_VERSION = 44;
 				DEVELOPMENT_TEAM = 7BK8NL3DYL;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1262,8 +1262,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.developercity.ArcanosRadio;
 				PRODUCT_NAME = "Arcanos Radio";
-				PROVISIONING_PROFILE = "53830c0e-ab14-4544-98ac-81c1a9df6fed";
-				PROVISIONING_PROFILE_SPECIFIER = "Arcanos Radio Dev";
+				PROVISIONING_PROFILE = "3be5d668-f09b-4088-8b46-71148aa50864";
+				PROVISIONING_PROFILE_SPECIFIER = ArcanosStore;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
