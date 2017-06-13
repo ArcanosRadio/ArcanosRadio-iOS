@@ -4,6 +4,7 @@
 #import "AWRMenuView.h"
 #import "AWRColorToolkit.h"
 #import <QuartzCore/QuartzCore.h>
+#import <WebKit/Webkit.h>
 
 const float kToolbarMaximumSize = 58.0;
 const float kToolbarMinimumSize = 28.0;
@@ -54,7 +55,7 @@ const float kToolbarFinalSpacing = 20.0;
 @property (strong, nonatomic) IBOutletCollection(NSLayoutConstraint) NSArray *toolbarItemsHeight;
 
 @property (strong, nonatomic)UIScrollView *twitterView;
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet WKWebView *webView;
 @end
 
 @implementation AWRNowPlayingView
