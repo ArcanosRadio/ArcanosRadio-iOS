@@ -1,6 +1,7 @@
 #import "AWRMetadataPoolingService.h"
 #import "AWRMetadataStore.h"
 #import "AWRMetadataFactory.h"
+#import <IOZPromise/IOZPromise.h>
 
 @interface AWRMetadataPoolingService()
 

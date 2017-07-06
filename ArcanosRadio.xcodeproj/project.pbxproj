@@ -139,6 +139,7 @@
 		D5018FAB1F0EC65700C7F7D1 /* AWRParseMetadataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D5018F9E1F0EC65700C7F7D1 /* AWRParseMetadataStore.m */; };
 		D5018FAC1F0EC65700C7F7D1 /* AWRReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = D5018F9F1F0EC65700C7F7D1 /* AWRReachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D5018FAD1F0EC65700C7F7D1 /* AWRReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D5018FA01F0EC65700C7F7D1 /* AWRReachability.m */; };
+		D5018FAE1F0ED2CD00C7F7D1 /* IOZPromise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B676FD1F0EBAD600C62C95 /* IOZPromise.framework */; };
 		D56724981F0EB61500B7CF80 /* ArcanosMetadataAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = D56724961F0EB61500B7CF80 /* ArcanosMetadataAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D567249B1F0EB61500B7CF80 /* ArcanosMetadataAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56724941F0EB61400B7CF80 /* ArcanosMetadataAPI.framework */; };
 		D567249C1F0EB61500B7CF80 /* ArcanosMetadataAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D56724941F0EB61400B7CF80 /* ArcanosMetadataAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -179,6 +180,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 0137D8571D9CCD2F003A1E6B;
 			remoteInfo = ArcanosRadioMock;
+		};
+		D5018FAF1F0ED2D100C7F7D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0181E7CF1D8C905B008E21C5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D5B676FC1F0EBAD600C62C95;
+			remoteInfo = IOZPromise;
 		};
 		D56724991F0EB61500B7CF80 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -399,6 +407,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5018FAE1F0ED2CD00C7F7D1 /* IOZPromise.framework in Frameworks */,
 				D5018F7A1F0EC26900C7F7D1 /* Bolts.framework in Frameworks */,
 				D5018F7B1F0EC26900C7F7D1 /* Parse.framework in Frameworks */,
 			);
@@ -849,6 +858,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				D5018FB01F0ED2D100C7F7D1 /* PBXTargetDependency */,
 			);
 			name = ArcanosMetadataAPI;
 			productName = ArcanosMetadataAPI;
@@ -1200,6 +1210,11 @@
 			isa = PBXTargetDependency;
 			target = 0137D8571D9CCD2F003A1E6B /* ArcanosRadioMock */;
 			targetProxy = 0196C6681DCF6F440061EEE8 /* PBXContainerItemProxy */;
+		};
+		D5018FB01F0ED2D100C7F7D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D5B676FC1F0EBAD600C62C95 /* IOZPromise */;
+			targetProxy = D5018FAF1F0ED2D100C7F7D1 /* PBXContainerItemProxy */;
 		};
 		D567249A1F0EB61500B7CF80 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
