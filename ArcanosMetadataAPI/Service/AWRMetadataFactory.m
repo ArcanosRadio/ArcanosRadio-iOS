@@ -4,6 +4,15 @@
 
 @implementation AWRMetadataFactory
 
+static NSDictionary *_settings;
++ (NSDictionary<NSString *,NSString *> *)settings {
+    return _settings;
+}
+
++ (void)setSettings:(NSDictionary<NSString *,NSString *> *)settings {
+    _settings = settings;
+}
+
 + (Class<AWRMetadataStore>)metadataStoreClass {
     return [AWRParseMetadataStore class];
 }

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		012582B81D91F2EA002C4E93 /* AWRAppCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 012582B71D91F2EA002C4E93 /* AWRAppCoordinator.m */; };
-		0126E3471DA7232D0054430C /* AWRMetadataPoolingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0126E3461DA7232D0054430C /* AWRMetadataPoolingService.m */; };
 		013075F81D96846A003FDA74 /* AWRNowPlayingViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 013075F71D96846A003FDA74 /* AWRNowPlayingViewModel.m */; };
 		013784DE1DEE2A86006EC13E /* AWRTwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 013784DD1DEE2A86006EC13E /* AWRTwitterViewController.m */; };
 		013784DF1DEE2A86006EC13E /* AWRTwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 013784DD1DEE2A86006EC13E /* AWRTwitterViewController.m */; };
@@ -20,10 +19,6 @@
 		0137D8721D9CCE29003A1E6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0181E7DB1D8C905B008E21C5 /* main.m */; };
 		0137D8731D9CCE33003A1E6B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0181E7DE1D8C905B008E21C5 /* AppDelegate.m */; };
 		0137D8741D9CCE3D003A1E6B /* AWRArcanosMediaPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0181E8171D8CB14D008E21C5 /* AWRArcanosMediaPlayer.m */; };
-		0137D8751D9CCE4B003A1E6B /* PXNoMorePromises.m in Sources */ = {isa = PBXBuildFile; fileRef = 0181E8201D8CB158008E21C5 /* PXNoMorePromises.m */; };
-		0137D8761D9CCE50003A1E6B /* PXPromiseResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 0181E8211D8CB158008E21C5 /* PXPromiseResult.m */; };
-		0137D8771D9CCE56003A1E6B /* NSObject+PXPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 019140771D8D8E05000B19EE /* NSObject+PXPromise.m */; };
-		0137D8781D9CCE5A003A1E6B /* NSError+PXPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 0181E81F1D8CB158008E21C5 /* NSError+PXPromise.m */; };
 		0137D87D1D9CCE79003A1E6B /* AWRNowPlayingViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 013075F71D96846A003FDA74 /* AWRNowPlayingViewModel.m */; };
 		0137D87E1D9CCE9A003A1E6B /* AWRNowPlayingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0181E8301D8CB177008E21C5 /* AWRNowPlayingView.xib */; };
 		0137D87F1D9CCEDE003A1E6B /* AWRNowPlayingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0181E8321D8CB177008E21C5 /* AWRNowPlayingView.m */; };
@@ -33,7 +28,6 @@
 		0137D8831D9CCEF6003A1E6B /* AWRNowPlayingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DBE4941D8CB2C4003B2100 /* AWRNowPlayingController.m */; };
 		0137D8861D9CCF9A003A1E6B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D2BD0B1D9B00D900632C08 /* QuartzCore.framework */; };
 		0137D8871D9CCF9F003A1E6B /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01DE2E811D9601C1003E604E /* Accelerate.framework */; };
-		0137D8971D9E66EE003A1E6B /* PFFile+AWRFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 0137D8961D9E66EE003A1E6B /* PFFile+AWRFile.m */; };
 		0137D8A01D9E7093003A1E6B /* AWRFakeStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 0137D89E1D9E7093003A1E6B /* AWRFakeStore.m */; };
 		0137D8A11D9E7093003A1E6B /* AWRMetadataServiceFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0137D89F1D9E7093003A1E6B /* AWRMetadataServiceFactory.m */; };
 		01419A1A1E15E111008FDBDB /* AWRTwitterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01419A191E15E111008FDBDB /* AWRTwitterView.m */; };
@@ -42,7 +36,6 @@
 		016500E11DB1E79B00B32C0A /* AWRMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 016500E01DB1E79B00B32C0A /* AWRMenuView.m */; };
 		016500E51DB2D04900B32C0A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 016500E81DB2D04900B32C0A /* Localizable.strings */; };
 		016500E61DB2D04900B32C0A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 016500E81DB2D04900B32C0A /* Localizable.strings */; };
-		016500ED1DB2E6F500B32C0A /* AWRReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 016500EC1DB2E6F500B32C0A /* AWRReachability.m */; };
 		016500EF1DB2EFBD00B32C0A /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 016500EE1DB2EFBD00B32C0A /* Settings.bundle */; };
 		016500F01DB2EFBD00B32C0A /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 016500EE1DB2EFBD00B32C0A /* Settings.bundle */; };
 		016500F21DB3374500B32C0A /* AWRAboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 016500F11DB3374500B32C0A /* AWRAboutView.xib */; };
@@ -53,7 +46,6 @@
 		016500FB1DB3383700B32C0A /* AWRAboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016500F91DB3383700B32C0A /* AWRAboutController.m */; };
 		016501021DB3516400B32C0A /* AWRColorToolkit.m in Sources */ = {isa = PBXBuildFile; fileRef = 016501011DB3516400B32C0A /* AWRColorToolkit.m */; };
 		016501031DB3516400B32C0A /* AWRColorToolkit.m in Sources */ = {isa = PBXBuildFile; fileRef = 016501011DB3516400B32C0A /* AWRColorToolkit.m */; };
-		01673C791DCF89EE000B14CE /* AWRMetadataPoolingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0126E3461DA7232D0054430C /* AWRMetadataPoolingService.m */; };
 		01673C7B1DCFAD2E000B14CE /* SimulatorStatusMagiciOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01673C7A1DCFAD2E000B14CE /* SimulatorStatusMagiciOS.framework */; };
 		0181E7DC1D8C905B008E21C5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0181E7DB1D8C905B008E21C5 /* main.m */; };
 		0181E7DF1D8C905B008E21C5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0181E7DE1D8C905B008E21C5 /* AppDelegate.m */; };
@@ -65,13 +57,6 @@
 		0181E8031D8CADE8008E21C5 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0181E8011D8CADE8008E21C5 /* Parse.framework */; };
 		0181E8091D8CB0ED008E21C5 /* AWRConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0181E8071D8CB0ED008E21C5 /* AWRConstants.m */; };
 		0181E8181D8CB14D008E21C5 /* AWRArcanosMediaPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0181E8171D8CB14D008E21C5 /* AWRArcanosMediaPlayer.m */; };
-		0181E8231D8CB158008E21C5 /* NSError+PXPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 0181E81F1D8CB158008E21C5 /* NSError+PXPromise.m */; };
-		0181E8241D8CB158008E21C5 /* PXNoMorePromises.m in Sources */ = {isa = PBXBuildFile; fileRef = 0181E8201D8CB158008E21C5 /* PXNoMorePromises.m */; };
-		0181E8251D8CB158008E21C5 /* PXPromiseResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 0181E8211D8CB158008E21C5 /* PXPromiseResult.m */; };
-		0181E8261D8CB158008E21C5 /* BFTask+PXPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 0181E8221D8CB158008E21C5 /* BFTask+PXPromise.m */; };
-		0181E82D1D8CB160008E21C5 /* AWRArtistParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 0181E8281D8CB160008E21C5 /* AWRArtistParse.m */; };
-		0181E82E1D8CB160008E21C5 /* AWRPlaylistParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 0181E82A1D8CB160008E21C5 /* AWRPlaylistParse.m */; };
-		0181E82F1D8CB160008E21C5 /* AWRSongParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 0181E82C1D8CB160008E21C5 /* AWRSongParse.m */; };
 		0181E8331D8CB177008E21C5 /* AWRNowPlayingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0181E8301D8CB177008E21C5 /* AWRNowPlayingView.xib */; };
 		0181E8341D8CB177008E21C5 /* AWRNowPlayingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0181E8321D8CB177008E21C5 /* AWRNowPlayingView.m */; };
 		018E2CC51DBC1CF50035455B /* AWRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 018E2CC41DBC1CF50035455B /* AWRViewController.m */; };
@@ -106,7 +91,6 @@
 		018E2D161DBD48960035455B /* AWRVersionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 018E2D141DBD48960035455B /* AWRVersionTableViewCell.xib */; };
 		018E2D191DBD48B30035455B /* AWRVersionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 018E2D181DBD48B30035455B /* AWRVersionTableViewCell.m */; };
 		018E2D1A1DBD48B30035455B /* AWRVersionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 018E2D181DBD48B30035455B /* AWRVersionTableViewCell.m */; };
-		019140781D8D8E05000B19EE /* NSObject+PXPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 019140771D8D8E05000B19EE /* NSObject+PXPromise.m */; };
 		0196C6341DCE27470061EEE8 /* ScreenshotAutomation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0196C6331DCE27470061EEE8 /* ScreenshotAutomation.m */; };
 		0196C6401DCE2C3E0061EEE8 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0196C63F1DCE2C3E0061EEE8 /* SnapshotHelper.swift */; };
 		0196C6411DCE89B40061EEE8 /* AWRMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 016500E01DB1E79B00B32C0A /* AWRMenuView.m */; };
@@ -120,15 +104,11 @@
 		01D2BD0C1D9B00D900632C08 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D2BD0B1D9B00D900632C08 /* QuartzCore.framework */; };
 		01DBE4981D8CB2C4003B2100 /* AWRNowPlayingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DBE4941D8CB2C4003B2100 /* AWRNowPlayingController.m */; };
 		01DBE4991D8CB2C4003B2100 /* AWRNowPlayingCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DBE4951D8CB2C4003B2100 /* AWRNowPlayingCoordinator.m */; };
-		01DBE49F1D8CB2D0003B2100 /* AWRParseMetadataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DBE49A1D8CB2D0003B2100 /* AWRParseMetadataStore.m */; };
-		01DBE4A01D8CB2D0003B2100 /* AWRMetadataFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DBE49E1D8CB2D0003B2100 /* AWRMetadataFactory.m */; };
 		01DD772A1DE985EB006E82B3 /* AWRCrashReportController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DD77291DE985EB006E82B3 /* AWRCrashReportController.m */; };
 		01DD772E1DE992BB006E82B3 /* AWRShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DD772D1DE992BB006E82B3 /* AWRShareViewController.m */; };
 		01DD772F1DE992BB006E82B3 /* AWRShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DD772D1DE992BB006E82B3 /* AWRShareViewController.m */; };
 		01DD77321DE997DF006E82B3 /* AWRControlCenterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DD77311DE997DF006E82B3 /* AWRControlCenterController.m */; };
 		01DD77331DE997DF006E82B3 /* AWRControlCenterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DD77311DE997DF006E82B3 /* AWRControlCenterController.m */; };
-		01DD77371DEA5618006E82B3 /* AWRMetadataServiceMulticastDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DD77361DEA5618006E82B3 /* AWRMetadataServiceMulticastDelegate.m */; };
-		01DD77381DEA5618006E82B3 /* AWRMetadataServiceMulticastDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DD77361DEA5618006E82B3 /* AWRMetadataServiceMulticastDelegate.m */; };
 		01DD773D1DEA5D83006E82B3 /* NSArray+Functional.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DD773C1DEA5D83006E82B3 /* NSArray+Functional.m */; };
 		01DD773E1DEA5D83006E82B3 /* NSArray+Functional.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DD773C1DEA5D83006E82B3 /* NSArray+Functional.m */; };
 		01DE2E801D95FCA3003E604E /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DE2E7F1D95FCA3003E604E /* FXBlurView.m */; };
@@ -145,6 +125,51 @@
 		01FB39451DACB9D600EBC99D /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FB39431DACB9D600EBC99D /* UIImage+Resize.m */; };
 		01FB39481DACC7BA00EBC99D /* AWRAvatarImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FB39471DACC7BA00EBC99D /* AWRAvatarImageView.m */; };
 		01FB39491DACC7BA00EBC99D /* AWRAvatarImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FB39471DACC7BA00EBC99D /* AWRAvatarImageView.m */; };
+		D5018F7A1F0EC26900C7F7D1 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0181E8001D8CADE8008E21C5 /* Bolts.framework */; };
+		D5018F7B1F0EC26900C7F7D1 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0181E8011D8CADE8008E21C5 /* Parse.framework */; };
+		D5018F861F0EC37600C7F7D1 /* AWRArtistParse.h in Headers */ = {isa = PBXBuildFile; fileRef = D5018F7E1F0EC37600C7F7D1 /* AWRArtistParse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5018F871F0EC37600C7F7D1 /* AWRArtistParse.m in Sources */ = {isa = PBXBuildFile; fileRef = D5018F7F1F0EC37600C7F7D1 /* AWRArtistParse.m */; };
+		D5018F881F0EC37600C7F7D1 /* AWRPlaylistParse.h in Headers */ = {isa = PBXBuildFile; fileRef = D5018F801F0EC37600C7F7D1 /* AWRPlaylistParse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5018F891F0EC37600C7F7D1 /* AWRPlaylistParse.m in Sources */ = {isa = PBXBuildFile; fileRef = D5018F811F0EC37600C7F7D1 /* AWRPlaylistParse.m */; };
+		D5018F8A1F0EC37600C7F7D1 /* AWRSongParse.h in Headers */ = {isa = PBXBuildFile; fileRef = D5018F821F0EC37600C7F7D1 /* AWRSongParse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5018F8B1F0EC37600C7F7D1 /* AWRSongParse.m in Sources */ = {isa = PBXBuildFile; fileRef = D5018F831F0EC37600C7F7D1 /* AWRSongParse.m */; };
+		D5018F8C1F0EC37600C7F7D1 /* PFFile+AWRFile.h in Headers */ = {isa = PBXBuildFile; fileRef = D5018F841F0EC37600C7F7D1 /* PFFile+AWRFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5018F8D1F0EC37600C7F7D1 /* PFFile+AWRFile.m in Sources */ = {isa = PBXBuildFile; fileRef = D5018F851F0EC37600C7F7D1 /* PFFile+AWRFile.m */; };
+		D5018F911F0EC5AA00C7F7D1 /* BFTask+IOZPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = D5018F8F1F0EC5AA00C7F7D1 /* BFTask+IOZPromise.h */; };
+		D5018F921F0EC5AA00C7F7D1 /* BFTask+IOZPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = D5018F901F0EC5AA00C7F7D1 /* BFTask+IOZPromise.m */; };
+		D5018FA11F0EC65700C7F7D1 /* AWRMetadataFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = D5018F941F0EC65700C7F7D1 /* AWRMetadataFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5018FA21F0EC65700C7F7D1 /* AWRMetadataFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = D5018F951F0EC65700C7F7D1 /* AWRMetadataFactory.m */; };
+		D5018FA31F0EC65700C7F7D1 /* AWRMetadataPoolingService.h in Headers */ = {isa = PBXBuildFile; fileRef = D5018F961F0EC65700C7F7D1 /* AWRMetadataPoolingService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5018FA41F0EC65700C7F7D1 /* AWRMetadataPoolingService.m in Sources */ = {isa = PBXBuildFile; fileRef = D5018F971F0EC65700C7F7D1 /* AWRMetadataPoolingService.m */; };
+		D5018FA51F0EC65700C7F7D1 /* AWRMetadataService.h in Headers */ = {isa = PBXBuildFile; fileRef = D5018F981F0EC65700C7F7D1 /* AWRMetadataService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5018FA61F0EC65700C7F7D1 /* AWRMetadataServiceDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = D5018F991F0EC65700C7F7D1 /* AWRMetadataServiceDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5018FA71F0EC65700C7F7D1 /* AWRMetadataServiceMulticastDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = D5018F9A1F0EC65700C7F7D1 /* AWRMetadataServiceMulticastDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5018FA81F0EC65700C7F7D1 /* AWRMetadataServiceMulticastDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D5018F9B1F0EC65700C7F7D1 /* AWRMetadataServiceMulticastDelegate.m */; };
+		D5018FA91F0EC65700C7F7D1 /* AWRMetadataStore.h in Headers */ = {isa = PBXBuildFile; fileRef = D5018F9C1F0EC65700C7F7D1 /* AWRMetadataStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5018FAA1F0EC65700C7F7D1 /* AWRParseMetadataStore.h in Headers */ = {isa = PBXBuildFile; fileRef = D5018F9D1F0EC65700C7F7D1 /* AWRParseMetadataStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5018FAB1F0EC65700C7F7D1 /* AWRParseMetadataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D5018F9E1F0EC65700C7F7D1 /* AWRParseMetadataStore.m */; };
+		D5018FAC1F0EC65700C7F7D1 /* AWRReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = D5018F9F1F0EC65700C7F7D1 /* AWRReachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5018FAD1F0EC65700C7F7D1 /* AWRReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D5018FA01F0EC65700C7F7D1 /* AWRReachability.m */; };
+		D56724981F0EB61500B7CF80 /* ArcanosMetadataAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = D56724961F0EB61500B7CF80 /* ArcanosMetadataAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D567249B1F0EB61500B7CF80 /* ArcanosMetadataAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56724941F0EB61400B7CF80 /* ArcanosMetadataAPI.framework */; };
+		D567249C1F0EB61500B7CF80 /* ArcanosMetadataAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D56724941F0EB61400B7CF80 /* ArcanosMetadataAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D5B676DE1F0EB8B400C62C95 /* AWREntity.h in Headers */ = {isa = PBXBuildFile; fileRef = D5B676D21F0EB83000C62C95 /* AWREntity.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5B676DF1F0EB8B400C62C95 /* AWRFile.h in Headers */ = {isa = PBXBuildFile; fileRef = D5B676D61F0EB86A00C62C95 /* AWRFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5B676E01F0EB8B400C62C95 /* AWRArtist.h in Headers */ = {isa = PBXBuildFile; fileRef = D5B676D71F0EB87F00C62C95 /* AWRArtist.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5B676E11F0EB8B400C62C95 /* AWRPlaylist.h in Headers */ = {isa = PBXBuildFile; fileRef = D5B676D81F0EB89000C62C95 /* AWRPlaylist.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5B676E21F0EB8B400C62C95 /* AWRSong.h in Headers */ = {isa = PBXBuildFile; fileRef = D5B676D91F0EB8A700C62C95 /* AWRSong.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5B677011F0EBAD600C62C95 /* IOZPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = D5B676FF1F0EBAD600C62C95 /* IOZPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5B677041F0EBAD600C62C95 /* IOZPromise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B676FD1F0EBAD600C62C95 /* IOZPromise.framework */; };
+		D5B677051F0EBAD600C62C95 /* IOZPromise.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D5B676FD1F0EBAD600C62C95 /* IOZPromise.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D5B677131F0EBB8100C62C95 /* NSError+IOZPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = D5B677091F0EBB8100C62C95 /* NSError+IOZPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5B677141F0EBB8100C62C95 /* NSError+IOZPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B6770A1F0EBB8100C62C95 /* NSError+IOZPromise.m */; };
+		D5B677151F0EBB8100C62C95 /* NSObject+IOZPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = D5B6770B1F0EBB8100C62C95 /* NSObject+IOZPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5B677161F0EBB8100C62C95 /* NSObject+IOZPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B6770C1F0EBB8100C62C95 /* NSObject+IOZPromise.m */; };
+		D5B677171F0EBB8100C62C95 /* IOZNoMorePromises.h in Headers */ = {isa = PBXBuildFile; fileRef = D5B6770D1F0EBB8100C62C95 /* IOZNoMorePromises.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5B677181F0EBB8100C62C95 /* IOZNoMorePromises.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B6770E1F0EBB8100C62C95 /* IOZNoMorePromises.m */; };
+		D5B6771A1F0EBB8100C62C95 /* IOZPromiseProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = D5B677101F0EBB8100C62C95 /* IOZPromiseProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5B6771B1F0EBB8100C62C95 /* IOZPromiseResult.h in Headers */ = {isa = PBXBuildFile; fileRef = D5B677111F0EBB8100C62C95 /* IOZPromiseResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5B6771C1F0EBB8100C62C95 /* IOZPromiseResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B677121F0EBB8100C62C95 /* IOZPromiseResult.m */; };
 		D5EF61EA1EDF84AC00890584 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5EF61E91EDF84AC00890584 /* TwitterCore.framework */; };
 		D5EF61EC1EDF84C200890584 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5EF61EB1EDF84C200890584 /* TwitterKit.framework */; };
 		D5EF61EF1EDF84D700890584 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D5EF61ED1EDF84D700890584 /* TwitterKitResources.bundle */; };
@@ -166,28 +191,46 @@
 			remoteGlobalIDString = 0137D8571D9CCD2F003A1E6B;
 			remoteInfo = ArcanosRadioMock;
 		};
+		D56724991F0EB61500B7CF80 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0181E7CF1D8C905B008E21C5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D56724931F0EB61400B7CF80;
+			remoteInfo = ArcanosMetadataAPI;
+		};
+		D5B677021F0EBAD600C62C95 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0181E7CF1D8C905B008E21C5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D5B676FC1F0EBAD600C62C95;
+			remoteInfo = IOZPromise;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D56724A01F0EB61500B7CF80 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D567249C1F0EB61500B7CF80 /* ArcanosMetadataAPI.framework in Embed Frameworks */,
+				D5B677051F0EBAD600C62C95 /* IOZPromise.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		012582B61D91F2EA002C4E93 /* AWRAppCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRAppCoordinator.h; sourceTree = "<group>"; };
 		012582B71D91F2EA002C4E93 /* AWRAppCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRAppCoordinator.m; sourceTree = "<group>"; };
-		0126E3411DA721970054430C /* AWRMetadataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRMetadataService.h; sourceTree = "<group>"; };
-		0126E3421DA721F70054430C /* AWRMetadataServiceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRMetadataServiceDelegate.h; sourceTree = "<group>"; };
-		0126E3451DA7232D0054430C /* AWRMetadataPoolingService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRMetadataPoolingService.h; sourceTree = "<group>"; };
-		0126E3461DA7232D0054430C /* AWRMetadataPoolingService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRMetadataPoolingService.m; sourceTree = "<group>"; };
 		013075F61D96846A003FDA74 /* AWRNowPlayingViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRNowPlayingViewModel.h; sourceTree = "<group>"; };
 		013075F71D96846A003FDA74 /* AWRNowPlayingViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRNowPlayingViewModel.m; sourceTree = "<group>"; };
-		0130D3061DA14E74005A299E /* AWREntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWREntity.h; sourceTree = "<group>"; };
 		013784DC1DEE2A86006EC13E /* AWRTwitterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRTwitterViewController.h; sourceTree = "<group>"; };
 		013784DD1DEE2A86006EC13E /* AWRTwitterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRTwitterViewController.m; sourceTree = "<group>"; };
 		013784E01DEE2AC4006EC13E /* AWRTwitterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AWRTwitterView.xib; sourceTree = "<group>"; };
 		0137D8581D9CCD2F003A1E6B /* ArcanosRadioMock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArcanosRadioMock.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0137D8911D9E63CD003A1E6B /* AWRSong.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRSong.h; sourceTree = "<group>"; };
-		0137D8921D9E63DC003A1E6B /* AWRArtist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRArtist.h; sourceTree = "<group>"; };
-		0137D8931D9E63ED003A1E6B /* AWRPlaylist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRPlaylist.h; sourceTree = "<group>"; };
-		0137D8941D9E6657003A1E6B /* AWRFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRFile.h; sourceTree = "<group>"; };
-		0137D8951D9E66EE003A1E6B /* PFFile+AWRFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PFFile+AWRFile.h"; sourceTree = "<group>"; };
-		0137D8961D9E66EE003A1E6B /* PFFile+AWRFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PFFile+AWRFile.m"; sourceTree = "<group>"; };
 		0137D89D1D9E7093003A1E6B /* AWRFakeStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRFakeStore.h; sourceTree = "<group>"; };
 		0137D89E1D9E7093003A1E6B /* AWRFakeStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRFakeStore.m; sourceTree = "<group>"; };
 		0137D89F1D9E7093003A1E6B /* AWRMetadataServiceFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRMetadataServiceFactory.m; sourceTree = "<group>"; };
@@ -200,8 +243,6 @@
 		016500E71DB2D04900B32C0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		016500E91DB2D05200B32C0A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		016500EA1DB2D0E300B32C0A /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		016500EB1DB2E6F500B32C0A /* AWRReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRReachability.h; sourceTree = "<group>"; };
-		016500EC1DB2E6F500B32C0A /* AWRReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRReachability.m; sourceTree = "<group>"; };
 		016500EE1DB2EFBD00B32C0A /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		016500F11DB3374500B32C0A /* AWRAboutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AWRAboutView.xib; sourceTree = "<group>"; };
 		016500F41DB337A100B32C0A /* AWRAboutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRAboutView.h; sourceTree = "<group>"; };
@@ -227,22 +268,6 @@
 		0181E8081D8CB0ED008E21C5 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		0181E8161D8CB14D008E21C5 /* AWRArcanosMediaPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRArcanosMediaPlayer.h; sourceTree = "<group>"; };
 		0181E8171D8CB14D008E21C5 /* AWRArcanosMediaPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRArcanosMediaPlayer.m; sourceTree = "<group>"; };
-		0181E8191D8CB158008E21C5 /* BFTask+PXPromise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BFTask+PXPromise.h"; sourceTree = "<group>"; };
-		0181E81A1D8CB158008E21C5 /* NSError+PXPromise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+PXPromise.h"; sourceTree = "<group>"; };
-		0181E81B1D8CB158008E21C5 /* PXNoMorePromises.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXNoMorePromises.h; sourceTree = "<group>"; };
-		0181E81C1D8CB158008E21C5 /* PXPromiseResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXPromiseResult.h; sourceTree = "<group>"; };
-		0181E81D1D8CB158008E21C5 /* PXPromise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXPromise.h; sourceTree = "<group>"; };
-		0181E81E1D8CB158008E21C5 /* PXPromiseProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXPromiseProtocol.h; sourceTree = "<group>"; };
-		0181E81F1D8CB158008E21C5 /* NSError+PXPromise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+PXPromise.m"; sourceTree = "<group>"; };
-		0181E8201D8CB158008E21C5 /* PXNoMorePromises.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXNoMorePromises.m; sourceTree = "<group>"; };
-		0181E8211D8CB158008E21C5 /* PXPromiseResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXPromiseResult.m; sourceTree = "<group>"; };
-		0181E8221D8CB158008E21C5 /* BFTask+PXPromise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BFTask+PXPromise.m"; sourceTree = "<group>"; };
-		0181E8271D8CB160008E21C5 /* AWRArtistParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRArtistParse.h; sourceTree = "<group>"; };
-		0181E8281D8CB160008E21C5 /* AWRArtistParse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRArtistParse.m; sourceTree = "<group>"; };
-		0181E8291D8CB160008E21C5 /* AWRPlaylistParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRPlaylistParse.h; sourceTree = "<group>"; };
-		0181E82A1D8CB160008E21C5 /* AWRPlaylistParse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRPlaylistParse.m; sourceTree = "<group>"; };
-		0181E82B1D8CB160008E21C5 /* AWRSongParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRSongParse.h; sourceTree = "<group>"; };
-		0181E82C1D8CB160008E21C5 /* AWRSongParse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRSongParse.m; sourceTree = "<group>"; };
 		0181E8301D8CB177008E21C5 /* AWRNowPlayingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AWRNowPlayingView.xib; sourceTree = "<group>"; };
 		0181E8311D8CB177008E21C5 /* AWRNowPlayingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRNowPlayingView.h; sourceTree = "<group>"; };
 		0181E8321D8CB177008E21C5 /* AWRNowPlayingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRNowPlayingView.m; sourceTree = "<group>"; };
@@ -272,8 +297,6 @@
 		018E2D141DBD48960035455B /* AWRVersionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AWRVersionTableViewCell.xib; sourceTree = "<group>"; };
 		018E2D171DBD48B30035455B /* AWRVersionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRVersionTableViewCell.h; sourceTree = "<group>"; };
 		018E2D181DBD48B30035455B /* AWRVersionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRVersionTableViewCell.m; sourceTree = "<group>"; };
-		019140761D8D8E05000B19EE /* NSObject+PXPromise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PXPromise.h"; sourceTree = "<group>"; };
-		019140771D8D8E05000B19EE /* NSObject+PXPromise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PXPromise.m"; sourceTree = "<group>"; };
 		0196C6311DCE27470061EEE8 /* ScreenshotAutomation.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScreenshotAutomation.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0196C6331DCE27470061EEE8 /* ScreenshotAutomation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScreenshotAutomation.m; sourceTree = "<group>"; };
 		0196C6351DCE27470061EEE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -297,19 +320,12 @@
 		01DBE4951D8CB2C4003B2100 /* AWRNowPlayingCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRNowPlayingCoordinator.m; sourceTree = "<group>"; };
 		01DBE4961D8CB2C4003B2100 /* AWRNowPlayingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRNowPlayingController.h; sourceTree = "<group>"; };
 		01DBE4971D8CB2C4003B2100 /* AWRNowPlayingCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRNowPlayingCoordinator.h; sourceTree = "<group>"; };
-		01DBE49A1D8CB2D0003B2100 /* AWRParseMetadataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRParseMetadataStore.m; sourceTree = "<group>"; };
-		01DBE49B1D8CB2D0003B2100 /* AWRParseMetadataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRParseMetadataStore.h; sourceTree = "<group>"; };
-		01DBE49C1D8CB2D0003B2100 /* AWRMetadataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRMetadataStore.h; sourceTree = "<group>"; };
-		01DBE49D1D8CB2D0003B2100 /* AWRMetadataFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRMetadataFactory.h; sourceTree = "<group>"; };
-		01DBE49E1D8CB2D0003B2100 /* AWRMetadataFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRMetadataFactory.m; sourceTree = "<group>"; };
 		01DD77281DE985EB006E82B3 /* AWRCrashReportController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRCrashReportController.h; sourceTree = "<group>"; };
 		01DD77291DE985EB006E82B3 /* AWRCrashReportController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRCrashReportController.m; sourceTree = "<group>"; };
 		01DD772C1DE992BB006E82B3 /* AWRShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRShareViewController.h; sourceTree = "<group>"; };
 		01DD772D1DE992BB006E82B3 /* AWRShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRShareViewController.m; sourceTree = "<group>"; };
 		01DD77301DE997DF006E82B3 /* AWRControlCenterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRControlCenterController.h; sourceTree = "<group>"; };
 		01DD77311DE997DF006E82B3 /* AWRControlCenterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRControlCenterController.m; sourceTree = "<group>"; };
-		01DD77351DEA5618006E82B3 /* AWRMetadataServiceMulticastDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRMetadataServiceMulticastDelegate.h; sourceTree = "<group>"; };
-		01DD77361DEA5618006E82B3 /* AWRMetadataServiceMulticastDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRMetadataServiceMulticastDelegate.m; sourceTree = "<group>"; };
 		01DD773B1DEA5D83006E82B3 /* NSArray+Functional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Functional.h"; sourceTree = "<group>"; };
 		01DD773C1DEA5D83006E82B3 /* NSArray+Functional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Functional.m"; sourceTree = "<group>"; };
 		01DE2E7E1D95FCA3003E604E /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
@@ -326,6 +342,49 @@
 		01FB39431DACB9D600EBC99D /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
 		01FB39461DACC7BA00EBC99D /* AWRAvatarImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRAvatarImageView.h; sourceTree = "<group>"; };
 		01FB39471DACC7BA00EBC99D /* AWRAvatarImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRAvatarImageView.m; sourceTree = "<group>"; };
+		D5018F7E1F0EC37600C7F7D1 /* AWRArtistParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRArtistParse.h; sourceTree = "<group>"; };
+		D5018F7F1F0EC37600C7F7D1 /* AWRArtistParse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRArtistParse.m; sourceTree = "<group>"; };
+		D5018F801F0EC37600C7F7D1 /* AWRPlaylistParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRPlaylistParse.h; sourceTree = "<group>"; };
+		D5018F811F0EC37600C7F7D1 /* AWRPlaylistParse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRPlaylistParse.m; sourceTree = "<group>"; };
+		D5018F821F0EC37600C7F7D1 /* AWRSongParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRSongParse.h; sourceTree = "<group>"; };
+		D5018F831F0EC37600C7F7D1 /* AWRSongParse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRSongParse.m; sourceTree = "<group>"; };
+		D5018F841F0EC37600C7F7D1 /* PFFile+AWRFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PFFile+AWRFile.h"; sourceTree = "<group>"; };
+		D5018F851F0EC37600C7F7D1 /* PFFile+AWRFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PFFile+AWRFile.m"; sourceTree = "<group>"; };
+		D5018F8F1F0EC5AA00C7F7D1 /* BFTask+IOZPromise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BFTask+IOZPromise.h"; sourceTree = "<group>"; };
+		D5018F901F0EC5AA00C7F7D1 /* BFTask+IOZPromise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BFTask+IOZPromise.m"; sourceTree = "<group>"; };
+		D5018F941F0EC65700C7F7D1 /* AWRMetadataFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRMetadataFactory.h; sourceTree = "<group>"; };
+		D5018F951F0EC65700C7F7D1 /* AWRMetadataFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRMetadataFactory.m; sourceTree = "<group>"; };
+		D5018F961F0EC65700C7F7D1 /* AWRMetadataPoolingService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRMetadataPoolingService.h; sourceTree = "<group>"; };
+		D5018F971F0EC65700C7F7D1 /* AWRMetadataPoolingService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRMetadataPoolingService.m; sourceTree = "<group>"; };
+		D5018F981F0EC65700C7F7D1 /* AWRMetadataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRMetadataService.h; sourceTree = "<group>"; };
+		D5018F991F0EC65700C7F7D1 /* AWRMetadataServiceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRMetadataServiceDelegate.h; sourceTree = "<group>"; };
+		D5018F9A1F0EC65700C7F7D1 /* AWRMetadataServiceMulticastDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRMetadataServiceMulticastDelegate.h; sourceTree = "<group>"; };
+		D5018F9B1F0EC65700C7F7D1 /* AWRMetadataServiceMulticastDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRMetadataServiceMulticastDelegate.m; sourceTree = "<group>"; };
+		D5018F9C1F0EC65700C7F7D1 /* AWRMetadataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRMetadataStore.h; sourceTree = "<group>"; };
+		D5018F9D1F0EC65700C7F7D1 /* AWRParseMetadataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRParseMetadataStore.h; sourceTree = "<group>"; };
+		D5018F9E1F0EC65700C7F7D1 /* AWRParseMetadataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRParseMetadataStore.m; sourceTree = "<group>"; };
+		D5018F9F1F0EC65700C7F7D1 /* AWRReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRReachability.h; sourceTree = "<group>"; };
+		D5018FA01F0EC65700C7F7D1 /* AWRReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRReachability.m; sourceTree = "<group>"; };
+		D56724941F0EB61400B7CF80 /* ArcanosMetadataAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ArcanosMetadataAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D56724961F0EB61500B7CF80 /* ArcanosMetadataAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArcanosMetadataAPI.h; sourceTree = "<group>"; };
+		D56724971F0EB61500B7CF80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5B676D21F0EB83000C62C95 /* AWREntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWREntity.h; sourceTree = "<group>"; };
+		D5B676D61F0EB86A00C62C95 /* AWRFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AWRFile.h; sourceTree = "<group>"; };
+		D5B676D71F0EB87F00C62C95 /* AWRArtist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AWRArtist.h; sourceTree = "<group>"; };
+		D5B676D81F0EB89000C62C95 /* AWRPlaylist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AWRPlaylist.h; sourceTree = "<group>"; };
+		D5B676D91F0EB8A700C62C95 /* AWRSong.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AWRSong.h; sourceTree = "<group>"; };
+		D5B676FD1F0EBAD600C62C95 /* IOZPromise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IOZPromise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5B676FF1F0EBAD600C62C95 /* IOZPromise.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IOZPromise.h; sourceTree = "<group>"; };
+		D5B677001F0EBAD600C62C95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5B677091F0EBB8100C62C95 /* NSError+IOZPromise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+IOZPromise.h"; sourceTree = "<group>"; };
+		D5B6770A1F0EBB8100C62C95 /* NSError+IOZPromise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+IOZPromise.m"; sourceTree = "<group>"; };
+		D5B6770B1F0EBB8100C62C95 /* NSObject+IOZPromise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+IOZPromise.h"; sourceTree = "<group>"; };
+		D5B6770C1F0EBB8100C62C95 /* NSObject+IOZPromise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+IOZPromise.m"; sourceTree = "<group>"; };
+		D5B6770D1F0EBB8100C62C95 /* IOZNoMorePromises.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOZNoMorePromises.h; sourceTree = "<group>"; };
+		D5B6770E1F0EBB8100C62C95 /* IOZNoMorePromises.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOZNoMorePromises.m; sourceTree = "<group>"; };
+		D5B677101F0EBB8100C62C95 /* IOZPromiseProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOZPromiseProtocol.h; sourceTree = "<group>"; };
+		D5B677111F0EBB8100C62C95 /* IOZPromiseResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOZPromiseResult.h; sourceTree = "<group>"; };
+		D5B677121F0EBB8100C62C95 /* IOZPromiseResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOZPromiseResult.m; sourceTree = "<group>"; };
 		D5EF61E91EDF84AC00890584 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
 		D5EF61EB1EDF84C200890584 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		D5EF61ED1EDF84D700890584 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TwitterKitResources.bundle; sourceTree = "<group>"; };
@@ -348,6 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01D2BD0C1D9B00D900632C08 /* QuartzCore.framework in Frameworks */,
+				D5B677041F0EBAD600C62C95 /* IOZPromise.framework in Frameworks */,
 				01DE2E821D9601C1003E604E /* Accelerate.framework in Frameworks */,
 				0181E7FF1D8C9EB1008E21C5 /* Crashlytics.framework in Frameworks */,
 				0181E7FE1D8C9EB1008E21C5 /* Fabric.framework in Frameworks */,
@@ -355,10 +415,27 @@
 				0181E8021D8CADE8008E21C5 /* Bolts.framework in Frameworks */,
 				0181E8031D8CADE8008E21C5 /* Parse.framework in Frameworks */,
 				D5EF61EC1EDF84C200890584 /* TwitterKit.framework in Frameworks */,
+				D567249B1F0EB61500B7CF80 /* ArcanosMetadataAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		0196C62E1DCE27470061EEE8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D56724901F0EB61400B7CF80 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5018F7A1F0EC26900C7F7D1 /* Bolts.framework in Frameworks */,
+				D5018F7B1F0EC26900C7F7D1 /* Parse.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5B676F91F0EBAD600C62C95 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -389,33 +466,6 @@
 				0137D89C1D9E707D003A1E6B /* Service */,
 			);
 			path = ArcanosRadioMock;
-			sourceTree = "<group>";
-		};
-		0137D8991D9E66FE003A1E6B /* Parse */ = {
-			isa = PBXGroup;
-			children = (
-				0181E8271D8CB160008E21C5 /* AWRArtistParse.h */,
-				0181E8281D8CB160008E21C5 /* AWRArtistParse.m */,
-				0181E8291D8CB160008E21C5 /* AWRPlaylistParse.h */,
-				0181E82A1D8CB160008E21C5 /* AWRPlaylistParse.m */,
-				0181E82B1D8CB160008E21C5 /* AWRSongParse.h */,
-				0181E82C1D8CB160008E21C5 /* AWRSongParse.m */,
-				0137D8951D9E66EE003A1E6B /* PFFile+AWRFile.h */,
-				0137D8961D9E66EE003A1E6B /* PFFile+AWRFile.m */,
-			);
-			name = Parse;
-			sourceTree = "<group>";
-		};
-		0137D89A1D9E6715003A1E6B /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				0130D3061DA14E74005A299E /* AWREntity.h */,
-				0137D8941D9E6657003A1E6B /* AWRFile.h */,
-				0137D8921D9E63DC003A1E6B /* AWRArtist.h */,
-				0137D8931D9E63ED003A1E6B /* AWRPlaylist.h */,
-				0137D8911D9E63CD003A1E6B /* AWRSong.h */,
-			);
-			name = Protocol;
 			sourceTree = "<group>";
 		};
 		0137D89B1D9E6724003A1E6B /* ViewModel */ = {
@@ -465,6 +515,8 @@
 		0181E7CE1D8C905B008E21C5 = {
 			isa = PBXGroup;
 			children = (
+				D56724951F0EB61500B7CF80 /* ArcanosMetadataAPI */,
+				D5B676FE1F0EBAD600C62C95 /* IOZPromise */,
 				0181E7FB1D8C9E83008E21C5 /* Frameworks */,
 				0181E7D91D8C905B008E21C5 /* ArcanosRadio */,
 				0137D8591D9CCD2F003A1E6B /* ArcanosRadioMock */,
@@ -479,6 +531,8 @@
 				0181E7D71D8C905B008E21C5 /* Arcanos Radio.app */,
 				0137D8581D9CCD2F003A1E6B /* ArcanosRadioMock.app */,
 				0196C6311DCE27470061EEE8 /* ScreenshotAutomation.xctest */,
+				D56724941F0EB61400B7CF80 /* ArcanosMetadataAPI.framework */,
+				D5B676FD1F0EBAD600C62C95 /* IOZPromise.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -491,12 +545,10 @@
 				0181E7F11D8C90BA008E21C5 /* Bootstrap */,
 				0181E8051D8CB095008E21C5 /* LiveQuery */,
 				0181E7F61D8C93D5008E21C5 /* Media */,
-				0181E7F71D8C93F8008E21C5 /* Promise */,
 				0181E7F41D8C938C008E21C5 /* Model */,
 				0181E7F21D8C9360008E21C5 /* View */,
 				012582B51D91F216002C4E93 /* Coordinator */,
 				0181E7F31D8C9374008E21C5 /* Controller */,
-				0181E7F51D8C93B1008E21C5 /* Service */,
 			);
 			path = ArcanosRadio;
 			sourceTree = "<group>";
@@ -584,31 +636,9 @@
 		0181E7F41D8C938C008E21C5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0137D8991D9E66FE003A1E6B /* Parse */,
-				0137D89A1D9E6715003A1E6B /* Protocol */,
 				0137D89B1D9E6724003A1E6B /* ViewModel */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		0181E7F51D8C93B1008E21C5 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				01DBE49D1D8CB2D0003B2100 /* AWRMetadataFactory.h */,
-				01DBE49E1D8CB2D0003B2100 /* AWRMetadataFactory.m */,
-				0126E3421DA721F70054430C /* AWRMetadataServiceDelegate.h */,
-				01DD77351DEA5618006E82B3 /* AWRMetadataServiceMulticastDelegate.h */,
-				01DD77361DEA5618006E82B3 /* AWRMetadataServiceMulticastDelegate.m */,
-				0126E3411DA721970054430C /* AWRMetadataService.h */,
-				0126E3451DA7232D0054430C /* AWRMetadataPoolingService.h */,
-				0126E3461DA7232D0054430C /* AWRMetadataPoolingService.m */,
-				01DBE49C1D8CB2D0003B2100 /* AWRMetadataStore.h */,
-				01DBE49B1D8CB2D0003B2100 /* AWRParseMetadataStore.h */,
-				01DBE49A1D8CB2D0003B2100 /* AWRParseMetadataStore.m */,
-				016500EB1DB2E6F500B32C0A /* AWRReachability.h */,
-				016500EC1DB2E6F500B32C0A /* AWRReachability.m */,
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 		0181E7F61D8C93D5008E21C5 /* Media */ = {
@@ -618,25 +648,6 @@
 				0181E8171D8CB14D008E21C5 /* AWRArcanosMediaPlayer.m */,
 			);
 			path = Media;
-			sourceTree = "<group>";
-		};
-		0181E7F71D8C93F8008E21C5 /* Promise */ = {
-			isa = PBXGroup;
-			children = (
-				0181E81D1D8CB158008E21C5 /* PXPromise.h */,
-				0181E81E1D8CB158008E21C5 /* PXPromiseProtocol.h */,
-				0181E81B1D8CB158008E21C5 /* PXNoMorePromises.h */,
-				0181E8201D8CB158008E21C5 /* PXNoMorePromises.m */,
-				0181E81C1D8CB158008E21C5 /* PXPromiseResult.h */,
-				0181E8211D8CB158008E21C5 /* PXPromiseResult.m */,
-				019140761D8D8E05000B19EE /* NSObject+PXPromise.h */,
-				019140771D8D8E05000B19EE /* NSObject+PXPromise.m */,
-				0181E81A1D8CB158008E21C5 /* NSError+PXPromise.h */,
-				0181E81F1D8CB158008E21C5 /* NSError+PXPromise.m */,
-				0181E8191D8CB158008E21C5 /* BFTask+PXPromise.h */,
-				0181E8221D8CB158008E21C5 /* BFTask+PXPromise.m */,
-			);
-			path = Promise;
 			sourceTree = "<group>";
 		};
 		0181E7FB1D8C9E83008E21C5 /* Frameworks */ = {
@@ -709,7 +720,144 @@
 			path = BaseLibrary;
 			sourceTree = "<group>";
 		};
+		D5018F7D1F0EC37600C7F7D1 /* Parse */ = {
+			isa = PBXGroup;
+			children = (
+				D5018F7E1F0EC37600C7F7D1 /* AWRArtistParse.h */,
+				D5018F7F1F0EC37600C7F7D1 /* AWRArtistParse.m */,
+				D5018F801F0EC37600C7F7D1 /* AWRPlaylistParse.h */,
+				D5018F811F0EC37600C7F7D1 /* AWRPlaylistParse.m */,
+				D5018F821F0EC37600C7F7D1 /* AWRSongParse.h */,
+				D5018F831F0EC37600C7F7D1 /* AWRSongParse.m */,
+				D5018F841F0EC37600C7F7D1 /* PFFile+AWRFile.h */,
+				D5018F851F0EC37600C7F7D1 /* PFFile+AWRFile.m */,
+			);
+			path = Parse;
+			sourceTree = "<group>";
+		};
+		D5018F8E1F0EC51000C7F7D1 /* BoltsPromise */ = {
+			isa = PBXGroup;
+			children = (
+				D5018F8F1F0EC5AA00C7F7D1 /* BFTask+IOZPromise.h */,
+				D5018F901F0EC5AA00C7F7D1 /* BFTask+IOZPromise.m */,
+			);
+			path = BoltsPromise;
+			sourceTree = "<group>";
+		};
+		D5018F931F0EC65700C7F7D1 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D5018F941F0EC65700C7F7D1 /* AWRMetadataFactory.h */,
+				D5018F951F0EC65700C7F7D1 /* AWRMetadataFactory.m */,
+				D5018F961F0EC65700C7F7D1 /* AWRMetadataPoolingService.h */,
+				D5018F971F0EC65700C7F7D1 /* AWRMetadataPoolingService.m */,
+				D5018F981F0EC65700C7F7D1 /* AWRMetadataService.h */,
+				D5018F991F0EC65700C7F7D1 /* AWRMetadataServiceDelegate.h */,
+				D5018F9A1F0EC65700C7F7D1 /* AWRMetadataServiceMulticastDelegate.h */,
+				D5018F9B1F0EC65700C7F7D1 /* AWRMetadataServiceMulticastDelegate.m */,
+				D5018F9C1F0EC65700C7F7D1 /* AWRMetadataStore.h */,
+				D5018F9D1F0EC65700C7F7D1 /* AWRParseMetadataStore.h */,
+				D5018F9E1F0EC65700C7F7D1 /* AWRParseMetadataStore.m */,
+				D5018F9F1F0EC65700C7F7D1 /* AWRReachability.h */,
+				D5018FA01F0EC65700C7F7D1 /* AWRReachability.m */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		D56724951F0EB61500B7CF80 /* ArcanosMetadataAPI */ = {
+			isa = PBXGroup;
+			children = (
+				D5018F8E1F0EC51000C7F7D1 /* BoltsPromise */,
+				D5B676D41F0EB84100C62C95 /* Model */,
+				D5018F931F0EC65700C7F7D1 /* Service */,
+				D56724961F0EB61500B7CF80 /* ArcanosMetadataAPI.h */,
+				D56724971F0EB61500B7CF80 /* Info.plist */,
+			);
+			path = ArcanosMetadataAPI;
+			sourceTree = "<group>";
+		};
+		D5B676D41F0EB84100C62C95 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D5018F7D1F0EC37600C7F7D1 /* Parse */,
+				D5B676D51F0EB84600C62C95 /* Protocol */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D5B676D51F0EB84600C62C95 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				D5B676D71F0EB87F00C62C95 /* AWRArtist.h */,
+				D5B676D21F0EB83000C62C95 /* AWREntity.h */,
+				D5B676D61F0EB86A00C62C95 /* AWRFile.h */,
+				D5B676D81F0EB89000C62C95 /* AWRPlaylist.h */,
+				D5B676D91F0EB8A700C62C95 /* AWRSong.h */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		D5B676FE1F0EBAD600C62C95 /* IOZPromise */ = {
+			isa = PBXGroup;
+			children = (
+				D5B676FF1F0EBAD600C62C95 /* IOZPromise.h */,
+				D5B677101F0EBB8100C62C95 /* IOZPromiseProtocol.h */,
+				D5B677091F0EBB8100C62C95 /* NSError+IOZPromise.h */,
+				D5B6770A1F0EBB8100C62C95 /* NSError+IOZPromise.m */,
+				D5B6770B1F0EBB8100C62C95 /* NSObject+IOZPromise.h */,
+				D5B6770C1F0EBB8100C62C95 /* NSObject+IOZPromise.m */,
+				D5B6770D1F0EBB8100C62C95 /* IOZNoMorePromises.h */,
+				D5B6770E1F0EBB8100C62C95 /* IOZNoMorePromises.m */,
+				D5B677111F0EBB8100C62C95 /* IOZPromiseResult.h */,
+				D5B677121F0EBB8100C62C95 /* IOZPromiseResult.m */,
+				D5B677001F0EBAD600C62C95 /* Info.plist */,
+			);
+			path = IOZPromise;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D56724911F0EB61400B7CF80 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5B676E21F0EB8B400C62C95 /* AWRSong.h in Headers */,
+				D5018FA11F0EC65700C7F7D1 /* AWRMetadataFactory.h in Headers */,
+				D5018FA51F0EC65700C7F7D1 /* AWRMetadataService.h in Headers */,
+				D5B676DF1F0EB8B400C62C95 /* AWRFile.h in Headers */,
+				D5B676DE1F0EB8B400C62C95 /* AWREntity.h in Headers */,
+				D5B676E01F0EB8B400C62C95 /* AWRArtist.h in Headers */,
+				D56724981F0EB61500B7CF80 /* ArcanosMetadataAPI.h in Headers */,
+				D5018F8C1F0EC37600C7F7D1 /* PFFile+AWRFile.h in Headers */,
+				D5018FA91F0EC65700C7F7D1 /* AWRMetadataStore.h in Headers */,
+				D5018FA71F0EC65700C7F7D1 /* AWRMetadataServiceMulticastDelegate.h in Headers */,
+				D5018F911F0EC5AA00C7F7D1 /* BFTask+IOZPromise.h in Headers */,
+				D5B676E11F0EB8B400C62C95 /* AWRPlaylist.h in Headers */,
+				D5018F861F0EC37600C7F7D1 /* AWRArtistParse.h in Headers */,
+				D5018FAC1F0EC65700C7F7D1 /* AWRReachability.h in Headers */,
+				D5018F8A1F0EC37600C7F7D1 /* AWRSongParse.h in Headers */,
+				D5018FA61F0EC65700C7F7D1 /* AWRMetadataServiceDelegate.h in Headers */,
+				D5018FA31F0EC65700C7F7D1 /* AWRMetadataPoolingService.h in Headers */,
+				D5018FAA1F0EC65700C7F7D1 /* AWRParseMetadataStore.h in Headers */,
+				D5018F881F0EC37600C7F7D1 /* AWRPlaylistParse.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5B676FA1F0EBAD600C62C95 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5B677131F0EBB8100C62C95 /* NSError+IOZPromise.h in Headers */,
+				D5B6771B1F0EBB8100C62C95 /* IOZPromiseResult.h in Headers */,
+				D5B677151F0EBB8100C62C95 /* NSObject+IOZPromise.h in Headers */,
+				D5B677171F0EBB8100C62C95 /* IOZNoMorePromises.h in Headers */,
+				D5B6771A1F0EBB8100C62C95 /* IOZPromiseProtocol.h in Headers */,
+				D5B677011F0EBAD600C62C95 /* IOZPromise.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		0137D8571D9CCD2F003A1E6B /* ArcanosRadioMock */ = {
@@ -737,12 +885,15 @@
 				0181E7D31D8C905B008E21C5 /* Sources */,
 				0181E7D41D8C905B008E21C5 /* Frameworks */,
 				0181E7D51D8C905B008E21C5 /* Resources */,
-				0181E8041D8CAE36008E21C5 /* ShellScript */,
+				0181E8041D8CAE36008E21C5 /* Carthage Copy Frameworks */,
 				0181E7FA1D8C9E37008E21C5 /* ShellScript */,
+				D56724A01F0EB61500B7CF80 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D567249A1F0EB61500B7CF80 /* PBXTargetDependency */,
+				D5B677031F0EBAD600C62C95 /* PBXTargetDependency */,
 			);
 			name = ArcanosRadio;
 			productName = ArcanosRadio;
@@ -768,13 +919,50 @@
 			productReference = 0196C6311DCE27470061EEE8 /* ScreenshotAutomation.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		D56724931F0EB61400B7CF80 /* ArcanosMetadataAPI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D567249F1F0EB61500B7CF80 /* Build configuration list for PBXNativeTarget "ArcanosMetadataAPI" */;
+			buildPhases = (
+				D567248F1F0EB61400B7CF80 /* Sources */,
+				D56724901F0EB61400B7CF80 /* Frameworks */,
+				D56724911F0EB61400B7CF80 /* Headers */,
+				D56724921F0EB61400B7CF80 /* Resources */,
+				D5018F7C1F0EC29500C7F7D1 /* Carthage Copy Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ArcanosMetadataAPI;
+			productName = ArcanosMetadataAPI;
+			productReference = D56724941F0EB61400B7CF80 /* ArcanosMetadataAPI.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D5B676FC1F0EBAD600C62C95 /* IOZPromise */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5B677061F0EBAD600C62C95 /* Build configuration list for PBXNativeTarget "IOZPromise" */;
+			buildPhases = (
+				D5B676F81F0EBAD600C62C95 /* Sources */,
+				D5B676F91F0EBAD600C62C95 /* Frameworks */,
+				D5B676FA1F0EBAD600C62C95 /* Headers */,
+				D5B676FB1F0EBAD600C62C95 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IOZPromise;
+			productName = IOZPromise;
+			productReference = D5B676FD1F0EBAD600C62C95 /* IOZPromise.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		0181E7CF1D8C905B008E21C5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = DeveloperCity;
 				TargetAttributes = {
 					0137D8571D9CCD2F003A1E6B = {
@@ -799,6 +987,15 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 0137D8571D9CCD2F003A1E6B;
 					};
+					D56724931F0EB61400B7CF80 = {
+						CreatedOnToolsVersion = 9.0;
+						DevelopmentTeam = 7BK8NL3DYL;
+					};
+					D5B676FC1F0EBAD600C62C95 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 7BK8NL3DYL;
+						ProvisioningStyle = Manual;
+					};
 				};
 			};
 			buildConfigurationList = 0181E7D21D8C905B008E21C5 /* Build configuration list for PBXProject "ArcanosRadio" */;
@@ -818,6 +1015,8 @@
 				0181E7D61D8C905B008E21C5 /* ArcanosRadio */,
 				0137D8571D9CCD2F003A1E6B /* ArcanosRadioMock */,
 				0196C6301DCE27470061EEE8 /* ScreenshotAutomation */,
+				D56724931F0EB61400B7CF80 /* ArcanosMetadataAPI */,
+				D5B676FC1F0EBAD600C62C95 /* IOZPromise */,
 			);
 		};
 /* End PBXProject section */
@@ -875,6 +1074,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D56724921F0EB61400B7CF80 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5B676FB1F0EBAD600C62C95 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -905,7 +1118,7 @@
 			shellPath = /bin/sh;
 			shellScript = "source ${SRCROOT}/fastlane/env_vars.properties\n\n./Frameworks/Fabric.framework/run ${CRASHLYTICS_API_TOKEN} ${CRASHLYTICS_BUILD_SECRET}";
 		};
-		0181E8041D8CAE36008E21C5 /* ShellScript */ = {
+		0181E8041D8CAE36008E21C5 /* Carthage Copy Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -914,6 +1127,23 @@
 				"$(SRCROOT)/Frameworks/Carthage/Build/iOS/Bolts.framework",
 				"$(SRCROOT)/Frameworks/Carthage/Build/iOS/Parse.framework",
 			);
+			name = "Carthage Copy Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		D5018F7C1F0EC29500C7F7D1 /* Carthage Copy Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Frameworks/Carthage/Build/iOS/Bolts.framework",
+				"$(SRCROOT)/Frameworks/Carthage/Build/iOS/Parse.framework",
+			);
+			name = "Carthage Copy Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -929,7 +1159,6 @@
 			files = (
 				016501031DB3516400B32C0A /* AWRColorToolkit.m in Sources */,
 				01DD773E1DEA5D83006E82B3 /* NSArray+Functional.m in Sources */,
-				01DD77381DEA5618006E82B3 /* AWRMetadataServiceMulticastDelegate.m in Sources */,
 				0137D8741D9CCE3D003A1E6B /* AWRArcanosMediaPlayer.m in Sources */,
 				0137D8811D9CCEEA003A1E6B /* AWRAppCoordinator.m in Sources */,
 				018E2D071DBCCF220035455B /* AWRLicenseView.m in Sources */,
@@ -942,7 +1171,6 @@
 				0137D8701D9CCE15003A1E6B /* AWRConstants.m in Sources */,
 				018E2CC61DBC1CF50035455B /* AWRViewController.m in Sources */,
 				018E2D1A1DBD48B30035455B /* AWRVersionTableViewCell.m in Sources */,
-				0137D8771D9CCE56003A1E6B /* NSObject+PXPromise.m in Sources */,
 				018E2CF51DBC78960035455B /* AWRAppDeveloperViewModel.m in Sources */,
 				0196C6411DCE89B40061EEE8 /* AWRMenuView.m in Sources */,
 				01DD772F1DE992BB006E82B3 /* AWRShareViewController.m in Sources */,
@@ -952,7 +1180,6 @@
 				01FB39391DAC596800EBC99D /* AWRNowPlayingHeaderView.m in Sources */,
 				018E2D131DBD00F00035455B /* AWRHelpCoordinator.m in Sources */,
 				0137D8721D9CCE29003A1E6B /* main.m in Sources */,
-				0137D8751D9CCE4B003A1E6B /* PXNoMorePromises.m in Sources */,
 				0196C6641DCF6EA60061EEE8 /* AWRFileVO.m in Sources */,
 				018E2D001DBC7DD00035455B /* AWRAppLinkInfoTableViewCell.m in Sources */,
 				0151BADA1DC0FA4E00736A79 /* AWRMenuPanGestureRecognizer.m in Sources */,
@@ -960,18 +1187,15 @@
 				0196C6671DCF6EA60061EEE8 /* AWRSongVO.m in Sources */,
 				0137D8821D9CCEEE003A1E6B /* AWRNowPlayingCoordinator.m in Sources */,
 				018E2CF91DBC7C870035455B /* AWRAppInfoViewModel.m in Sources */,
-				0137D8761D9CCE50003A1E6B /* PXPromiseResult.m in Sources */,
 				0196C6631DCF6EA60061EEE8 /* AWREntityVO.m in Sources */,
 				0137D8731D9CCE33003A1E6B /* AppDelegate.m in Sources */,
 				016500FB1DB3383700B32C0A /* AWRAboutController.m in Sources */,
-				01673C791DCF89EE000B14CE /* AWRMetadataPoolingService.m in Sources */,
 				0137D8A01D9E7093003A1E6B /* AWRFakeStore.m in Sources */,
 				01FB39491DACC7BA00EBC99D /* AWRAvatarImageView.m in Sources */,
 				01FB39411DACABC000EBC99D /* UIView+Utils.m in Sources */,
 				01FB39451DACB9D600EBC99D /* UIImage+Resize.m in Sources */,
 				018E2CF11DBC720A0035455B /* AWRDeveloperInfoTableViewCell.m in Sources */,
 				018E2D0B1DBCD4C50035455B /* AWRLicenseViewModel.m in Sources */,
-				0137D8781D9CCE5A003A1E6B /* NSError+PXPromise.m in Sources */,
 				018E2D0F1DBCD8670035455B /* AWRLicenseController.m in Sources */,
 				0137D87D1D9CCE79003A1E6B /* AWRNowPlayingViewModel.m in Sources */,
 				013784DF1DEE2A86006EC13E /* AWRTwitterViewController.m in Sources */,
@@ -984,9 +1208,7 @@
 			files = (
 				01DD772E1DE992BB006E82B3 /* AWRShareViewController.m in Sources */,
 				01DBE4991D8CB2C4003B2100 /* AWRNowPlayingCoordinator.m in Sources */,
-				0181E82E1D8CB160008E21C5 /* AWRPlaylistParse.m in Sources */,
 				01FB39381DAC596800EBC99D /* AWRNowPlayingHeaderView.m in Sources */,
-				019140781D8D8E05000B19EE /* NSObject+PXPromise.m in Sources */,
 				0181E8181D8CB14D008E21C5 /* AWRArcanosMediaPlayer.m in Sources */,
 				0181E7DF1D8C905B008E21C5 /* AppDelegate.m in Sources */,
 				013784DE1DEE2A86006EC13E /* AWRTwitterViewController.m in Sources */,
@@ -995,18 +1217,13 @@
 				01FB393C1DAC607A00EBC99D /* AWRMergeImageView.m in Sources */,
 				0151BAD91DC0FA4E00736A79 /* AWRMenuPanGestureRecognizer.m in Sources */,
 				0181E7DC1D8C905B008E21C5 /* main.m in Sources */,
-				0137D8971D9E66EE003A1E6B /* PFFile+AWRFile.m in Sources */,
 				0181E8091D8CB0ED008E21C5 /* AWRConstants.m in Sources */,
 				01DBE4981D8CB2C4003B2100 /* AWRNowPlayingController.m in Sources */,
 				01DE2E801D95FCA3003E604E /* FXBlurView.m in Sources */,
-				0181E8241D8CB158008E21C5 /* PXNoMorePromises.m in Sources */,
 				01DD77321DE997DF006E82B3 /* AWRControlCenterController.m in Sources */,
 				01DD772A1DE985EB006E82B3 /* AWRCrashReportController.m in Sources */,
-				0181E8251D8CB158008E21C5 /* PXPromiseResult.m in Sources */,
 				01FB39401DACABC000EBC99D /* UIView+Utils.m in Sources */,
-				0181E82F1D8CB160008E21C5 /* AWRSongParse.m in Sources */,
 				012582B81D91F2EA002C4E93 /* AWRAppCoordinator.m in Sources */,
-				016500ED1DB2E6F500B32C0A /* AWRReachability.m in Sources */,
 				018E2CF41DBC78960035455B /* AWRAppDeveloperViewModel.m in Sources */,
 				018E2CF01DBC720A0035455B /* AWRDeveloperInfoTableViewCell.m in Sources */,
 				0181E8341D8CB177008E21C5 /* AWRNowPlayingView.m in Sources */,
@@ -1014,23 +1231,16 @@
 				018E2CFF1DBC7DD00035455B /* AWRAppLinkInfoTableViewCell.m in Sources */,
 				01DD773D1DEA5D83006E82B3 /* NSArray+Functional.m in Sources */,
 				018E2D121DBD00F00035455B /* AWRHelpCoordinator.m in Sources */,
-				01DBE4A01D8CB2D0003B2100 /* AWRMetadataFactory.m in Sources */,
 				018E2D0E1DBCD8670035455B /* AWRLicenseController.m in Sources */,
 				016500E11DB1E79B00B32C0A /* AWRMenuView.m in Sources */,
 				016500F61DB337A100B32C0A /* AWRAboutView.m in Sources */,
 				01FB39481DACC7BA00EBC99D /* AWRAvatarImageView.m in Sources */,
-				0126E3471DA7232D0054430C /* AWRMetadataPoolingService.m in Sources */,
-				0181E8261D8CB158008E21C5 /* BFTask+PXPromise.m in Sources */,
-				01DBE49F1D8CB2D0003B2100 /* AWRParseMetadataStore.m in Sources */,
 				013075F81D96846A003FDA74 /* AWRNowPlayingViewModel.m in Sources */,
 				018E2D0A1DBCD4C50035455B /* AWRLicenseViewModel.m in Sources */,
 				018E2D061DBCCF220035455B /* AWRLicenseView.m in Sources */,
 				016501021DB3516400B32C0A /* AWRColorToolkit.m in Sources */,
 				01FB39441DACB9D600EBC99D /* UIImage+Resize.m in Sources */,
-				0181E8231D8CB158008E21C5 /* NSError+PXPromise.m in Sources */,
 				01419A1A1E15E111008FDBDB /* AWRTwitterView.m in Sources */,
-				01DD77371DEA5618006E82B3 /* AWRMetadataServiceMulticastDelegate.m in Sources */,
-				0181E82D1D8CB160008E21C5 /* AWRArtistParse.m in Sources */,
 				018E2D191DBD48B30035455B /* AWRVersionTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1041,6 +1251,34 @@
 			files = (
 				0196C6341DCE27470061EEE8 /* ScreenshotAutomation.m in Sources */,
 				0196C6401DCE2C3E0061EEE8 /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D567248F1F0EB61400B7CF80 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5018F891F0EC37600C7F7D1 /* AWRPlaylistParse.m in Sources */,
+				D5018FAB1F0EC65700C7F7D1 /* AWRParseMetadataStore.m in Sources */,
+				D5018F871F0EC37600C7F7D1 /* AWRArtistParse.m in Sources */,
+				D5018FA41F0EC65700C7F7D1 /* AWRMetadataPoolingService.m in Sources */,
+				D5018FA21F0EC65700C7F7D1 /* AWRMetadataFactory.m in Sources */,
+				D5018F8D1F0EC37600C7F7D1 /* PFFile+AWRFile.m in Sources */,
+				D5018FA81F0EC65700C7F7D1 /* AWRMetadataServiceMulticastDelegate.m in Sources */,
+				D5018F921F0EC5AA00C7F7D1 /* BFTask+IOZPromise.m in Sources */,
+				D5018F8B1F0EC37600C7F7D1 /* AWRSongParse.m in Sources */,
+				D5018FAD1F0EC65700C7F7D1 /* AWRReachability.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5B676F81F0EBAD600C62C95 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5B677181F0EBB8100C62C95 /* IOZNoMorePromises.m in Sources */,
+				D5B677141F0EBB8100C62C95 /* NSError+IOZPromise.m in Sources */,
+				D5B6771C1F0EBB8100C62C95 /* IOZPromiseResult.m in Sources */,
+				D5B677161F0EBB8100C62C95 /* NSObject+IOZPromise.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1056,6 +1294,16 @@
 			isa = PBXTargetDependency;
 			target = 0137D8571D9CCD2F003A1E6B /* ArcanosRadioMock */;
 			targetProxy = 0196C6681DCF6F440061EEE8 /* PBXContainerItemProxy */;
+		};
+		D567249A1F0EB61500B7CF80 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D56724931F0EB61400B7CF80 /* ArcanosMetadataAPI */;
+			targetProxy = D56724991F0EB61500B7CF80 /* PBXContainerItemProxy */;
+		};
+		D5B677031F0EBAD600C62C95 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D5B676FC1F0EBAD600C62C95 /* IOZPromise */;
+			targetProxy = D5B677021F0EBAD600C62C95 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1135,7 +1383,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1143,7 +1393,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -1185,7 +1439,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1193,7 +1449,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -1224,8 +1484,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 44;
+				CURRENT_PROJECT_VERSION = 45;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 7BK8NL3DYL;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1249,8 +1510,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CURRENT_PROJECT_VERSION = 44;
+				CURRENT_PROJECT_VERSION = 45;
 				DEVELOPMENT_TEAM = 7BK8NL3DYL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1312,6 +1574,128 @@
 			};
 			name = Release;
 		};
+		D567249D1F0EB61500B7CF80 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7BK8NL3DYL;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks/Carthage/Build/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = ArcanosMetadataAPI/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.developercity.ArcanosMetadataAPI;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D567249E1F0EB61500B7CF80 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7BK8NL3DYL;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks/Carthage/Build/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = ArcanosMetadataAPI/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.developercity.ArcanosMetadataAPI;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D5B677071F0EBAD600C62C95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7BK8NL3DYL;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = IOZPromise/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.developercity.IOZPromise;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D5B677081F0EBAD600C62C95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7BK8NL3DYL;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = IOZPromise/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.developercity.IOZPromise;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1347,6 +1731,24 @@
 			buildConfigurations = (
 				0196C6381DCE27470061EEE8 /* Debug */,
 				0196C6391DCE27470061EEE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D567249F1F0EB61500B7CF80 /* Build configuration list for PBXNativeTarget "ArcanosMetadataAPI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D567249D1F0EB61500B7CF80 /* Debug */,
+				D567249E1F0EB61500B7CF80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5B677061F0EBAD600C62C95 /* Build configuration list for PBXNativeTarget "IOZPromise" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5B677071F0EBAD600C62C95 /* Debug */,
+				D5B677081F0EBAD600C62C95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

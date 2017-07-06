@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
-#import "PXPromiseProtocol.h"
+#import "IOZPromiseProtocol.h"
 
-@interface PXPromiseResult : NSObject<PXSuccessfulPromise>
+@interface IOZPromiseResult : NSObject<IOZSuccessfulPromise>
 
 - (instancetype)init NS_UNAVAILABLE;
 + (instancetype)new NS_UNAVAILABLE;

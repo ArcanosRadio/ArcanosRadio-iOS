@@ -68,6 +68,11 @@
     [defaults addObserver:self forKeyPath:CONFIG_STREAM_OVER_MOBILE_DATA_KEY options:NSKeyValueObservingOptionNew context:NULL];
     [self evaluateSettings:defaults];
 
+    AWRMetadataFactory.settings = @{
+                                    @"PARSE_APPLICATION_ID": PARSE_APP,
+                                    @"PARSE_CLIENT_KEY": PARSE_CLIENT_KEY,
+                                    @"PARSE_SERVER_URL": PARSE_URL
+                                    };
     [[AWRMetadataFactory createMetadataStore] refreshConfig];
 #ifndef MOCK
     [self.reachability startNotifier];
