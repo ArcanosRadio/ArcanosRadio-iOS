@@ -1,9 +1,9 @@
+#import <IOZPromise/IOZPromise.h>
 #import "AWRNowPlayingController.h"
 #import "AWRArcanosMediaPlayer.h"
 #import "AWRNowPlayingView.h"
 #import "AWRNowPlayingViewModel.h"
 #import "AWRMetadataFactory.h"
-#import "PXPromise.h"
 #import "AWRTwitterViewController.h"
 
 @interface AWRNowPlayingController () <AWRArcanosMediaPlayerDelegate, AWRNowPlayingViewDelegate, AWRTwitterViewControllerDelegate>

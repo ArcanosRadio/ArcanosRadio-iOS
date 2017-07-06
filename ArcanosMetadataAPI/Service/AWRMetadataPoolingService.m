@@ -16,6 +16,10 @@
 @end
 
 @implementation AWRMetadataPoolingService
+NSString *const CONFIG_RIGHTS_FLAG_KEY = @"rights_flag";
+NSString *const REMOTE_CONFIG_RIGHTS_FLAG_KEY = @"iphoneRightsFlag";
+NSString *const REMOTE_CONFIG_POOLING_TIME_ACTIVE_KEY = @"iphonePoolingTimeActive";
+NSString *const REMOTE_CONFIG_POOLING_TIME_BACKGROUND_KEY = @"iphonePoolingTimeBackground";
 
 - (instancetype)initWithStore:(id<AWRMetadataStore>)store {
     self = [super init];
@@ -44,31 +48,28 @@
 
 - (NSTimer *)timer {
     if (_timer == nil) {
-        DLog(@"Timer: %f", self.timerInterval);
         _timer = [NSTimer scheduledTimerWithTimeInterval:self.timerInterval target:self selector:@selector(tick:) userInfo:nil repeats:YES];
     }
     return _timer;
 }
 
 - (void)tick:(NSTimer *)timer {
-    [self fetchCurrentSong].catch(^id<PXPromise>(id<PXBrokenPromise> finishedPromise) {
-        NSLog(@"Error pooling for new song: %@", finishedPromise.error);
-        return [PXNoMorePromises new];
+    [self fetchCurrentSong].catch(^id<IOZPromise>(id<IOZBrokenPromise> finishedPromise) {
+        return [IOZNoMorePromises new];
     });
 }
 
-- (id<PXPromise>)fetchCurrentSong {
+- (id<IOZPromise>)fetchCurrentSong {
     __weak typeof(self) weakSelf = self;
     return [self.metadataStore currentSong]
-        .then(^id<PXPromise>(id<PXSuccessfulPromise> finishedPromise) {
+        .then(^id<IOZPromise>(id<IOZSuccessfulPromise> finishedPromise) {
             id<AWRPlaylist>result = finishedPromise.result;
 
             if (!result) {
-                DLog(@"Current song: no result");
-                if (!weakSelf.currentPlaylist) return [PXNoMorePromises new];
+                if (!weakSelf.currentPlaylist) return [IOZNoMorePromises new];
                 weakSelf.currentPlaylist = nil;
                 if (weakSelf.delegate) [weakSelf.delegate metadataDidChangeTheSong:nil];
-                return [PXNoMorePromises new];
+                return [IOZNoMorePromises new];
             }
 
             double diff = [result.updatedAt timeIntervalSinceReferenceDate] - [weakSelf.currentPlaylist.updatedAt timeIntervalSinceReferenceDate];
@@ -79,11 +80,9 @@
 
             weakSelf.currentPlaylist = result;
 
-            DLog(@"New song: %@ by %@ (since %@)", result.song.songName, result.song.artist.artistName, result.updatedAt);
-
             if (weakSelf.delegate) [weakSelf.delegate metadataDidChangeTheSong:weakSelf.currentPlaylist.song];
 
-            if (!weakSelf.currentPlaylist.song) return [PXNoMorePromises new];
+            if (!weakSelf.currentPlaylist.song) return [IOZNoMorePromises new];
 
             [weakSelf fetchArtistDescriptionAsync];
 
@@ -93,7 +92,7 @@
 
             [weakSelf fetchAlbumLyricsAsync];
 
-            return [PXNoMorePromises new];
+            return [IOZNoMorePromises new];
         });
 }
 
@@ -105,11 +104,11 @@
     __weak typeof(self) weakSelf = self;
 
     [self.metadataStore descriptionForArtist:self.currentPlaylist.song.artist locale:self.locale]
-        .then(^id<PXPromise>(id<PXSuccessfulPromise> finishedPromise) {
+        .then(^id<IOZPromise>(id<IOZSuccessfulPromise> finishedPromise) {
             if ([weakSelf.delegate respondsToSelector:@selector(metadataDidFinishDownloadingArtistDescription:forSong:)]) {
                 [weakSelf.delegate metadataDidFinishDownloadingArtistDescription:finishedPromise.result forSong:weakSelf.currentPlaylist.song];
             }
-            return [PXNoMorePromises new];
+            return [IOZNoMorePromises new];
         });
 }
 
@@ -117,11 +116,11 @@
     __weak typeof(self) weakSelf = self;
 
     [self.metadataStore descriptionForSong:self.currentPlaylist.song locale:self.locale]
-        .then(^id<PXPromise>(id<PXSuccessfulPromise> finishedPromise) {
+        .then(^id<IOZPromise>(id<IOZSuccessfulPromise> finishedPromise) {
             if ([weakSelf.delegate respondsToSelector:@selector(metadataDidFinishDownloadingSongDescription:forSong:)]) {
                 [weakSelf.delegate metadataDidFinishDownloadingSongDescription:finishedPromise.result forSong:weakSelf.currentPlaylist.song];
             }
-            return [PXNoMorePromises new];
+            return [IOZNoMorePromises new];
         });
 }
 
@@ -133,11 +132,11 @@
     __weak typeof(self) weakSelf = self;
 
     [self.metadataStore albumArtBySong:self.currentPlaylist.song]
-        .then(^id<PXPromise>(id<PXSuccessfulPromise> finishedPromise) {
+        .then(^id<IOZPromise>(id<IOZSuccessfulPromise> finishedPromise) {
             NSData *data = finishedPromise.result;
             UIImage *albumArt = [UIImage imageWithData:data];
             [weakSelf.delegate metadataDidFinishDownloadingAlbumArt:albumArt forSong:weakSelf.currentPlaylist.song];
-            return [PXNoMorePromises new];
+            return [IOZNoMorePromises new];
         });
 }
 
@@ -157,11 +156,11 @@
     __weak typeof(self) weakSelf = self;
 
     [self.metadataStore lyricsBySong:self.currentPlaylist.song]
-        .then(^id<PXPromise>(id<PXSuccessfulPromise> finishedPromise) {
+        .then(^id<IOZPromise>(id<IOZSuccessfulPromise> finishedPromise) {
             if ([weakSelf.delegate respondsToSelector:@selector(metadataDidFinishDownloadingLyrics:forSong:)]) {
                 [weakSelf.delegate metadataDidFinishDownloadingLyrics:finishedPromise.result forSong:weakSelf.currentPlaylist.song];
             }
-            return [PXNoMorePromises new];
+            return [IOZNoMorePromises new];
         });
 }
 
@@ -187,17 +186,17 @@
     NSString *songBefore = self.currentPlaylist.song.songName;
 
     [self fetchCurrentSong]
-        .then(^id<PXPromise>(id<PXSuccessfulPromise> finishedPromise) {
+        .then(^id<IOZPromise>(id<IOZSuccessfulPromise> finishedPromise) {
             NSString *songNow = self.currentPlaylist.song.songName;
             if ([songBefore isEqualToString:songNow]) {
                 completionHandler(NO);
             } else {
                 completionHandler(YES);
             }
-            return [PXNoMorePromises new];
-        }).catch(^id<PXPromise>(id<PXBrokenPromise> finishedPromise) {
+            return [IOZNoMorePromises new];
+        }).catch(^id<IOZPromise>(id<IOZBrokenPromise> finishedPromise) {
             completionHandler(NO);
-            return [PXNoMorePromises new];
+            return [IOZNoMorePromises new];
         });
 }
 

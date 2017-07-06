@@ -1,12 +1,9 @@
 #import "AWRNowPlayingCoordinator.h"
 #import <UIKit/UIKit.h>
-#import "AWRSong.h"
+#import <ArcanosMetadataAPI/ArcanosMetadataAPI.h>
 #import "AWRNowPlayingController.h"
-#import "AWRMetadataFactory.h"
-#import "AWRMetadataService.h"
 #import "AWRShareViewController.h"
 #import "AWRControlCenterController.h"
-#import "AWRMetadataServiceMulticastDelegate.h"
 
 @interface AWRNowPlayingCoordinator()<AWRNowPlayingControllerDelegate>
 

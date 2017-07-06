@@ -1,10 +1,10 @@
-#import "BFTask+PXPromise.h"
+#import "BFTask+IOZPromise.h"
 
-@implementation BFTask (PXPromise)
+@implementation BFTask (IOZPromise)
 
-- (id<PXPromise> (^) (id<PXPromise> (^)(id<PXSuccessfulPromise>)))then {
+- (id<IOZPromise> (^) (id<IOZPromise> (^)(id<IOZSuccessfulPromise>)))then {
     __weak typeof(self) weakSelf = self;
-    return ^id<PXPromise>(id<PXPromise> (^block)(id<PXSuccessfulPromise>)) {
+    return ^id<IOZPromise>(id<IOZPromise> (^block)(id<IOZSuccessfulPromise>)) {
         if (self.error) {
             // Current task is already in "error" state
             // That means we should ignore this "then" block
@@ -25,18 +25,18 @@
             }
 
             // Good, task was successful, let's call user's block
-            return block((id<PXSuccessfulPromise>)t);
+            return block((id<IOZSuccessfulPromise>)t);
         }];
     };
 }
 
-- (id<PXPromise> (^) (id<PXPromise> (^)(id<PXBrokenPromise>)))catch {
+- (id<IOZPromise> (^) (id<IOZPromise> (^)(id<IOZBrokenPromise>)))catch {
     __weak typeof(self) weakSelf = self;
-    return ^id<PXPromise>(id<PXPromise> (^block)(id<PXBrokenPromise>)) {
+    return ^id<IOZPromise>(id<IOZPromise> (^block)(id<IOZBrokenPromise>)) {
         // Execute BFTask and set the callback for the result
         return [weakSelf continueWithBlock:^id _Nullable(BFTask * _Nonnull t) {
             if (weakSelf.error) {
-                return block((id<PXBrokenPromise>)t);
+                return block((id<IOZBrokenPromise>)t);
             } else {
                 return weakSelf;
             }
