@@ -132,6 +132,7 @@
 		D5018FAC1F0EC65700C7F7D1 /* AWRReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = D5018F9F1F0EC65700C7F7D1 /* AWRReachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D5018FAD1F0EC65700C7F7D1 /* AWRReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D5018FA01F0EC65700C7F7D1 /* AWRReachability.m */; };
 		D5018FAE1F0ED2CD00C7F7D1 /* IOZPromise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B676FD1F0EBAD600C62C95 /* IOZPromise.framework */; };
+		D545F0311F12DE6600462242 /* AWRScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D545F0301F12DE6600462242 /* AWRScrollView.m */; };
 		D56724981F0EB61500B7CF80 /* ArcanosMetadataAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = D56724961F0EB61500B7CF80 /* ArcanosMetadataAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D567249B1F0EB61500B7CF80 /* ArcanosMetadataAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56724941F0EB61400B7CF80 /* ArcanosMetadataAPI.framework */; };
 		D567249C1F0EB61500B7CF80 /* ArcanosMetadataAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D56724941F0EB61400B7CF80 /* ArcanosMetadataAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -330,6 +331,8 @@
 		D5018F9E1F0EC65700C7F7D1 /* AWRParseMetadataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRParseMetadataStore.m; sourceTree = "<group>"; };
 		D5018F9F1F0EC65700C7F7D1 /* AWRReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRReachability.h; sourceTree = "<group>"; };
 		D5018FA01F0EC65700C7F7D1 /* AWRReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRReachability.m; sourceTree = "<group>"; };
+		D545F02F1F12DE6600462242 /* AWRScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRScrollView.h; sourceTree = "<group>"; };
+		D545F0301F12DE6600462242 /* AWRScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRScrollView.m; sourceTree = "<group>"; };
 		D56724941F0EB61400B7CF80 /* ArcanosMetadataAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ArcanosMetadataAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D56724961F0EB61500B7CF80 /* ArcanosMetadataAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArcanosMetadataAPI.h; sourceTree = "<group>"; };
 		D56724971F0EB61500B7CF80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -491,6 +494,8 @@
 		0181E7F21D8C9360008E21C5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D545F02F1F12DE6600462242 /* AWRScrollView.h */,
+				D545F0301F12DE6600462242 /* AWRScrollView.m */,
 				016501001DB3516400B32C0A /* AWRColorToolkit.h */,
 				016501011DB3516400B32C0A /* AWRColorToolkit.m */,
 				01FB393A1DAC607A00EBC99D /* AWRMergeImageView.h */,
@@ -1138,6 +1143,7 @@
 				018E2D0E1DBCD8670035455B /* AWRLicenseController.m in Sources */,
 				016500E11DB1E79B00B32C0A /* AWRMenuView.m in Sources */,
 				016500F61DB337A100B32C0A /* AWRAboutView.m in Sources */,
+				D545F0311F12DE6600462242 /* AWRScrollView.m in Sources */,
 				01FB39481DACC7BA00EBC99D /* AWRAvatarImageView.m in Sources */,
 				018E2D061DBCCF220035455B /* AWRLicenseView.m in Sources */,
 				016501021DB3516400B32C0A /* AWRColorToolkit.m in Sources */,

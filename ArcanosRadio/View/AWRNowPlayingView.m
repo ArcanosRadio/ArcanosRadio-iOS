@@ -3,6 +3,7 @@
 #import "UIView+Utils.h"
 #import "AWRMenuView.h"
 #import "AWRColorToolkit.h"
+#import "AWRScrollView.h"
 #import <QuartzCore/QuartzCore.h>
 #import <WebKit/Webkit.h>
 
@@ -16,12 +17,12 @@ const float kToolbarInitialSpacing = 50.0;
 const float kToolbarFinalLeftMargin = 112.0;
 const float kToolbarFinalSpacing = 20.0;
 
-@interface AWRNowPlayingView()<UIScrollViewDelegate, AWRMenuViewDelegate, AWRNowPlayingHeaderViewDelegate>
+@interface AWRNowPlayingView()<UIScrollViewDelegate, AWRMenuViewDelegate, AWRNowPlayingHeaderViewDelegate, AWRScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *headerContainer;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *headerHeight;
 @property (strong, nonatomic) AWRNowPlayingHeaderView *headerView;
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet AWRScrollView *scrollView;
 
 @property (weak, nonatomic) IBOutlet UIView *mediaControlBar;
 @property (weak, nonatomic) IBOutlet UISlider *volumeSlider;
@@ -179,6 +180,7 @@ const float kToolbarFinalSpacing = 20.0;
 
     [self emptyFields];
     [self addGestureRecognizer: self.scrollView.panGestureRecognizer];
+    self.scrollView.scrollViewDelegate = self;
     [self toolbarItemSelected: self.lyricsButton];
 
     self.headerContainer.layer.zPosition = 2;
@@ -293,6 +295,11 @@ const float kToolbarFinalSpacing = 20.0;
         [b setTitle:@"" forState:UIControlStateNormal];
         [b setTitle:@"" forState:UIControlStateSelected];
     }
+}
+
+- (BOOL)scrollView:(AWRScrollView *)scrollView isAllowedToHandleTouchAt:(CGPoint)point {
+    BOOL allow = point.y < (self.window.frame.size.height - self.mediaControlBar.frame.size.height);
+    return allow;
 }
 
 - (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView {
