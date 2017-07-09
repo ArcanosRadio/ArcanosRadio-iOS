@@ -1,7 +1,7 @@
 #import "AWRHelpCoordinator.h"
 #import "AWRAboutController.h"
 #import "AWRLicenseController.h"
-#import "AWRLicenseViewModel.h"
+#import "AWRLicenseViewState.h"
 
 @interface AWRHelpCoordinator()<AWRAboutControllerDelegate, AWRLicenseControllerDelegate>
 
@@ -31,7 +31,7 @@
     [[UIApplication sharedApplication] openURL:url];
 }
 
-- (void)userDidSelectLicense:(AWRLicenseViewModel *)license {
+- (void)userDidSelectLicense:(AWRLicenseViewState *)license {
     AWRLicenseController *licenseController = [[AWRLicenseController alloc] init];
     licenseController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     licenseController.delegate = self;

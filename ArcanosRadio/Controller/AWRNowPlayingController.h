@@ -2,7 +2,7 @@
 #import "AWRViewController.h"
 #import "AWRSong.h"
 #import "AWRMetadataServiceDelegate.h"
-@class AWRNowPlayingViewModel;
+@class AWRNowPlayingViewState;
 
 @protocol AWRNowPlayingControllerDelegate
 

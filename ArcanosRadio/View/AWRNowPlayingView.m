@@ -533,7 +533,7 @@ const float kToolbarFinalSpacing = 20.0;
     [self.delegate volumeChangedTo:self.volumeSlider.value];
 }
 
-- (void)renderModel:(AWRNowPlayingViewModel *)model {
+- (void)renderModel:(AWRNowPlayingViewState *)model {
     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_main_queue(), ^{
         [weakSelf.headerView renderModel:model];

@@ -1,8 +1,8 @@
 #import <Foundation/Foundation.h>
 
-@interface AWRAppDeveloperViewModel : NSObject
+@interface AWRAppDeveloperViewState : NSObject
 
-+ (NSArray<AWRAppDeveloperViewModel *> *)all;
++ (NSArray<AWRAppDeveloperViewState *> *)all;
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *details;

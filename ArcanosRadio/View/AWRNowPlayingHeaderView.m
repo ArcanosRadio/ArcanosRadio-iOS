@@ -71,7 +71,7 @@ static NSString * const kStatusBarTappedNotification = @"StatusBarTappedNotifica
     self.artistLabel.text = @"";
 }
 
-- (void)renderModel:(AWRNowPlayingViewModel *)model {
+- (void)renderModel:(AWRNowPlayingViewState *)model {
     NSString *songName = model.songName ?: @"";
     NSString *artistName = model.artistName ?: @"";
     self.songLabel.attributedText = [[NSAttributedString alloc]initWithString:songName attributes:self.textEffects];

@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface AWRNowPlayingViewModel : NSObject
+@interface AWRNowPlayingViewState : NSObject
 
 @property(nonatomic, strong) NSString *songName;
 @property(nonatomic, strong) NSString *artistName;

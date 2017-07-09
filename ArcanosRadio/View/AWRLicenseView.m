@@ -9,7 +9,7 @@
 
 @implementation AWRLicenseView
 
-- (void)renderModel:(AWRLicenseViewModel *)model {
+- (void)renderModel:(AWRLicenseViewState *)model {
     [self.navigationBar.items firstObject].title = model.name;
     self.licenseTextView.text = model.text;
 }

@@ -1,6 +1,6 @@
-#import "AWRNowPlayingViewModel.h"
+#import "AWRNowPlayingViewState.h"
 
-@implementation AWRNowPlayingViewModel
+@implementation AWRNowPlayingViewState
 
 - (instancetype)init {
     self = [super init];

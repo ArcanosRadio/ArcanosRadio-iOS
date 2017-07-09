@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
-#import "AWRNowPlayingViewModel.h"
+#import "AWRNowPlayingViewState.h"
 
 @protocol AWRNowPlayingHeaderViewDelegate <NSObject>
 
@@ -13,7 +13,7 @@
 @property (nonatomic)float metadataOffset;
 @property (nonatomic)float metadataAlpha;
 
-- (void)renderModel:(AWRNowPlayingViewModel *)model;
+- (void)renderModel:(AWRNowPlayingViewState *)model;
 - (float)maximumHeight;
 - (float)minimumHeight;
 

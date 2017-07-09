@@ -1,6 +1,6 @@
 #import <UIKit/UIKit.h>
 #import "AWRViewController.h"
-#import "AWRLicenseViewModel.h"
+#import "AWRLicenseViewState.h"
 
 @protocol AWRLicenseControllerDelegate
 
@@ -11,6 +11,6 @@
 @interface AWRLicenseController : AWRViewController
 
 @property (weak, nonatomic) id<AWRLicenseControllerDelegate>delegate;
-@property (strong, nonatomic) AWRLicenseViewModel *licenseModel;
+@property (strong, nonatomic) AWRLicenseViewState *licenseModel;
 
 @end

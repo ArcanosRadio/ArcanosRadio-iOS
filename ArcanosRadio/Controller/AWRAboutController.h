@@ -1,12 +1,12 @@
 #import <UIKit/UIKit.h>
 #import "AWRViewController.h"
-#import "AWRLicenseViewModel.h"
+#import "AWRLicenseViewState.h"
 
 @protocol AWRAboutControllerDelegate
 
 - (void)userDidCloseAbout;
 - (void)userDidSelectUrl:(NSURL *)url;
-- (void)userDidSelectLicense:(AWRLicenseViewModel *)license;
+- (void)userDidSelectLicense:(AWRLicenseViewState *)license;
 
 @end
 

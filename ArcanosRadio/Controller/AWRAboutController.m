@@ -1,17 +1,17 @@
 #import "AWRAboutController.h"
 #import "AWRAboutView.h"
-#import "AWRAppDeveloperViewModel.h"
+#import "AWRAppDeveloperViewState.h"
 #import "AWRDeveloperInfoTableViewCell.h"
-#import "AWRAppInfoViewModel.h"
+#import "AWRAppInfoViewState.h"
 #import "AWRAppLinkInfoTableViewCell.h"
 #import "AWRVersionTableViewCell.h"
 
 @interface AWRAboutController () <AWRAboutViewDelegate, UITableViewDataSource>
 
 @property(readonly, nonatomic) AWRAboutView *aboutView;
-@property (strong, nonatomic) NSArray<AWRLicenseViewModel *> *thirdPartyLibs;
-@property (strong, nonatomic) NSArray<AWRAppDeveloperViewModel *> *developers;
-@property (strong, nonatomic) NSArray<AWRAppInfoViewModel *> *appLinks;
+@property (strong, nonatomic) NSArray<AWRLicenseViewState *> *thirdPartyLibs;
+@property (strong, nonatomic) NSArray<AWRAppDeveloperViewState *> *developers;
+@property (strong, nonatomic) NSArray<AWRAppInfoViewState *> *appLinks;
 
 @end
 
@@ -39,16 +39,16 @@
     [self.delegate userDidCloseAbout];
 }
 
-- (NSArray<AWRLicenseViewModel *> *)thirdPartyLibs {
+- (NSArray<AWRLicenseViewState *> *)thirdPartyLibs {
     if (!_thirdPartyLibs) {
         NSString *acknowledgementsPlist = [[NSBundle mainBundle]
                                            pathForResource:@"Acknowledgements"
                                            ofType:@"plist"];
         NSDictionary *root = [[NSDictionary alloc] initWithContentsOfFile:acknowledgementsPlist];
         NSDictionary *licenses = [root objectForKey:@"Licenses"];
-        NSMutableArray<AWRLicenseViewModel *> *licenseArray = [[NSMutableArray alloc] initWithCapacity:licenses.count];
+        NSMutableArray<AWRLicenseViewState *> *licenseArray = [[NSMutableArray alloc] initWithCapacity:licenses.count];
         for (NSString *key in licenses) {
-            AWRLicenseViewModel *l = [[AWRLicenseViewModel alloc] init];
+            AWRLicenseViewState *l = [[AWRLicenseViewState alloc] init];
             l.name = key;
             l.text = [licenses objectForKey:key];
             [licenseArray addObject:l];
@@ -59,16 +59,16 @@
     return _thirdPartyLibs;
 }
 
-- (NSArray<AWRAppInfoViewModel *> *)appLinks {
+- (NSArray<AWRAppInfoViewState *> *)appLinks {
     if (!_appLinks) {
-        _appLinks = [AWRAppInfoViewModel all];
+        _appLinks = [AWRAppInfoViewState all];
     }
     return _appLinks;
 }
 
-- (NSArray<AWRAppDeveloperViewModel *> *)developers {
+- (NSArray<AWRAppDeveloperViewState *> *)developers {
     if (!_developers) {
-        _developers = [AWRAppDeveloperViewModel all];
+        _developers = [AWRAppDeveloperViewState all];
     }
     return _developers;
 }
@@ -116,7 +116,7 @@
     }
 
     if (indexPath.section == 1) {
-        AWRAppDeveloperViewModel *dev = self.developers[indexPath.row];
+        AWRAppDeveloperViewState *dev = self.developers[indexPath.row];
         AWRDeveloperInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"developerCell" forIndexPath:indexPath];
         cell.nameLabel.text = dev.name;
         cell.detailsFirstLineLabel.text = dev.details;
@@ -125,7 +125,7 @@
     }
 
     if (indexPath.section == 2) {
-        AWRAppInfoViewModel *link = self.appLinks[indexPath.row];
+        AWRAppInfoViewState *link = self.appLinks[indexPath.row];
         AWRAppLinkInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"appLinkCell" forIndexPath:indexPath];
         cell.nameLabel.text = link.name;
         cell.detailsOnlyLineLabel.text = link.details;
