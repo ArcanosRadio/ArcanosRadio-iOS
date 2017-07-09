@@ -1,3 +1,33 @@
+"COMPOSITION_SEND_TWEET_ERROR_LABEL" = "Tweet không gửi";
+
+"LOCATION_SERVICES_ACCESS_DENIED_ALERT_MESSAGE" = "Hãy truy cập Cài đặt\niOS > Quyền riêng tư > Dịch vụ định vị để cho phép Twitter truy cập vị trí của bạn.";
+
+"LOCATION_SERVICES_ACCESS_DENIED_ALERT_TITLE" = "Cho phép Twitter truy cập vị trí của bạn";
+
+"LOCATION_SERVICES_ERROR_ALERT_MESSAGE" = "Không thể tìm thấy vị trí của bạn. Hãy thử lại sau.";
+
+"LOCATION_SERVICES_ERROR_ALERT_TITLE" = "Không truy cập được vị trí";
+
+"OK_ACTION_LABEL" = "OK";
+
+"RETRY_ACTION_LABEL" = "Thử lại";
+
+"SEND_TWEET_ACTION_LABEL" = "Tweet";
+
+"SHARE_EXT_ACCOUNT" = "Tài khoản";
+
+"SHARE_EXT_LOCATION" = "Vị trí";
+
+"SHARE_EXT_NONE_VALUE" = "Không";
+
+"SHARE_EXT_NO_ACCOUNTS_MESSAGE" = "Không có tài khoản Twitter nào được cấu hình. Bạn có thể\nthêm hoặc tạo tài khoản Twitter trong Cài đặt.";
+
+"SHARE_EXT_NO_ACCOUNTS_TITLE" = "Không có tài khoản Twitter";
+
+"SHARE_EXT_TWEET_FAILED_TITLE" = "Tweet không gửi được.";
+
+"SHARE_EXT_TWITTER_TITLE" = "Twitter";
+
 "TIME_SHORT_DAYS_FORMAT" = "%dngày";
 
 "TIME_SHORT_DAY_FORMAT" = "%dngày";
@@ -14,6 +44,8 @@
 
 "TIME_SHORT_SECOND_FORMAT" = "%dgiây";
 
+"TSEUI_CANCEL_ACTION_LABEL" = "Hủy";
+
 "tw__card_compose_character_count" = "%td ký tự còn lại";
 
 "tw__card_compose_close_hint" = "Nhấn đúp để bỏ qua trình soạn.";
@@ -29,6 +61,8 @@
 "tw__card_composer_install_button" = "Cài đặt";
 
 "tw__card_composer_tweet" = "Đăng Tweet";
+
+"tw__close_button" = "Đóng";
 
 "tw__composer_placeholder_text" = "Điều gì Đang xảy ra?";
 

@@ -86,6 +86,10 @@
 		D5018FAD1F0EC65700C7F7D1 /* AWRReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D5018FA01F0EC65700C7F7D1 /* AWRReachability.m */; };
 		D5018FAE1F0ED2CD00C7F7D1 /* IOZPromise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B676FD1F0EBAD600C62C95 /* IOZPromise.framework */; };
 		D545F0311F12DE6600462242 /* AWRScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D545F0301F12DE6600462242 /* AWRScrollView.m */; };
+		D545F0361F12E5DA00462242 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D545F0321F12E5DA00462242 /* TwitterCore.framework */; };
+		D545F0371F12E5DA00462242 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D545F0331F12E5DA00462242 /* TwitterKit.framework */; };
+		D545F0381F12E5DA00462242 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D545F0341F12E5DA00462242 /* TwitterKitResources.bundle */; };
+		D545F0391F12E5DA00462242 /* TwitterShareExtensionUIResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D545F0351F12E5DA00462242 /* TwitterShareExtensionUIResources.bundle */; };
 		D56724981F0EB61500B7CF80 /* ArcanosMetadataAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = D56724961F0EB61500B7CF80 /* ArcanosMetadataAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D567249B1F0EB61500B7CF80 /* ArcanosMetadataAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56724941F0EB61400B7CF80 /* ArcanosMetadataAPI.framework */; };
 		D567249C1F0EB61500B7CF80 /* ArcanosMetadataAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D56724941F0EB61400B7CF80 /* ArcanosMetadataAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -110,10 +114,6 @@
 		D5D7599B1F127AA50001D6B5 /* AWRAppInfoViewState.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D759951F127AA50001D6B5 /* AWRAppInfoViewState.m */; };
 		D5D7599C1F127AA50001D6B5 /* AWRLicenseViewState.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D759971F127AA50001D6B5 /* AWRLicenseViewState.m */; };
 		D5D7599D1F127AA50001D6B5 /* AWRNowPlayingViewState.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D759991F127AA50001D6B5 /* AWRNowPlayingViewState.m */; };
-		D5EF61EA1EDF84AC00890584 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5EF61E91EDF84AC00890584 /* TwitterCore.framework */; };
-		D5EF61EC1EDF84C200890584 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5EF61EB1EDF84C200890584 /* TwitterKit.framework */; };
-		D5EF61EF1EDF84D700890584 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D5EF61ED1EDF84D700890584 /* TwitterKitResources.bundle */; };
-		D5EF61F01EDF84D700890584 /* TwitterShareExtensionUIResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D5EF61EE1EDF84D700890584 /* TwitterShareExtensionUIResources.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -270,6 +270,10 @@
 		D5018FA01F0EC65700C7F7D1 /* AWRReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRReachability.m; sourceTree = "<group>"; };
 		D545F02F1F12DE6600462242 /* AWRScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRScrollView.h; sourceTree = "<group>"; };
 		D545F0301F12DE6600462242 /* AWRScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRScrollView.m; sourceTree = "<group>"; };
+		D545F0321F12E5DA00462242 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
+		D545F0331F12E5DA00462242 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
+		D545F0341F12E5DA00462242 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TwitterKitResources.bundle; sourceTree = "<group>"; };
+		D545F0351F12E5DA00462242 /* TwitterShareExtensionUIResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TwitterShareExtensionUIResources.bundle; sourceTree = "<group>"; };
 		D56724941F0EB61400B7CF80 /* ArcanosMetadataAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ArcanosMetadataAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D56724961F0EB61500B7CF80 /* ArcanosMetadataAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArcanosMetadataAPI.h; sourceTree = "<group>"; };
 		D56724971F0EB61500B7CF80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -298,10 +302,6 @@
 		D5D759971F127AA50001D6B5 /* AWRLicenseViewState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRLicenseViewState.m; sourceTree = "<group>"; };
 		D5D759981F127AA50001D6B5 /* AWRNowPlayingViewState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRNowPlayingViewState.h; sourceTree = "<group>"; };
 		D5D759991F127AA50001D6B5 /* AWRNowPlayingViewState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRNowPlayingViewState.m; sourceTree = "<group>"; };
-		D5EF61E91EDF84AC00890584 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
-		D5EF61EB1EDF84C200890584 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
-		D5EF61ED1EDF84D700890584 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TwitterKitResources.bundle; sourceTree = "<group>"; };
-		D5EF61EE1EDF84D700890584 /* TwitterShareExtensionUIResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TwitterShareExtensionUIResources.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,14 +310,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				01D2BD0C1D9B00D900632C08 /* QuartzCore.framework in Frameworks */,
+				D545F0371F12E5DA00462242 /* TwitterKit.framework in Frameworks */,
 				D5B677041F0EBAD600C62C95 /* IOZPromise.framework in Frameworks */,
 				01DE2E821D9601C1003E604E /* Accelerate.framework in Frameworks */,
 				0181E7FF1D8C9EB1008E21C5 /* Crashlytics.framework in Frameworks */,
+				D545F0361F12E5DA00462242 /* TwitterCore.framework in Frameworks */,
 				0181E7FE1D8C9EB1008E21C5 /* Fabric.framework in Frameworks */,
-				D5EF61EA1EDF84AC00890584 /* TwitterCore.framework in Frameworks */,
 				0181E8021D8CADE8008E21C5 /* Bolts.framework in Frameworks */,
 				0181E8031D8CADE8008E21C5 /* Parse.framework in Frameworks */,
-				D5EF61EC1EDF84C200890584 /* TwitterKit.framework in Frameworks */,
 				D567249B1F0EB61500B7CF80 /* ArcanosMetadataAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -486,10 +486,10 @@
 		0181E7FB1D8C9E83008E21C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D5EF61ED1EDF84D700890584 /* TwitterKitResources.bundle */,
-				D5EF61EE1EDF84D700890584 /* TwitterShareExtensionUIResources.bundle */,
-				D5EF61EB1EDF84C200890584 /* TwitterKit.framework */,
-				D5EF61E91EDF84AC00890584 /* TwitterCore.framework */,
+				D545F0321F12E5DA00462242 /* TwitterCore.framework */,
+				D545F0331F12E5DA00462242 /* TwitterKit.framework */,
+				D545F0341F12E5DA00462242 /* TwitterKitResources.bundle */,
+				D545F0351F12E5DA00462242 /* TwitterShareExtensionUIResources.bundle */,
 				01673C7A1DCFAD2E000B14CE /* SimulatorStatusMagiciOS.framework */,
 				01D2BD0B1D9B00D900632C08 /* QuartzCore.framework */,
 				01DE2E811D9601C1003E604E /* Accelerate.framework */,
@@ -727,7 +727,6 @@
 				D56724901F0EB61400B7CF80 /* Frameworks */,
 				D56724911F0EB61400B7CF80 /* Headers */,
 				D56724921F0EB61400B7CF80 /* Resources */,
-				D5018F7C1F0EC29500C7F7D1 /* Carthage Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -817,14 +816,14 @@
 				018E2CEC1DBC70D90035455B /* AWRDeveloperInfoTableViewCell.xib in Resources */,
 				018E2D151DBD48960035455B /* AWRVersionTableViewCell.xib in Resources */,
 				016500E51DB2D04900B32C0A /* Localizable.strings in Resources */,
-				D5EF61EF1EDF84D700890584 /* TwitterKitResources.bundle in Resources */,
+				D545F0381F12E5DA00462242 /* TwitterKitResources.bundle in Resources */,
 				018E2D021DBCCD950035455B /* AWRLicenseView.xib in Resources */,
 				018E2CFB1DBC7DBC0035455B /* AWRAppLinkInfoTableViewCell.xib in Resources */,
 				016500F21DB3374500B32C0A /* AWRAboutView.xib in Resources */,
 				0181E7E71D8C905B008E21C5 /* Assets.xcassets in Resources */,
 				0181E8331D8CB177008E21C5 /* AWRNowPlayingView.xib in Resources */,
 				013784E11DEE2AC4006EC13E /* AWRTwitterView.xib in Resources */,
-				D5EF61F01EDF84D700890584 /* TwitterShareExtensionUIResources.bundle in Resources */,
+				D545F0391F12E5DA00462242 /* TwitterShareExtensionUIResources.bundle in Resources */,
 				01FB39341DAC592B00EBC99D /* AWRNowPlayingHeaderView.xib in Resources */,
 				016500EF1DB2EFBD00B32C0A /* Settings.bundle in Resources */,
 				0181E7F91D8C9663008E21C5 /* SplashView.xib in Resources */,
@@ -863,22 +862,6 @@
 			shellScript = "source ${SRCROOT}/fastlane/env_vars.properties\n\n./Frameworks/Fabric.framework/run ${CRASHLYTICS_API_TOKEN} ${CRASHLYTICS_BUILD_SECRET}";
 		};
 		0181E8041D8CAE36008E21C5 /* Carthage Copy Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Frameworks/Carthage/Build/iOS/Bolts.framework",
-				"$(SRCROOT)/Frameworks/Carthage/Build/iOS/Parse.framework",
-			);
-			name = "Carthage Copy Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-		D5018F7C1F0EC29500C7F7D1 /* Carthage Copy Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (

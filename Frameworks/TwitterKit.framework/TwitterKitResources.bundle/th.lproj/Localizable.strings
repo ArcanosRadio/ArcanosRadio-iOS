@@ -1,3 +1,33 @@
+"COMPOSITION_SEND_TWEET_ERROR_LABEL" = "ยังไม่ได้ส่งทวีต";
+
+"LOCATION_SERVICES_ACCESS_DENIED_ALERT_MESSAGE" = "โปรดไปที่ การตั้งค่า iOS > ความเป็นส่วนตัว > บริการตำแหน่งที่ตั้ง เพื่อให้ทวิตเตอร์สามารถเข้าถึงตำแหน่งที่ตั้งของคุณได้";
+
+"LOCATION_SERVICES_ACCESS_DENIED_ALERT_TITLE" = "อนุญาตให้ทวิตเตอร์เข้าถึงตำแหน่งที่ตั้งของคุณได้";
+
+"LOCATION_SERVICES_ERROR_ALERT_MESSAGE" = "หาตำแหน่งที่ตั้งไม่พบ โปรดลองอีกครั้งในภายหลัง";
+
+"LOCATION_SERVICES_ERROR_ALERT_TITLE" = "ไม่สามารถเข้าถึงตำแหน่งที่ตั้งได้";
+
+"OK_ACTION_LABEL" = "ตกลง";
+
+"RETRY_ACTION_LABEL" = "ลองใหม่";
+
+"SEND_TWEET_ACTION_LABEL" = "ทวีต";
+
+"SHARE_EXT_ACCOUNT" = "บัญชี";
+
+"SHARE_EXT_LOCATION" = "ตำแหน่งที่ตั้ง";
+
+"SHARE_EXT_NONE_VALUE" = "ไม่มี";
+
+"SHARE_EXT_NO_ACCOUNTS_MESSAGE" = "ไม่มีบัญชีทวิตเตอร์ที่กำหนดค่า คุณสามารถเพิ่มหรือสร้างบัญชีทวิตเตอร์ได้ในการตั้งค่า";
+
+"SHARE_EXT_NO_ACCOUNTS_TITLE" = "ไม่มีบัญชีทวิตเตอร์";
+
+"SHARE_EXT_TWEET_FAILED_TITLE" = "ไม่สามารถส่งทวีตได้";
+
+"SHARE_EXT_TWITTER_TITLE" = "ทวิตเตอร์";
+
 "TIME_SHORT_DAYS_FORMAT" = "%dว.";
 
 "TIME_SHORT_DAY_FORMAT" = "%dว.";
@@ -14,6 +44,8 @@
 
 "TIME_SHORT_SECOND_FORMAT" = "%dวิ.";
 
+"TSEUI_CANCEL_ACTION_LABEL" = "ยกเลิก";
+
 "tw__card_compose_character_count" = "เหลืออีก %td ตัวอักขระ";
 
 "tw__card_compose_close_hint" = "แตะสองครั้งเพื่อยกเลิก";
@@ -29,6 +61,8 @@
 "tw__card_composer_install_button" = "ติดตั้ง";
 
 "tw__card_composer_tweet" = "ทวีต";
+
+"tw__close_button" = "ปิด";
 
 "tw__composer_placeholder_text" = "กำลังเกิดอะไรขึ้น";
 

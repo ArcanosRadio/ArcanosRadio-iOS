@@ -1,3 +1,33 @@
+"COMPOSITION_SEND_TWEET_ERROR_LABEL" = "Твит не отправлен";
+
+"LOCATION_SERVICES_ACCESS_DENIED_ALERT_MESSAGE" = "Перейдите в раздел «Настройки iOS» > «Приватность» > «Службы местоположения», чтобы разрешить Твиттеру доступ к данным о местоположении.";
+
+"LOCATION_SERVICES_ACCESS_DENIED_ALERT_TITLE" = "Разрешить Твиттеру доступ к данным о вашем местоположении";
+
+"LOCATION_SERVICES_ERROR_ALERT_MESSAGE" = "Не удалось найти ваше местоположение. Повторите попытку позже.";
+
+"LOCATION_SERVICES_ERROR_ALERT_TITLE" = "Нет доступа к данным о местоположении";
+
+"OK_ACTION_LABEL" = "ОК";
+
+"RETRY_ACTION_LABEL" = "Повторить";
+
+"SEND_TWEET_ACTION_LABEL" = "Твит";
+
+"SHARE_EXT_ACCOUNT" = "Учетная запись";
+
+"SHARE_EXT_LOCATION" = "Местоположение";
+
+"SHARE_EXT_NONE_VALUE" = "Нет";
+
+"SHARE_EXT_NO_ACCOUNTS_MESSAGE" = "Нет настроенных учетных записей Твиттера. Учетную запись Твиттера можно добавить или создать в настройках.";
+
+"SHARE_EXT_NO_ACCOUNTS_TITLE" = "Нет учетной записи Твиттера";
+
+"SHARE_EXT_TWEET_FAILED_TITLE" = "Не удалось отправить твит.";
+
+"SHARE_EXT_TWITTER_TITLE" = "Твиттер";
+
 "TIME_SHORT_DAYS_FORMAT" = "%dдн.";
 
 "TIME_SHORT_DAY_FORMAT" = "%dдн.";
@@ -14,6 +44,8 @@
 
 "TIME_SHORT_SECOND_FORMAT" = "%dс";
 
+"TSEUI_CANCEL_ACTION_LABEL" = "Отмена";
+
 "tw__card_compose_character_count" = "Осталось символов: %td";
 
 "tw__card_compose_close_hint" = "Нажмите дважды, чтобы закрыть редактор.";
@@ -29,6 +61,8 @@
 "tw__card_composer_install_button" = "Установить";
 
 "tw__card_composer_tweet" = "Твитнуть";
+
+"tw__close_button" = "Закрыть";
 
 "tw__composer_placeholder_text" = "Что происходит?";
 

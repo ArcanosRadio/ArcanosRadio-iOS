@@ -32,7 +32,6 @@ typedef void (^TWTRComposerCompletion)(TWTRComposerResult result);
 /**
  *  The TWTRComposer class presents a view to the user to compose a Tweet.
  */
-NS_CLASS_DEPRECATED_IOS(6_0, 8_0, "TWTRComposer is deprecated. Use a TWTRComposerViewController instead.")
 @interface TWTRComposer : NSObject
 
 /**
