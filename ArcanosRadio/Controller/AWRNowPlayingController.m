@@ -11,7 +11,7 @@
 @property(strong, nonatomic) AWRArcanosMediaPlayer *arcanosRadio;
 @property(strong, nonatomic) NSString *streamingUrl;
 @property(readonly, nonatomic) AWRNowPlayingView *nowPlayingView;
-@property(atomic, nullable, strong) AWRNowPlayingViewState *ViewState;
+@property(atomic, nullable, strong) AWRNowPlayingViewState *viewState;
 @property(strong, nonatomic) AWRTwitterViewController *twitterViewController;
 @end
 
@@ -24,7 +24,7 @@
 - (instancetype)init {
     self = [super initWithNibName:@"AWRNowPlayingView" bundle:nil];
     if (self) {
-        self.ViewState = [[AWRNowPlayingViewState alloc] init];
+        self.viewState = [[AWRNowPlayingViewState alloc] init];
         self.streamingUrl = [[AWRMetadataFactory createMetadataStore] readConfig:REMOTE_CONFIG_STREAMING_URL_KEY];
     }
     return self;
@@ -52,10 +52,10 @@
 }
 
 - (void)metadataDidChangeTheSong:(id<AWRSong>)song {
-    self.ViewState.songName = song.songName;
-    self.ViewState.artistName = song.artist.artistName;
-    self.ViewState.url = song.artist.url;
-    self.ViewState.hasUrl = song.artist.url.length > 0;
+    self.viewState.songName = song.songName;
+    self.viewState.artistName = song.artist.artistName;
+    self.viewState.url = song.artist.url;
+    self.viewState.hasUrl = song.artist.url.length > 0;
 
     if (song.artist.twitterTimeline && [song.artist.twitterTimeline characterAtIndex:0] == '#' ) {
         // Hashtag search
@@ -69,19 +69,19 @@
     }
 
     UIImage *defaultImage = [[AWRMetadataFactory metadataStoreClass] defaultAlbumArt];
-    self.ViewState.albumArt = defaultImage;
-    self.ViewState.lyrics = @"";
-    [self.nowPlayingView renderModel:self.ViewState];
+    self.viewState.albumArt = defaultImage;
+    self.viewState.lyrics = @"";
+    [self.nowPlayingView renderModel:self.viewState];
 }
 
 - (void)metadataDidFinishDownloadingAlbumArt:(UIImage *)albumArt forSong:(id<AWRSong>)song {
-    self.ViewState.albumArt = albumArt;
-    [self.nowPlayingView renderModel:self.ViewState];
+    self.viewState.albumArt = albumArt;
+    [self.nowPlayingView renderModel:self.viewState];
 }
 
 - (void)metadataDidFinishDownloadingLyrics:(NSString *)lyrics forSong:(id<AWRSong>)song {
-    self.ViewState.lyrics = lyrics;
-    [self.nowPlayingView renderModel:self.ViewState];
+    self.viewState.lyrics = lyrics;
+    [self.nowPlayingView renderModel:self.viewState];
 }
 
 - (void)didStartPlaying {
@@ -127,7 +127,7 @@
 
 - (void)currentTabHasChanged:(AWRNowPlayingViewTab)newtab {
     if (newtab == AWRNowPlayingViewTabWebsite) {
-        NSString *urlString = self.ViewState.url;
+        NSString *urlString = self.viewState.url;
         if (!urlString) {
             [self.nowPlayingView setCurrentTab:AWRNowPlayingViewTabLyrics];
             return;
@@ -159,7 +159,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.nowPlayingView.delegate = self;
-    [self.nowPlayingView renderModel:self.ViewState];
+    [self.nowPlayingView renderModel:self.viewState];
     [self.nowPlayingView setVolume:1.0];
     [self addChildViewController:self.twitterViewController];
     [self.nowPlayingView setTwitterView:(UIScrollView *)self.twitterViewController.view];
