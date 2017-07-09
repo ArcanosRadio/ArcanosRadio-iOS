@@ -302,10 +302,15 @@ const float kToolbarFinalSpacing = 20.0;
 - (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView {
 }
 
+CGFloat scrollViewLastOffset = 0.0;
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     if (scrollView != self.scrollView) return;
 
     float offset = scrollView.contentOffset.y;
+    CGFloat delta = offset - scrollViewLastOffset;
+    scrollViewLastOffset = scrollView.contentOffset.y;
+
     float headerSize = MAX(self.headerView.maximumHeight - offset,
                            self.headerView.minimumHeight);
 
@@ -469,7 +474,8 @@ const float kToolbarFinalSpacing = 20.0;
     if (self.currentTab == AWRNowPlayingViewTabLyrics) {
         self.lyricsScrollView.contentOffset = CGPointMake(0, remainingOffset);
     } else if (self.currentTab == AWRNowPlayingViewTabTwitter) {
-        self.twitterView.contentOffset = CGPointMake(0, remainingOffset);
+        self.twitterView.contentOffset = CGPointMake(0, MAX(0.0, self.twitterView.contentOffset.y + delta));
+        [self recalculateContentSize];
     } else {
 
     }
