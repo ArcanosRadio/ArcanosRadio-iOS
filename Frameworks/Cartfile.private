@@ -1,1 +1,3 @@
 github "shinydevelopment/SimulatorStatusMagic"
+github "kif-framework/KIF"
+github "facebook/ios-snapshot-test-case"

@@ -586,6 +586,7 @@ CGFloat scrollViewLastOffset = 0.0;
     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_main_queue(), ^{
         [weakSelf.togglePlayButton setImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
+        [weakSelf.togglePlayButton setAccessibilityLabel:NSLocalizedString(@"NOW_PLAYING_PAUSE", nil)];
     });
 }
 
@@ -593,6 +594,7 @@ CGFloat scrollViewLastOffset = 0.0;
     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_main_queue(), ^{
         [weakSelf.togglePlayButton setImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
+        [weakSelf.togglePlayButton setAccessibilityLabel:NSLocalizedString(@"NOW_PLAYING_PLAY", nil)];
     });
 }
 
@@ -600,6 +602,7 @@ CGFloat scrollViewLastOffset = 0.0;
     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_main_queue(), ^{
         [weakSelf.togglePlayButton setImage:[UIImage imageNamed:@"hourglass"] forState:UIControlStateNormal];
+        [weakSelf.togglePlayButton setAccessibilityLabel:NSLocalizedString(@"NOW_PLAYING_HOURGLASS", nil)];
     });
 }
 

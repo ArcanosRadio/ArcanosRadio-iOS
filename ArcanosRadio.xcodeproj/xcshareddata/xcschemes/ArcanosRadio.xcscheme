@@ -29,6 +29,16 @@
       language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D531D4AC1F21478100A78658"
+               BuildableName = "ArcanosRadioScreenshot.xctest"
+               BlueprintName = "ArcanosRadioScreenshot"
+               ReferencedContainer = "container:ArcanosRadio.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
@@ -66,6 +76,11 @@
          <EnvironmentVariable
             key = "OS_ACTIVITY_MODE"
             value = "disable"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "KIF_SCREENSHOT"
+            value = "$(SOURCE_ROOT)/Screenshots"
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>

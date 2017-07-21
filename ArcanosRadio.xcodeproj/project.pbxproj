@@ -85,6 +85,10 @@
 		D5018FAC1F0EC65700C7F7D1 /* AWRReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = D5018F9F1F0EC65700C7F7D1 /* AWRReachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D5018FAD1F0EC65700C7F7D1 /* AWRReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D5018FA01F0EC65700C7F7D1 /* AWRReachability.m */; };
 		D5018FAE1F0ED2CD00C7F7D1 /* IOZPromise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B676FD1F0EBAD600C62C95 /* IOZPromise.framework */; };
+		D531D4B01F21478100A78658 /* ArcanosRadioScreenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = D531D4AF1F21478100A78658 /* ArcanosRadioScreenshot.m */; };
+		D531D4B81F214AAB00A78658 /* KIF.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D531D4B71F214AAB00A78658 /* KIF.framework */; };
+		D531D4B91F214AB200A78658 /* SimulatorStatusMagiciOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01673C7A1DCFAD2E000B14CE /* SimulatorStatusMagiciOS.framework */; };
+		D531D4BC1F214D1400A78658 /* KIFUITestActor+EXAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D531D4BB1F214D1400A78658 /* KIFUITestActor+EXAdditions.m */; };
 		D545F0311F12DE6600462242 /* AWRScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D545F0301F12DE6600462242 /* AWRScrollView.m */; };
 		D545F0361F12E5DA00462242 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D545F0321F12E5DA00462242 /* TwitterCore.framework */; };
 		D545F0371F12E5DA00462242 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D545F0331F12E5DA00462242 /* TwitterKit.framework */; };
@@ -123,6 +127,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = D5B676FC1F0EBAD600C62C95;
 			remoteInfo = IOZPromise;
+		};
+		D531D4B21F21478100A78658 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0181E7CF1D8C905B008E21C5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0181E7D61D8C905B008E21C5;
+			remoteInfo = ArcanosRadio;
 		};
 		D56724991F0EB61500B7CF80 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -268,6 +279,13 @@
 		D5018F9E1F0EC65700C7F7D1 /* AWRParseMetadataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRParseMetadataStore.m; sourceTree = "<group>"; };
 		D5018F9F1F0EC65700C7F7D1 /* AWRReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRReachability.h; sourceTree = "<group>"; };
 		D5018FA01F0EC65700C7F7D1 /* AWRReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRReachability.m; sourceTree = "<group>"; };
+		D531D4AD1F21478100A78658 /* ArcanosRadioScreenshot.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArcanosRadioScreenshot.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D531D4AF1F21478100A78658 /* ArcanosRadioScreenshot.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArcanosRadioScreenshot.m; sourceTree = "<group>"; };
+		D531D4B11F21478100A78658 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D531D4B71F214AAB00A78658 /* KIF.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KIF.framework; path = Carthage/Build/iOS/KIF.framework; sourceTree = "<group>"; };
+		D531D4BA1F214D1400A78658 /* KIFUITestActor+EXAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KIFUITestActor+EXAdditions.h"; sourceTree = "<group>"; };
+		D531D4BB1F214D1400A78658 /* KIFUITestActor+EXAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KIFUITestActor+EXAdditions.m"; sourceTree = "<group>"; };
+		D531D4BF1F215A4500A78658 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSnapshotTestCase.framework; path = Carthage/Build/iOS/FBSnapshotTestCase.framework; sourceTree = "<group>"; };
 		D545F02F1F12DE6600462242 /* AWRScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRScrollView.h; sourceTree = "<group>"; };
 		D545F0301F12DE6600462242 /* AWRScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRScrollView.m; sourceTree = "<group>"; };
 		D545F0321F12E5DA00462242 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
@@ -322,6 +340,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D531D4AA1F21478100A78658 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D531D4B81F214AAB00A78658 /* KIF.framework in Frameworks */,
+				D531D4B91F214AB200A78658 /* SimulatorStatusMagiciOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D56724901F0EB61400B7CF80 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -361,6 +388,7 @@
 				0181E7D91D8C905B008E21C5 /* ArcanosRadio */,
 				D56724951F0EB61500B7CF80 /* ArcanosMetadataAPI */,
 				D5B676FE1F0EBAD600C62C95 /* IOZPromise */,
+				D531D4AE1F21478100A78658 /* ArcanosRadioScreenshot */,
 				0181E7FB1D8C9E83008E21C5 /* Frameworks */,
 				0181E7D81D8C905B008E21C5 /* Products */,
 			);
@@ -372,6 +400,7 @@
 				0181E7D71D8C905B008E21C5 /* Arcanos Radio.app */,
 				D56724941F0EB61400B7CF80 /* ArcanosMetadataAPI.framework */,
 				D5B676FD1F0EBAD600C62C95 /* IOZPromise.framework */,
+				D531D4AD1F21478100A78658 /* ArcanosRadioScreenshot.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -486,6 +515,8 @@
 		0181E7FB1D8C9E83008E21C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D531D4BF1F215A4500A78658 /* FBSnapshotTestCase.framework */,
+				D531D4B71F214AAB00A78658 /* KIF.framework */,
 				D545F0321F12E5DA00462242 /* TwitterCore.framework */,
 				D545F0331F12E5DA00462242 /* TwitterKit.framework */,
 				D545F0341F12E5DA00462242 /* TwitterKitResources.bundle */,
@@ -584,6 +615,17 @@
 				D5018FA01F0EC65700C7F7D1 /* AWRReachability.m */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		D531D4AE1F21478100A78658 /* ArcanosRadioScreenshot */ = {
+			isa = PBXGroup;
+			children = (
+				D531D4AF1F21478100A78658 /* ArcanosRadioScreenshot.m */,
+				D531D4B11F21478100A78658 /* Info.plist */,
+				D531D4BA1F214D1400A78658 /* KIFUITestActor+EXAdditions.h */,
+				D531D4BB1F214D1400A78658 /* KIFUITestActor+EXAdditions.m */,
+			);
+			path = ArcanosRadioScreenshot;
 			sourceTree = "<group>";
 		};
 		D56724951F0EB61500B7CF80 /* ArcanosMetadataAPI */ = {
@@ -719,6 +761,25 @@
 			productReference = 0181E7D71D8C905B008E21C5 /* Arcanos Radio.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D531D4AC1F21478100A78658 /* ArcanosRadioScreenshot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D531D4B61F21478100A78658 /* Build configuration list for PBXNativeTarget "ArcanosRadioScreenshot" */;
+			buildPhases = (
+				D531D4A91F21478100A78658 /* Sources */,
+				D531D4AA1F21478100A78658 /* Frameworks */,
+				D531D4AB1F21478100A78658 /* Resources */,
+				D531D4BE1F21514800A78658 /* Carthage Copy Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D531D4B31F21478100A78658 /* PBXTargetDependency */,
+			);
+			name = ArcanosRadioScreenshot;
+			productName = ArcanosRadioScreenshot;
+			productReference = D531D4AD1F21478100A78658 /* ArcanosRadioScreenshot.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D56724931F0EB61400B7CF80 /* ArcanosMetadataAPI */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D567249F1F0EB61500B7CF80 /* Build configuration list for PBXNativeTarget "ArcanosMetadataAPI" */;
@@ -775,6 +836,13 @@
 							};
 						};
 					};
+					D531D4AC1F21478100A78658 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 7BK8NL3DYL;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 0181E7D61D8C905B008E21C5;
+					};
 					D56724931F0EB61400B7CF80 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Manual;
@@ -803,6 +871,7 @@
 				0181E7D61D8C905B008E21C5 /* ArcanosRadio */,
 				D56724931F0EB61400B7CF80 /* ArcanosMetadataAPI */,
 				D5B676FC1F0EBAD600C62C95 /* IOZPromise */,
+				D531D4AC1F21478100A78658 /* ArcanosRadioScreenshot */,
 			);
 		};
 /* End PBXProject section */
@@ -828,6 +897,13 @@
 				016500EF1DB2EFBD00B32C0A /* Settings.bundle in Resources */,
 				0181E7F91D8C9663008E21C5 /* SplashView.xib in Resources */,
 				018E2CE21DBC376A0035455B /* Acknowledgements.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D531D4AB1F21478100A78658 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -869,6 +945,22 @@
 			inputPaths = (
 				"$(SRCROOT)/Frameworks/Carthage/Build/iOS/Bolts.framework",
 				"$(SRCROOT)/Frameworks/Carthage/Build/iOS/Parse.framework",
+			);
+			name = "Carthage Copy Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		D531D4BE1F21514800A78658 /* Carthage Copy Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Frameworks/Carthage/Build/iOS/KIF.framework",
+				"$(SRCROOT)/Frameworks/Carthage/Build/iOS/SimulatorStatusMagiciOS.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputPaths = (
@@ -924,6 +1016,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D531D4A91F21478100A78658 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D531D4BC1F214D1400A78658 /* KIFUITestActor+EXAdditions.m in Sources */,
+				D531D4B01F21478100A78658 /* ArcanosRadioScreenshot.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D567248F1F0EB61400B7CF80 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -959,6 +1060,11 @@
 			isa = PBXTargetDependency;
 			target = D5B676FC1F0EBAD600C62C95 /* IOZPromise */;
 			targetProxy = D5018FAF1F0ED2D100C7F7D1 /* PBXContainerItemProxy */;
+		};
+		D531D4B31F21478100A78658 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0181E7D61D8C905B008E21C5 /* ArcanosRadio */;
+			targetProxy = D531D4B21F21478100A78658 /* PBXContainerItemProxy */;
 		};
 		D567249A1F0EB61500B7CF80 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1144,6 +1250,61 @@
 			};
 			name = Release;
 		};
+		D531D4B41F21478100A78658 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 7BK8NL3DYL;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = ArcanosRadioScreenshot/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-framework",
+					IOKit,
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.developercity.ArcanosRadioScreenshot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ArcanosRadioScreenshot/ArcanosRadioScreenshot-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Arcanos Radio.app/Arcanos Radio";
+			};
+			name = Debug;
+		};
+		D531D4B51F21478100A78658 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 7BK8NL3DYL;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = ArcanosRadioScreenshot/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-framework",
+					IOKit,
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.developercity.ArcanosRadioScreenshot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ArcanosRadioScreenshot/ArcanosRadioScreenshot-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Arcanos Radio.app/Arcanos Radio";
+			};
+			name = Release;
+		};
 		D567249D1F0EB61500B7CF80 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1289,6 +1450,15 @@
 			buildConfigurations = (
 				0181E7EF1D8C905B008E21C5 /* Debug */,
 				0181E7F01D8C905B008E21C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D531D4B61F21478100A78658 /* Build configuration list for PBXNativeTarget "ArcanosRadioScreenshot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D531D4B41F21478100A78658 /* Debug */,
+				D531D4B51F21478100A78658 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

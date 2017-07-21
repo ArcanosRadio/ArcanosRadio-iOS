@@ -127,7 +127,7 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sct-cG-X0j" userLabel="Play Button">
                     <rect key="frame" x="305" y="343" width="54" height="54"/>
                     <color key="backgroundColor" red="0.99607843137254903" green="0.81568627450980391" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
-                    <accessibility key="accessibilityConfiguration" identifier="play_pause_button"/>
+                    <accessibility key="accessibilityConfiguration" identifier="play_pause_button" label="Play"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="54" id="3Oo-Nv-bP5" userLabel="Play Button Width"/>
                         <constraint firstAttribute="height" constant="54" id="dDB-rd-Jps" userLabel="Play Button Height"/>

@@ -41,3 +41,6 @@
 "TOOLBAR_LYRICS" = "Letra";
 "TOOLBAR_TWITTER" = "Twitter";
 "TOOLBAR_WEBSITE" = "Site";
+"NOW_PLAYING_PLAY" = "Tocar";
+"NOW_PLAYING_PAUSE" = "Parar";
+"NOW_PLAYING_HOURGLASS" = "Conectando";
