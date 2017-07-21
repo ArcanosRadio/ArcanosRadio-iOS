@@ -50,7 +50,10 @@
 - (AWRReachability *)reachability {
     if (!_reachability) {
         _reachability = [AWRReachability reachabilityForInternetConnection];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedReachability:) name:kReachabilityChangedNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(receivedReachability:)
+                                                     name:kReachabilityChangedNotification
+                                                   object:nil];
     }
     return _reachability;
 }
@@ -65,7 +68,10 @@
     [defaults addObserver:self forKeyPath:CONFIG_STREAM_OVER_MOBILE_DATA_KEY options:NSKeyValueObservingOptionNew context:NULL];
     [self evaluateSettings:defaults];
 
-    AWRMetadataFactory.settings = @{ @"PARSE_APPLICATION_ID" : PARSE_APP, @"PARSE_CLIENT_KEY" : PARSE_CLIENT_KEY, @"PARSE_SERVER_URL" : PARSE_URL };
+    AWRMetadataFactory.settings =
+        @{ @"PARSE_APPLICATION_ID" : PARSE_APP,
+           @"PARSE_CLIENT_KEY" : PARSE_CLIENT_KEY,
+           @"PARSE_SERVER_URL" : PARSE_URL };
     [[AWRMetadataFactory createMetadataStore] refreshConfig];
 #ifndef MOCK
     [self.reachability startNotifier];

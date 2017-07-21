@@ -92,10 +92,10 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return (section == 0)
-               ? nil
-               : (section == 1) ? NSLocalizedString(@"ABOUT_TEAM_HEADER", nil)
-                                : (section == 2) ? NSLocalizedString(@"ABOUT_LINKS_HEADER", nil) : NSLocalizedString(@"ABOUT_THIRD_PARTY_HEADER", nil);
+    return (section == 0) ? nil
+                          : (section == 1) ? NSLocalizedString(@"ABOUT_TEAM_HEADER", nil)
+                                           : (section == 2) ? NSLocalizedString(@"ABOUT_LINKS_HEADER", nil)
+                                                            : NSLocalizedString(@"ABOUT_THIRD_PARTY_HEADER", nil);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

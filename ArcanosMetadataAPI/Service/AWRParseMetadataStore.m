@@ -13,11 +13,12 @@
 @implementation AWRParseMetadataStore
 
 + (void)configure {
-    [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
-               configuration.applicationId = AWRMetadataFactory.settings[@"PARSE_APPLICATION_ID"];
-               configuration.clientKey     = AWRMetadataFactory.settings[@"PARSE_CLIENT_KEY"];
-               configuration.server        = AWRMetadataFactory.settings[@"PARSE_SERVER_URL"];
-           }]];
+    [Parse
+        initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
+            configuration.applicationId = AWRMetadataFactory.settings[@"PARSE_APPLICATION_ID"];
+            configuration.clientKey     = AWRMetadataFactory.settings[@"PARSE_CLIENT_KEY"];
+            configuration.server        = AWRMetadataFactory.settings[@"PARSE_SERVER_URL"];
+        }]];
 }
 
 + (UIImage *)defaultAlbumArt {

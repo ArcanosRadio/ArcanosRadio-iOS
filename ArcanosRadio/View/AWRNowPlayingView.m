@@ -134,7 +134,9 @@ const float kToolbarFinalSpacing      = 20.0;
     if (!_menu) {
         NSArray<AWRMenuViewItem *> *items = @[
             [AWRMenuViewItem itemWithIdentifier:@"about" icon:[UIImage imageNamed:@"help"] text:NSLocalizedString(@"MENU_ABOUT", nil)],
-            [AWRMenuViewItem itemWithIdentifier:@"settings" icon:[UIImage imageNamed:@"settings"] text:NSLocalizedString(@"MENU_SETTINGS", nil)],
+            [AWRMenuViewItem itemWithIdentifier:@"settings"
+                                           icon:[UIImage imageNamed:@"settings"]
+                                           text:NSLocalizedString(@"MENU_SETTINGS", nil)],
             [AWRMenuViewItem itemWithIdentifier:@"share" icon:[UIImage imageNamed:@"share"] text:NSLocalizedString(@"MENU_SHARE", nil)]
         ];
         _menu          = [[AWRMenuView alloc] initWithFrame:self.frame];
@@ -238,12 +240,14 @@ const float kToolbarFinalSpacing      = 20.0;
 - (void)recalculateContentSize {
     float scrollbarFrameHeight = self.scrollView.frame.size.height;
 
-    float innerScrollMaxContainerSize = [UIScreen mainScreen].bounds.size.height - self.headerView.minimumHeight - self.mediaControlBar.frame.size.height;
+    float innerScrollMaxContainerSize =
+        [UIScreen mainScreen].bounds.size.height - self.headerView.minimumHeight - self.mediaControlBar.frame.size.height;
 
-    float innerScrollMaxOffset =
-        self.currentTab == AWRNowPlayingViewTabLyrics
-            ? MAX(self.lyricsScrollView.contentSize.height - innerScrollMaxContainerSize, 0)
-            : self.currentTab == AWRNowPlayingViewTabTwitter ? MAX(self.twitterView.contentSize.height - innerScrollMaxContainerSize, 0) : 0;
+    float innerScrollMaxOffset = self.currentTab == AWRNowPlayingViewTabLyrics
+                                     ? MAX(self.lyricsScrollView.contentSize.height - innerScrollMaxContainerSize, 0)
+                                     : self.currentTab == AWRNowPlayingViewTabTwitter
+                                           ? MAX(self.twitterView.contentSize.height - innerScrollMaxContainerSize, 0)
+                                           : 0;
 
     self.scrollView.contentSize = CGSizeMake(1.0, scrollbarFrameHeight + [self screenAnimationScrollOffset] + innerScrollMaxOffset);
 }

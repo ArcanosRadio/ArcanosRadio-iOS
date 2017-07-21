@@ -8,7 +8,14 @@
 }
 
 - (void)trackTab:(nonnull NSString *)content forSong:(nonnull NSString *)song artist:(nonnull NSString *)artist {
-    [Answers logContentViewWithName:content contentType:@"tab" contentId:content customAttributes:@{ @"Tab" : content, @"Artist" : artist, @"Song" : song }];
+    [Answers logContentViewWithName:content
+                        contentType:@"tab"
+                          contentId:content
+                   customAttributes:@{
+                       @"Tab" : content,
+                       @"Artist" : artist,
+                       @"Song" : song
+                   }];
 }
 
 - (void)trackListenSong:(NSString *)song artist:(NSString *)artist {
@@ -17,7 +24,14 @@
 
 - (void)trackShareSong:(NSString *)song artist:(NSString *)artist {
     NSString *fullName = [NSString stringWithFormat:@"%@ - %@", song, artist];
-    [Answers logShareWithMethod:@"Song" contentName:fullName contentType:@"song" contentId:fullName customAttributes:@{ @"Artist" : artist, @"Song" : song }];
+    [Answers logShareWithMethod:@"Song"
+                    contentName:fullName
+                    contentType:@"song"
+                      contentId:fullName
+               customAttributes:@{
+                   @"Artist" : artist,
+                   @"Song" : song
+               }];
 }
 
 - (void)trackUserLeavingWithSong:(NSString *)song artist:(NSString *)artist {

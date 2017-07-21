@@ -51,7 +51,10 @@ static NSString *const kStatusBarTappedNotification = @"StatusBarTappedNotificat
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(statusBarTappedAction:) name:kStatusBarTappedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(statusBarTappedAction:)
+                                                 name:kStatusBarTappedNotification
+                                               object:nil];
     [self emptyFields];
 }
 
@@ -80,7 +83,9 @@ static NSString *const kStatusBarTappedNotification = @"StatusBarTappedNotificat
 
     self.backgroundAlbumArt.imageStart = [model.albumArt convertToSquareWithSideLength:self.maximumHeight];
     self.backgroundAlbumArt.imageEnd =
-        [self.backgroundAlbumArt.imageStart blurredImageWithRadius:22.0 iterations:2 tintColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0]];
+        [self.backgroundAlbumArt.imageStart blurredImageWithRadius:22.0
+                                                        iterations:2
+                                                         tintColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0]];
 
     self.albumArtIcon.image              = [model.albumArt convertToSize:self.albumArtIcon.frame.size];
     UIColor *borderColor                 = [UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:kAvatarBorderOpacity];

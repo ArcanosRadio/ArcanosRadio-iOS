@@ -33,8 +33,8 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        self.startingPoint =
-            CGPointMake(frame.origin.x + frame.size.width - BUTTON_DIAMETER / 2 - 8, frame.origin.y + frame.size.height - BUTTON_DIAMETER / 2 - 8);
+        self.startingPoint = CGPointMake(frame.origin.x + frame.size.width - BUTTON_DIAMETER / 2 - 8,
+                                         frame.origin.y + frame.size.height - BUTTON_DIAMETER / 2 - 8);
         self.clipsToBounds = NO;
     }
     return self;
@@ -107,9 +107,10 @@
     if (!_menuItemButtons) {
         NSMutableArray *subviews = [[NSMutableArray alloc] initWithCapacity:self.items.count];
         for (AWRMenuViewItem *item in self.items) {
-            UIButton *button = [[UIButton alloc]
-                initWithFrame:CGRectMake(
-                                  self.startingPoint.x - BUTTON_DIAMETER / 2, self.startingPoint.y - BUTTON_DIAMETER / 2, BUTTON_DIAMETER, BUTTON_DIAMETER)];
+            UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(self.startingPoint.x - BUTTON_DIAMETER / 2,
+                                                                          self.startingPoint.y - BUTTON_DIAMETER / 2,
+                                                                          BUTTON_DIAMETER,
+                                                                          BUTTON_DIAMETER)];
             button.layer.cornerRadius = BUTTON_DIAMETER / 2;
             button.alpha              = 0.0;
             button.tag                = [self.items indexOfObject:item];
@@ -128,8 +129,8 @@
 - (UIButton *)buttonForPoint:(CGPoint)point {
     UIButton *found = nil;
     for (UIButton *button in _menuItemButtons) {
-        if (point.x >= button.frame.origin.x && point.x <= button.frame.origin.x + button.frame.size.width && point.y >= button.frame.origin.y &&
-            point.y <= button.frame.origin.y + button.frame.size.height) {
+        if (point.x >= button.frame.origin.x && point.x <= button.frame.origin.x + button.frame.size.width &&
+            point.y >= button.frame.origin.y && point.y <= button.frame.origin.y + button.frame.size.height) {
             button.backgroundColor = [UIColor colorWithRed:0.8 green:0.3 blue:0.3 alpha:1.0];
             found                  = button;
         } else {

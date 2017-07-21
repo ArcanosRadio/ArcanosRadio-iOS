@@ -56,7 +56,8 @@
     CGImageRef imageRef = self.CGImage;
 
     // convert to ARGB if it isn't
-    if (CGImageGetBitsPerPixel(imageRef) != 32 || CGImageGetBitsPerComponent(imageRef) != 8 || !((CGImageGetBitmapInfo(imageRef) & kCGBitmapAlphaInfoMask))) {
+    if (CGImageGetBitsPerPixel(imageRef) != 32 || CGImageGetBitsPerComponent(imageRef) != 8 ||
+        !((CGImageGetBitmapInfo(imageRef) & kCGBitmapAlphaInfoMask))) {
         UIGraphicsBeginImageContextWithOptions(self.size, NO, self.scale);
         [self drawAtPoint:CGPointZero];
         imageRef = UIGraphicsGetImageFromCurrentImageContext().CGImage;
@@ -72,8 +73,8 @@
     buffer2.data                        = malloc(bytes);
 
     // create temp buffer
-    void *tempBuffer =
-        malloc((size_t)vImageBoxConvolve_ARGB8888(&buffer1, &buffer2, NULL, 0, 0, boxSize, boxSize, NULL, kvImageEdgeExtend + kvImageGetTempBufferSize));
+    void *tempBuffer = malloc((size_t)vImageBoxConvolve_ARGB8888(
+        &buffer1, &buffer2, NULL, 0, 0, boxSize, boxSize, NULL, kvImageEdgeExtend + kvImageGetTempBufferSize));
 
     // copy image data
     CFDataRef dataSource = CGDataProviderCopyData(CGImageGetDataProvider(imageRef));
@@ -95,8 +96,8 @@
     free(tempBuffer);
 
     // create image context from buffer
-    CGContextRef ctx =
-        CGBitmapContextCreate(buffer1.data, buffer1.width, buffer1.height, 8, buffer1.rowBytes, CGImageGetColorSpace(imageRef), CGImageGetBitmapInfo(imageRef));
+    CGContextRef ctx = CGBitmapContextCreate(
+        buffer1.data, buffer1.width, buffer1.height, 8, buffer1.rowBytes, CGImageGetColorSpace(imageRef), CGImageGetBitmapInfo(imageRef));
 
     // apply tint
     if (tintColor && CGColorGetAlpha(tintColor.CGColor) > 0.0f) {

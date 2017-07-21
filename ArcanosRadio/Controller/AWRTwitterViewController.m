@@ -22,15 +22,17 @@
 
 - (void)setTwitterSearch:(NSString *)searchQuery {
     dispatch_async(dispatch_get_main_queue(), ^{
-        TWTRSearchTimelineDataSource *searchDataSource = [[TWTRSearchTimelineDataSource alloc] initWithSearchQuery:searchQuery APIClient:self.client];
-        self.dataSource                                = searchDataSource;
+        TWTRSearchTimelineDataSource *searchDataSource =
+            [[TWTRSearchTimelineDataSource alloc] initWithSearchQuery:searchQuery APIClient:self.client];
+        self.dataSource = searchDataSource;
     });
 }
 
 - (void)setTwitterTimeline:(NSString *)timeline {
     dispatch_async(dispatch_get_main_queue(), ^{
-        TWTRUserTimelineDataSource *userTimelineDataSource = [[TWTRUserTimelineDataSource alloc] initWithScreenName:timeline APIClient:self.client];
-        self.dataSource                                    = userTimelineDataSource;
+        TWTRUserTimelineDataSource *userTimelineDataSource =
+            [[TWTRUserTimelineDataSource alloc] initWithScreenName:timeline APIClient:self.client];
+        self.dataSource = userTimelineDataSource;
     });
 }
 

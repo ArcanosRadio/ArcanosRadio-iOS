@@ -72,7 +72,8 @@ NSString *const REMOTE_CONFIG_POOLING_TIME_BACKGROUND_KEY = @"iphonePoolingTimeB
             return [IOZNoMorePromises new];
         }
 
-        double diff = [result.updatedAt timeIntervalSinceReferenceDate] - [weakSelf.currentPlaylist.updatedAt timeIntervalSinceReferenceDate];
+        double diff =
+            [result.updatedAt timeIntervalSinceReferenceDate] - [weakSelf.currentPlaylist.updatedAt timeIntervalSinceReferenceDate];
 
         if (diff < 2) {
             return [[NSError alloc] initWithDomain:@"Song hasn't changed since last time we've checked" code:-200 userInfo:nil];
@@ -103,19 +104,20 @@ NSString *const REMOTE_CONFIG_POOLING_TIME_BACKGROUND_KEY = @"iphonePoolingTimeB
 - (void)fetchArtistDescriptionAsync {
     __weak typeof(self) weakSelf = self;
 
-    [self.metadataStore descriptionForArtist:self.currentPlaylist.song.artist locale:self.locale].then(
-        ^id<IOZPromise>(id<IOZSuccessfulPromise> finishedPromise) {
-            if ([weakSelf.delegate respondsToSelector:@selector(metadataDidFinishDownloadingArtistDescription:forSong:)]) {
-                [weakSelf.delegate metadataDidFinishDownloadingArtistDescription:finishedPromise.result forSong:weakSelf.currentPlaylist.song];
-            }
-            return [IOZNoMorePromises new];
-        });
+    [self.metadataStore descriptionForArtist:self.currentPlaylist.song.artist locale:self.locale].then(^id<IOZPromise>(
+        id<IOZSuccessfulPromise> finishedPromise) {
+        if ([weakSelf.delegate respondsToSelector:@selector(metadataDidFinishDownloadingArtistDescription:forSong:)]) {
+            [weakSelf.delegate metadataDidFinishDownloadingArtistDescription:finishedPromise.result forSong:weakSelf.currentPlaylist.song];
+        }
+        return [IOZNoMorePromises new];
+    });
 }
 
 - (void)fetchSongDescriptionAsync {
     __weak typeof(self) weakSelf = self;
 
-    [self.metadataStore descriptionForSong:self.currentPlaylist.song locale:self.locale].then(^id<IOZPromise>(id<IOZSuccessfulPromise> finishedPromise) {
+    [self.metadataStore descriptionForSong:self.currentPlaylist.song locale:self.locale].then(^id<IOZPromise>(
+        id<IOZSuccessfulPromise> finishedPromise) {
         if ([weakSelf.delegate respondsToSelector:@selector(metadataDidFinishDownloadingSongDescription:forSong:)]) {
             [weakSelf.delegate metadataDidFinishDownloadingSongDescription:finishedPromise.result forSong:weakSelf.currentPlaylist.song];
         }

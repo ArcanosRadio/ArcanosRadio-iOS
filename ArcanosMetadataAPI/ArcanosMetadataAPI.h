@@ -6,7 +6,8 @@ FOUNDATION_EXPORT double ArcanosMetadataAPIVersionNumber;
 //! Project version string for ArcanosMetadataAPI.
 FOUNDATION_EXPORT const unsigned char ArcanosMetadataAPIVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <ArcanosMetadataAPI/PublicHeader.h>
+// In this header, you should import all the public headers of your framework using statements like #import
+// <ArcanosMetadataAPI/PublicHeader.h>
 
 #import <ArcanosMetadataAPI/AWRArtist.h>
 #import <ArcanosMetadataAPI/AWREntity.h>

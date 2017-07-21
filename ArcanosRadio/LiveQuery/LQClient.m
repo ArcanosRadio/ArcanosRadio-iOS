@@ -149,7 +149,8 @@
 //                if !userDisconnected {
 //                    reconnect()
 //                } else {
-//                    debugPrint("Warning: The client was explicitly disconnected! You must explicitly call .reconnect() in order to process your
+//                    debugPrint("Warning: The client was explicitly disconnected! You must explicitly call .reconnect() in order to process
+//                    your
 //                    subscriptions.")
 //                }
 //            }

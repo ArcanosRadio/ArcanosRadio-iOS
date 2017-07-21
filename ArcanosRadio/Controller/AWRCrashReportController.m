@@ -35,7 +35,8 @@
         [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"CRASHREPORT_REQUEST_ALWAYS_SEND", nil)
                                                   style:UIAlertActionStyleDefault
                                                 handler:^(UIAlertAction *_Nonnull action) {
-                                                    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:CONFIG_AGREE_WITH_CRASH_REPORTS_KEY];
+                                                    [[NSUserDefaults standardUserDefaults] setBool:YES
+                                                                                            forKey:CONFIG_AGREE_WITH_CRASH_REPORTS_KEY];
                                                     completionHandler(YES);
                                                 }]];
 

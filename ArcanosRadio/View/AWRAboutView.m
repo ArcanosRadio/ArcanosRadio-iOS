@@ -30,7 +30,9 @@
     CGRect rect                 = self.navigationBar.frame;
     float y                     = rect.size.height + rect.origin.y;
     self.tableView.contentInset = UIEdgeInsetsMake(y, 0, 0, 0);
-    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]
+                          atScrollPosition:UITableViewScrollPositionTop
+                                  animated:YES];
 }
 
 - (UIBarPosition)positionForBar:(id<UIBarPositioning>)bar {
