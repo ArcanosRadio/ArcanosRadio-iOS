@@ -743,11 +743,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0181E7EE1D8C905B008E21C5 /* Build configuration list for PBXNativeTarget "ArcanosRadio" */;
 			buildPhases = (
+				D5C755FE1F22AE950006C2FA /* Lint */,
 				0181E7D31D8C905B008E21C5 /* Sources */,
 				0181E7D41D8C905B008E21C5 /* Frameworks */,
 				0181E7D51D8C905B008E21C5 /* Resources */,
 				0181E8041D8CAE36008E21C5 /* Carthage Copy Frameworks */,
-				0181E7FA1D8C9E37008E21C5 /* ShellScript */,
+				0181E7FA1D8C9E37008E21C5 /* Inject Crashlytics Credentials */,
 				D56724A01F0EB61500B7CF80 /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -924,13 +925,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0181E7FA1D8C9E37008E21C5 /* ShellScript */ = {
+		0181E7FA1D8C9E37008E21C5 /* Inject Crashlytics Credentials */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Inject Crashlytics Credentials";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -968,6 +970,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		D5C755FE1F22AE950006C2FA /* Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Lint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd ${SRCROOT}\nTools/lint.sh";
 		};
 /* End PBXShellScriptBuildPhase section */
 
