@@ -114,6 +114,8 @@
 		D5B6771A1F0EBB8100C62C95 /* IOZPromiseProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = D5B677101F0EBB8100C62C95 /* IOZPromiseProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D5B6771B1F0EBB8100C62C95 /* IOZPromiseResult.h in Headers */ = {isa = PBXBuildFile; fileRef = D5B677111F0EBB8100C62C95 /* IOZPromiseResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D5B6771C1F0EBB8100C62C95 /* IOZPromiseResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B677121F0EBB8100C62C95 /* IOZPromiseResult.m */; };
+		D5C756051F22B38D0006C2FA /* AWRAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = D5C756041F22B38D0006C2FA /* AWRAnalytics.m */; };
+		D5C756081F22B4540006C2FA /* AWRFabricAnswers.m in Sources */ = {isa = PBXBuildFile; fileRef = D5C756071F22B4540006C2FA /* AWRFabricAnswers.m */; };
 		D5D7599A1F127AA50001D6B5 /* AWRAppDeveloperViewState.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D759931F127AA50001D6B5 /* AWRAppDeveloperViewState.m */; };
 		D5D7599B1F127AA50001D6B5 /* AWRAppInfoViewState.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D759951F127AA50001D6B5 /* AWRAppInfoViewState.m */; };
 		D5D7599C1F127AA50001D6B5 /* AWRLicenseViewState.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D759971F127AA50001D6B5 /* AWRLicenseViewState.m */; };
@@ -312,6 +314,11 @@
 		D5B677101F0EBB8100C62C95 /* IOZPromiseProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOZPromiseProtocol.h; sourceTree = "<group>"; };
 		D5B677111F0EBB8100C62C95 /* IOZPromiseResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOZPromiseResult.h; sourceTree = "<group>"; };
 		D5B677121F0EBB8100C62C95 /* IOZPromiseResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOZPromiseResult.m; sourceTree = "<group>"; };
+		D5C756001F22B3310006C2FA /* AWRAnalyticsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRAnalyticsService.h; sourceTree = "<group>"; };
+		D5C756031F22B38D0006C2FA /* AWRAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRAnalytics.h; sourceTree = "<group>"; };
+		D5C756041F22B38D0006C2FA /* AWRAnalytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRAnalytics.m; sourceTree = "<group>"; };
+		D5C756061F22B4540006C2FA /* AWRFabricAnswers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRFabricAnswers.h; sourceTree = "<group>"; };
+		D5C756071F22B4540006C2FA /* AWRFabricAnswers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRFabricAnswers.m; sourceTree = "<group>"; };
 		D5D759921F127AA50001D6B5 /* AWRAppDeveloperViewState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRAppDeveloperViewState.h; sourceTree = "<group>"; };
 		D5D759931F127AA50001D6B5 /* AWRAppDeveloperViewState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRAppDeveloperViewState.m; sourceTree = "<group>"; };
 		D5D759941F127AA50001D6B5 /* AWRAppInfoViewState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRAppInfoViewState.h; sourceTree = "<group>"; };
@@ -409,14 +416,15 @@
 			isa = PBXGroup;
 			children = (
 				018E2CCF1DBC31130035455B /* Acknowledgements */,
+				D5C755FF1F22B3120006C2FA /* Analytics */,
 				01DE2E7D1D95FC0B003E604E /* BaseLibrary */,
 				0181E7F11D8C90BA008E21C5 /* Bootstrap */,
+				0181E7F31D8C9374008E21C5 /* Controller */,
+				012582B51D91F216002C4E93 /* Coordinator */,
 				0181E8051D8CB095008E21C5 /* LiveQuery */,
 				0181E7F61D8C93D5008E21C5 /* Media */,
 				0181E7F21D8C9360008E21C5 /* View */,
 				D5D759911F127A640001D6B5 /* ViewState */,
-				012582B51D91F216002C4E93 /* Coordinator */,
-				0181E7F31D8C9374008E21C5 /* Controller */,
 			);
 			path = ArcanosRadio;
 			sourceTree = "<group>";
@@ -677,6 +685,18 @@
 				D5B677001F0EBAD600C62C95 /* Info.plist */,
 			);
 			path = IOZPromise;
+			sourceTree = "<group>";
+		};
+		D5C755FF1F22B3120006C2FA /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				D5C756001F22B3310006C2FA /* AWRAnalyticsService.h */,
+				D5C756031F22B38D0006C2FA /* AWRAnalytics.h */,
+				D5C756041F22B38D0006C2FA /* AWRAnalytics.m */,
+				D5C756061F22B4540006C2FA /* AWRFabricAnswers.h */,
+				D5C756071F22B4540006C2FA /* AWRFabricAnswers.m */,
+			);
+			path = Analytics;
 			sourceTree = "<group>";
 		};
 		D5D759911F127A640001D6B5 /* ViewState */ = {
@@ -1000,6 +1020,7 @@
 				D5D7599A1F127AA50001D6B5 /* AWRAppDeveloperViewState.m in Sources */,
 				0181E7DF1D8C905B008E21C5 /* AppDelegate.m in Sources */,
 				013784DE1DEE2A86006EC13E /* AWRTwitterViewController.m in Sources */,
+				D5C756081F22B4540006C2FA /* AWRFabricAnswers.m in Sources */,
 				018E2CC51DBC1CF50035455B /* AWRViewController.m in Sources */,
 				01FB393C1DAC607A00EBC99D /* AWRMergeImageView.m in Sources */,
 				0151BAD91DC0FA4E00736A79 /* AWRMenuPanGestureRecognizer.m in Sources */,
@@ -1016,6 +1037,7 @@
 				018E2CF01DBC720A0035455B /* AWRDeveloperInfoTableViewCell.m in Sources */,
 				0181E8341D8CB177008E21C5 /* AWRNowPlayingView.m in Sources */,
 				016500FA1DB3383700B32C0A /* AWRAboutController.m in Sources */,
+				D5C756051F22B38D0006C2FA /* AWRAnalytics.m in Sources */,
 				018E2CFF1DBC7DD00035455B /* AWRAppLinkInfoTableViewCell.m in Sources */,
 				01DD773D1DEA5D83006E82B3 /* NSArray+Functional.m in Sources */,
 				018E2D121DBD00F00035455B /* AWRHelpCoordinator.m in Sources */,
