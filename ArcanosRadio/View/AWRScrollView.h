@@ -8,8 +8,8 @@
 
 @end
 
-@interface AWRScrollView : UIScrollView<UIGestureRecognizerDelegate>
+@interface AWRScrollView : UIScrollView <UIGestureRecognizerDelegate>
 
-@property (nonatomic, weak)id<AWRScrollViewDelegate> scrollViewDelegate;
+@property (nonatomic, weak) id<AWRScrollViewDelegate> scrollViewDelegate;
 
 @end

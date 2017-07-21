@@ -1,8 +1,8 @@
 #import "AWRCrashReportController.h"
 
-@interface AWRCrashReportController()
+@interface AWRCrashReportController ()
 
-@property(nonatomic, weak)UIViewController *parent;
+@property (nonatomic, weak) UIViewController *parent;
 
 @end
 
@@ -26,19 +26,19 @@
                                                                        message:NSLocalizedString(@"CRASHREPORT_REQUEST_MESSAGE", nil)
                                                                 preferredStyle:UIAlertControllerStyleAlert];
 
-        [alert addAction: [UIAlertAction actionWithTitle:NSLocalizedString(@"CRASHREPORT_REQUEST_NEVER_SEND", nil)
-                                                   style:UIAlertActionStyleCancel
-                                                 handler:^(UIAlertAction * _Nonnull action) {
-                                                     completionHandler(NO);
-                                                 }]];
+        [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"CRASHREPORT_REQUEST_NEVER_SEND", nil)
+                                                  style:UIAlertActionStyleCancel
+                                                handler:^(UIAlertAction *_Nonnull action) {
+                                                    completionHandler(NO);
+                                                }]];
 
-        [alert addAction: [UIAlertAction actionWithTitle:NSLocalizedString(@"CRASHREPORT_REQUEST_ALWAYS_SEND", nil)
-                                                   style:UIAlertActionStyleDefault
-                                                 handler:^(UIAlertAction * _Nonnull action) {
-                                                     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:CONFIG_AGREE_WITH_CRASH_REPORTS_KEY];
-                                                     completionHandler(YES);
-                                                 }]];
-        
+        [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"CRASHREPORT_REQUEST_ALWAYS_SEND", nil)
+                                                  style:UIAlertActionStyleDefault
+                                                handler:^(UIAlertAction *_Nonnull action) {
+                                                    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:CONFIG_AGREE_WITH_CRASH_REPORTS_KEY];
+                                                    completionHandler(YES);
+                                                }]];
+
         [self.parent presentViewController:alert animated:YES completion:NULL];
     }
 }

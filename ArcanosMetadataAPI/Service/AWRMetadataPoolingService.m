@@ -1,39 +1,39 @@
 #import "AWRMetadataPoolingService.h"
-#import "AWRMetadataStore.h"
 #import "AWRMetadataFactory.h"
+#import "AWRMetadataStore.h"
 #import <IOZPromise/IOZPromise.h>
 
-@interface AWRMetadataPoolingService()
+@interface AWRMetadataPoolingService ()
 
-@property (nonatomic, strong) NSTimer * timer;
+@property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic, strong) id<AWRMetadataStore> metadataStore;
-@property (nonatomic,getter=isForegroundExecution) BOOL foregroundExecution;
-@property (nonatomic)NSTimeInterval timerInterval;
-@property (nonatomic)double timerIntervalActive;
-@property (nonatomic)double timerIntervalBackground;
+@property (nonatomic, getter=isForegroundExecution) BOOL foregroundExecution;
+@property (nonatomic) NSTimeInterval timerInterval;
+@property (nonatomic) double timerIntervalActive;
+@property (nonatomic) double timerIntervalBackground;
 @property (nonatomic) BOOL serverRightsFlag;
 @property (nonatomic) BOOL localRightsFlag;
 
 @end
 
 @implementation AWRMetadataPoolingService
-NSString *const CONFIG_RIGHTS_FLAG_KEY = @"rights_flag";
-NSString *const REMOTE_CONFIG_RIGHTS_FLAG_KEY = @"iphoneRightsFlag";
-NSString *const REMOTE_CONFIG_POOLING_TIME_ACTIVE_KEY = @"iphonePoolingTimeActive";
+NSString *const CONFIG_RIGHTS_FLAG_KEY                    = @"rights_flag";
+NSString *const REMOTE_CONFIG_RIGHTS_FLAG_KEY             = @"iphoneRightsFlag";
+NSString *const REMOTE_CONFIG_POOLING_TIME_ACTIVE_KEY     = @"iphonePoolingTimeActive";
 NSString *const REMOTE_CONFIG_POOLING_TIME_BACKGROUND_KEY = @"iphonePoolingTimeBackground";
 
 - (instancetype)initWithStore:(id<AWRMetadataStore>)store {
     self = [super init];
     if (self) {
-        self.metadataStore = store;
-        id<AWRMetadataStore> store = [AWRMetadataFactory createMetadataStore];
-        self.timerIntervalActive = [[store readConfig:REMOTE_CONFIG_POOLING_TIME_ACTIVE_KEY] doubleValue];
+        self.metadataStore           = store;
+        id<AWRMetadataStore> store   = [AWRMetadataFactory createMetadataStore];
+        self.timerIntervalActive     = [[store readConfig:REMOTE_CONFIG_POOLING_TIME_ACTIVE_KEY] doubleValue];
         self.timerIntervalBackground = [[store readConfig:REMOTE_CONFIG_POOLING_TIME_BACKGROUND_KEY] doubleValue];
-        self.serverRightsFlag = [[store readConfig:REMOTE_CONFIG_RIGHTS_FLAG_KEY] boolValue];
-        self.localRightsFlag = [[NSUserDefaults standardUserDefaults] boolForKey:CONFIG_RIGHTS_FLAG_KEY];
+        self.serverRightsFlag        = [[store readConfig:REMOTE_CONFIG_RIGHTS_FLAG_KEY] boolValue];
+        self.localRightsFlag         = [[NSUserDefaults standardUserDefaults] boolForKey:CONFIG_RIGHTS_FLAG_KEY];
 
         _foregroundExecution = YES;
-        self.timerInterval = self.timerIntervalActive;
+        self.timerInterval   = self.timerIntervalActive;
     }
     return self;
 }
@@ -62,39 +62,38 @@ NSString *const REMOTE_CONFIG_POOLING_TIME_BACKGROUND_KEY = @"iphonePoolingTimeB
 
 - (id<IOZPromise>)fetchCurrentSong {
     __weak typeof(self) weakSelf = self;
-    return [self.metadataStore currentSong]
-        .then(^id<IOZPromise>(id<IOZSuccessfulPromise> finishedPromise) {
-            id<AWRPlaylist>result = finishedPromise.result;
+    return [self.metadataStore currentSong].then(^id<IOZPromise>(id<IOZSuccessfulPromise> finishedPromise) {
+        id<AWRPlaylist> result = finishedPromise.result;
 
-            if (!result) {
-                if (!weakSelf.currentPlaylist) return [IOZNoMorePromises new];
-                weakSelf.currentPlaylist = nil;
-                if (weakSelf.delegate) [weakSelf.delegate metadataDidChangeTheSong:nil];
-                return [IOZNoMorePromises new];
-            }
-
-            double diff = [result.updatedAt timeIntervalSinceReferenceDate] - [weakSelf.currentPlaylist.updatedAt timeIntervalSinceReferenceDate];
-
-            if (diff < 2) {
-                return [[NSError alloc] initWithDomain:@"Song hasn't changed since last time we've checked" code:-200 userInfo:nil];
-            }
-
-            weakSelf.currentPlaylist = result;
-
-            if (weakSelf.delegate) [weakSelf.delegate metadataDidChangeTheSong:weakSelf.currentPlaylist.song];
-
-            if (!weakSelf.currentPlaylist.song) return [IOZNoMorePromises new];
-
-            [weakSelf fetchArtistDescriptionAsync];
-
-            [weakSelf fetchSongDescriptionAsync];
-
-            [weakSelf fetchAlbumArtAsync];
-
-            [weakSelf fetchAlbumLyricsAsync];
-
+        if (!result) {
+            if (!weakSelf.currentPlaylist) return [IOZNoMorePromises new];
+            weakSelf.currentPlaylist = nil;
+            if (weakSelf.delegate) [weakSelf.delegate metadataDidChangeTheSong:nil];
             return [IOZNoMorePromises new];
-        });
+        }
+
+        double diff = [result.updatedAt timeIntervalSinceReferenceDate] - [weakSelf.currentPlaylist.updatedAt timeIntervalSinceReferenceDate];
+
+        if (diff < 2) {
+            return [[NSError alloc] initWithDomain:@"Song hasn't changed since last time we've checked" code:-200 userInfo:nil];
+        }
+
+        weakSelf.currentPlaylist = result;
+
+        if (weakSelf.delegate) [weakSelf.delegate metadataDidChangeTheSong:weakSelf.currentPlaylist.song];
+
+        if (!weakSelf.currentPlaylist.song) return [IOZNoMorePromises new];
+
+        [weakSelf fetchArtistDescriptionAsync];
+
+        [weakSelf fetchSongDescriptionAsync];
+
+        [weakSelf fetchAlbumArtAsync];
+
+        [weakSelf fetchAlbumLyricsAsync];
+
+        return [IOZNoMorePromises new];
+    });
 }
 
 - (NSString *)locale {
@@ -104,8 +103,8 @@ NSString *const REMOTE_CONFIG_POOLING_TIME_BACKGROUND_KEY = @"iphonePoolingTimeB
 - (void)fetchArtistDescriptionAsync {
     __weak typeof(self) weakSelf = self;
 
-    [self.metadataStore descriptionForArtist:self.currentPlaylist.song.artist locale:self.locale]
-        .then(^id<IOZPromise>(id<IOZSuccessfulPromise> finishedPromise) {
+    [self.metadataStore descriptionForArtist:self.currentPlaylist.song.artist locale:self.locale].then(
+        ^id<IOZPromise>(id<IOZSuccessfulPromise> finishedPromise) {
             if ([weakSelf.delegate respondsToSelector:@selector(metadataDidFinishDownloadingArtistDescription:forSong:)]) {
                 [weakSelf.delegate metadataDidFinishDownloadingArtistDescription:finishedPromise.result forSong:weakSelf.currentPlaylist.song];
             }
@@ -116,13 +115,12 @@ NSString *const REMOTE_CONFIG_POOLING_TIME_BACKGROUND_KEY = @"iphonePoolingTimeB
 - (void)fetchSongDescriptionAsync {
     __weak typeof(self) weakSelf = self;
 
-    [self.metadataStore descriptionForSong:self.currentPlaylist.song locale:self.locale]
-        .then(^id<IOZPromise>(id<IOZSuccessfulPromise> finishedPromise) {
-            if ([weakSelf.delegate respondsToSelector:@selector(metadataDidFinishDownloadingSongDescription:forSong:)]) {
-                [weakSelf.delegate metadataDidFinishDownloadingSongDescription:finishedPromise.result forSong:weakSelf.currentPlaylist.song];
-            }
-            return [IOZNoMorePromises new];
-        });
+    [self.metadataStore descriptionForSong:self.currentPlaylist.song locale:self.locale].then(^id<IOZPromise>(id<IOZSuccessfulPromise> finishedPromise) {
+        if ([weakSelf.delegate respondsToSelector:@selector(metadataDidFinishDownloadingSongDescription:forSong:)]) {
+            [weakSelf.delegate metadataDidFinishDownloadingSongDescription:finishedPromise.result forSong:weakSelf.currentPlaylist.song];
+        }
+        return [IOZNoMorePromises new];
+    });
 }
 
 - (void)fetchAlbumArtAsync {
@@ -132,13 +130,12 @@ NSString *const REMOTE_CONFIG_POOLING_TIME_BACKGROUND_KEY = @"iphonePoolingTimeB
 
     __weak typeof(self) weakSelf = self;
 
-    [self.metadataStore albumArtBySong:self.currentPlaylist.song]
-        .then(^id<IOZPromise>(id<IOZSuccessfulPromise> finishedPromise) {
-            NSData *data = finishedPromise.result;
-            UIImage *albumArt = [UIImage imageWithData:data];
-            [weakSelf.delegate metadataDidFinishDownloadingAlbumArt:albumArt forSong:weakSelf.currentPlaylist.song];
-            return [IOZNoMorePromises new];
-        });
+    [self.metadataStore albumArtBySong:self.currentPlaylist.song].then(^id<IOZPromise>(id<IOZSuccessfulPromise> finishedPromise) {
+        NSData *data      = finishedPromise.result;
+        UIImage *albumArt = [UIImage imageWithData:data];
+        [weakSelf.delegate metadataDidFinishDownloadingAlbumArt:albumArt forSong:weakSelf.currentPlaylist.song];
+        return [IOZNoMorePromises new];
+    });
 }
 
 - (void)fetchAlbumLyricsAsync {
@@ -156,13 +153,12 @@ NSString *const REMOTE_CONFIG_POOLING_TIME_BACKGROUND_KEY = @"iphonePoolingTimeB
 
     __weak typeof(self) weakSelf = self;
 
-    [self.metadataStore lyricsBySong:self.currentPlaylist.song]
-        .then(^id<IOZPromise>(id<IOZSuccessfulPromise> finishedPromise) {
-            if ([weakSelf.delegate respondsToSelector:@selector(metadataDidFinishDownloadingLyrics:forSong:)]) {
-                [weakSelf.delegate metadataDidFinishDownloadingLyrics:finishedPromise.result forSong:weakSelf.currentPlaylist.song];
-            }
-            return [IOZNoMorePromises new];
-        });
+    [self.metadataStore lyricsBySong:self.currentPlaylist.song].then(^id<IOZPromise>(id<IOZSuccessfulPromise> finishedPromise) {
+        if ([weakSelf.delegate respondsToSelector:@selector(metadataDidFinishDownloadingLyrics:forSong:)]) {
+            [weakSelf.delegate metadataDidFinishDownloadingLyrics:finishedPromise.result forSong:weakSelf.currentPlaylist.song];
+        }
+        return [IOZNoMorePromises new];
+    });
 }
 
 - (void)setForegroundExecution:(BOOL)foregroundExecution {
@@ -179,9 +175,13 @@ NSString *const REMOTE_CONFIG_POOLING_TIME_BACKGROUND_KEY = @"iphonePoolingTimeB
     }
 }
 
-- (void)foregroundMode { self.foregroundExecution = YES; }
+- (void)foregroundMode {
+    self.foregroundExecution = YES;
+}
 
-- (void)backgroundMode { self.foregroundExecution = NO; }
+- (void)backgroundMode {
+    self.foregroundExecution = NO;
+}
 
 - (void)backgroundFetchWithCompletionHandler:(void (^)(BOOL))completionHandler {
     NSString *songBefore = self.currentPlaylist.song.songName;
@@ -195,7 +195,8 @@ NSString *const REMOTE_CONFIG_POOLING_TIME_BACKGROUND_KEY = @"iphonePoolingTimeB
                 completionHandler(YES);
             }
             return [IOZNoMorePromises new];
-        }).catch(^id<IOZPromise>(id<IOZBrokenPromise> finishedPromise) {
+        })
+        .catch(^id<IOZPromise>(id<IOZBrokenPromise> finishedPromise) {
             completionHandler(NO);
             return [IOZNoMorePromises new];
         });

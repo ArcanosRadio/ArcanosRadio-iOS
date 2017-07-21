@@ -5,10 +5,10 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.songName = @"";
+        self.songName   = @"";
         self.artistName = @"";
-        self.lyrics = @"";
-        self.albumArt = nil;
+        self.lyrics     = @"";
+        self.albumArt   = nil;
     }
     return self;
 }

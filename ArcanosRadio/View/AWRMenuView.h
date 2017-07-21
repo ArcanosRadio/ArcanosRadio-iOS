@@ -24,8 +24,8 @@
 
 @interface AWRMenuView : UIView
 
-@property(nonatomic, weak) NSObject<AWRMenuViewDelegate> *delegate;
-@property(nonatomic, strong) NSArray<AWRMenuViewItem *> *items;
+@property (nonatomic, weak) NSObject<AWRMenuViewDelegate> *delegate;
+@property (nonatomic, strong) NSArray<AWRMenuViewItem *> *items;
 
 - (void)show;
 - (void)hide;

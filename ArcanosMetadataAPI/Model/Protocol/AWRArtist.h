@@ -1,6 +1,6 @@
-#import <Foundation/Foundation.h>
 #import "AWREntity.h"
 #import "AWRFile.h"
+#import <Foundation/Foundation.h>
 
 @protocol AWRArtist <NSObject, AWREntity>
 

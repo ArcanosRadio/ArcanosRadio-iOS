@@ -3,10 +3,10 @@
 @protocol IOZSuccessfulPromise;
 @protocol IOZBrokenPromise;
 
-@protocol IOZPromise<NSObject>
+@protocol IOZPromise <NSObject>
 
 - (id<IOZPromise> (^)(id<IOZPromise> (^)(id<IOZSuccessfulPromise>)))then;
-- (id<IOZPromise> (^)(id<IOZPromise> (^)(id<IOZBrokenPromise>)))catch;
+- (id<IOZPromise> (^)(id<IOZPromise> (^)(id<IOZBrokenPromise>))) catch;
 
 @end
 

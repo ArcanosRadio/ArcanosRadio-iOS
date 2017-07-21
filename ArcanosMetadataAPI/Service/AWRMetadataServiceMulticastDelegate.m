@@ -3,9 +3,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AWRMetadataServiceMulticastDelegate()
+@interface AWRMetadataServiceMulticastDelegate ()
 
-@property (nonatomic, strong)NSMutableArray<__kindof id<AWRMetadataServiceDelegate>> *listeners;
+@property (nonatomic, strong) NSMutableArray<__kindof id<AWRMetadataServiceDelegate>> *listeners;
 
 @end
 
@@ -40,19 +40,19 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (void)metadataDidChangeTheSong:(id<AWRSong>)song {
-    self.listeners.each(^(id<AWRMetadataServiceDelegate> listener){
+    self.listeners.each(^(id<AWRMetadataServiceDelegate> listener) {
         [listener metadataDidChangeTheSong:song];
     });
 }
 
 - (void)metadataDidFinishDownloadingAlbumArt:(UIImage *)albumArt forSong:(id<AWRSong>)song {
-    self.listeners.each(^(id<AWRMetadataServiceDelegate> listener){
+    self.listeners.each(^(id<AWRMetadataServiceDelegate> listener) {
         [listener metadataDidFinishDownloadingAlbumArt:albumArt forSong:song];
     });
 }
 
 - (void)metadataDidFinishDownloadingLyrics:(NSString *)lyrics forSong:(id<AWRSong>)song {
-    self.listeners.each(^(id<AWRMetadataServiceDelegate> listener){
+    self.listeners.each(^(id<AWRMetadataServiceDelegate> listener) {
         if (![listener respondsToSelector:@selector(metadataDidFinishDownloadingLyrics:forSong:)]) {
             return;
         }
@@ -61,7 +61,7 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (void)metadataDidFinishDownloadingArtistDescription:(NSString *)artistDescription forSong:(id<AWRSong>)song {
-    self.listeners.each(^(id<AWRMetadataServiceDelegate> listener){
+    self.listeners.each(^(id<AWRMetadataServiceDelegate> listener) {
         if (![listener respondsToSelector:@selector(metadataDidFinishDownloadingArtistDescription:forSong:)]) {
             return;
         }
@@ -70,7 +70,7 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (void)metadataDidFinishDownloadingSongDescription:(NSString *)songDescription forSong:(id<AWRSong>)song {
-    self.listeners.each(^(id<AWRMetadataServiceDelegate> listener){
+    self.listeners.each(^(id<AWRMetadataServiceDelegate> listener) {
         if (![listener respondsToSelector:@selector(metadataDidFinishDownloadingSongDescription:forSong:)]) {
             return;
         }

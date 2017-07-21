@@ -5,14 +5,13 @@
 //@class LQErrorType;
 #import "LQRequestId.h"
 
-
 @implementation LQSubscriptionRecord
 
 - (instancetype)initWithQuery:(PFQuery *)query requestId:(LQRequestId *)requestId handler:(id)handler {
     self = [super init];
     if (self) {
-        self.query = query;
-        self.requestId = requestId;
+        self.query               = query;
+        self.requestId           = requestId;
         self.subscriptionHandler = handler;
 
         __weak LQSubscriptionRecord *weakSelf = self;
@@ -49,7 +48,7 @@
             //[weakSelf.subscriptionHandler didUnsubscribeFromQuery:query inClient:client];
         };
     }
-    
+
     return self;
 }
 

@@ -1,6 +1,6 @@
-#import <Foundation/Foundation.h>
-#import "AWRMetadataStore.h"
 #import "AWRMetadataService.h"
+#import "AWRMetadataStore.h"
+#import <Foundation/Foundation.h>
 
 @interface AWRMetadataFactory : NSObject
 

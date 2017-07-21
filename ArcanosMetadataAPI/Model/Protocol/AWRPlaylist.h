@@ -1,6 +1,6 @@
-#import <Foundation/Foundation.h>
-#import "AWRSong.h"
 #import "AWREntity.h"
+#import "AWRSong.h"
+#import <Foundation/Foundation.h>
 
 @protocol AWRPlaylist <NSObject, AWREntity>
 

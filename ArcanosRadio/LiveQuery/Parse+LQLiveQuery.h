@@ -1,7 +1,7 @@
 #import <Parse/Parse.h>
 
-@interface Parse(LQLiveQuery)
+@interface Parse (LQLiveQuery)
 
-+ (ParseClientConfiguration *) validatedCurrentConfiguration:(NSError **)error;
++ (ParseClientConfiguration *)validatedCurrentConfiguration:(NSError **)error;
 
 @end

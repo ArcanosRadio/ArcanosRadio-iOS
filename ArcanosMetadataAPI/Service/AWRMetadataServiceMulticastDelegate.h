@@ -1,9 +1,9 @@
-#import <Foundation/Foundation.h>
 #import "AWRMetadataServiceDelegate.h"
+#import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AWRMetadataServiceMulticastDelegate : NSObject<AWRMetadataServiceDelegate>
+@interface AWRMetadataServiceMulticastDelegate : NSObject <AWRMetadataServiceDelegate>
 
 - (instancetype)addListener:(__kindof id<AWRMetadataServiceDelegate>)listener;
 - (instancetype)addListeners:(__kindof NSArray<__kindof id<AWRMetadataServiceDelegate>> *)listeners;

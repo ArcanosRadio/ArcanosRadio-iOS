@@ -1,5 +1,5 @@
-#import <Foundation/Foundation.h>
 #import "IOZPromiseProtocol.h"
+#import <Foundation/Foundation.h>
 
 @interface NSObject (IOZPromise) <IOZSuccessfulPromise>
 

@@ -1,8 +1,8 @@
+#import "AWRArtist.h"
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
-#import "AWRArtist.h"
 
-@interface AWRArtistParse : PFObject<PFSubclassing, AWRArtist>
+@interface AWRArtistParse : PFObject <PFSubclassing, AWRArtist>
 
 @property (nonatomic, strong) NSString *artistName;
 @property (nonatomic, strong) NSString *url;
@@ -15,4 +15,3 @@
 + (NSString *)parseClassName;
 
 @end
-

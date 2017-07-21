@@ -1,7 +1,7 @@
 #import "AWRMergeImageView.h"
 #import "UIView+Utils.h"
 
-@interface AWRMergeImageView()
+@interface AWRMergeImageView ()
 
 @property (nonatomic, strong) UIImageView *imageViewStart;
 @property (nonatomic, strong) UIImageView *imageViewEnd;
@@ -27,14 +27,14 @@
 }
 
 - (void)createImageViews {
-    self.imageViewStart = [[UIImageView alloc] initWithFrame:self.frame];
+    self.imageViewStart             = [[UIImageView alloc] initWithFrame:self.frame];
     self.imageViewStart.contentMode = UIViewContentModeScaleAspectFill;
     [self addSubview:self.imageViewStart];
     [self.imageViewStart fillSuperview];
 
-    self.imageViewEnd = [[UIImageView alloc] initWithFrame:self.frame];
+    self.imageViewEnd             = [[UIImageView alloc] initWithFrame:self.frame];
     self.imageViewEnd.contentMode = UIViewContentModeScaleAspectFill;
-    self.imageViewEnd.alpha = 0.0;
+    self.imageViewEnd.alpha       = 0.0;
     [self addSubview:self.imageViewEnd];
     [self.imageViewEnd fillSuperview];
 }
@@ -56,7 +56,7 @@
 }
 
 - (void)setProgress:(float)progress {
-    _progress = progress;
+    _progress               = progress;
     self.imageViewEnd.alpha = progress;
 }
 

@@ -1,7 +1,7 @@
-#import <Foundation/Foundation.h>
 #import "AWRArtist.h"
-#import "AWRFile.h"
 #import "AWREntity.h"
+#import "AWRFile.h"
+#import <Foundation/Foundation.h>
 
 @protocol AWRSong <NSObject, AWREntity>
 

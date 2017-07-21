@@ -9,6 +9,6 @@
 
 @interface AWRAboutView : UIView
 
-@property (nonatomic, weak)id<AWRAboutViewDelegate> delegate;
+@property (nonatomic, weak) id<AWRAboutViewDelegate> delegate;
 
 @end

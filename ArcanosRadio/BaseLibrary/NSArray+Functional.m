@@ -2,7 +2,7 @@
 
 @implementation NSArray (Functional)
 
-- (instancetype (^) (void (^)(id)))each {
+- (instancetype (^)(void (^)(id)))each {
     __weak typeof(self) weakSelf = self;
     return ^id(void (^block)(id)) {
         for (id item in weakSelf) {

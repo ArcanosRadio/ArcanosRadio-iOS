@@ -1,11 +1,11 @@
 #import "LQClient.h"
-#import <Parse/Parse.h>
-#import <SocketRocket/SocketRocket.h>
-#import "Parse+LQLiveQuery.h"
 #import "LQRequestId.h"
 #import "LQSubscriptionRecord.h"
+#import "Parse+LQLiveQuery.h"
+#import <Parse/Parse.h>
+#import <SocketRocket/SocketRocket.h>
 
-@interface LQClient()
+@interface LQClient ()
 
 @property (nonatomic, strong) NSURL *host;
 @property (nonatomic, strong) NSString *applicationId;
@@ -18,7 +18,6 @@
 
 @end
 
-
 @implementation LQClient
 
 - (instancetype)init {
@@ -30,7 +29,7 @@
     return [self initWithServer:server applicationId:nil clientKey:nil];
 }
 
-- (instancetype) initWithServer:(NSString *)server applicationId:(NSString *)applicationId clientKey:(NSString *)clientKey {
+- (instancetype)initWithServer:(NSString *)server applicationId:(NSString *)applicationId clientKey:(NSString *)clientKey {
     self = [super init];
     if (self) {
         self.queue = dispatch_queue_create("com.parse.livequery", DISPATCH_QUEUE_SERIAL);
@@ -40,19 +39,23 @@
             @throw @"Server should be a valid URL.";
         }
 
-        components.scheme = [components.scheme isEqualToString: @"https"] ? @"wss" : @"ws";
+        components.scheme = [components.scheme isEqualToString:@"https"] ? @"wss" : @"ws";
 
         __block NSInteger currentRequestId = 0;
-        self.requestIdGenerator = ^LQRequestId *{
+        self.requestIdGenerator            = ^LQRequestId * {
             currentRequestId += 1;
-            return [[LQRequestId alloc] initWithValue: currentRequestId];
+            return [[LQRequestId alloc] initWithValue:currentRequestId];
         };
 
         NSError *error;
         self.applicationId = applicationId ? applicationId : [Parse validatedCurrentConfiguration:&error].applicationId;
-        if (error) { return nil; }
+        if (error) {
+            return nil;
+        }
         self.clientKey = clientKey ? clientKey : [Parse validatedCurrentConfiguration:&error].clientKey;
-        if (error) { return nil; }
+        if (error) {
+            return nil;
+        }
 
         self.host = components.URL;
     }
@@ -60,7 +63,6 @@
 }
 
 @end
-
 
 //
 //    extension Client {
@@ -147,7 +149,8 @@
 //                if !userDisconnected {
 //                    reconnect()
 //                } else {
-//                    debugPrint("Warning: The client was explicitly disconnected! You must explicitly call .reconnect() in order to process your subscriptions.")
+//                    debugPrint("Warning: The client was explicitly disconnected! You must explicitly call .reconnect() in order to process your
+//                    subscriptions.")
 //                }
 //            }
 //
@@ -199,7 +202,7 @@
 //                return socket
 //            }()
 //        }
-//        
+//
 //        /**
 //         Explicitly disconnects this client from the server.
 //         This does not remove any subscriptions - if you `reconnect()` your existing subscriptions will be restored.

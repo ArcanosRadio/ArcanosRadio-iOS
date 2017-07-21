@@ -1,11 +1,11 @@
 #import "AWRNowPlayingCoordinator.h"
-#import <UIKit/UIKit.h>
-#import <ArcanosMetadataAPI/ArcanosMetadataAPI.h>
+#import "AWRControlCenterController.h"
 #import "AWRNowPlayingController.h"
 #import "AWRShareViewController.h"
-#import "AWRControlCenterController.h"
+#import <ArcanosMetadataAPI/ArcanosMetadataAPI.h>
+#import <UIKit/UIKit.h>
 
-@interface AWRNowPlayingCoordinator()<AWRNowPlayingControllerDelegate>
+@interface AWRNowPlayingCoordinator () <AWRNowPlayingControllerDelegate>
 
 @property (nonatomic, strong) AWRNowPlayingController *mainController;
 @property (nonatomic, strong) AWRControlCenterController *controlCenterController;
@@ -24,15 +24,13 @@
 }
 
 - (id)start {
-    self.mainController = [[AWRNowPlayingController alloc] init];
+    self.mainController          = [[AWRNowPlayingController alloc] init];
     self.controlCenterController = [[AWRControlCenterController alloc] init];
     self.mainController.delegate = self;
     [self configureRemoteEvents];
 
     self.metadataService.delegate = self.metadataServiceListeners =
-        [[AWRMetadataServiceMulticastDelegate new]
-            addListeners:@[self.mainController,
-                           self.controlCenterController]];
+        [[AWRMetadataServiceMulticastDelegate new] addListeners:@[ self.mainController, self.controlCenterController ]];
 
     [self.metadataService startScheduledFetch];
     return self.mainController;
@@ -49,7 +47,8 @@
 }
 
 - (void)userDidSelectShare {
-    AWRShareViewController *shareController = [[AWRShareViewController alloc] initWithCurrentSong:self.metadataService.currentPlaylist.song parentView:self.mainController.view];
+    AWRShareViewController *shareController =
+        [[AWRShareViewController alloc] initWithCurrentSong:self.metadataService.currentPlaylist.song parentView:self.mainController.view];
     [self.mainController presentViewController:shareController animated:YES completion:nil];
 }
 

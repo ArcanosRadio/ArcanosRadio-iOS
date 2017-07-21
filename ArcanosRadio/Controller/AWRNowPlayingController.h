@@ -1,7 +1,7 @@
-#import <UIKit/UIKit.h>
-#import "AWRViewController.h"
-#import "AWRSong.h"
 #import "AWRMetadataServiceDelegate.h"
+#import "AWRSong.h"
+#import "AWRViewController.h"
+#import <UIKit/UIKit.h>
 @class AWRNowPlayingViewState;
 
 @protocol AWRNowPlayingControllerDelegate
@@ -12,8 +12,8 @@
 
 @end
 
-@interface AWRNowPlayingController : AWRViewController<AWRMetadataServiceDelegate>
+@interface AWRNowPlayingController : AWRViewController <AWRMetadataServiceDelegate>
 
-@property (weak, nonatomic) id<AWRNowPlayingControllerDelegate>delegate;
+@property (weak, nonatomic) id<AWRNowPlayingControllerDelegate> delegate;
 
 @end

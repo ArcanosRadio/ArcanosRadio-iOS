@@ -2,7 +2,7 @@
 
 @implementation BFTask (IOZPromise)
 
-- (id<IOZPromise> (^) (id<IOZPromise> (^)(id<IOZSuccessfulPromise>)))then {
+- (id<IOZPromise> (^)(id<IOZPromise> (^)(id<IOZSuccessfulPromise>)))then {
     __weak typeof(self) weakSelf = self;
     return ^id<IOZPromise>(id<IOZPromise> (^block)(id<IOZSuccessfulPromise>)) {
         if (self.error) {
@@ -13,7 +13,7 @@
         }
 
         // Execute BFTask pending tasks
-        return [weakSelf continueWithBlock:^id _Nullable(BFTask * _Nonnull t) {
+        return [weakSelf continueWithBlock:^id _Nullable(BFTask *_Nonnull t) {
 
             // All pending tasks were executed, let's check the status
 
@@ -30,11 +30,11 @@
     };
 }
 
-- (id<IOZPromise> (^) (id<IOZPromise> (^)(id<IOZBrokenPromise>)))catch {
+- (id<IOZPromise> (^)(id<IOZPromise> (^)(id<IOZBrokenPromise>))) catch {
     __weak typeof(self) weakSelf = self;
     return ^id<IOZPromise>(id<IOZPromise> (^block)(id<IOZBrokenPromise>)) {
         // Execute BFTask and set the callback for the result
-        return [weakSelf continueWithBlock:^id _Nullable(BFTask * _Nonnull t) {
+        return [weakSelf continueWithBlock:^id _Nullable(BFTask *_Nonnull t) {
             if (weakSelf.error) {
                 return block((id<IOZBrokenPromise>)t);
             } else {

@@ -1,16 +1,16 @@
 #import "AWRNowPlayingHeaderView.h"
+#import "AWRAvatarImageView.h"
 #import "AWRMergeImageView.h"
 #import "FXBlurView.h"
 #import "UIImage+Resize.h"
-#import "AWRAvatarImageView.h"
 
-const int kDefaultMargin = 8;
-const float kAvatarBorder = 4.0;
-const float kAvatarBorderOpacity = 0.35;
-const float kAvatarCornerRadius = 10.0;
-static NSString * const kStatusBarTappedNotification = @"StatusBarTappedNotification";
+const int kDefaultMargin                            = 8;
+const float kAvatarBorder                           = 4.0;
+const float kAvatarBorderOpacity                    = 0.35;
+const float kAvatarCornerRadius                     = 10.0;
+static NSString *const kStatusBarTappedNotification = @"StatusBarTappedNotification";
 
-@interface AWRNowPlayingHeaderView()
+@interface AWRNowPlayingHeaderView ()
 
 @property (weak, nonatomic) IBOutlet AWRMergeImageView *backgroundAlbumArt;
 @property (weak, nonatomic) IBOutlet AWRAvatarImageView *albumArtIcon;
@@ -39,22 +39,19 @@ static NSString * const kStatusBarTappedNotification = @"StatusBarTappedNotifica
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    float currentHeight = MIN(self.frame.size.height, self.maximumHeight);
-    float progress = (self.maximumHeight - currentHeight) / self.deltaHeight;
+    float currentHeight              = MIN(self.frame.size.height, self.maximumHeight);
+    float progress                   = (self.maximumHeight - currentHeight) / self.deltaHeight;
     self.backgroundAlbumArt.progress = progress;
-    self.albumArtIcon.alpha = progress;
+    self.albumArtIcon.alpha          = progress;
 
     CATransform3D horizontalOffsetEffect = CATransform3DIdentity;
-    horizontalOffsetEffect = CATransform3DTranslate(horizontalOffsetEffect, (1.0 - progress) * 12.0, 0, 0);
-    self.albumArtIcon.layer.transform = horizontalOffsetEffect;
+    horizontalOffsetEffect               = CATransform3DTranslate(horizontalOffsetEffect, (1.0 - progress) * 12.0, 0, 0);
+    self.albumArtIcon.layer.transform    = horizontalOffsetEffect;
 }
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(statusBarTappedAction:)
-                                                 name:kStatusBarTappedNotification
-                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(statusBarTappedAction:) name:kStatusBarTappedNotification object:nil];
     [self emptyFields];
 }
 
@@ -62,36 +59,32 @@ static NSString * const kStatusBarTappedNotification = @"StatusBarTappedNotifica
     [[NSNotificationCenter defaultCenter] removeObserver:self name:kStatusBarTappedNotification object:nil];
 }
 
-- (void)statusBarTappedAction:(NSNotification*)notification {
+- (void)statusBarTappedAction:(NSNotification *)notification {
     [self.delegate didTapStatusBar];
 }
 
 - (void)emptyFields {
-    self.songLabel.text = @"";
+    self.songLabel.text   = @"";
     self.artistLabel.text = @"";
 }
 
 - (void)renderModel:(AWRNowPlayingViewState *)model {
-    NSString *songName = model.songName ?: @"";
-    NSString *artistName = model.artistName ?: @"";
-    self.songLabel.attributedText = [[NSAttributedString alloc]initWithString:songName attributes:self.textEffects];
-    self.artistLabel.attributedText = [[NSAttributedString alloc]initWithString:artistName attributes:self.textEffects];
+    NSString *songName              = model.songName ?: @"";
+    NSString *artistName            = model.artistName ?: @"";
+    self.songLabel.attributedText   = [[NSAttributedString alloc] initWithString:songName attributes:self.textEffects];
+    self.artistLabel.attributedText = [[NSAttributedString alloc] initWithString:artistName attributes:self.textEffects];
 
     if (!model.albumArt) {
         return;
     }
 
     self.backgroundAlbumArt.imageStart = [model.albumArt convertToSquareWithSideLength:self.maximumHeight];
-    self.backgroundAlbumArt.imageEnd = [self.backgroundAlbumArt.imageStart blurredImageWithRadius:22.0
-                                                                                       iterations:2
-                                                                                        tintColor:[UIColor colorWithRed:0.0
-                                                                                                                  green:0.0
-                                                                                                                   blue:0.0
-                                                                                                                  alpha:1.0]];
+    self.backgroundAlbumArt.imageEnd =
+        [self.backgroundAlbumArt.imageStart blurredImageWithRadius:22.0 iterations:2 tintColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0]];
 
-    self.albumArtIcon.image = [model.albumArt convertToSize:self.albumArtIcon.frame.size];
-    UIColor *borderColor = [UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:kAvatarBorderOpacity];
-    self.albumArtIcon.layer.borderColor = borderColor.CGColor;
+    self.albumArtIcon.image              = [model.albumArt convertToSize:self.albumArtIcon.frame.size];
+    UIColor *borderColor                 = [UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:kAvatarBorderOpacity];
+    self.albumArtIcon.layer.borderColor  = borderColor.CGColor;
     self.albumArtIcon.layer.cornerRadius = kAvatarCornerRadius;
 }
 
@@ -102,9 +95,7 @@ static NSString * const kStatusBarTappedNotification = @"StatusBarTappedNotifica
     [shadow setShadowOffset:CGSizeMake(0, 1.0f)];
 
     if (!_textEffects) {
-        _textEffects = @{
-                         NSShadowAttributeName: shadow
-                         };
+        _textEffects = @{NSShadowAttributeName : shadow};
     }
     return _textEffects;
 }

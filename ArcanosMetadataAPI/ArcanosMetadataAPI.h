@@ -8,9 +8,9 @@ FOUNDATION_EXPORT const unsigned char ArcanosMetadataAPIVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <ArcanosMetadataAPI/PublicHeader.h>
 
+#import <ArcanosMetadataAPI/AWRArtist.h>
 #import <ArcanosMetadataAPI/AWREntity.h>
 #import <ArcanosMetadataAPI/AWRFile.h>
-#import <ArcanosMetadataAPI/AWRArtist.h>
 #import <ArcanosMetadataAPI/AWRPlaylist.h>
 #import <ArcanosMetadataAPI/AWRSong.h>
 

@@ -1,7 +1,7 @@
+#import "AWRArtist.h"
+#import "AWRSong.h"
 #import <Foundation/Foundation.h>
 #import <IOZPromise/IOZPromise.h>
-#import "AWRSong.h"
-#import "AWRArtist.h"
 #import <UIKit/UIKit.h>
 
 @protocol AWRMetadataStore

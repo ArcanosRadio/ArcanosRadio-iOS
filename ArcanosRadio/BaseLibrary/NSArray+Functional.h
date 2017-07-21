@@ -2,6 +2,6 @@
 
 @interface NSArray (Functional)
 
-- (instancetype (^) (void (^)(id)))each;
+- (instancetype (^)(void (^)(id)))each;
 
 @end

@@ -1,23 +1,21 @@
 #import "AWRNowPlayingView.h"
-#import "AWRNowPlayingHeaderView.h"
-#import "UIView+Utils.h"
-#import "AWRMenuView.h"
 #import "AWRColorToolkit.h"
+#import "AWRMenuView.h"
+#import "AWRNowPlayingHeaderView.h"
 #import "AWRScrollView.h"
+#import "UIView+Utils.h"
 #import <QuartzCore/QuartzCore.h>
 #import <WebKit/Webkit.h>
 
-const float kToolbarMaximumSize = 58.0;
-const float kToolbarMinimumSize = 28.0;
-
-const float kToolbarItemInitialWidth = 40.0;
-
+const float kToolbarMaximumSize       = 58.0;
+const float kToolbarMinimumSize       = 28.0;
+const float kToolbarItemInitialWidth  = 40.0;
 const float kToolbarInitialLeftMargin = 25.0;
-const float kToolbarInitialSpacing = 50.0;
-const float kToolbarFinalLeftMargin = 112.0;
-const float kToolbarFinalSpacing = 20.0;
+const float kToolbarInitialSpacing    = 50.0;
+const float kToolbarFinalLeftMargin   = 112.0;
+const float kToolbarFinalSpacing      = 20.0;
 
-@interface AWRNowPlayingView()<UIScrollViewDelegate, AWRMenuViewDelegate, AWRNowPlayingHeaderViewDelegate, AWRScrollViewDelegate>
+@interface AWRNowPlayingView () <UIScrollViewDelegate, AWRMenuViewDelegate, AWRNowPlayingHeaderViewDelegate, AWRScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *headerContainer;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *headerHeight;
@@ -55,28 +53,26 @@ const float kToolbarFinalSpacing = 20.0;
 
 @property (strong, nonatomic) IBOutletCollection(NSLayoutConstraint) NSArray *toolbarItemsHeight;
 
-@property (strong, nonatomic)UIScrollView *twitterView;
+@property (strong, nonatomic) UIScrollView *twitterView;
 @property (weak, nonatomic) IBOutlet WKWebView *webView;
 @end
 
 @implementation AWRNowPlayingView
 
 - (IBAction)toolbarItemSelected:(UIButton *)sender {
-    self.lyricsButton.selected = NO;
+    self.lyricsButton.selected  = NO;
     self.twitterButton.selected = NO;
     self.websiteButton.selected = NO;
-    sender.selected = YES;
+    sender.selected             = YES;
 
-    self.lyricsButton.tintColor = AWRColorToolkit.toolbarForegroundColor;
+    self.lyricsButton.tintColor  = AWRColorToolkit.toolbarForegroundColor;
     self.twitterButton.tintColor = AWRColorToolkit.toolbarForegroundColor;
-    self.websiteButton.tintColor = self.websiteButton.enabled
-        ? AWRColorToolkit.toolbarForegroundColor
-        : AWRColorToolkit.disabledTextColor;
-    sender.tintColor = AWRColorToolkit.extraHighlightTextColor;
+    self.websiteButton.tintColor = self.websiteButton.enabled ? AWRColorToolkit.toolbarForegroundColor : AWRColorToolkit.disabledTextColor;
+    sender.tintColor             = AWRColorToolkit.extraHighlightTextColor;
 
     self.lyricsLabel.hidden = sender != self.lyricsButton;
     self.twitterView.hidden = sender != self.twitterButton;
-    self.webView.hidden = sender != self.websiteButton;
+    self.webView.hidden     = sender != self.websiteButton;
 
     if (sender == self.lyricsButton) {
         [self setCurrentTab:AWRNowPlayingViewTabLyrics];
@@ -92,30 +88,30 @@ const float kToolbarFinalSpacing = 20.0;
 
     _currentTab = currentTab;
     switch (currentTab) {
-        case AWRNowPlayingViewTabLyrics:
-            [self.scrollView setUserInteractionEnabled:YES];
-            self.scrollView.scrollEnabled = YES;
-            self.lyricsScrollView.hidden = NO;
-            self.twitterView.hidden = YES;
-            self.webView.hidden = YES;
-            [self innerScrollsToTop:NO];
-            break;
-        case AWRNowPlayingViewTabTwitter:
-            [self.scrollView setUserInteractionEnabled:YES];
-            self.scrollView.scrollEnabled = YES;
-            self.lyricsScrollView.hidden = YES;
-            self.twitterView.hidden = NO;
-            self.webView.hidden = YES;
-            [self innerScrollsToTop:NO];
-            break;
-        case AWRNowPlayingViewTabWebsite:
-            [self.scrollView setUserInteractionEnabled:NO];
-            [self.scrollView setContentOffset:CGPointMake(0, [self screenAnimationScrollOffset]) animated:YES];
-            self.scrollView.scrollEnabled = NO;
-            self.lyricsScrollView.hidden = YES;
-            self.twitterView.hidden = YES;
-            self.webView.hidden = NO;
-            break;
+    case AWRNowPlayingViewTabLyrics:
+        [self.scrollView setUserInteractionEnabled:YES];
+        self.scrollView.scrollEnabled = YES;
+        self.lyricsScrollView.hidden  = NO;
+        self.twitterView.hidden       = YES;
+        self.webView.hidden           = YES;
+        [self innerScrollsToTop:NO];
+        break;
+    case AWRNowPlayingViewTabTwitter:
+        [self.scrollView setUserInteractionEnabled:YES];
+        self.scrollView.scrollEnabled = YES;
+        self.lyricsScrollView.hidden  = YES;
+        self.twitterView.hidden       = NO;
+        self.webView.hidden           = YES;
+        [self innerScrollsToTop:NO];
+        break;
+    case AWRNowPlayingViewTabWebsite:
+        [self.scrollView setUserInteractionEnabled:NO];
+        [self.scrollView setContentOffset:CGPointMake(0, [self screenAnimationScrollOffset]) animated:YES];
+        self.scrollView.scrollEnabled = NO;
+        self.lyricsScrollView.hidden  = YES;
+        self.twitterView.hidden       = YES;
+        self.webView.hidden           = NO;
+        break;
     }
 
     [self recalculateContentSize];
@@ -136,18 +132,14 @@ const float kToolbarFinalSpacing = 20.0;
 
 - (AWRMenuView *)menu {
     if (!_menu) {
-        NSArray<AWRMenuViewItem *> *items = @[[AWRMenuViewItem itemWithIdentifier:@"about"
-                                                                             icon: [UIImage imageNamed:@"help"]
-                                                                             text: NSLocalizedString(@"MENU_ABOUT", nil)],
-                                              [AWRMenuViewItem itemWithIdentifier:@"settings"
-                                                                             icon: [UIImage imageNamed:@"settings"]
-                                                                             text: NSLocalizedString(@"MENU_SETTINGS", nil)],
-                                              [AWRMenuViewItem itemWithIdentifier:@"share"
-                                                                             icon: [UIImage imageNamed:@"share"]
-                                                                             text: NSLocalizedString(@"MENU_SHARE", nil)]];
-        _menu = [[AWRMenuView alloc] initWithFrame:self.frame];
+        NSArray<AWRMenuViewItem *> *items = @[
+            [AWRMenuViewItem itemWithIdentifier:@"about" icon:[UIImage imageNamed:@"help"] text:NSLocalizedString(@"MENU_ABOUT", nil)],
+            [AWRMenuViewItem itemWithIdentifier:@"settings" icon:[UIImage imageNamed:@"settings"] text:NSLocalizedString(@"MENU_SETTINGS", nil)],
+            [AWRMenuViewItem itemWithIdentifier:@"share" icon:[UIImage imageNamed:@"share"] text:NSLocalizedString(@"MENU_SHARE", nil)]
+        ];
+        _menu          = [[AWRMenuView alloc] initWithFrame:self.frame];
         _menu.delegate = self;
-        _menu.items = items;
+        _menu.items    = items;
     }
     return _menu;
 }
@@ -179,47 +171,49 @@ const float kToolbarFinalSpacing = 20.0;
     [super awakeFromNib];
 
     [self emptyFields];
-    [self addGestureRecognizer: self.scrollView.panGestureRecognizer];
+    [self addGestureRecognizer:self.scrollView.panGestureRecognizer];
     self.scrollView.scrollViewDelegate = self;
-    [self toolbarItemSelected: self.lyricsButton];
+    [self toolbarItemSelected:self.lyricsButton];
 
-    self.headerContainer.layer.zPosition = 2;
-    self.toolbar.layer.zPosition = 3;
+    self.headerContainer.layer.zPosition  = 2;
+    self.toolbar.layer.zPosition          = 3;
     self.togglePlayButton.layer.zPosition = 4;
-    self.scrollView.layer.zPosition = 5;
-    self.toolbar.backgroundColor = AWRColorToolkit.toolbarBackgroundColor;
+    self.scrollView.layer.zPosition       = 5;
+    self.toolbar.backgroundColor          = AWRColorToolkit.toolbarBackgroundColor;
 
     self.toolbarItemsLeftMargin.constant = kToolbarInitialLeftMargin;
-    for (NSLayoutConstraint *c in self.toolbarItemsSpacing) { c.constant = kToolbarInitialSpacing; }
+    for (NSLayoutConstraint *c in self.toolbarItemsSpacing) {
+        c.constant = kToolbarInitialSpacing;
+    }
     [self setToolbarHeight:kToolbarMaximumSize];
     self.websiteButton.enabled = NO;
 
     [self.lyricsButton setTitleColor:AWRColorToolkit.toolbarForegroundColor forState:UIControlStateNormal];
     [self.lyricsButton setTitleColor:AWRColorToolkit.disabledTextColor forState:UIControlStateDisabled];
     [self.lyricsButton setTitleColor:AWRColorToolkit.extraHighlightTextColor forState:UIControlStateSelected];
-    self.lyricsButton.layer.shadowColor = AWRColorToolkit.shadowColor.CGColor;
-    self.lyricsButton.layer.shadowRadius = 1.5f;
-    self.lyricsButton.layer.shadowOffset = CGSizeMake(0.2f, 0.5f);
+    self.lyricsButton.layer.shadowColor   = AWRColorToolkit.shadowColor.CGColor;
+    self.lyricsButton.layer.shadowRadius  = 1.5f;
+    self.lyricsButton.layer.shadowOffset  = CGSizeMake(0.2f, 0.5f);
     self.lyricsButton.layer.shadowOpacity = 0.9f;
-    self.lyricsButton.clipsToBounds = NO;
+    self.lyricsButton.clipsToBounds       = NO;
 
     [self.twitterButton setTitleColor:AWRColorToolkit.toolbarForegroundColor forState:UIControlStateNormal];
     [self.twitterButton setTitleColor:AWRColorToolkit.disabledTextColor forState:UIControlStateDisabled];
     [self.twitterButton setTitleColor:AWRColorToolkit.extraHighlightTextColor forState:UIControlStateSelected];
-    self.twitterButton.layer.shadowColor = AWRColorToolkit.shadowColor.CGColor;
-    self.twitterButton.layer.shadowRadius = 1.5f;
-    self.twitterButton.layer.shadowOffset = CGSizeMake(0.2f, 0.5f);
+    self.twitterButton.layer.shadowColor   = AWRColorToolkit.shadowColor.CGColor;
+    self.twitterButton.layer.shadowRadius  = 1.5f;
+    self.twitterButton.layer.shadowOffset  = CGSizeMake(0.2f, 0.5f);
     self.twitterButton.layer.shadowOpacity = 0.9f;
-    self.twitterButton.clipsToBounds = NO;
+    self.twitterButton.clipsToBounds       = NO;
 
     [self.websiteButton setTitleColor:AWRColorToolkit.toolbarForegroundColor forState:UIControlStateNormal];
     [self.websiteButton setTitleColor:AWRColorToolkit.disabledTextColor forState:UIControlStateDisabled];
     [self.websiteButton setTitleColor:AWRColorToolkit.extraHighlightTextColor forState:UIControlStateSelected];
-    self.websiteButton.layer.shadowColor = AWRColorToolkit.shadowColor.CGColor;
-    self.websiteButton.layer.shadowRadius = 1.5f;
-    self.websiteButton.layer.shadowOffset = CGSizeMake(0.2f, 0.5f);
+    self.websiteButton.layer.shadowColor   = AWRColorToolkit.shadowColor.CGColor;
+    self.websiteButton.layer.shadowRadius  = 1.5f;
+    self.websiteButton.layer.shadowOffset  = CGSizeMake(0.2f, 0.5f);
     self.websiteButton.layer.shadowOpacity = 0.9f;
-    self.websiteButton.clipsToBounds = NO;
+    self.websiteButton.clipsToBounds       = NO;
 
     [self configureMediaBarShadow];
 }
@@ -233,25 +227,23 @@ const float kToolbarFinalSpacing = 20.0;
 }
 
 - (float)screenAnimationScrollOffset {
-    float headerOffset = self.headerView.maximumHeight - self.headerView.minimumHeight;
-    float toolbarOffset = kToolbarMaximumSize - kToolbarMinimumSize;
+    float headerOffset                          = self.headerView.maximumHeight - self.headerView.minimumHeight;
+    float toolbarOffset                         = kToolbarMaximumSize - kToolbarMinimumSize;
     float offsetUntilMetadataIsCompletelyHidden = self.bigMetadataStackView.frame.size.height;
-    float maxBigMetadataMovement = offsetUntilMetadataIsCompletelyHidden + 8;
-    float maxToolbarMovement = kToolbarMinimumSize + 8;
+    float maxBigMetadataMovement                = offsetUntilMetadataIsCompletelyHidden + 8;
+    float maxToolbarMovement                    = kToolbarMinimumSize + 8;
     return headerOffset + toolbarOffset + maxBigMetadataMovement + maxToolbarMovement;
 }
 
 - (void)recalculateContentSize {
     float scrollbarFrameHeight = self.scrollView.frame.size.height;
 
-    float innerScrollMaxContainerSize = [UIScreen mainScreen].bounds.size.height
-        - self.headerView.minimumHeight
-        - self.mediaControlBar.frame.size.height;
+    float innerScrollMaxContainerSize = [UIScreen mainScreen].bounds.size.height - self.headerView.minimumHeight - self.mediaControlBar.frame.size.height;
 
     float innerScrollMaxOffset =
-        self.currentTab == AWRNowPlayingViewTabLyrics ? MAX(self.lyricsScrollView.contentSize.height - innerScrollMaxContainerSize, 0)
-      : self.currentTab == AWRNowPlayingViewTabTwitter ? MAX(self.twitterView.contentSize.height - innerScrollMaxContainerSize, 0)
-      : 0;
+        self.currentTab == AWRNowPlayingViewTabLyrics
+            ? MAX(self.lyricsScrollView.contentSize.height - innerScrollMaxContainerSize, 0)
+            : self.currentTab == AWRNowPlayingViewTabTwitter ? MAX(self.twitterView.contentSize.height - innerScrollMaxContainerSize, 0) : 0;
 
     self.scrollView.contentSize = CGSizeMake(1.0, scrollbarFrameHeight + [self screenAnimationScrollOffset] + innerScrollMaxOffset);
 }
@@ -262,12 +254,18 @@ const float kToolbarFinalSpacing = 20.0;
 
 - (void)setToolbarHeight:(float)height {
     self.toolbarHeightLayoutConstraint.constant = height;
-    NSArray *buttons = @[self.lyricsButton, self.twitterButton, self.websiteButton];
+    NSArray *buttons                            = @[ self.lyricsButton, self.twitterButton, self.websiteButton ];
 
     if (height >= 52) {
-        for (NSLayoutConstraint *c in self.toolbarItemsWidth) { c.constant = kToolbarItemInitialWidth; }
-        for (NSLayoutConstraint *c in self.toolbarItemsHeight) { c.constant = 12; }
-        for (UIButton *b in buttons) { b.imageEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, 12.0, 0.0); }
+        for (NSLayoutConstraint *c in self.toolbarItemsWidth) {
+            c.constant = kToolbarItemInitialWidth;
+        }
+        for (NSLayoutConstraint *c in self.toolbarItemsHeight) {
+            c.constant = 12;
+        }
+        for (UIButton *b in buttons) {
+            b.imageEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, 12.0, 0.0);
+        }
         [self.lyricsButton setTitle:NSLocalizedString(@"TOOLBAR_LYRICS", nil) forState:UIControlStateNormal];
         [self.twitterButton setTitle:NSLocalizedString(@"TOOLBAR_TWITTER", nil) forState:UIControlStateNormal];
         [self.websiteButton setTitle:NSLocalizedString(@"TOOLBAR_WEBSITE", nil) forState:UIControlStateNormal];
@@ -278,8 +276,12 @@ const float kToolbarFinalSpacing = 20.0;
     }
 
     if (height >= 44) {
-        for (NSLayoutConstraint *c in self.toolbarItemsWidth) { c.constant = kToolbarItemInitialWidth; }
-        for (NSLayoutConstraint *c in self.toolbarItemsHeight) { c.constant = 0; }
+        for (NSLayoutConstraint *c in self.toolbarItemsWidth) {
+            c.constant = kToolbarItemInitialWidth;
+        }
+        for (NSLayoutConstraint *c in self.toolbarItemsHeight) {
+            c.constant = 0;
+        }
         for (UIButton *b in buttons) {
             b.imageEdgeInsets = UIEdgeInsetsZero;
             [b setTitle:@"" forState:UIControlStateNormal];
@@ -288,8 +290,12 @@ const float kToolbarFinalSpacing = 20.0;
         return;
     }
 
-    for (NSLayoutConstraint *c in self.toolbarItemsWidth) { c.constant = height - 4; }
-    for (NSLayoutConstraint *c in self.toolbarItemsHeight) { c.constant = 0; }
+    for (NSLayoutConstraint *c in self.toolbarItemsWidth) {
+        c.constant = height - 4;
+    }
+    for (NSLayoutConstraint *c in self.toolbarItemsHeight) {
+        c.constant = 0;
+    }
     for (UIButton *b in buttons) {
         b.imageEdgeInsets = UIEdgeInsetsZero;
         [b setTitle:@"" forState:UIControlStateNormal];
@@ -314,15 +320,14 @@ CGFloat scrollViewLastOffset = 0.0;
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     if (scrollView != self.scrollView) return;
 
-    float offset = scrollView.contentOffset.y;
-    CGFloat delta = offset - scrollViewLastOffset;
+    float offset         = scrollView.contentOffset.y;
+    CGFloat delta        = offset - scrollViewLastOffset;
     scrollViewLastOffset = scrollView.contentOffset.y;
 
-    float headerSize = MAX(self.headerView.maximumHeight - offset,
-                           self.headerView.minimumHeight);
+    float headerSize = MAX(self.headerView.maximumHeight - offset, self.headerView.minimumHeight);
 
     self.headerHeight.constant = headerSize;
-    float maxScrollHeader = self.headerView.maximumHeight - self.headerView.minimumHeight;
+    float maxScrollHeader      = self.headerView.maximumHeight - self.headerView.minimumHeight;
 
     // Check if Header is transitioning between maximum and minimum sizes
     if (offset <= maxScrollHeader) {
@@ -332,27 +337,29 @@ CGFloat scrollViewLastOffset = 0.0;
 
         // Scroll lyrics and Twitter to the top
         self.lyricsScrollView.contentOffset = CGPointMake(0, 0);
-        self.twitterView.contentOffset = CGPointMake(0, 0);
+        self.twitterView.contentOffset      = CGPointMake(0, 0);
 
         // Keep Big Metadata 4 pixels below toolbar
         self.metadataTopLayoutConstraint.constant = 4;
 
         // Big Metadata is completely visible
-        self.songLabel.alpha = 1.0;
+        self.songLabel.alpha   = 1.0;
         self.artistLabel.alpha = 1.0;
 
         // Header mini-Metadata should be hidden
-        self.headerView.metadataAlpha = 0.0;
+        self.headerView.metadataAlpha  = 0.0;
         self.headerView.metadataOffset = self.headerView.maximumHeight;
 
         // Toolbar is yet at the maximum size
         [self setToolbarHeight:kToolbarMaximumSize];
 
         self.toolbarTopLayoutConstraint.constant = 0;
-        self.toolbar.backgroundColor = AWRColorToolkit.toolbarBackgroundColor;
+        self.toolbar.backgroundColor             = AWRColorToolkit.toolbarBackgroundColor;
 
         self.toolbarItemsLeftMargin.constant = kToolbarInitialLeftMargin;
-        for (NSLayoutConstraint *c in self.toolbarItemsSpacing) { c.constant = kToolbarInitialSpacing; }
+        for (NSLayoutConstraint *c in self.toolbarItemsSpacing) {
+            c.constant = kToolbarInitialSpacing;
+        }
 
         return;
     }
@@ -360,14 +367,13 @@ CGFloat scrollViewLastOffset = 0.0;
     // Header size is the minimum
     // Let's check how further we are from that point
     float offsetAfterHeaderTransition = offset - maxScrollHeader;
-    float toolbarSize = MAX(kToolbarMaximumSize - offsetAfterHeaderTransition,
-                            kToolbarMinimumSize);
+    float toolbarSize                 = MAX(kToolbarMaximumSize - offsetAfterHeaderTransition, kToolbarMinimumSize);
 
     [self setToolbarHeight:toolbarSize];
-    float maxToolbarTransformation = kToolbarMaximumSize - kToolbarMinimumSize;
+    float maxToolbarTransformation       = kToolbarMaximumSize - kToolbarMinimumSize;
     NSLayoutConstraint *currentItemWidth = [self.toolbarItemsWidth firstObject];
-    float toolbarLeftMarginTransition = kToolbarInitialLeftMargin + (kToolbarItemInitialWidth - currentItemWidth.constant) / 2.0;
-    float toolbarSpacingTransition = kToolbarInitialSpacing + kToolbarItemInitialWidth - currentItemWidth.constant;
+    float toolbarLeftMarginTransition    = kToolbarInitialLeftMargin + (kToolbarItemInitialWidth - currentItemWidth.constant) / 2.0;
+    float toolbarSpacingTransition       = kToolbarInitialSpacing + kToolbarItemInitialWidth - currentItemWidth.constant;
 
     // Check if Toolbar is transitioning between maximum and minimum sizes
     if (offsetAfterHeaderTransition <= maxToolbarTransformation) {
@@ -377,21 +383,21 @@ CGFloat scrollViewLastOffset = 0.0;
 
         // Scroll lyrics and Twitter to the top
         self.lyricsScrollView.contentOffset = CGPointMake(0, 0);
-        self.twitterView.contentOffset = CGPointMake(0, 0);
+        self.twitterView.contentOffset      = CGPointMake(0, 0);
 
         // Keep Big Metadata 4 pixels below toolbar
         self.metadataTopLayoutConstraint.constant = 4;
 
         // Big Metadata is completely visible
-        self.songLabel.alpha = 1.0;
+        self.songLabel.alpha   = 1.0;
         self.artistLabel.alpha = 1.0;
 
         // Header mini-Metadata should be hidden
-        self.headerView.metadataAlpha = 0.0;
+        self.headerView.metadataAlpha  = 0.0;
         self.headerView.metadataOffset = self.headerView.maximumHeight;
 
         self.toolbarTopLayoutConstraint.constant = 0;
-        self.toolbar.backgroundColor = AWRColorToolkit.toolbarBackgroundColor;
+        self.toolbar.backgroundColor             = AWRColorToolkit.toolbarBackgroundColor;
 
         self.toolbarItemsLeftMargin.constant = toolbarLeftMarginTransition;
         for (NSLayoutConstraint *c in self.toolbarItemsSpacing) {
@@ -402,13 +408,13 @@ CGFloat scrollViewLastOffset = 0.0;
 
     // Toolbar already reached the minimum size
     // Let's check how further we are from that point
-    float offsetAfterToolbarTransformation = offsetAfterHeaderTransition - maxToolbarTransformation;
+    float offsetAfterToolbarTransformation      = offsetAfterHeaderTransition - maxToolbarTransformation;
     float offsetUntilMetadataIsCompletelyHidden = self.bigMetadataStackView.frame.size.height;
-    float maxBigMetadataMovement = offsetUntilMetadataIsCompletelyHidden + kToolbarMinimumSize + 12;
-    float offsetBigMetadata = 4 - MIN(offsetAfterToolbarTransformation, maxBigMetadataMovement);
+    float maxBigMetadataMovement                = offsetUntilMetadataIsCompletelyHidden + kToolbarMinimumSize + 12;
+    float offsetBigMetadata                     = 4 - MIN(offsetAfterToolbarTransformation, maxBigMetadataMovement);
 
     self.metadataTopLayoutConstraint.constant = offsetBigMetadata;
-    self.headerView.metadataOffset = MAX((self.headerView.minimumHeight / 2) + 20 - offsetAfterToolbarTransformation, 0);
+    self.headerView.metadataOffset            = MAX((self.headerView.minimumHeight / 2) + 20 - offsetAfterToolbarTransformation, 0);
 
     if (offsetAfterToolbarTransformation <= offsetUntilMetadataIsCompletelyHidden) {
         //////////////////////////////////
@@ -417,18 +423,18 @@ CGFloat scrollViewLastOffset = 0.0;
 
         // Scroll lyrics and Twitter to the top
         self.lyricsScrollView.contentOffset = CGPointMake(0, 0);
-        self.twitterView.contentOffset = CGPointMake(0, 0);
+        self.twitterView.contentOffset      = CGPointMake(0, 0);
 
         float movementPercentage = offsetAfterToolbarTransformation / offsetUntilMetadataIsCompletelyHidden;
         // Big Metadata is partially visible
-        self.songLabel.alpha = 1.0 - movementPercentage;
+        self.songLabel.alpha   = 1.0 - movementPercentage;
         self.artistLabel.alpha = 1.0 - movementPercentage;
 
         // Header mini-Metadata is partially visible (inversely proportional to big metadata alpha)
         self.headerView.metadataAlpha = movementPercentage;
 
         self.toolbarTopLayoutConstraint.constant = 0;
-        self.toolbar.backgroundColor = AWRColorToolkit.toolbarBackgroundColor;
+        self.toolbar.backgroundColor             = AWRColorToolkit.toolbarBackgroundColor;
 
         self.toolbarItemsLeftMargin.constant = toolbarLeftMarginTransition;
         for (NSLayoutConstraint *c in self.toolbarItemsSpacing) {
@@ -439,16 +445,16 @@ CGFloat scrollViewLastOffset = 0.0;
 
     // Big metadata is completely invisible now
     // Small metadata completely visible
-    self.songLabel.alpha = 0.0;
-    self.artistLabel.alpha = 0.0;
+    self.songLabel.alpha          = 0.0;
+    self.artistLabel.alpha        = 0.0;
     self.headerView.metadataAlpha = 1.0;
 
     // Let's check how further we are from that point
-    float offsetAfterHidingMetadata = offsetAfterToolbarTransformation - offsetUntilMetadataIsCompletelyHidden;
-    float maxToolbarMovement = kToolbarMinimumSize + 8;
-    float offsetToolbarMovement = -MIN(offsetAfterHidingMetadata, maxToolbarMovement);
+    float offsetAfterHidingMetadata           = offsetAfterToolbarTransformation - offsetUntilMetadataIsCompletelyHidden;
+    float maxToolbarMovement                  = kToolbarMinimumSize + 8;
+    float offsetToolbarMovement               = -MIN(offsetAfterHidingMetadata, maxToolbarMovement);
     self.metadataTopLayoutConstraint.constant = offsetBigMetadata - offsetToolbarMovement;
-    self.toolbarTopLayoutConstraint.constant = offsetToolbarMovement;
+    self.toolbarTopLayoutConstraint.constant  = offsetToolbarMovement;
 
     if (offsetAfterHidingMetadata <= maxToolbarMovement) {
         ////////////////////////////////
@@ -457,13 +463,14 @@ CGFloat scrollViewLastOffset = 0.0;
 
         // Scroll lyrics and Twitter to the top
         self.lyricsScrollView.contentOffset = CGPointMake(0, 0);
-        self.twitterView.contentOffset = CGPointMake(0, 0);
+        self.twitterView.contentOffset      = CGPointMake(0, 0);
 
         float movementPercentage = 1.0 - offsetAfterHidingMetadata / maxToolbarMovement;
         // Toolbar background is partially opaque
         self.toolbar.backgroundColor = [AWRColorToolkit.toolbarBackgroundColor colorWithAlphaComponent:movementPercentage];
 
-        self.toolbarItemsLeftMargin.constant = toolbarLeftMarginTransition + (1.0 - movementPercentage) * (kToolbarFinalLeftMargin - toolbarLeftMarginTransition);
+        self.toolbarItemsLeftMargin.constant =
+            toolbarLeftMarginTransition + (1.0 - movementPercentage) * (kToolbarFinalLeftMargin - toolbarLeftMarginTransition);
         for (NSLayoutConstraint *c in self.toolbarItemsSpacing) {
             c.constant = toolbarSpacingTransition + (1.0 - movementPercentage) * (kToolbarFinalSpacing - toolbarSpacingTransition);
         }
@@ -474,7 +481,9 @@ CGFloat scrollViewLastOffset = 0.0;
     self.toolbar.backgroundColor = AWRColorToolkit.noColor;
 
     self.toolbarItemsLeftMargin.constant = kToolbarFinalLeftMargin;
-    for (NSLayoutConstraint *c in self.toolbarItemsSpacing) { c.constant = kToolbarFinalSpacing; }
+    for (NSLayoutConstraint *c in self.toolbarItemsSpacing) {
+        c.constant = kToolbarFinalSpacing;
+    }
 
     // And the rest of the scroll belongs to the children scrollviews
     float remainingOffset = offsetAfterHidingMetadata - maxToolbarMovement;
@@ -484,7 +493,6 @@ CGFloat scrollViewLastOffset = 0.0;
         self.twitterView.contentOffset = CGPointMake(0, MAX(0.0, self.twitterView.contentOffset.y + delta));
         [self recalculateContentSize];
     } else {
-
     }
 }
 
@@ -550,14 +558,12 @@ CGFloat scrollViewLastOffset = 0.0;
     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_main_queue(), ^{
         [weakSelf.headerView renderModel:model];
-        self.songLabel.attributedText = [[NSAttributedString alloc]initWithString:model.songName attributes:self.songNameEffects];
-        self.artistLabel.text = model.artistName;
-        self.lyricsLabel.text = model.lyrics;
+        self.songLabel.attributedText = [[NSAttributedString alloc] initWithString:model.songName attributes:self.songNameEffects];
+        self.artistLabel.text         = model.artistName;
+        self.lyricsLabel.text         = model.lyrics;
         if (self.websiteButton.enabled != model.hasUrl) {
-            self.websiteButton.enabled = model.hasUrl;
-            self.websiteButton.tintColor = model.hasUrl
-                ? AWRColorToolkit.toolbarForegroundColor
-                : AWRColorToolkit.disabledTextColor;
+            self.websiteButton.enabled   = model.hasUrl;
+            self.websiteButton.tintColor = model.hasUrl ? AWRColorToolkit.toolbarForegroundColor : AWRColorToolkit.disabledTextColor;
         }
         [self recalculateContentSize];
     });
@@ -566,21 +572,20 @@ CGFloat scrollViewLastOffset = 0.0;
 - (NSDictionary *)songNameEffects {
     if (!_songNameEffects) {
         _songNameEffects = @{
-                             NSForegroundColorAttributeName: self.songLabel.textColor,
-                             NSFontAttributeName: self.songLabel.font,
-                             NSStrokeColorAttributeName: AWRColorToolkit.highlightStrokeColor,
-                             NSStrokeWidthAttributeName: @(-5.0)
-                             };
+            NSForegroundColorAttributeName : self.songLabel.textColor,
+            NSFontAttributeName : self.songLabel.font,
+            NSStrokeColorAttributeName : AWRColorToolkit.highlightStrokeColor,
+            NSStrokeWidthAttributeName : @(-5.0)
+        };
     }
     return _songNameEffects;
 }
 
 - (void)emptyFields {
-    self.songLabel.text = @"";
+    self.songLabel.text   = @"";
     self.artistLabel.text = @"";
     self.lyricsLabel.text = @"";
 }
-
 
 - (void)setStatusPlaying {
     __weak typeof(self) weakSelf = self;
@@ -609,11 +614,11 @@ CGFloat scrollViewLastOffset = 0.0;
 - (void)configureMediaBarShadow {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        CALayer *layer = self.mediaControlBar.layer;
-        layer.shadowColor = AWRColorToolkit.shadowColor.CGColor;
-        layer.shadowRadius = 4.5;
+        CALayer *layer      = self.mediaControlBar.layer;
+        layer.shadowColor   = AWRColorToolkit.shadowColor.CGColor;
+        layer.shadowRadius  = 4.5;
         layer.shadowOpacity = 0.6;
-        layer.shadowOffset = CGSizeMake(0, -3.0);
+        layer.shadowOffset  = CGSizeMake(0, -3.0);
         layer.masksToBounds = NO;
     });
 }

@@ -1,5 +1,5 @@
-#import <UIKit/UIKit.h>
 #import "AWRLicenseViewState.h"
+#import <UIKit/UIKit.h>
 
 @protocol AWRLicenseViewDelegate
 
@@ -10,7 +10,7 @@
 @interface AWRLicenseView : UIView
 
 @property (strong, nonatomic) AWRLicenseViewState *license;
-@property (nonatomic, weak)id<AWRLicenseViewDelegate> delegate;
+@property (nonatomic, weak) id<AWRLicenseViewDelegate> delegate;
 
 - (void)renderModel:(AWRLicenseViewState *)model;
 

@@ -1,8 +1,8 @@
-#import <FBSnapshotTestCase/FBSnapshotTestCase.h>
-#import <XCTest/XCTest.h>
-#import <KIF/KIF.h>
 #import "KIFUITestActor+EXAdditions.h"
+#import <FBSnapshotTestCase/FBSnapshotTestCase.h>
+#import <KIF/KIF.h>
 #import <SimulatorStatusMagiciOS/SimulatorStatusMagiciOS.h>
+#import <XCTest/XCTest.h>
 
 @interface ArcanosRadioScreenshot : KIFTestCase
 
@@ -43,11 +43,11 @@
 - (nonnull NSString *)screenshotFileNameForIdentifier:(nonnull NSString *)identifier {
     UIDevice *device = [UIDevice currentDevice];
     return [NSString stringWithFormat:@"%@_%.0fx%.0f_%.0fx_%@.png",
-            device.model,
-            [UIScreen mainScreen].bounds.size.width,
-            [UIScreen mainScreen].bounds.size.height,
-            [UIScreen mainScreen].scale,
-            identifier];
+                                      device.model,
+                                      [UIScreen mainScreen].bounds.size.width,
+                                      [UIScreen mainScreen].bounds.size.height,
+                                      [UIScreen mainScreen].scale,
+                                      identifier];
 }
 
 - (nonnull NSString *)screenshotFolder {
@@ -56,7 +56,7 @@
         screenshotsPath = @(getenv("KIF_SCREENSHOT"));
     }
     NSString *currentLocale = [NSLocale currentLocale].localeIdentifier;
-    NSString *languagePath = [screenshotsPath stringByAppendingPathComponent:currentLocale];
+    NSString *languagePath  = [screenshotsPath stringByAppendingPathComponent:currentLocale];
 
     NSError *error;
     NSFileManager *fileManager = [[NSFileManager alloc] init];

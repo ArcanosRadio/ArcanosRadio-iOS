@@ -6,7 +6,7 @@
 @class LQErrorType;
 @class LQRequestId;
 
-@interface LQSubscriptionRecord<T> : NSObject
+@interface LQSubscriptionRecord <T> : NSObject
 
 @property (nonatomic, weak) id subscriptionHandler;
 @property (nonatomic, copy) void (^eventHandlerClosure)(LQEvent *, LQClient *);
@@ -20,4 +20,3 @@
 - (instancetype)initWithQuery:(PFQuery *)query requestId:(LQRequestId *)requestId handler:(T)handler;
 
 @end
-

@@ -1,12 +1,12 @@
 #import "AWRParseMetadataStore.h"
-#import <Parse/Parse.h>
-#import "AWRSongParse.h"
 #import "AWRArtistParse.h"
-#import "AWRPlaylistParse.h"
 #import "AWRMetadataFactory.h"
+#import "AWRPlaylistParse.h"
+#import "AWRSongParse.h"
 #import "BFTask+IOZPromise.h"
+#import <Parse/Parse.h>
 
-@interface AWRParseMetadataStore()
+@interface AWRParseMetadataStore ()
 
 @end
 
@@ -14,10 +14,10 @@
 
 + (void)configure {
     [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
-        configuration.applicationId = AWRMetadataFactory.settings[@"PARSE_APPLICATION_ID"];
-        configuration.clientKey = AWRMetadataFactory.settings[@"PARSE_CLIENT_KEY"];
-        configuration.server = AWRMetadataFactory.settings[@"PARSE_SERVER_URL"];
-    }]];
+               configuration.applicationId = AWRMetadataFactory.settings[@"PARSE_APPLICATION_ID"];
+               configuration.clientKey     = AWRMetadataFactory.settings[@"PARSE_CLIENT_KEY"];
+               configuration.server        = AWRMetadataFactory.settings[@"PARSE_SERVER_URL"];
+           }]];
 }
 
 + (UIImage *)defaultAlbumArt {
@@ -43,7 +43,7 @@
 
 - (id<IOZPromise>)artistByTag:(NSString *)tag {
     PFQuery *query = [AWRArtistParse query];
-    [query whereKey:@"tags" containsAllObjectsInArray:@[tag]];
+    [query whereKey:@"tags" containsAllObjectsInArray:@[ tag ]];
     [query setLimit:1];
 
     return [query getFirstObjectInBackground];
@@ -59,7 +59,7 @@
 
 - (id<IOZPromise>)songByTag:(NSString *)tag {
     PFQuery *query = [AWRSongParse query];
-    [query whereKey:@"tags" containsAllObjectsInArray:@[tag]];
+    [query whereKey:@"tags" containsAllObjectsInArray:@[ tag ]];
     [query setLimit:1];
 
     return [query getFirstObjectInBackground];
@@ -70,11 +70,10 @@
         return [NSError errorWithDomain:@"Error on Parse Metadata Store: song is not a PFObject" code:0 userInfo:nil];
     }
     AWRSongParse *songParse = (AWRSongParse *)song;
-    return [songParse.albumArt getDataInBackground]
-        .then(^id<IOZPromise>(id<IOZSuccessfulPromise> finishedPromise) {
-            NSData *imageData = finishedPromise.result;
-            return imageData;
-        });
+    return [songParse.albumArt getDataInBackground].then(^id<IOZPromise>(id<IOZSuccessfulPromise> finishedPromise) {
+        NSData *imageData = finishedPromise.result;
+        return imageData;
+    });
 }
 
 - (id<IOZPromise>)lyricsBySong:(id<AWRSong>)song {
@@ -90,7 +89,7 @@
         return [NSError errorWithDomain:@"Error on Parse Metadata Store: artist is not a PFObject" code:0 userInfo:nil];
     }
     AWRArtistParse *artistParse = (AWRArtistParse *)artist;
-    PFFile *file = [artistParse.localizedDescription objectForKey:locale];
+    PFFile *file                = [artistParse.localizedDescription objectForKey:locale];
     if (!file) {
         return [[IOZPromiseResult alloc] initWithValue:nil];
     }
@@ -103,7 +102,7 @@
         return [NSError errorWithDomain:@"Error on Parse Metadata Store: song is not a PFObject" code:0 userInfo:nil];
     }
     AWRSongParse *songParse = (AWRSongParse *)song;
-    PFFile *file = [songParse.localizedDescription objectForKey:locale];
+    PFFile *file            = [songParse.localizedDescription objectForKey:locale];
     if (!file) {
         return [[IOZPromiseResult alloc] initWithValue:nil];
     }
@@ -112,12 +111,11 @@
 }
 
 - (id<IOZPromise>)fetchTextFile:(PFFile *)file {
-    return [file getDataInBackground]
-        .then(^id<IOZPromise>(id<IOZSuccessfulPromise> finishedPromise) {
-            NSData *data = finishedPromise.result;
-            NSString *text = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-            return text;
-        });
+    return [file getDataInBackground].then(^id<IOZPromise>(id<IOZSuccessfulPromise> finishedPromise) {
+        NSData *data   = finishedPromise.result;
+        NSString *text = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        return text;
+    });
 }
 
 - (void)refreshConfig {

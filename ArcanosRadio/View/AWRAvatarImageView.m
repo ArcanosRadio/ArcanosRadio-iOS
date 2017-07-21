@@ -4,7 +4,7 @@ IB_DESIGNABLE
 @implementation AWRAvatarImageView
 
 - (UIColor *)borderColor {
-    return [UIColor colorWithCGColor: self.layer.borderColor];
+    return [UIColor colorWithCGColor:self.layer.borderColor];
 }
 
 - (void)setBorderColor:(UIColor *)borderColor {
@@ -18,7 +18,6 @@ IB_DESIGNABLE
 - (CGFloat)borderWidth {
     return self.layer.borderWidth;
 }
-
 
 - (CGFloat)cornerRadius {
     return self.layer.cornerRadius;

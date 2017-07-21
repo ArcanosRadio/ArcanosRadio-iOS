@@ -3,7 +3,7 @@
 
 @interface AWRLicenseController () <AWRLicenseViewDelegate>
 
-@property(readonly, nonatomic) AWRLicenseView *licenseView;
+@property (readonly, nonatomic) AWRLicenseView *licenseView;
 
 @end
 

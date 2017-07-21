@@ -1,5 +1,5 @@
-#import <UIKit/UIKit.h>
 #import "AWRNowPlayingViewState.h"
+#import <UIKit/UIKit.h>
 
 @protocol AWRNowPlayingHeaderViewDelegate <NSObject>
 
@@ -9,9 +9,9 @@
 
 @interface AWRNowPlayingHeaderView : UIView
 
-@property (weak, nonatomic)id<AWRNowPlayingHeaderViewDelegate> delegate;
-@property (nonatomic)float metadataOffset;
-@property (nonatomic)float metadataAlpha;
+@property (weak, nonatomic) id<AWRNowPlayingHeaderViewDelegate> delegate;
+@property (nonatomic) float metadataOffset;
+@property (nonatomic) float metadataAlpha;
 
 - (void)renderModel:(AWRNowPlayingViewState *)model;
 - (float)maximumHeight;

@@ -16,8 +16,8 @@ FOUNDATION_EXPORT const unsigned char IOZPromiseVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <IOZPromise/PublicHeader.h>
 
+#import <IOZPromise/IOZNoMorePromises.h>
 #import <IOZPromise/IOZPromiseProtocol.h>
 #import <IOZPromise/IOZPromiseResult.h>
-#import <IOZPromise/IOZNoMorePromises.h>
-#import <IOZPromise/NSObject+IOZPromise.h>
 #import <IOZPromise/NSError+IOZPromise.h>
+#import <IOZPromise/NSObject+IOZPromise.h>

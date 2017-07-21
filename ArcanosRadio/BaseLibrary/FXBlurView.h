@@ -30,15 +30,12 @@
 //  3. This notice may not be removed or altered from any source distribution.
 //
 
-
-#import <UIKit/UIKit.h>
-#import <QuartzCore/QuartzCore.h>
 #import <Accelerate/Accelerate.h>
-
+#import <QuartzCore/QuartzCore.h>
+#import <UIKit/UIKit.h>
 
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wobjc-missing-property-synthesis"
-
 
 #import <Availability.h>
 #undef weak_ref
@@ -48,13 +45,11 @@
 #define weak_ref unsafe_unretained
 #endif
 
-
 @interface UIImage (FXBlurView)
 
 - (UIImage *)blurredImageWithRadius:(CGFloat)radius iterations:(NSUInteger)iterations tintColor:(UIColor *)tintColor;
 
 @end
-
 
 @interface FXBlurView : UIView
 
@@ -62,8 +57,8 @@
 + (void)setUpdatesEnabled;
 + (void)setUpdatesDisabled;
 
-@property (nonatomic, getter = isBlurEnabled) BOOL blurEnabled;
-@property (nonatomic, getter = isDynamic) BOOL dynamic;
+@property (nonatomic, getter=isBlurEnabled) BOOL blurEnabled;
+@property (nonatomic, getter=isDynamic) BOOL dynamic;
 @property (nonatomic, assign) NSUInteger iterations;
 @property (nonatomic, assign) NSTimeInterval updateInterval;
 @property (nonatomic, assign) CGFloat blurRadius;
@@ -75,6 +70,5 @@
 - (void)clearImage;
 
 @end
-
 
 #pragma GCC diagnostic pop

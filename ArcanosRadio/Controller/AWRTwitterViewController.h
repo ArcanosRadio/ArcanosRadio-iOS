@@ -1,5 +1,5 @@
-#import <UIKit/UIKit.h>
 #import <TwitterKit/TwitterKit.h>
+#import <UIKit/UIKit.h>
 
 @protocol AWRTwitterViewControllerDelegate
 
@@ -9,7 +9,7 @@
 
 @interface AWRTwitterViewController : TWTRTimelineViewController
 
-@property (nonatomic, weak)id<AWRTwitterViewControllerDelegate> delegate;
+@property (nonatomic, weak) id<AWRTwitterViewControllerDelegate> delegate;
 - (void)setTwitterTimeline:(NSString *)timeline;
 - (void)setTwitterSearch:(NSString *)searchQuery;
 

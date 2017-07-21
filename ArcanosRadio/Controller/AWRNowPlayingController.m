@@ -1,18 +1,18 @@
-#import <IOZPromise/IOZPromise.h>
 #import "AWRNowPlayingController.h"
 #import "AWRArcanosMediaPlayer.h"
+#import "AWRMetadataFactory.h"
 #import "AWRNowPlayingView.h"
 #import "AWRNowPlayingViewState.h"
-#import "AWRMetadataFactory.h"
 #import "AWRTwitterViewController.h"
+#import <IOZPromise/IOZPromise.h>
 
 @interface AWRNowPlayingController () <AWRArcanosMediaPlayerDelegate, AWRNowPlayingViewDelegate, AWRTwitterViewControllerDelegate>
 
-@property(strong, nonatomic) AWRArcanosMediaPlayer *arcanosRadio;
-@property(strong, nonatomic) NSString *streamingUrl;
-@property(readonly, nonatomic) AWRNowPlayingView *nowPlayingView;
-@property(atomic, nullable, strong) AWRNowPlayingViewState *viewState;
-@property(strong, nonatomic) AWRTwitterViewController *twitterViewController;
+@property (strong, nonatomic) AWRArcanosMediaPlayer *arcanosRadio;
+@property (strong, nonatomic) NSString *streamingUrl;
+@property (readonly, nonatomic) AWRNowPlayingView *nowPlayingView;
+@property (atomic, nullable, strong) AWRNowPlayingViewState *viewState;
+@property (strong, nonatomic) AWRTwitterViewController *twitterViewController;
 @end
 
 @implementation AWRNowPlayingController
@@ -24,7 +24,7 @@
 - (instancetype)init {
     self = [super initWithNibName:@"AWRNowPlayingView" bundle:nil];
     if (self) {
-        self.viewState = [[AWRNowPlayingViewState alloc] init];
+        self.viewState    = [[AWRNowPlayingViewState alloc] init];
         self.streamingUrl = [[AWRMetadataFactory createMetadataStore] readConfig:REMOTE_CONFIG_STREAMING_URL_KEY];
     }
     return self;
@@ -35,7 +35,7 @@
 
 - (AWRTwitterViewController *)twitterViewController {
     if (!_twitterViewController) {
-        _twitterViewController = [AWRTwitterViewController new];
+        _twitterViewController          = [AWRTwitterViewController new];
         _twitterViewController.delegate = self;
     }
     return _twitterViewController;
@@ -44,7 +44,7 @@
 - (void)setStreamingUrl:(NSString *)streamingUrl {
     _streamingUrl = streamingUrl;
     if (_streamingUrl) {
-        _arcanosRadio = [[AWRArcanosMediaPlayer alloc] initWithUrl:_streamingUrl];
+        _arcanosRadio          = [[AWRArcanosMediaPlayer alloc] initWithUrl:_streamingUrl];
         _arcanosRadio.delegate = self;
         [_arcanosRadio prepare];
         [_arcanosRadio play];
@@ -52,12 +52,12 @@
 }
 
 - (void)metadataDidChangeTheSong:(id<AWRSong>)song {
-    self.viewState.songName = song.songName;
+    self.viewState.songName   = song.songName;
     self.viewState.artistName = song.artist.artistName;
-    self.viewState.url = song.artist.url;
-    self.viewState.hasUrl = song.artist.url.length > 0;
+    self.viewState.url        = song.artist.url;
+    self.viewState.hasUrl     = song.artist.url.length > 0;
 
-    if (song.artist.twitterTimeline && [song.artist.twitterTimeline characterAtIndex:0] == '#' ) {
+    if (song.artist.twitterTimeline && [song.artist.twitterTimeline characterAtIndex:0] == '#') {
         // Hashtag search
         [self.twitterViewController setTwitterSearch:song.artist.twitterTimeline];
     } else if (song.artist.twitterTimeline) {
@@ -68,9 +68,9 @@
         [self.twitterViewController setTwitterSearch:song.artist.artistName];
     }
 
-    UIImage *defaultImage = [[AWRMetadataFactory metadataStoreClass] defaultAlbumArt];
+    UIImage *defaultImage   = [[AWRMetadataFactory metadataStoreClass] defaultAlbumArt];
     self.viewState.albumArt = defaultImage;
-    self.viewState.lyrics = @"";
+    self.viewState.lyrics   = @"";
     [self.nowPlayingView renderModel:self.viewState];
 }
 
@@ -133,7 +133,7 @@
             return;
         }
 
-        NSURL *url = [NSURL URLWithString:urlString];
+        NSURL *url               = [NSURL URLWithString:urlString];
         NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
 
         [self.nowPlayingView navigate:requestObj];

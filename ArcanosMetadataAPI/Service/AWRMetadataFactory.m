@@ -1,15 +1,15 @@
 #import "AWRMetadataFactory.h"
-#import "AWRParseMetadataStore.h"
 #import "AWRMetadataPoolingService.h"
+#import "AWRParseMetadataStore.h"
 
 @implementation AWRMetadataFactory
 
 static NSDictionary *_settings;
-+ (NSDictionary<NSString *,NSString *> *)settings {
++ (NSDictionary<NSString *, NSString *> *)settings {
     return _settings;
 }
 
-+ (void)setSettings:(NSDictionary<NSString *,NSString *> *)settings {
++ (void)setSettings:(NSDictionary<NSString *, NSString *> *)settings {
     _settings = settings;
 }
 

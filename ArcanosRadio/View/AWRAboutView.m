@@ -1,6 +1,6 @@
 #import "AWRAboutView.h"
 
-@interface AWRAboutView()<UINavigationBarDelegate, UITableViewDelegate>
+@interface AWRAboutView () <UINavigationBarDelegate, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -18,24 +18,24 @@
 }
 
 - (void)setNavigationBar:(UINavigationBar *)navigationBar {
-    _navigationBar = navigationBar;
+    _navigationBar          = navigationBar;
     _navigationBar.delegate = self;
 
     UINavigationItem *titleItem = [_navigationBar.items firstObject];
-    titleItem.title = NSLocalizedString(@"ABOUT_TITLE_TEXT", nil);
+    titleItem.title             = NSLocalizedString(@"ABOUT_TITLE_TEXT", nil);
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    CGRect rect = self.navigationBar.frame;
-    float y = rect.size.height + rect.origin.y;
+    CGRect rect                 = self.navigationBar.frame;
+    float y                     = rect.size.height + rect.origin.y;
     self.tableView.contentInset = UIEdgeInsetsMake(y, 0, 0, 0);
     [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
 }
 
-- (UIBarPosition)positionForBar:(id <UIBarPositioning>)bar {
-    CGRect frame = self.navigationBar.frame;
-    frame.origin = CGPointMake(0, [UIApplication sharedApplication].statusBarFrame.size.height);
+- (UIBarPosition)positionForBar:(id<UIBarPositioning>)bar {
+    CGRect frame             = self.navigationBar.frame;
+    frame.origin             = CGPointMake(0, [UIApplication sharedApplication].statusBarFrame.size.height);
     self.navigationBar.frame = frame;
 
     return UIBarPositionTopAttached;

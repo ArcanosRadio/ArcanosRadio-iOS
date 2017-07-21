@@ -6,7 +6,7 @@
 - (UIViewController *)start;
 
 - (instancetype)init NS_UNAVAILABLE;
-+ (instancetype)new NS_UNAVAILABLE;
++ (instancetype) new NS_UNAVAILABLE;
 - (instancetype)initWithOptions:(NSDictionary *)launchOptions NS_DESIGNATED_INITIALIZER;
 - (void)runningInBackground;
 - (void)runningInForeground;

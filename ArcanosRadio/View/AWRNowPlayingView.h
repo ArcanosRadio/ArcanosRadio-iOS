@@ -3,15 +3,11 @@
 // Visit his github for more information:
 // https://github.com/ariok/TB_TwitterUI
 
-#import <UIKit/UIKit.h>
 #import "AWRNowPlayingViewState.h"
 #import <MediaPlayer/MPVolumeView.h>
+#import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSInteger, AWRNowPlayingViewTab) {
-    AWRNowPlayingViewTabLyrics,
-    AWRNowPlayingViewTabTwitter,
-    AWRNowPlayingViewTabWebsite
-};
+typedef NS_ENUM(NSInteger, AWRNowPlayingViewTab) { AWRNowPlayingViewTabLyrics, AWRNowPlayingViewTabTwitter, AWRNowPlayingViewTabWebsite };
 
 @protocol AWRNowPlayingViewDelegate
 
@@ -28,8 +24,8 @@ typedef NS_ENUM(NSInteger, AWRNowPlayingViewTab) {
 
 @interface AWRNowPlayingView : UIView
 
-@property (nonatomic)AWRNowPlayingViewTab currentTab;
-@property (nonatomic, weak)id<AWRNowPlayingViewDelegate> delegate;
+@property (nonatomic) AWRNowPlayingViewTab currentTab;
+@property (nonatomic, weak) id<AWRNowPlayingViewDelegate> delegate;
 - (void)setTwitterView:(UIScrollView *)twitterView;
 - (void)renderModel:(AWRNowPlayingViewState *)model;
 - (void)setVolume:(float)percentage;

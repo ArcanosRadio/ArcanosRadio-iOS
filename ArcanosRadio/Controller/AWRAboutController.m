@@ -1,14 +1,14 @@
 #import "AWRAboutController.h"
 #import "AWRAboutView.h"
 #import "AWRAppDeveloperViewState.h"
-#import "AWRDeveloperInfoTableViewCell.h"
 #import "AWRAppInfoViewState.h"
 #import "AWRAppLinkInfoTableViewCell.h"
+#import "AWRDeveloperInfoTableViewCell.h"
 #import "AWRVersionTableViewCell.h"
 
 @interface AWRAboutController () <AWRAboutViewDelegate, UITableViewDataSource>
 
-@property(readonly, nonatomic) AWRAboutView *aboutView;
+@property (readonly, nonatomic) AWRAboutView *aboutView;
 @property (strong, nonatomic) NSArray<AWRLicenseViewState *> *thirdPartyLibs;
 @property (strong, nonatomic) NSArray<AWRAppDeveloperViewState *> *developers;
 @property (strong, nonatomic) NSArray<AWRAppInfoViewState *> *appLinks;
@@ -41,16 +41,14 @@
 
 - (NSArray<AWRLicenseViewState *> *)thirdPartyLibs {
     if (!_thirdPartyLibs) {
-        NSString *acknowledgementsPlist = [[NSBundle mainBundle]
-                                           pathForResource:@"Acknowledgements"
-                                           ofType:@"plist"];
-        NSDictionary *root = [[NSDictionary alloc] initWithContentsOfFile:acknowledgementsPlist];
-        NSDictionary *licenses = [root objectForKey:@"Licenses"];
+        NSString *acknowledgementsPlist                     = [[NSBundle mainBundle] pathForResource:@"Acknowledgements" ofType:@"plist"];
+        NSDictionary *root                                  = [[NSDictionary alloc] initWithContentsOfFile:acknowledgementsPlist];
+        NSDictionary *licenses                              = [root objectForKey:@"Licenses"];
         NSMutableArray<AWRLicenseViewState *> *licenseArray = [[NSMutableArray alloc] initWithCapacity:licenses.count];
         for (NSString *key in licenses) {
             AWRLicenseViewState *l = [[AWRLicenseViewState alloc] init];
-            l.name = key;
-            l.text = [licenses objectForKey:key];
+            l.name                 = key;
+            l.text                 = [licenses objectForKey:key];
             [licenseArray addObject:l];
         }
 
@@ -94,49 +92,47 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return
-        (section == 0) ? nil
-      : (section == 1) ? NSLocalizedString(@"ABOUT_TEAM_HEADER", nil)
-      : (section == 2) ? NSLocalizedString(@"ABOUT_LINKS_HEADER", nil)
-      : NSLocalizedString(@"ABOUT_THIRD_PARTY_HEADER", nil);
+    return (section == 0)
+               ? nil
+               : (section == 1) ? NSLocalizedString(@"ABOUT_TEAM_HEADER", nil)
+                                : (section == 2) ? NSLocalizedString(@"ABOUT_LINKS_HEADER", nil) : NSLocalizedString(@"ABOUT_THIRD_PARTY_HEADER", nil);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-
     if (indexPath.section == 0) {
         AWRVersionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"appVersionCell" forIndexPath:indexPath];
 
         NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
-        NSString *build = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey];
+        NSString *build   = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey];
 
-        cell.appNameLabel.text = NSLocalizedString(@"ABOUT_ARCANOS", nil);
+        cell.appNameLabel.text   = NSLocalizedString(@"ABOUT_ARCANOS", nil);
         cell.copyrightLabel.text = NSLocalizedString(@"ABOUT_COPYRIGHT", nil);
-        cell.versionLabel.text = [NSString stringWithFormat:@"%@ (%@)", version, build];
+        cell.versionLabel.text   = [NSString stringWithFormat:@"%@ (%@)", version, build];
         return cell;
     }
 
     if (indexPath.section == 1) {
-        AWRAppDeveloperViewState *dev = self.developers[indexPath.row];
+        AWRAppDeveloperViewState *dev       = self.developers[indexPath.row];
         AWRDeveloperInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"developerCell" forIndexPath:indexPath];
-        cell.nameLabel.text = dev.name;
-        cell.detailsFirstLineLabel.text = dev.details;
-        cell.detailsSecondLineLabel.text = dev.moreDetails;
+        cell.nameLabel.text                 = dev.name;
+        cell.detailsFirstLineLabel.text     = dev.details;
+        cell.detailsSecondLineLabel.text    = dev.moreDetails;
         return cell;
     }
 
     if (indexPath.section == 2) {
-        AWRAppInfoViewState *link = self.appLinks[indexPath.row];
+        AWRAppInfoViewState *link         = self.appLinks[indexPath.row];
         AWRAppLinkInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"appLinkCell" forIndexPath:indexPath];
-        cell.nameLabel.text = link.name;
-        cell.detailsOnlyLineLabel.text = link.details;
+        cell.nameLabel.text               = link.name;
+        cell.detailsOnlyLineLabel.text    = link.details;
         return cell;
     }
 
     static NSString *CellIdentifier = @"Cell";
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.textLabel.text = [self.thirdPartyLibs objectAtIndex:indexPath.row].name;
+    cell.accessoryType    = UITableViewCellAccessoryDisclosureIndicator;
+    cell.textLabel.text   = [self.thirdPartyLibs objectAtIndex:indexPath.row].name;
     return cell;
 }
 
@@ -148,12 +144,12 @@
     }
 
     if (indexPath.section == 1) {
-        [self.delegate userDidSelectUrl: self.developers[indexPath.row].url];
+        [self.delegate userDidSelectUrl:self.developers[indexPath.row].url];
         return;
     }
 
     if (indexPath.section == 2) {
-        [self.delegate userDidSelectUrl: self.appLinks[indexPath.row].url];
+        [self.delegate userDidSelectUrl:self.appLinks[indexPath.row].url];
         return;
     }
 

@@ -1,13 +1,13 @@
 #import "AWRArcanosMediaPlayer.h"
-#import <MediaPlayer/MediaPlayer.h>
 #import <AVFoundation/AVFoundation.h>
+#import <MediaPlayer/MediaPlayer.h>
 
-@interface AWRArcanosMediaPlayer()
+@interface AWRArcanosMediaPlayer ()
 
-@property(strong,nonatomic) AVPlayer *audioPlayer;
-@property(strong,nonatomic) AVPlayerItem *streamingFlow;
-@property(nonatomic) float restoreVolume;
-@property (nonatomic, strong) NSTimer * timer;
+@property (strong, nonatomic) AVPlayer *audioPlayer;
+@property (strong, nonatomic) AVPlayerItem *streamingFlow;
+@property (nonatomic) float restoreVolume;
+@property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic) AVPlayerTimeControlStatus lastStatus;
 
 @end
@@ -18,9 +18,9 @@
     self = [super init];
     if (self) {
         NSURL *streamingUrl = [NSURL URLWithString:url];
-        self.streamingFlow = [[AVPlayerItem alloc] initWithURL:streamingUrl];
-        self.audioPlayer = [[AVPlayer alloc] initWithPlayerItem:self.streamingFlow];
-        self.restoreVolume = 0.0;
+        self.streamingFlow  = [[AVPlayerItem alloc] initWithURL:streamingUrl];
+        self.audioPlayer    = [[AVPlayer alloc] initWithPlayerItem:self.streamingFlow];
+        self.restoreVolume  = 0.0;
         [self.timer setFireDate:[NSDate dateWithTimeIntervalSinceNow:0]];
     }
     return self;
@@ -57,22 +57,22 @@
         self.lastStatus = self.audioPlayer.timeControlStatus;
         if (self.delegate) {
             switch (self.lastStatus) {
-                case AVPlayerTimeControlStatusWaitingToPlayAtSpecifiedRate:
-                    commandCenter.playCommand.enabled = NO;
-                    commandCenter.pauseCommand.enabled = YES;
-                    [self.delegate didStartBuffering];
-                    break;
-                case AVPlayerTimeControlStatusPlaying:
-                    commandCenter.playCommand.enabled = NO;
-                    commandCenter.pauseCommand.enabled = YES;
-                    [self.delegate didStartPlaying];
-                    break;
-                case AVPlayerTimeControlStatusPaused:
-                default:
-                    commandCenter.playCommand.enabled = YES;
-                    commandCenter.pauseCommand.enabled = NO;
-                    [self.delegate didStopPlaying];
-                    break;
+            case AVPlayerTimeControlStatusWaitingToPlayAtSpecifiedRate:
+                commandCenter.playCommand.enabled  = NO;
+                commandCenter.pauseCommand.enabled = YES;
+                [self.delegate didStartBuffering];
+                break;
+            case AVPlayerTimeControlStatusPlaying:
+                commandCenter.playCommand.enabled  = NO;
+                commandCenter.pauseCommand.enabled = YES;
+                [self.delegate didStartPlaying];
+                break;
+            case AVPlayerTimeControlStatusPaused:
+            default:
+                commandCenter.playCommand.enabled  = YES;
+                commandCenter.pauseCommand.enabled = NO;
+                [self.delegate didStopPlaying];
+                break;
             }
         }
     }
@@ -119,54 +119,48 @@
 
 - (void)startBackgroundStreaming {
     if (self.delegate) [self.delegate beginReceivingRemoteControlEvents];
-    NSError *activationError = nil;
+    NSError *activationError     = nil;
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     [audioSession setCategory:AVAudioSessionCategoryPlayback error:&activationError];
     [audioSession setActive:YES error:&activationError];
 }
 
 - (void)registerForNotifications {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(remoteControlEventNotification:)
-                                                 name:@"RemoteControlEventReceived" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(remoteControlEventNotification:) name:@"RemoteControlEventReceived" object:nil];
 
     MPRemoteCommandCenter *commandCenter = [MPRemoteCommandCenter sharedCommandCenter];
 
     commandCenter.previousTrackCommand.enabled = NO;
-    commandCenter.nextTrackCommand.enabled = NO;
-    commandCenter.playCommand.enabled = YES;
-    commandCenter.pauseCommand.enabled = NO;
-//    commandCenter.likeCommand.enabled = YES;
-//    commandCenter.bookmarkCommand.enabled = YES;
+    commandCenter.nextTrackCommand.enabled     = NO;
+    commandCenter.playCommand.enabled          = YES;
+    commandCenter.pauseCommand.enabled         = NO;
+    //    commandCenter.likeCommand.enabled = YES;
+    //    commandCenter.bookmarkCommand.enabled = YES;
 
     [commandCenter.playCommand addTarget:self action:@selector(play)];
     [commandCenter.pauseCommand addTarget:self action:@selector(stop)];
-//    [commandCenter.likeCommand addTarget:self action:@selector(like)];
-//    [commandCenter.likeCommand addTarget:self action:@selector(bookmark)];
+    //    [commandCenter.likeCommand addTarget:self action:@selector(like)];
+    //    [commandCenter.likeCommand addTarget:self action:@selector(bookmark)];
 }
 
-- (void)like { }
-- (void)bookmark { }
+- (void)like {
+}
+- (void)bookmark {
+}
 
--(void)unregisterForNotifications {
+- (void)unregisterForNotifications {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"RemoteControlEventReceived" object:nil];
 }
 
--(void)remoteControlEventNotification:(NSNotification *)note{
+- (void)remoteControlEventNotification:(NSNotification *)note {
     UIEvent *event = note.object;
-    if (event.type == UIEventTypeRemoteControl){
+    if (event.type == UIEventTypeRemoteControl) {
         switch (event.subtype) {
-            case UIEventSubtypeRemoteControlTogglePlayPause:
-                [self togglePlayPause];
-                break;
-            case UIEventSubtypeRemoteControlPlay:
-                [self play];
-                break;
-            case UIEventSubtypeRemoteControlPause:
-            case UIEventSubtypeRemoteControlStop:
-                [self stop];
-                break;
-            default:
-                break;
+        case UIEventSubtypeRemoteControlTogglePlayPause: [self togglePlayPause]; break;
+        case UIEventSubtypeRemoteControlPlay: [self play]; break;
+        case UIEventSubtypeRemoteControlPause:
+        case UIEventSubtypeRemoteControlStop: [self stop]; break;
+        default: break;
         }
     }
 }

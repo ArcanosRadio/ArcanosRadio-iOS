@@ -1,5 +1,5 @@
-#import <Foundation/Foundation.h>
 #import "AWRPlaylist.h"
+#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
 @protocol AWRMetadataServiceDelegate <NSObject>
