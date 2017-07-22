@@ -85,7 +85,7 @@
 		D5018FAC1F0EC65700C7F7D1 /* AWRReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = D5018F9F1F0EC65700C7F7D1 /* AWRReachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D5018FAD1F0EC65700C7F7D1 /* AWRReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D5018FA01F0EC65700C7F7D1 /* AWRReachability.m */; };
 		D5018FAE1F0ED2CD00C7F7D1 /* IOZPromise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B676FD1F0EBAD600C62C95 /* IOZPromise.framework */; };
-		D531D4B01F21478100A78658 /* ArcanosRadioScreenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = D531D4AF1F21478100A78658 /* ArcanosRadioScreenshot.m */; };
+		D531D4B01F21478100A78658 /* AWRScreenshotAutomation.m in Sources */ = {isa = PBXBuildFile; fileRef = D531D4AF1F21478100A78658 /* AWRScreenshotAutomation.m */; };
 		D531D4B81F214AAB00A78658 /* KIF.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D531D4B71F214AAB00A78658 /* KIF.framework */; };
 		D531D4B91F214AB200A78658 /* SimulatorStatusMagiciOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01673C7A1DCFAD2E000B14CE /* SimulatorStatusMagiciOS.framework */; };
 		D531D4BC1F214D1400A78658 /* KIFUITestActor+EXAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D531D4BB1F214D1400A78658 /* KIFUITestActor+EXAdditions.m */; };
@@ -180,7 +180,6 @@
 		0151BAD81DC0FA4E00736A79 /* AWRMenuPanGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRMenuPanGestureRecognizer.m; sourceTree = "<group>"; };
 		016500DF1DB1E79B00B32C0A /* AWRMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRMenuView.h; sourceTree = "<group>"; };
 		016500E01DB1E79B00B32C0A /* AWRMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRMenuView.m; sourceTree = "<group>"; };
-		016500E71DB2D04900B32C0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		016500E91DB2D05200B32C0A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		016500EA1DB2D0E300B32C0A /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		016500EE1DB2EFBD00B32C0A /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -281,8 +280,9 @@
 		D5018F9E1F0EC65700C7F7D1 /* AWRParseMetadataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRParseMetadataStore.m; sourceTree = "<group>"; };
 		D5018F9F1F0EC65700C7F7D1 /* AWRReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRReachability.h; sourceTree = "<group>"; };
 		D5018FA01F0EC65700C7F7D1 /* AWRReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRReachability.m; sourceTree = "<group>"; };
+		D519A1C01F23DB8200BB4543 /* AWRScreenshotAutomation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRScreenshotAutomation.h; sourceTree = "<group>"; };
 		D531D4AD1F21478100A78658 /* ArcanosRadioScreenshot.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArcanosRadioScreenshot.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D531D4AF1F21478100A78658 /* ArcanosRadioScreenshot.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArcanosRadioScreenshot.m; sourceTree = "<group>"; };
+		D531D4AF1F21478100A78658 /* AWRScreenshotAutomation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AWRScreenshotAutomation.m; sourceTree = "<group>"; };
 		D531D4B11F21478100A78658 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D531D4B71F214AAB00A78658 /* KIF.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KIF.framework; path = Carthage/Build/iOS/KIF.framework; sourceTree = "<group>"; };
 		D531D4BA1F214D1400A78658 /* KIFUITestActor+EXAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KIFUITestActor+EXAdditions.h"; sourceTree = "<group>"; };
@@ -628,7 +628,8 @@
 		D531D4AE1F21478100A78658 /* ArcanosRadioScreenshot */ = {
 			isa = PBXGroup;
 			children = (
-				D531D4AF1F21478100A78658 /* ArcanosRadioScreenshot.m */,
+				D519A1C01F23DB8200BB4543 /* AWRScreenshotAutomation.h */,
+				D531D4AF1F21478100A78658 /* AWRScreenshotAutomation.m */,
 				D531D4B11F21478100A78658 /* Info.plist */,
 				D531D4BA1F214D1400A78658 /* KIFUITestActor+EXAdditions.h */,
 				D531D4BB1F214D1400A78658 /* KIFUITestActor+EXAdditions.m */,
@@ -881,7 +882,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 				"pt-BR",
 			);
 			mainGroup = 0181E7CE1D8C905B008E21C5;
@@ -1059,7 +1059,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D531D4BC1F214D1400A78658 /* KIFUITestActor+EXAdditions.m in Sources */,
-				D531D4B01F21478100A78658 /* ArcanosRadioScreenshot.m in Sources */,
+				D531D4B01F21478100A78658 /* AWRScreenshotAutomation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1120,7 +1120,6 @@
 		016500E81DB2D04900B32C0A /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				016500E71DB2D04900B32C0A /* Base */,
 				016500E91DB2D05200B32C0A /* en */,
 				016500EA1DB2D0E300B32C0A /* pt-BR */,
 			);
