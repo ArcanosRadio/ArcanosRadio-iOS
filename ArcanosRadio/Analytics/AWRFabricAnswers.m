@@ -45,7 +45,7 @@ static NSString *const LAST_SONG_COUNT = @"LAST_SONG_COUNT";
 - (void)trackListenSong:(NSString *)song artist:(NSString *)artist {
     self.songCount++;
     [self trackMetric:@"Listen" withAttributes:@{ @"Artist" : artist, @"Song" : song, @"Song Count" : @(self.songCount) }];
-    ILog(@"trackListenSong:artist: (%@,%@,self.songCount=%ld)", song, artist, self.songCount);
+    ILog(@"trackListenSong:artist: (%@,%@,self.songCount=%ld)", song, artist, (long)self.songCount);
 
     [[NSUserDefaults standardUserDefaults] setObject:song forKey:LAST_SONG];
     [[NSUserDefaults standardUserDefaults] setObject:artist forKey:LAST_ARTIST];
@@ -54,7 +54,7 @@ static NSString *const LAST_SONG_COUNT = @"LAST_SONG_COUNT";
 
 - (void)trackFinishedSong:(NSString *)song artist:(NSString *)artist {
     [self trackMetric:@"Finished Song" withAttributes:@{ @"Artist" : artist, @"Song" : song, @"Song Count" : @(self.songCount) }];
-    ILog(@"trackFinishedSong:artist: (%@,%@,self.songCount=%ld)", song, artist, self.songCount);
+    ILog(@"trackFinishedSong:artist: (%@,%@,self.songCount=%ld)", song, artist, (long)self.songCount);
 }
 
 - (void)trackShareSong:(NSString *)song artist:(NSString *)artist on:(NSString *)service {
@@ -78,9 +78,9 @@ static NSString *const LAST_SONG_COUNT = @"LAST_SONG_COUNT";
             @"Artist" : artist,
             @"Song" : song,
             @"Listened" : @(sessionSongCount),
-            @"Popularity" : [NSString stringWithFormat:@"%ld : %@", sessionSongCount, fullName]
+            @"Popularity" : [NSString stringWithFormat:@"%ld : %@", (long)sessionSongCount, fullName]
         }];
-    ILog(@"trackUserLeavingWithSong:artist:sessionSongCount: (%@,%@,%ld)", song, artist, sessionSongCount);
+    ILog(@"trackUserLeavingWithSong:artist:sessionSongCount: (%@,%@,%ld)", song, artist, (long)sessionSongCount);
 }
 
 @end
