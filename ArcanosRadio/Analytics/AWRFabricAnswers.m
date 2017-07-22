@@ -26,12 +26,24 @@ static NSString *const LAST_SONG_COUNT = @"LAST_SONG_COUNT";
     return self;
 }
 
+- (BOOL)fabricsEnabled {
+    return YES;
+}
+
 - (void)trackMetric:(NSString *)metric withAttributes:(NSDictionary<NSString *, id> *)attributes {
+    if (!self.fabricsEnabled) {
+        return;
+    }
+
     [Answers logCustomEventWithName:metric customAttributes:attributes];
 }
 
 - (void)trackTab:(nonnull NSString *)content forSong:(nonnull NSString *)song artist:(nonnull NSString *)artist {
     ILog(@"trackTab:forSong:artist: (%@,%@,%@)", content, song, artist);
+    if (!self.fabricsEnabled) {
+        return;
+    }
+
     NSString *fullContent = [NSString stringWithFormat:@"%@ : %@ - %@", content, song, artist];
     [Answers logContentViewWithName:content
                         contentType:@"tab"
@@ -44,20 +56,33 @@ static NSString *const LAST_SONG_COUNT = @"LAST_SONG_COUNT";
 
 - (void)trackListenSong:(NSString *)song artist:(NSString *)artist {
     self.songCount++;
-    [self trackMetric:@"Listen" withAttributes:@{ @"Artist" : artist, @"Song" : song, @"Song Count" : @(self.songCount) }];
     ILog(@"trackListenSong:artist: (%@,%@,self.songCount=%ld)", song, artist, (long)self.songCount);
-
     [[NSUserDefaults standardUserDefaults] setObject:song forKey:LAST_SONG];
     [[NSUserDefaults standardUserDefaults] setObject:artist forKey:LAST_ARTIST];
     [[NSUserDefaults standardUserDefaults] setInteger:self.songCount forKey:LAST_SONG_COUNT];
+    if (!self.fabricsEnabled) {
+        return;
+    }
+
+    [self trackMetric:@"Listen" withAttributes:@{ @"Artist" : artist, @"Song" : song, @"Song Count" : @(self.songCount) }];
 }
 
 - (void)trackFinishedSong:(NSString *)song artist:(NSString *)artist {
-    [self trackMetric:@"Finished Song" withAttributes:@{ @"Artist" : artist, @"Song" : song, @"Song Count" : @(self.songCount) }];
     ILog(@"trackFinishedSong:artist: (%@,%@,self.songCount=%ld)", song, artist, (long)self.songCount);
+    if (!self.fabricsEnabled) {
+        return;
+    }
+
+    if (!self.fabricsEnabled) return;
+    [self trackMetric:@"Finished Song" withAttributes:@{ @"Artist" : artist, @"Song" : song, @"Song Count" : @(self.songCount) }];
 }
 
 - (void)trackShareSong:(NSString *)song artist:(NSString *)artist on:(NSString *)service {
+    ILog(@"trackShareSong:artist:service: (%@,%@,%@)", song, artist, service);
+    if (!self.fabricsEnabled) {
+        return;
+    }
+
     NSString *fullName = [NSString stringWithFormat:@"%@ - %@", song, artist];
     [Answers logShareWithMethod:@"Song"
                     contentName:fullName
@@ -68,10 +93,14 @@ static NSString *const LAST_SONG_COUNT = @"LAST_SONG_COUNT";
                    @"Song" : song,
                    @"Service" : service
                }];
-    ILog(@"trackShareSong:artist:service: (%@,%@,%@)", song, artist, service);
 }
 
 - (void)trackUserLeavingWithSong:(NSString *)song artist:(NSString *)artist sessionSongCount:(NSInteger)sessionSongCount {
+    ILog(@"trackUserLeavingWithSong:artist:sessionSongCount: (%@,%@,%ld)", song, artist, (long)sessionSongCount);
+    if (!self.fabricsEnabled) {
+        return;
+    }
+
     NSString *fullName = [NSString stringWithFormat:@"%@ - %@", song, artist];
     [self trackMetric:@"Leave"
         withAttributes:@{
@@ -80,7 +109,6 @@ static NSString *const LAST_SONG_COUNT = @"LAST_SONG_COUNT";
             @"Listened" : @(sessionSongCount),
             @"Popularity" : [NSString stringWithFormat:@"%ld : %@", (long)sessionSongCount, fullName]
         }];
-    ILog(@"trackUserLeavingWithSong:artist:sessionSongCount: (%@,%@,%ld)", song, artist, (long)sessionSongCount);
 }
 
 @end
