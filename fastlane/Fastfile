@@ -161,10 +161,17 @@ platform :ios do
                         'iPhone 7',
                         'iPhone 6s Plus']
 
-        scan(scheme: "ArcanosRadio",
-             devices: device_names,
-             derived_data_path: "DerivedData",
-             test_without_building: true)
+        languages = Hash['pt_BR' => 'pt-BR',
+                         'en_US' => 'en' ]
+
+        languages.each { |locale, language|
+            ENV["KIF_LOCALE"] = locale
+            ENV["KIF_LANGUAGE"] = language
+
+            scan(scheme: "ArcanosRadio",
+                 devices: device_names,
+                 derived_data_path: "DerivedData",
+                 test_without_building: true)
         }
     end
 
