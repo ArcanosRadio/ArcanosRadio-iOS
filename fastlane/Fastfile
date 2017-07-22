@@ -1,5 +1,4 @@
 update_fastlane
-fastlane_version "1.104.0"
 default_platform :ios
 
 platform :ios do
@@ -153,12 +152,20 @@ platform :ios do
 
     lane :screenshots do
         ENV["SIMULATOR_STATUS_MAGIC_OVERRIDES"] = "enable"
-        snapshot(
-            scheme: "ArcanosRadioMock",
-            number_of_retries: 5,
-            erase_simulator: false,
-            reinstall_app: false,
-            localize_simulator: true)
+
+        scan(scheme: "ArcanosRadio",
+             derived_data_path: "DerivedData",
+             build_for_testing: true)
+
+        device_names = ['iPhone SE',
+                        'iPhone 7',
+                        'iPhone 6s Plus']
+
+        scan(scheme: "ArcanosRadio",
+             devices: device_names,
+             derived_data_path: "DerivedData",
+             test_without_building: true)
+        }
     end
 
     lane :upload_metadata do
