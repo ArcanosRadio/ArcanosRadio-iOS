@@ -26,12 +26,16 @@ static NSString *const LAST_SONG_COUNT = @"LAST_SONG_COUNT";
     return self;
 }
 
-- (BOOL)fabricsEnabled {
+- (BOOL)isFabricEnabled {
+#if DEBUG
+    return NO;
+#else
     return YES;
+#endif
 }
 
 - (void)trackMetric:(NSString *)metric withAttributes:(NSDictionary<NSString *, id> *)attributes {
-    if (!self.fabricsEnabled) {
+    if (![self isFabricEnabled]) {
         return;
     }
 
@@ -40,7 +44,7 @@ static NSString *const LAST_SONG_COUNT = @"LAST_SONG_COUNT";
 
 - (void)trackTab:(nonnull NSString *)content forSong:(nonnull NSString *)song artist:(nonnull NSString *)artist {
     ILog(@"trackTab:forSong:artist: (%@,%@,%@)", content, song, artist);
-    if (!self.fabricsEnabled) {
+    if (![self isFabricEnabled]) {
         return;
     }
 
@@ -60,7 +64,7 @@ static NSString *const LAST_SONG_COUNT = @"LAST_SONG_COUNT";
     [[NSUserDefaults standardUserDefaults] setObject:song forKey:LAST_SONG];
     [[NSUserDefaults standardUserDefaults] setObject:artist forKey:LAST_ARTIST];
     [[NSUserDefaults standardUserDefaults] setInteger:self.songCount forKey:LAST_SONG_COUNT];
-    if (!self.fabricsEnabled) {
+    if (![self isFabricEnabled]) {
         return;
     }
 
@@ -69,17 +73,16 @@ static NSString *const LAST_SONG_COUNT = @"LAST_SONG_COUNT";
 
 - (void)trackFinishedSong:(NSString *)song artist:(NSString *)artist {
     ILog(@"trackFinishedSong:artist: (%@,%@,self.songCount=%ld)", song, artist, (long)self.songCount);
-    if (!self.fabricsEnabled) {
+    if (![self isFabricEnabled]) {
         return;
     }
 
-    if (!self.fabricsEnabled) return;
     [self trackMetric:@"Finished Song" withAttributes:@{ @"Artist" : artist, @"Song" : song, @"Song Count" : @(self.songCount) }];
 }
 
 - (void)trackShareSong:(NSString *)song artist:(NSString *)artist on:(NSString *)service {
     ILog(@"trackShareSong:artist:service: (%@,%@,%@)", song, artist, service);
-    if (!self.fabricsEnabled) {
+    if (![self isFabricEnabled]) {
         return;
     }
 
@@ -97,7 +100,7 @@ static NSString *const LAST_SONG_COUNT = @"LAST_SONG_COUNT";
 
 - (void)trackUserLeavingWithSong:(NSString *)song artist:(NSString *)artist sessionSongCount:(NSInteger)sessionSongCount {
     ILog(@"trackUserLeavingWithSong:artist:sessionSongCount: (%@,%@,%ld)", song, artist, (long)sessionSongCount);
-    if (!self.fabricsEnabled) {
+    if (![self isFabricEnabled]) {
         return;
     }
 
