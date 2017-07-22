@@ -1,4 +1,5 @@
 #import "AWRNowPlayingCoordinator.h"
+#import "AWRAnalytics.h"
 #import "AWRControlCenterController.h"
 #import "AWRNowPlayingController.h"
 #import "AWRShareViewController.h"

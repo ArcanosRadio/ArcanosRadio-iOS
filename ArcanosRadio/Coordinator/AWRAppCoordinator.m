@@ -1,24 +1,17 @@
 #import "AWRAppCoordinator.h"
+#import "AWRCrashReportController.h"
 #import "AWRHelpCoordinator.h"
 #import "AWRMetadataFactory.h"
 #import "AWRNowPlayingCoordinator.h"
-#ifndef MOCK
-#import "AWRCrashReportController.h"
 #import "AWRReachability.h"
 #import <Crashlytics/Crashlytics.h>
 #import <Fabric/Fabric.h>
 #import <TwitterKit/TwitterKit.h>
-#define CRASHLYTICS_DELEGATE , CrashlyticsDelegate
-#else
-#define CRASHLYTICS_DELEGATE
-#endif
 
-@interface AWRAppCoordinator () <AWRNowPlayingCoordinatorDelegate, AWRHelpCoordinatorDelegate CRASHLYTICS_DELEGATE>
+@interface AWRAppCoordinator () <AWRNowPlayingCoordinatorDelegate, AWRHelpCoordinatorDelegate, CrashlyticsDelegate>
 
 @property (nonatomic, strong) AWRNowPlayingCoordinator *nowPlayingCoordinator;
-#ifndef MOCK
 @property (nonatomic, strong) AWRReachability *reachability;
-#endif
 @property (nonatomic, strong) UIViewController *mainController;
 @property (nonatomic, strong) NSObject *currentCoordinator;
 
@@ -29,11 +22,9 @@
 - (instancetype)initWithOptions:(NSDictionary *)launchOptions {
     self = [super init];
     if (self) {
-#ifndef MOCK
         [Crashlytics startWithAPIKey:FABRIC_API_KEY delegate:self];
         [[Twitter sharedInstance] startWithConsumerKey:TWITTER_CONSUMER_KEY consumerSecret:TWITTER_CONSUMER_SECRET];
         [Fabric with:@[ [Crashlytics class], [Twitter class] ]];
-#endif
     }
     return self;
 }
@@ -46,7 +37,6 @@
     return _nowPlayingCoordinator;
 }
 
-#ifndef MOCK
 - (AWRReachability *)reachability {
     if (!_reachability) {
         _reachability = [AWRReachability reachabilityForInternetConnection];
@@ -60,7 +50,6 @@
 
 - (void)receivedReachability:(NSNotification *)note {
 }
-#endif
 
 - (UIViewController *)start {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -73,9 +62,7 @@
            @"PARSE_CLIENT_KEY" : PARSE_CLIENT_KEY,
            @"PARSE_SERVER_URL" : PARSE_URL };
     [[AWRMetadataFactory createMetadataStore] refreshConfig];
-#ifndef MOCK
     [self.reachability startNotifier];
-#endif
     self.currentCoordinator    = self.nowPlayingCoordinator;
     return self.mainController = [self.nowPlayingCoordinator start];
 }
@@ -122,11 +109,9 @@
     [self.nowPlayingCoordinator backgroundFetchWithCompletionHandler:completionHandler];
 }
 
-#ifndef MOCK
 - (void)crashlyticsDidDetectReportForLastExecution:(CLSReport *)report completionHandler:(void (^)(BOOL))completionHandler {
     AWRCrashReportController *crashReportController = [[AWRCrashReportController alloc] initWithParent:self.mainController];
     [crashReportController sendReport:report completionHandler:completionHandler];
 }
-#endif
 
 @end

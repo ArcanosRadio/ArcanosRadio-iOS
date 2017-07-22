@@ -1,4 +1,5 @@
 #import "AWRNowPlayingController.h"
+#import "AWRAnalytics.h"
 #import "AWRArcanosMediaPlayer.h"
 #import "AWRMetadataFactory.h"
 #import "AWRNowPlayingView.h"
@@ -24,8 +25,9 @@
 - (instancetype)init {
     self = [super initWithNibName:@"AWRNowPlayingView" bundle:nil];
     if (self) {
-        self.viewState    = [[AWRNowPlayingViewState alloc] init];
-        self.streamingUrl = [[AWRMetadataFactory createMetadataStore] readConfig:REMOTE_CONFIG_STREAMING_URL_KEY];
+        self.viewState            = [[AWRNowPlayingViewState alloc] init];
+        self.streamingUrl         = [[AWRMetadataFactory createMetadataStore] readConfig:REMOTE_CONFIG_STREAMING_URL_KEY];
+        self.viewState.artistName = @"...";
     }
     return self;
 }
@@ -52,6 +54,14 @@
 }
 
 - (void)metadataDidChangeTheSong:(id<AWRSong>)song {
+    if ([self.viewState.artistName isEqualToString:@"..."]) {
+        [self trackContentTab:self.nowPlayingView.currentTab song:song.songName artist:song.artist.artistName first:YES];
+    } else {
+        [[AWRAnalytics sharedAnalytics] trackFinishedSong:self.viewState.songName ?: @"" artist:self.viewState.artistName ?: @""];
+        [self trackContentTab:self.nowPlayingView.currentTab song:song.songName artist:song.artist.artistName first:NO];
+    }
+    [[AWRAnalytics sharedAnalytics] trackListenSong:song.songName ?: @"" artist:song.artist.artistName ?: @""];
+
     self.viewState.songName   = song.songName;
     self.viewState.artistName = song.artist.artistName;
     self.viewState.url        = song.artist.url;
@@ -138,6 +148,10 @@
 
         [self.nowPlayingView navigate:requestObj];
     }
+
+    if (![self.viewState.artistName isEqualToString:@"..."]) {
+        [self trackContentTab:newtab song:self.viewState.songName artist:self.viewState.artistName first:NO];
+    }
 }
 
 - (void)settingsButtonPressed {
@@ -168,6 +182,13 @@
 - (void)viewDidUnload {
     [self.arcanosRadio stop];
     [super viewDidUnload];
+}
+
+- (void)trackContentTab:(AWRNowPlayingViewTab)tab song:(NSString *)song artist:(NSString *)artist first:(BOOL)first {
+    NSString *tabName = tab == AWRNowPlayingViewTabLyrics ? @"Lyrics" : tab == AWRNowPlayingViewTabTwitter ? @"Twitter" : @"Website";
+    [[AWRAnalytics sharedAnalytics] trackTab:[NSString stringWithFormat:@"%@%@", tabName, (first ? @" (init)" : @"")]
+                                     forSong:song ?: @""
+                                      artist:artist ?: @""];
 }
 
 @end
