@@ -88,7 +88,7 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (void)deepPurpleMetadata {
-    [tester setSongName:@"Brun"
+    [tester setSongName:@"Burn"
              artistName:@"Deep Purple"
                 twitter:@"@_DeepPurple"
                 website:@"http://www.deeppurple.com/"
