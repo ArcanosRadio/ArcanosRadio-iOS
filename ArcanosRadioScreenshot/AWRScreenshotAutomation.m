@@ -68,7 +68,7 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (void)steveVaiMetadata {
-    [tester setSongName:@"For The Love Of God God"
+    [tester setSongName:@"For The Love Of God"
              artistName:@"Steve Vai"
                 twitter:@"@stevevai"
                 website:@""
