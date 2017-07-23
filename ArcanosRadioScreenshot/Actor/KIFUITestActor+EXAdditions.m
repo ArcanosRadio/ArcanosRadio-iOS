@@ -28,7 +28,8 @@
 
 - (void)screenshotWithIdentifier:(nonnull NSString *)identifier {
     UIView *screen = [[UIScreen mainScreen] snapshotViewAfterScreenUpdates:NO];
-    UIGraphicsBeginImageContext(screen.bounds.size);
+    UIGraphicsBeginImageContextWithOptions(screen.bounds.size, NO, 0);
+    [screen layoutIfNeeded];
     [screen drawViewHierarchyInRect:screen.bounds afterScreenUpdates:YES];
     UIImage *screenshot = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
