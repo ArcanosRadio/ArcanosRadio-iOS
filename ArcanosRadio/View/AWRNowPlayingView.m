@@ -65,10 +65,7 @@ const float kToolbarFinalSpacing      = 20.0;
     self.websiteButton.selected = NO;
     sender.selected             = YES;
 
-    self.lyricsButton.tintColor  = AWRColorToolkit.toolbarForegroundColor;
-    self.twitterButton.tintColor = AWRColorToolkit.toolbarForegroundColor;
-    self.websiteButton.tintColor = self.websiteButton.enabled ? AWRColorToolkit.toolbarForegroundColor : AWRColorToolkit.disabledTextColor;
-    sender.tintColor             = AWRColorToolkit.extraHighlightTextColor;
+    [self setToolbarColors];
 
     self.lyricsLabel.hidden = sender != self.lyricsButton;
     self.twitterView.hidden = sender != self.twitterButton;
@@ -81,6 +78,15 @@ const float kToolbarFinalSpacing      = 20.0;
     } else if (sender == self.websiteButton) {
         [self setCurrentTab:AWRNowPlayingViewTabWebsite];
     }
+}
+
+- (void)setToolbarColors {
+    UIColor *selected            = AWRColorToolkit.extraHighlightTextColor;
+    UIColor *notSelected         = AWRColorToolkit.toolbarForegroundColor;
+    UIColor *disabled            = AWRColorToolkit.disabledTextColor;
+    self.lyricsButton.tintColor  = self.lyricsButton.selected ? selected : notSelected;
+    self.twitterButton.tintColor = self.twitterButton.selected ? selected : notSelected;
+    self.websiteButton.tintColor = !self.websiteButton.enabled ? disabled : self.lyricsButton.selected ? selected : notSelected;
 }
 
 - (void)setCurrentTab:(AWRNowPlayingViewTab)currentTab {
@@ -572,9 +578,9 @@ CGFloat scrollViewLastOffset = 0.0;
         self.artistLabel.text         = model.artistName;
         self.lyricsLabel.text         = model.lyrics;
         if (self.websiteButton.enabled != model.hasUrl) {
-            self.websiteButton.enabled   = model.hasUrl;
-            self.websiteButton.tintColor = model.hasUrl ? AWRColorToolkit.toolbarForegroundColor : AWRColorToolkit.disabledTextColor;
+            self.websiteButton.enabled = model.hasUrl;
         }
+        [self setToolbarColors];
         [self recalculateContentSize];
     });
 }
