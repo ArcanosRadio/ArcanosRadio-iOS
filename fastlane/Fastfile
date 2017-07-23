@@ -14,11 +14,6 @@ platform :ios do
         increment_build_number(xcodeproj: "ArcanosRadio.xcodeproj")
     end
 
-    desc "Runs all the tests"
-    lane :test do
-        scan
-    end
-
     desc "Builds alpha release and upload to Crashlytics"
     lane :alpha do
         cert(output_path: "./Certificates/")
@@ -59,6 +54,7 @@ platform :ios do
 
         # add tag such as "v1.0.0-alpha.3431"
         add_git_tag(tag: "v#{version_alpha}.#{build_number}")
+        push_to_git_remote
     end
 
     desc "Builds beta release and upload to Crashlytics"
@@ -101,6 +97,7 @@ platform :ios do
 
         # add tag such as "v1.0.0-beta.3431"
         add_git_tag(tag: "v#{version_beta}.#{build_number}")
+        push_to_git_remote
     end
 
     desc "Builds trial release and upload to Testflight"
@@ -130,6 +127,7 @@ platform :ios do
 
         # add tag such as "v1.0.0-trial.3431"
         add_git_tag(tag: "v#{version_trial}.#{build_number}")
+        push_to_git_remote
     end
 
     lane :store do
@@ -148,6 +146,7 @@ platform :ios do
         version = get_version_number(xcodeproj: "ArcanosRadio.xcodeproj")
 
         add_git_tag(tag: "v#{version}.#{build_number}")
+        push_to_git_remote
     end
 
     lane :screenshots do
@@ -177,10 +176,6 @@ platform :ios do
 
     lane :upload_metadata do
         deliver(skip_binary_upload: true)
-    end
-
-    after_all do |lane|
-        push_to_git_remote
     end
 
     error do |lane, exception|
