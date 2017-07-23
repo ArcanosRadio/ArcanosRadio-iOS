@@ -175,6 +175,9 @@ const float kToolbarFinalSpacing      = 20.0;
     [self emptyFields];
     [self addGestureRecognizer:self.scrollView.panGestureRecognizer];
     self.scrollView.scrollViewDelegate = self;
+#if DEBUG
+    self.scrollView.accessibilityIdentifier = @"Main ScrollView";
+#endif
     [self toolbarItemSelected:self.lyricsButton];
 
     self.headerContainer.layer.zPosition  = 2;
@@ -198,6 +201,7 @@ const float kToolbarFinalSpacing      = 20.0;
     self.lyricsButton.layer.shadowOffset  = CGSizeMake(0.2f, 0.5f);
     self.lyricsButton.layer.shadowOpacity = 0.9f;
     self.lyricsButton.clipsToBounds       = NO;
+    [self.lyricsButton setAccessibilityLabel:NSLocalizedString(@"TOOLBAR_LYRICS", nil)];
 
     [self.twitterButton setTitleColor:AWRColorToolkit.toolbarForegroundColor forState:UIControlStateNormal];
     [self.twitterButton setTitleColor:AWRColorToolkit.disabledTextColor forState:UIControlStateDisabled];
@@ -207,6 +211,7 @@ const float kToolbarFinalSpacing      = 20.0;
     self.twitterButton.layer.shadowOffset  = CGSizeMake(0.2f, 0.5f);
     self.twitterButton.layer.shadowOpacity = 0.9f;
     self.twitterButton.clipsToBounds       = NO;
+    [self.twitterButton setAccessibilityLabel:NSLocalizedString(@"TOOLBAR_TWITTER", nil)];
 
     [self.websiteButton setTitleColor:AWRColorToolkit.toolbarForegroundColor forState:UIControlStateNormal];
     [self.websiteButton setTitleColor:AWRColorToolkit.disabledTextColor forState:UIControlStateDisabled];
@@ -216,6 +221,7 @@ const float kToolbarFinalSpacing      = 20.0;
     self.websiteButton.layer.shadowOffset  = CGSizeMake(0.2f, 0.5f);
     self.websiteButton.layer.shadowOpacity = 0.9f;
     self.websiteButton.clipsToBounds       = NO;
+    [self.websiteButton setAccessibilityLabel:NSLocalizedString(@"TOOLBAR_WEBSITE", nil)];
 
     [self configureMediaBarShadow];
 }

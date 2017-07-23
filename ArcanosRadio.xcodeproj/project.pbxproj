@@ -88,7 +88,6 @@
 		D531D4B01F21478100A78658 /* AWRScreenshotAutomation.m in Sources */ = {isa = PBXBuildFile; fileRef = D531D4AF1F21478100A78658 /* AWRScreenshotAutomation.m */; };
 		D531D4B81F214AAB00A78658 /* KIF.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D531D4B71F214AAB00A78658 /* KIF.framework */; };
 		D531D4B91F214AB200A78658 /* SimulatorStatusMagiciOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01673C7A1DCFAD2E000B14CE /* SimulatorStatusMagiciOS.framework */; };
-		D531D4BC1F214D1400A78658 /* KIFUITestActor+EXAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D531D4BB1F214D1400A78658 /* KIFUITestActor+EXAdditions.m */; };
 		D545F0311F12DE6600462242 /* AWRScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D545F0301F12DE6600462242 /* AWRScrollView.m */; };
 		D545F0361F12E5DA00462242 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D545F0321F12E5DA00462242 /* TwitterCore.framework */; };
 		D545F0371F12E5DA00462242 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D545F0331F12E5DA00462242 /* TwitterKit.framework */; };
@@ -120,6 +119,13 @@
 		D5D7599B1F127AA50001D6B5 /* AWRAppInfoViewState.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D759951F127AA50001D6B5 /* AWRAppInfoViewState.m */; };
 		D5D7599C1F127AA50001D6B5 /* AWRLicenseViewState.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D759971F127AA50001D6B5 /* AWRLicenseViewState.m */; };
 		D5D7599D1F127AA50001D6B5 /* AWRNowPlayingViewState.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D759991F127AA50001D6B5 /* AWRNowPlayingViewState.m */; };
+		D5DDD50E1F24055C00F6E683 /* AWRMetadataFactory+Mock.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DDD5091F24055C00F6E683 /* AWRMetadataFactory+Mock.m */; };
+		D5DDD50F1F24055C00F6E683 /* AWRMockMetadataService.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DDD50B1F24055C00F6E683 /* AWRMockMetadataService.m */; };
+		D5DDD5141F24058200F6E683 /* KIFUITestActor+EXAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DDD5131F24058200F6E683 /* KIFUITestActor+EXAdditions.m */; };
+		D5DDD51A1F24198F00F6E683 /* Wolfenbach.png in Resources */ = {isa = PBXBuildFile; fileRef = D5DDD5191F24198F00F6E683 /* Wolfenbach.png */; };
+		D5DDD51C1F241ACF00F6E683 /* SteveVai.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D5DDD51B1F241ACF00F6E683 /* SteveVai.jpg */; };
+		D5DDD51F1F2424C200F6E683 /* Angra.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D5DDD51E1F2424C200F6E683 /* Angra.jpg */; };
+		D5DDD5211F24286600F6E683 /* DeepPurple.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D5DDD5201F24286600F6E683 /* DeepPurple.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -285,8 +291,6 @@
 		D531D4AF1F21478100A78658 /* AWRScreenshotAutomation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AWRScreenshotAutomation.m; sourceTree = "<group>"; };
 		D531D4B11F21478100A78658 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D531D4B71F214AAB00A78658 /* KIF.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KIF.framework; path = Carthage/Build/iOS/KIF.framework; sourceTree = "<group>"; };
-		D531D4BA1F214D1400A78658 /* KIFUITestActor+EXAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KIFUITestActor+EXAdditions.h"; sourceTree = "<group>"; };
-		D531D4BB1F214D1400A78658 /* KIFUITestActor+EXAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KIFUITestActor+EXAdditions.m"; sourceTree = "<group>"; };
 		D531D4BF1F215A4500A78658 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSnapshotTestCase.framework; path = Carthage/Build/iOS/FBSnapshotTestCase.framework; sourceTree = "<group>"; };
 		D545F02F1F12DE6600462242 /* AWRScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRScrollView.h; sourceTree = "<group>"; };
 		D545F0301F12DE6600462242 /* AWRScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRScrollView.m; sourceTree = "<group>"; };
@@ -327,6 +331,16 @@
 		D5D759971F127AA50001D6B5 /* AWRLicenseViewState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRLicenseViewState.m; sourceTree = "<group>"; };
 		D5D759981F127AA50001D6B5 /* AWRNowPlayingViewState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRNowPlayingViewState.h; sourceTree = "<group>"; };
 		D5D759991F127AA50001D6B5 /* AWRNowPlayingViewState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRNowPlayingViewState.m; sourceTree = "<group>"; };
+		D5DDD5081F24055C00F6E683 /* AWRMetadataFactory+Mock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AWRMetadataFactory+Mock.h"; sourceTree = "<group>"; };
+		D5DDD5091F24055C00F6E683 /* AWRMetadataFactory+Mock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AWRMetadataFactory+Mock.m"; sourceTree = "<group>"; };
+		D5DDD50A1F24055C00F6E683 /* AWRMockMetadataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWRMockMetadataService.h; sourceTree = "<group>"; };
+		D5DDD50B1F24055C00F6E683 /* AWRMockMetadataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWRMockMetadataService.m; sourceTree = "<group>"; };
+		D5DDD5121F24058200F6E683 /* KIFUITestActor+EXAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KIFUITestActor+EXAdditions.h"; sourceTree = "<group>"; };
+		D5DDD5131F24058200F6E683 /* KIFUITestActor+EXAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KIFUITestActor+EXAdditions.m"; sourceTree = "<group>"; };
+		D5DDD5191F24198F00F6E683 /* Wolfenbach.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Wolfenbach.png; sourceTree = "<group>"; };
+		D5DDD51B1F241ACF00F6E683 /* SteveVai.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SteveVai.jpg; sourceTree = "<group>"; };
+		D5DDD51E1F2424C200F6E683 /* Angra.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Angra.jpg; sourceTree = "<group>"; };
+		D5DDD5201F24286600F6E683 /* DeepPurple.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DeepPurple.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -628,11 +642,12 @@
 		D531D4AE1F21478100A78658 /* ArcanosRadioScreenshot */ = {
 			isa = PBXGroup;
 			children = (
+				D5DDD5111F24058200F6E683 /* Actor */,
+				D5DDD5071F24055C00F6E683 /* Mock */,
 				D519A1C01F23DB8200BB4543 /* AWRScreenshotAutomation.h */,
 				D531D4AF1F21478100A78658 /* AWRScreenshotAutomation.m */,
+				D5DDD51D1F241AD200F6E683 /* AlbumArt */,
 				D531D4B11F21478100A78658 /* Info.plist */,
-				D531D4BA1F214D1400A78658 /* KIFUITestActor+EXAdditions.h */,
-				D531D4BB1F214D1400A78658 /* KIFUITestActor+EXAdditions.m */,
 			);
 			path = ArcanosRadioScreenshot;
 			sourceTree = "<group>";
@@ -713,6 +728,37 @@
 				D5D759991F127AA50001D6B5 /* AWRNowPlayingViewState.m */,
 			);
 			path = ViewState;
+			sourceTree = "<group>";
+		};
+		D5DDD5071F24055C00F6E683 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				D5DDD5081F24055C00F6E683 /* AWRMetadataFactory+Mock.h */,
+				D5DDD5091F24055C00F6E683 /* AWRMetadataFactory+Mock.m */,
+				D5DDD50A1F24055C00F6E683 /* AWRMockMetadataService.h */,
+				D5DDD50B1F24055C00F6E683 /* AWRMockMetadataService.m */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		D5DDD5111F24058200F6E683 /* Actor */ = {
+			isa = PBXGroup;
+			children = (
+				D5DDD5121F24058200F6E683 /* KIFUITestActor+EXAdditions.h */,
+				D5DDD5131F24058200F6E683 /* KIFUITestActor+EXAdditions.m */,
+			);
+			path = Actor;
+			sourceTree = "<group>";
+		};
+		D5DDD51D1F241AD200F6E683 /* AlbumArt */ = {
+			isa = PBXGroup;
+			children = (
+				D5DDD51E1F2424C200F6E683 /* Angra.jpg */,
+				D5DDD5201F24286600F6E683 /* DeepPurple.jpg */,
+				D5DDD51B1F241ACF00F6E683 /* SteveVai.jpg */,
+				D5DDD5191F24198F00F6E683 /* Wolfenbach.png */,
+			);
+			name = AlbumArt;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -925,6 +971,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5DDD51F1F2424C200F6E683 /* Angra.jpg in Resources */,
+				D5DDD51C1F241ACF00F6E683 /* SteveVai.jpg in Resources */,
+				D5DDD51A1F24198F00F6E683 /* Wolfenbach.png in Resources */,
+				D5DDD5211F24286600F6E683 /* DeepPurple.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1058,8 +1108,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D531D4BC1F214D1400A78658 /* KIFUITestActor+EXAdditions.m in Sources */,
+				D5DDD50E1F24055C00F6E683 /* AWRMetadataFactory+Mock.m in Sources */,
+				D5DDD50F1F24055C00F6E683 /* AWRMockMetadataService.m in Sources */,
 				D531D4B01F21478100A78658 /* AWRScreenshotAutomation.m in Sources */,
+				D5DDD5141F24058200F6E683 /* KIFUITestActor+EXAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
