@@ -30,11 +30,6 @@ xcode-select --install
 
 # Available Actions
 ## iOS
-### ios test
-```
-fastlane ios test
-```
-Runs all the tests
 ### ios alpha
 ```
 fastlane ios alpha
