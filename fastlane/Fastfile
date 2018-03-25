@@ -16,8 +16,8 @@ platform :ios do
 
     desc "Builds alpha release and upload to Crashlytics"
     lane :alpha do
-        cert(output_path: "./Certificates/")
-        sigh(
+        get_certificates(output_path: "./Certificates/")
+        get_provisioning_profile(
             output_path: "./Certificates/",
             adhoc: true,
             provisioning_name: 'ArcanosTrial'
@@ -32,7 +32,7 @@ platform :ios do
             version_number: version_alpha,
             xcodeproj: "ArcanosRadio.xcodeproj")
 
-        gym(scheme: "ArcanosRadio")
+        build_app(scheme: "ArcanosRadio")
         changes = changelog_from_git_commits(tag_match_pattern: "*alpha*")
         crashlytics(
             crashlytics_path: "./Frameworks/Crashlytics.framework",
@@ -59,8 +59,8 @@ platform :ios do
 
     desc "Builds beta release and upload to Crashlytics"
     lane :beta do
-        cert(output_path: "./Certificates/")
-        sigh(
+        get_certificates(output_path: "./Certificates/")
+        get_provisioning_profile(
             output_path: "./Certificates/",
             adhoc: true,
             provisioning_name: 'ArcanosTrial'
@@ -75,7 +75,7 @@ platform :ios do
             version_number: version_beta,
             xcodeproj: "ArcanosRadio.xcodeproj")
 
-        gym(scheme: "ArcanosRadio")
+        build_app(scheme: "ArcanosRadio")
         changes = changelog_from_git_commits(tag_match_pattern: "*beta*")
         crashlytics(
             crashlytics_path: "./Frameworks/Crashlytics.framework",
@@ -102,14 +102,14 @@ platform :ios do
 
     desc "Builds trial release and upload to Testflight"
     lane :trial do
-        cert(output_path: "./Certificates/")
-        sigh(
+        get_certificates(output_path: "./Certificates/")
+        get_provisioning_profile(
             output_path: "./Certificates/",
             adhoc: false,
             provisioning_name: 'ArcanosStore'
         )
 
-        gym(scheme: "ArcanosRadio")
+        build_app(scheme: "ArcanosRadio")
         changes = changelog_from_git_commits(tag_match_pattern: "*trial*")
         testflight(
             changelog: changes,
@@ -131,15 +131,15 @@ platform :ios do
     end
 
     lane :store do
-        cert(output_path: "./Certificates/")
-        sigh(
+        get_certificates(output_path: "./Certificates/")
+        get_provisioning_profile(
             output_path: "./Certificates/",
             adhoc: false,
             provisioning_name: 'ArcanosStore'
         )
 
-        gym(scheme: "ArcanosRadio")
-        deliver(force: true)
+        build_app(scheme: "ArcanosRadio")
+        upload_to_app_store(force: true)
 
 
         build_number = get_build_number(xcodeproj: "ArcanosRadio.xcodeproj")
@@ -176,7 +176,7 @@ platform :ios do
     end
 
     lane :upload_metadata do
-        deliver(skip_binary_upload: true)
+        upload_to_app_store(skip_binary_upload: true)
     end
 
     error do |lane, exception|
