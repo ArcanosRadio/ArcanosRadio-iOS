@@ -157,8 +157,9 @@ platform :ios do
              build_for_testing: true)
 
         device_names = ['iPhone SE',
-                        'iPhone 7',
-                        'iPhone 6s Plus']
+                        'iPhone 8',
+                        'iPhone 8 Plus',
+                        'iPhone X']
 
         languages = Hash['pt_BR' => 'pt-BR',
                          'en_US' => 'en' ]
