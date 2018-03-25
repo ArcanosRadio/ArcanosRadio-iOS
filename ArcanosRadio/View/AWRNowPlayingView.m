@@ -86,7 +86,7 @@ const float kToolbarFinalSpacing      = 20.0;
     UIColor *disabled            = AWRColorToolkit.disabledTextColor;
     self.lyricsButton.tintColor  = self.lyricsButton.selected ? selected : notSelected;
     self.twitterButton.tintColor = self.twitterButton.selected ? selected : notSelected;
-    self.websiteButton.tintColor = !self.websiteButton.enabled ? disabled : self.lyricsButton.selected ? selected : notSelected;
+    self.websiteButton.tintColor = !self.websiteButton.enabled ? disabled : self.websiteButton.selected ? selected : notSelected;
 }
 
 - (void)setCurrentTab:(AWRNowPlayingViewTab)currentTab {
