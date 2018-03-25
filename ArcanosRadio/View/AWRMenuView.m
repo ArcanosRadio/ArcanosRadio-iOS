@@ -59,14 +59,14 @@
     if (@available(iOS 11.0, *)) {
         return UIApplication.sharedApplication.keyWindow.safeAreaInsets;
     } else {
-        return UIEdgeInsetsMake(20.0, 0.0, 0.0, 0.0);
+        return UIEdgeInsetsZero;
     }
 }
 
 - (UILabel *)helpLabel {
     if (!_helpLabel) {
-        _helpLabel = [[UILabel alloc]
-            initWithFrame:CGRectMake(HELP_MARGIN, self.safeInsets.top + HELP_MARGIN, self.frame.size.width - 2 * HELP_MARGIN, 30)];
+        CGFloat topDistance = MAX(self.safeInsets.top, 20.0) + HELP_MARGIN;
+        _helpLabel = [[UILabel alloc] initWithFrame:CGRectMake(HELP_MARGIN, topDistance, self.frame.size.width - 2 * HELP_MARGIN, 30)];
         _helpLabel.alpha               = 0.0;
         _helpLabel.textAlignment       = NSTextAlignmentCenter;
         _helpLabel.backgroundColor     = UIColor.darkGrayColor;
@@ -81,7 +81,7 @@
                                                                   toItem:self
                                                                attribute:NSLayoutAttributeTop
                                                               multiplier:1
-                                                                constant:self.safeInsets.top + HELP_MARGIN];
+                                                                constant:topDistance];
         NSLayoutConstraint *left = [NSLayoutConstraint constraintWithItem:_helpLabel
                                                                 attribute:NSLayoutAttributeLeading
                                                                 relatedBy:NSLayoutRelationEqual
