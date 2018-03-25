@@ -7,8 +7,8 @@ platform :ios do
         env_vars = File.read('env_vars.properties').scan /(\S+)=(\S+)/
         env_vars.each { |v| ENV[v.first] = v.last.gsub /\A['"]|['"]\Z/, '' }
 
-        ensure_xcode_version(version: "8.3.3")
-        xcversion(version: "8.3.3")
+        ensure_xcode_version(version: "9.2")
+        xcversion(version: "9.2")
         ensure_git_status_clean
         git_pull
         increment_build_number(xcodeproj: "ArcanosRadio.xcodeproj")
