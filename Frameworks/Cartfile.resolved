@@ -1,5 +1,5 @@
 github "BoltsFramework/Bolts-ObjC" "1.8.4"
-github "facebook/ios-snapshot-test-case" "2.1.4"
-github "kif-framework/KIF" "v3.5.2"
+github "kif-framework/KIF" "v3.7.1"
 github "luizmb/Parse-SDK-iOS-OSX" "1.15.0"
-github "shinydevelopment/SimulatorStatusMagic" "1.9.5"
+github "shinydevelopment/SimulatorStatusMagic" "2.1"
+github "uber/ios-snapshot-test-case" "2.2.0"
