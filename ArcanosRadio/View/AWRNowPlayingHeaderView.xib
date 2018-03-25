@@ -83,9 +83,11 @@
                 <outlet property="albumArtIcon" destination="et1-2X-qV7" id="KGC-2y-o2F"/>
                 <outlet property="artistLabel" destination="Gsu-TU-MYK" id="Nqu-b0-3je"/>
                 <outlet property="backgroundAlbumArt" destination="UDm-4P-vDN" id="wGB-Bk-c72"/>
+                <outlet property="iconVerticalConstraint" destination="FK1-22-dpE" id="OFJ-Ka-Ipg"/>
                 <outlet property="metadataContainer" destination="B0g-4k-sB6" id="JV2-Os-Dyf"/>
                 <outlet property="metadataVerticalCenterConstraint" destination="r0V-oy-BRb" id="3MA-iY-Twv"/>
                 <outlet property="songLabel" destination="287-cl-MlW" id="ma7-tE-lhK"/>
+                <outlet property="statusBarBackgroundConstraint" destination="45g-7Z-TJD" id="pmU-vd-1Px"/>
             </connections>
             <point key="canvasLocation" x="5.5" y="-443"/>
         </view>

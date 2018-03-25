@@ -16,5 +16,6 @@
 - (void)renderModel:(AWRNowPlayingViewState *)model;
 - (float)maximumHeight;
 - (float)minimumHeight;
+- (float)statusBarHeight;
 
 @end
