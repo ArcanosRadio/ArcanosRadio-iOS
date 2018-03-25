@@ -5,6 +5,8 @@
 #define FIRST_INNER_CIRCLE_RADIUS 89
 #define DISTACE_BETWEEN_CIRCLES 89
 #define BUTTON_DIAMETER 55
+#define HELP_MARGIN 6.0f
+#define HELP_RADIUS 10.0f
 
 @implementation AWRMenuViewItem
 
@@ -34,7 +36,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.startingPoint = CGPointMake(frame.origin.x + frame.size.width - BUTTON_DIAMETER / 2 - 8,
-                                         frame.origin.y + frame.size.height - BUTTON_DIAMETER / 2 - 8);
+                                         frame.origin.y + frame.size.height - BUTTON_DIAMETER / 2 - 8 - self.safeInsets.bottom);
         self.clipsToBounds = NO;
     }
     return self;
@@ -53,14 +55,25 @@
     return _overlay;
 }
 
+- (UIEdgeInsets)safeInsets {
+    if (@available(iOS 11.0, *)) {
+        return UIApplication.sharedApplication.keyWindow.safeAreaInsets;
+    } else {
+        return UIEdgeInsetsMake(20.0, 0.0, 0.0, 0.0);
+    }
+}
+
 - (UILabel *)helpLabel {
     if (!_helpLabel) {
-        _helpLabel                 = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, self.frame.size.width, 30)];
-        _helpLabel.alpha           = 0.0;
-        _helpLabel.textAlignment   = NSTextAlignmentCenter;
-        _helpLabel.backgroundColor = UIColor.darkGrayColor;
-        _helpLabel.font            = [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1];
-        _helpLabel.textColor       = [UIColor whiteColor];
+        _helpLabel = [[UILabel alloc]
+            initWithFrame:CGRectMake(HELP_MARGIN, self.safeInsets.top + HELP_MARGIN, self.frame.size.width - 2 * HELP_MARGIN, 30)];
+        _helpLabel.alpha               = 0.0;
+        _helpLabel.textAlignment       = NSTextAlignmentCenter;
+        _helpLabel.backgroundColor     = UIColor.darkGrayColor;
+        _helpLabel.font                = [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1];
+        _helpLabel.textColor           = [UIColor whiteColor];
+        _helpLabel.layer.masksToBounds = YES;
+        _helpLabel.layer.cornerRadius  = HELP_RADIUS;
         [self addSubview:_helpLabel];
         NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:_helpLabel
                                                                attribute:NSLayoutAttributeTop
@@ -68,7 +81,7 @@
                                                                   toItem:self
                                                                attribute:NSLayoutAttributeTop
                                                               multiplier:1
-                                                                constant:20];
+                                                                constant:self.safeInsets.top + HELP_MARGIN];
         NSLayoutConstraint *left = [NSLayoutConstraint constraintWithItem:_helpLabel
                                                                 attribute:NSLayoutAttributeLeading
                                                                 relatedBy:NSLayoutRelationEqual
