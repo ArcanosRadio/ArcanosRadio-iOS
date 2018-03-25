@@ -14,6 +14,7 @@ const float kToolbarInitialLeftMargin = 25.0;
 const float kToolbarInitialSpacing    = 50.0;
 const float kToolbarFinalLeftMargin   = 112.0;
 const float kToolbarFinalSpacing      = 20.0;
+const float kMediaControlSafeHeight   = 48.0;
 
 @interface AWRNowPlayingView () <UIScrollViewDelegate, AWRMenuViewDelegate, AWRNowPlayingHeaderViewDelegate, AWRScrollViewDelegate>
 
@@ -48,10 +49,11 @@ const float kToolbarFinalSpacing      = 20.0;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *toolbarItemsLeftMargin;
 @property (strong, nonatomic) IBOutletCollection(NSLayoutConstraint) NSArray *toolbarItemsSpacing;
-
 @property (strong, nonatomic) IBOutletCollection(NSLayoutConstraint) NSArray *toolbarItemsWidth;
-
 @property (strong, nonatomic) IBOutletCollection(NSLayoutConstraint) NSArray *toolbarItemsHeight;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *mediaControlHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *mediaControlCenterConstraint;
 
 @property (strong, nonatomic) UIScrollView *twitterView;
 @property (weak, nonatomic) IBOutlet WKWebView *webView;
@@ -238,6 +240,13 @@ const float kToolbarFinalSpacing      = 20.0;
 
 - (void)layoutSubviews {
     [super layoutSubviews];
+    float safeMargin = 0.0f;
+    if (@available(iOS 11.0, *)) {
+        safeMargin = self.safeAreaInsets.bottom;
+    }
+
+    self.mediaControlHeightConstraint.constant = kMediaControlSafeHeight + safeMargin;
+    self.mediaControlCenterConstraint.constant = -safeMargin / 2.0f;
 }
 
 - (float)screenAnimationScrollOffset {
@@ -430,7 +439,7 @@ CGFloat scrollViewLastOffset = 0.0;
     float offsetBigMetadata                     = 4 - MIN(offsetAfterToolbarTransformation, maxBigMetadataMovement);
 
     self.metadataTopLayoutConstraint.constant = offsetBigMetadata;
-    self.headerView.metadataOffset            = MAX((self.headerView.minimumHeight / 2) + 20 - offsetAfterToolbarTransformation, 0);
+    self.headerView.metadataOffset            = MAX((self.headerView.minimumHeight / 2) + 10 - offsetAfterToolbarTransformation, 0);
 
     if (offsetAfterToolbarTransformation <= offsetUntilMetadataIsCompletelyHidden) {
         //////////////////////////////////
