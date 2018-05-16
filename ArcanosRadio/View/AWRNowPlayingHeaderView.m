@@ -19,7 +19,8 @@ static NSString *const kStatusBarTappedNotification = @"StatusBarTappedNotificat
 @property (weak, nonatomic) IBOutlet UILabel *artistLabel;
 @property (strong, nonatomic) NSDictionary *textEffects;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *metadataVerticalCenterConstraint;
-
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *statusBarBackgroundConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *iconVerticalConstraint;
 @end
 
 @implementation AWRNowPlayingHeaderView
@@ -30,11 +31,19 @@ static NSString *const kStatusBarTappedNotification = @"StatusBarTappedNotificat
 }
 
 - (float)minimumHeight {
-    return self.albumArtIcon.bounds.size.height + kDefaultMargin * 2 + 20;
+    return self.albumArtIcon.bounds.size.height + kDefaultMargin * 2 + self.statusBarHeight;
 }
 
 - (float)deltaHeight {
     return self.maximumHeight - self.minimumHeight;
+}
+
+- (float)statusBarHeight {
+    if (@available(iOS 11.0, *)) {
+        return self.safeAreaInsets.top;
+    } else {
+        return 20.0f;
+    }
 }
 
 - (void)layoutSubviews {
@@ -47,6 +56,9 @@ static NSString *const kStatusBarTappedNotification = @"StatusBarTappedNotificat
     CATransform3D horizontalOffsetEffect = CATransform3DIdentity;
     horizontalOffsetEffect               = CATransform3DTranslate(horizontalOffsetEffect, (1.0 - progress) * 12.0, 0, 0);
     self.albumArtIcon.layer.transform    = horizontalOffsetEffect;
+
+    self.statusBarBackgroundConstraint.constant = self.statusBarHeight;
+    self.iconVerticalConstraint.constant        = self.statusBarHeight / 2.0f;
 }
 
 - (void)awakeFromNib {
